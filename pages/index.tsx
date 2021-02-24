@@ -4,9 +4,9 @@ import { Layout } from '../layouts';
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       <Heading>Hi</Heading>
-    </Layout>
+    </>
   );
 };
 
