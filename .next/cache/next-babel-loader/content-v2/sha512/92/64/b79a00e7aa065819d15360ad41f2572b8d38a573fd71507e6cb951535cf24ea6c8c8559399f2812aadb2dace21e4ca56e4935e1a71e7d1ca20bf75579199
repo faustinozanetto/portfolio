@@ -1,1 +1,0 @@
-{"ast":null,"code":"export { Layout } from './Layout';","map":{"version":3,"sources":["K:/Programming/Full Stack/portfolio/layouts/index.ts"],"names":["Layout"],"mappings":"AAAA,SAASA,MAAT,QAAuB,UAAvB","sourcesContent":["export { Layout } from './Layout';\r\n"]},"metadata":{},"sourceType":"module"}
