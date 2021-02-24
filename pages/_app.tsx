@@ -1,5 +1,14 @@
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+import React from 'react';
+import { ChakraProvider, CSSReset } from '@chakra-ui/react';
+import { theme } from '../styles';
 
-export default MyApp;
+const App = ({ Component, pageProps }: any) => {
+  return (
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+};
+
+export default App;
