@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Collapse,
@@ -5,10 +6,11 @@ import {
   Flex,
   Heading,
   HStack,
+  Icon,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import React from 'react';
+import Image from 'next/image';
 import { NAVBAR_LINKS } from '../../data';
 import { HamburgerButton } from './mobile';
 import { HamburgerMenu } from './mobile';
@@ -59,7 +61,8 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             justifyContent='center'
             mr={[0, 0, 8, 8, 8]}
           >
-            <Heading
+            <Image src='/logo.svg' height={150} width={400} />
+            {/* <Heading
               as='a'
               color={useColorModeValue('gray.800', 'white')}
               fontSize='3xl'
@@ -69,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
               href='/'
             >
               Faustino
-            </Heading>
+            </Heading> */}
           </Flex>
 
           {/* Links */}

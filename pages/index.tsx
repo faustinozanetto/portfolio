@@ -1,9 +1,15 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { Heading } from '@chakra-ui/react';
-import { Layout } from '../layouts';
+import { RecentPosts } from '../components/sections/home';
 
 const Home = () => {
-  return <></>;
+  return (
+    <>
+      <Box>
+        <RecentPosts />
+      </Box>
+    </>
+  );
 };
 
 export default Home;
