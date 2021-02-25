@@ -14,6 +14,10 @@ export const NavbarLink: React.FC<NavbarLinkProps> = ({ data }) => {
           fontWeight={500}
           color={useColorModeValue('gray.600', 'gray.200')}
           href={data.href}
+          _hover={{
+            textDecoration: 'none',
+            fontWeight: '600',
+          }}
         >
           {data.label}
         </Link>

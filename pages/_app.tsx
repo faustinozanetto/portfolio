@@ -5,12 +5,12 @@ import { Layout } from '../layouts';
 
 const App = ({ Component, pageProps }: any) => {
   return (
-    <Layout>
-      <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <Layout>
         <CSSReset />
         <Component {...pageProps} />
-      </ChakraProvider>
-    </Layout>
+      </Layout>
+    </ChakraProvider>
   );
 };
 
