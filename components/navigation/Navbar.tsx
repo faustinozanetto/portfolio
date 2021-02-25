@@ -16,6 +16,7 @@ import { HamburgerButton } from './mobile';
 import { HamburgerMenu } from './mobile';
 import { NavbarLink } from './NavbarLink';
 import { ThemeToggleButton } from './ThemeToggleButton';
+import { NavbarLogo } from './NavbarLogo';
 
 interface NavbarProps {}
 
@@ -61,7 +62,9 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             justifyContent='center'
             mr={[0, 0, 8, 8, 8]}
           >
-            <Image src='/logo.svg' height={150} width={400} />
+            {/* <Image src='/logo.svg' height={50} width={100} />
+             */}
+            <NavbarLogo />
             {/* <Heading
               as='a'
               color={useColorModeValue('gray.800', 'white')}

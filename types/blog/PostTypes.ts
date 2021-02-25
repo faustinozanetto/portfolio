@@ -1,9 +1,9 @@
-import { PostTopicTypes } from './PostTopicTypes';
+import { PostTopicEnum } from './PostTopicTypes';
 
 export type PostTypes = {
   title: string;
   thumbnail: string;
   shortDescription: string;
   readTime: number;
-  topic: PostTopicTypes;
+  topic: PostTopicEnum;
 };

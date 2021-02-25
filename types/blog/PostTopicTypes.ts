@@ -1,3 +1,6 @@
-export type PostTopicTypes = {
-  topic: ['programming', 'design', 'games', 'tech'];
-};
+export enum PostTopicEnum {
+  'programming',
+  'design',
+  'games',
+  'tech',
+}
