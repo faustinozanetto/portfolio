@@ -1,2 +1,2 @@
-export type { PostTopicTypes } from './PostTopicTypes';
+export type { PostTopicEnum } from './PostTopicTypes';
 export type { PostTypes } from './PostTypes';
