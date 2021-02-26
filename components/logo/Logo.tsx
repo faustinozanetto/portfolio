@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-interface NavbarLogoProps {}
+interface LogoProps {}
 
-export const NavbarLogo: React.FC<NavbarLogoProps> = ({}) => {
+export const Logo: React.FC<LogoProps> = ({}) => {
   const background = useColorModeValue('black', 'white');
   return (
     <Box d='flex' width='100px' justifyContent='center'>

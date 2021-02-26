@@ -4,19 +4,16 @@ import {
   Collapse,
   Container,
   Flex,
-  Heading,
   HStack,
-  Icon,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { NAVBAR_LINKS } from '../../data';
 import { HamburgerButton } from './mobile';
 import { HamburgerMenu } from './mobile';
 import { NavbarLink } from './NavbarLink';
 import { ThemeToggleButton } from './ThemeToggleButton';
-import { NavbarLogo } from './NavbarLogo';
+import { Logo } from '../logo';
 
 interface NavbarProps {}
 
@@ -46,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
           ),
         }}
       >
-        <Container as={Flex} maxW='2xl'>
+        <Container as={Flex} maxW='5xl'>
           {/* Mobile Hamburger Button */}
           <Flex display={['flex', 'flex', 'none', 'none', 'none']}>
             <HamburgerButton
@@ -62,20 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
             justifyContent='center'
             mr={[0, 0, 8, 8, 8]}
           >
-            {/* <Image src='/logo.svg' height={50} width={100} />
-             */}
-            <NavbarLogo />
-            {/* <Heading
-              as='a'
-              color={useColorModeValue('gray.800', 'white')}
-              fontSize='3xl'
-              fontWeight='bold'
-              textShadow='2xl'
-              mb={1.5}
-              href='/'
-            >
-              Faustino
-            </Heading> */}
+            <Logo />
           </Flex>
 
           {/* Links */}
