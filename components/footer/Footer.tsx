@@ -10,6 +10,7 @@ import {
 import { Logo } from '../logo';
 import { NAVBAR_LINKS } from '../../data';
 import { NavbarLink } from '../navigation';
+import { GITHUB_LINK } from '../../utils/constants';
 
 interface FooterProps {}
 
@@ -55,7 +56,8 @@ export const Footer: React.FC<FooterProps> = ({}) => {
           align='center'
         >
           <Text>
-            Made with ❤️ on 🇦🇷 by <Link href=''>Faustino Zanetto</Link>
+            Made with ❤️ on 🇦🇷 by{' '}
+            <Link href={GITHUB_LINK}>Faustino Zanetto</Link>
           </Text>
         </Container>
       </Box>

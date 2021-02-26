@@ -6,5 +6,6 @@ export type PostTypes = {
   thumbnail: string;
   shortDescription: string;
   readTime: number;
-  topic: PostTopicEnum;
+  topic: PostTopicEnum | string;
+  createdAt: Date;
 };

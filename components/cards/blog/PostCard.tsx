@@ -2,14 +2,13 @@ import {
   Box,
   Text,
   Image,
-  VStack,
   Stack,
   Center,
   Heading,
   useColorModeValue,
   Badge,
 } from '@chakra-ui/react';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { PostTypes } from '../../../types/blog';
@@ -51,14 +50,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
       }}
     >
       <Center py={6}>
-        <Box
-          maxW='350px'
-          w='full'
-          boxShadow='2xl'
-          rounded='lg'
-          overflow='hidden'
-          p={6}
-        >
+        <Box w='full' boxShadow='2xl' rounded='lg' overflow='hidden' p={6}>
           {/* Thumbnail */}
           <Box bg='gray.100' mt={-6} mx={-6} mb={6} pos='relative'>
             <Image
@@ -81,7 +73,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
             {/* Topic */}
             <Box mr='auto'>
               <Badge colorScheme={getTopicColor()} width='full'>
-                {PostTopicEnum[postData.topic].toString()}
+                {postData.topic}
               </Badge>
             </Box>
 
