@@ -32,7 +32,7 @@ export const theme = extendTheme({
       },
       '.body': {
         // todo check how to do this without breaking the site
-        // height: '100%',
+        // height: '100%', // Push footer to bottom
         overflowY: 'scroll', // Always show scrollbar to avoid flickering
       },
       html: {
@@ -42,7 +42,7 @@ export const theme = extendTheme({
         pointerEvents: 'none',
       },
       '#nprogress .bar': {
-        background: 'purple.200',
+        background: 'green.200',
         position: 'fixed',
         zIndex: '1031',
         top: 0,

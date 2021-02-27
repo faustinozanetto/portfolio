@@ -1,13 +1,36 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { Heading } from '@chakra-ui/react';
-import { Layout } from '../layouts';
+import { HeroSection, RecentPostsSection } from '../components/sections/home';
+import { blogPosts } from '../data/blog/posts/blogPosts';
+import { PostTypes } from '../types/blog';
 
-const Home = () => {
+type HomeProps = {
+  posts: PostTypes[];
+};
+
+const Home = ({ posts }: HomeProps) => {
   return (
-    <Layout>
-      <Heading>Hi</Heading>
-    </Layout>
+    <>
+      <Box>
+        <HeroSection />
+        <RecentPostsSection posts={posts} />
+      </Box>
+    </>
   );
 };
+
+export async function getStaticProps() {
+  const posts: PostTypes[] = blogPosts;
+
+  if (!posts) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { posts },
+  };
+}
 
 export default Home;
