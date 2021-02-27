@@ -38,7 +38,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
   };
 
   const handleBlogPostRoute = () => {
-    router.push(`/blog/${postData.id}`);
+    router.push(`/blog/${postData.slug}`);
   };
 
   return (

@@ -1,5 +1,5 @@
-import { Box, Stack, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
+import { Box, Stack, useColorModeValue } from '@chakra-ui/react';
 import { NAVBAR_LINKS } from '../../../data';
 import { HamburgerLink } from './HamburgerLink';
 
