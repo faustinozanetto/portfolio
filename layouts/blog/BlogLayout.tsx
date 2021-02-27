@@ -62,11 +62,6 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
 
           {/* Post Content */}
           <div dangerouslySetInnerHTML={{ __html: content }} />
-          <div>
-            <Link href='/'>
-              <a>Home</a>
-            </Link>
-          </div>
         </article>
       </Container>
     </>
