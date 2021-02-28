@@ -5,6 +5,7 @@ import {
   Stack,
   Text,
   Link,
+  SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { Logo } from '../logo';
@@ -26,18 +27,18 @@ export const Footer: React.FC<FooterProps> = ({}) => {
       {/* Top */}
       <Container
         as={Stack}
-        maxW={'6xl'}
+        maxW={'5xl'}
         py={4}
         spacing={4}
         justify={'center'}
         align={'center'}
       >
         <Logo />
-        <Stack direction={'row'} spacing={6}>
+        <SimpleGrid columns={[3, 3, 5, 5]} spacing={4}>
           {NAVBAR_LINKS.map((link, index) => {
             return <NavbarLink key={index} data={link} />;
           })}
-        </Stack>
+        </SimpleGrid>
       </Container>
 
       {/* Bottom */}

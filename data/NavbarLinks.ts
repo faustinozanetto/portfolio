@@ -17,6 +17,11 @@ export const NAVBAR_LINKS: Array<NavbarLinkType> = [
     tooltip: 'Goto projects',
   },
   {
+    label: 'About',
+    href: '/about',
+    tooltip: 'Goto about',
+  },
+  {
     label: 'Contact',
     href: '/contact',
     tooltip: 'Goto contact',

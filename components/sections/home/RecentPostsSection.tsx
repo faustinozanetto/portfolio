@@ -43,7 +43,7 @@ export const RecentPostsSection: React.FC<RecentPostsSectionProps> = ({
             ]}
             gap={4}
           >
-            {posts.map((post, index) => {
+            {posts.slice(0, 3).map((post, index) => {
               return <PostCard key={index} postData={post} />;
             })}
           </Grid>

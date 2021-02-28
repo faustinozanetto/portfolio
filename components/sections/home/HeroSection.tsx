@@ -11,10 +11,12 @@ import {
   Spacer,
   Button,
 } from '@chakra-ui/react';
+import { Router, useRouter } from 'next/router';
 
 interface HeroSectionProps {}
 
 export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
+  const router = useRouter();
   return (
     <Box bg={useColorModeValue('gray.50', 'gray.900')}>
       <Container maxW='5xl' py={{ base: 12, sm: 16, md: 20 }} centerContent>
@@ -43,7 +45,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({}) => {
                 'inherit',
               ]}
             >
-              <Button>More About Me</Button>
+              <Button
+                onClick={() => {
+                  router.push('/about');
+                }}
+              >
+                More About Me
+              </Button>
             </Flex>
           </Flex>
           <Spacer />

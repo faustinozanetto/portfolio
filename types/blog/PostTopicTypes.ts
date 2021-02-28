@@ -3,4 +3,6 @@ export enum PostTopicEnum {
   'design',
   'games',
   'tech',
+  'food',
+  'nature',
 }

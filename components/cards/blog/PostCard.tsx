@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Text,
@@ -10,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { PostTypes } from '../../../types/blog';
 import { PostTopicEnum } from '../../../types/blog/PostTopicTypes';
 
@@ -31,6 +31,8 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
         return 'yellow';
       case PostTopicEnum.tech:
         return 'blue';
+      case PostTopicEnum.food:
+        return 'green';
 
       default:
         return 'blue';
@@ -50,13 +52,15 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
       }}
     >
       <Center py={6}>
-        <Box w='full' boxShadow='2xl' rounded='lg' overflow='hidden' p={6}>
+        <Box w='100%' boxShadow='2xl' rounded='lg' overflow='hidden' p={6}>
           {/* Thumbnail */}
           <Box bg='gray.100' mt={-6} mx={-6} mb={6} pos='relative'>
             <Image
               src={postData.thumbnail}
               alt={`${postData.title} Thumbnail`}
-              layout={'fill'}
+              width='full'
+              height='full'
+              objectFit='cover'
             />
           </Box>
 
@@ -65,7 +69,7 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
             <Heading
               color={useColorModeValue('gray.700', 'white')}
               fontSize='2xl'
-              fontFamily='body'
+              noOfLines={1}
             >
               {postData.title}
             </Heading>
@@ -85,13 +89,13 @@ export const PostCard: React.FC<PostCardProps> = ({ postData }) => {
             </Box>
 
             {/* Description */}
-            <Text color={useColorModeValue('gray.800', 'gray.500')}>
+            <Text
+              color={useColorModeValue('gray.800', 'gray.500')}
+              noOfLines={3}
+            >
               {postData.shortDescription}
             </Text>
           </Stack>
-
-          {/* Extra */}
-          <Stack mt={6} direction='row' spacing={4} align='center'></Stack>
         </Box>
       </Center>
     </motion.div>
