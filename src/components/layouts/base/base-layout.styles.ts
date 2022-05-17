@@ -10,4 +10,10 @@ const LayoutContainer = styled.main`
   justify-content: center;
 `;
 
+export const LayoutContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export default LayoutContainer;

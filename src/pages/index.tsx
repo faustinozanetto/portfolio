@@ -27,7 +27,18 @@ const HomePage: React.FC<HomePageProps> = (props) => {
         <Heading as="h4" size="xl">
           Home Page
         </Heading>
-        <Button aria-label="Hello">Welcome</Button>
+        <Button size="sm" aria-label="Hello">
+          Welcome
+        </Button>
+        <Button size="md" aria-label="Hello">
+          Welcome
+        </Button>
+        <Button size="lg" aria-label="Hello">
+          Welcome
+        </Button>
+        <Button size="xl" aria-label="Hello">
+          Welcome
+        </Button>
         <Text size="md" weight="normal">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis nihil, pariatur illo ipsum ipsa
           cumque deleniti in eaque id unde a eveniet asperiores porro dolore? Expedita fugit eum qui.
