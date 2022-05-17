@@ -1,27 +1,22 @@
 import React from 'react';
-import { AppProps } from 'next/app';
-import globalStyles, { darkTheme, lightTheme } from '@styles/global-styles';
-import { ThemeProvider } from 'styled-components';
+import type { AppProps } from 'next/app';
+import { darkTheme, lightTheme } from '@styles/global-styles';
 import GlobalStyles from '@styles/global-styles';
-import useTheme from '@hooks/theming/use-theme.hook';
+import { ThemeProvider } from 'styled-components';
+import useTheme from '@hooks/use-theme';
 
 type PortfolioProps = AppProps & {};
 
 const Portfolio: React.FC<PortfolioProps> = (props) => {
   const { pageProps, Component } = props;
-  const { theme } = useTheme();
+  const [theme] = useTheme();
 
-  const selectTheme = () => {
-    if (theme === 'dark') {
-      return darkTheme;
-    }
-    return lightTheme;
-  };
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
-    <ThemeProvider theme={selectTheme}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <Component {...pageProps} />{' '}
     </ThemeProvider>
   );
 };

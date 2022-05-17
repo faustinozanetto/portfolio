@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { LayoutContainer } from './base-layout.styles';
+import LayoutContainer from './base-layout.styles';
 
 type BaseLayoutProps = {
   children: ReactNode;
