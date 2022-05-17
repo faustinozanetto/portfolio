@@ -15,6 +15,7 @@ export const Navigation = styled.nav`
   align-items: stretch;
   justify-content: space-between;
   height: 90px;
+  width: 100%;
   float: none;
 `;
 
@@ -24,6 +25,7 @@ export const NavbarLeft = styled.div`
 
 export const NavbarRight = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export default StyledNavbar;

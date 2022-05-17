@@ -1,4 +1,6 @@
 import React from 'react';
+import NavbarLink from './link/navbar-link';
+import NavbarLogo from './logo/navbar-logo';
 import StyledNavbar, { Navigation, NavbarContainer, NavbarLeft, NavbarRight } from './navbar.styles';
 
 type NavbarProps = {};
@@ -11,10 +13,17 @@ const Navbar: React.FC<NavbarProps> = (props) => {
       <NavbarContainer>
         <Navigation>
           {/* LEFT */}
-          <NavbarLeft></NavbarLeft>
+          <NavbarLeft>
+            <NavbarLogo />
+          </NavbarLeft>
 
           {/* RIGHT */}
-          <NavbarRight></NavbarRight>
+          <NavbarRight>
+            <NavbarLink href="/">Home</NavbarLink>
+            <NavbarLink href="/about">About</NavbarLink>
+            <NavbarLink href="/blog">Blog</NavbarLink>
+            <NavbarLink href="/contact">Contact</NavbarLink>
+          </NavbarRight>
         </Navigation>
       </NavbarContainer>
     </StyledNavbar>
