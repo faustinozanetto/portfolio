@@ -2,9 +2,9 @@ import Container from '@components/ui/container/container';
 import styled from 'styled-components';
 
 const StyledNavbar = styled.div`
-  position: relative;
   width: 100%;
   z-index: 10;
+  background-color: ${(props) => props.theme.colors.background[200]};
 `;
 
 export const NavbarContainer = styled(Container)``;

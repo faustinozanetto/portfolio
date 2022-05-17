@@ -19,6 +19,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 
           {/* RIGHT */}
           <NavbarRight>
+            {/* Links */}
             <NavbarLink href="/">Home</NavbarLink>
             <NavbarLink href="/about">About</NavbarLink>
             <NavbarLink href="/blog">Blog</NavbarLink>

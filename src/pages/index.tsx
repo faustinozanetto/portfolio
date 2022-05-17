@@ -13,7 +13,12 @@ const HomePage: React.FC<HomePageProps> = (props) => {
   const [theme, themeToggler] = useTheme();
 
   return (
-    <BaseLayout>
+    <BaseLayout
+      headProps={{
+        title: 'Home',
+        description: 'Home page of my personal porftolio.',
+      }}
+    >
       <Container>
         <Heading as="h1" size="sm" weight="normal">
           Home Page
