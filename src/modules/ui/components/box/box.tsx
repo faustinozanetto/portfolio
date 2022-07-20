@@ -1,12 +1,18 @@
 import React from 'react';
 import StyledBox from './box.styles';
+import type { IStyledBoxProps } from './box.styles';
 
-type IBoxProps = React.HTMLAttributes<HTMLDivElement> & {
-  children?: React.ReactNode;
-};
+type IBoxProps = React.HTMLAttributes<HTMLDivElement> &
+  IStyledBoxProps & {
+    children?: React.ReactNode;
+  };
 
 const Box: React.FC<IBoxProps> = (props) => {
   const { children, ...rest } = props;
-  return <StyledBox {...rest}>{children}</StyledBox>;
+  return (
+    <StyledBox as="div" {...rest}>
+      {children}
+    </StyledBox>
+  );
 };
 export default Box;

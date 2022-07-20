@@ -11,6 +11,10 @@ const Button: React.FC<ButtonProps> = (props) => {
   const {
     children,
     variant = 'solid',
+    color = 'black',
+    hoverColor = 'white',
+    backgroundColor = 'white',
+    hoverBackgroundColor = '#18181b',
     borderRadius = 'md',
     fontWeight = 'bold',
     fontSize = 'sm',
@@ -22,6 +26,10 @@ const Button: React.FC<ButtonProps> = (props) => {
       as="button"
       type="button"
       variant={variant}
+      color={color}
+      hoverColor={hoverColor}
+      backgroundColor={backgroundColor}
+      hoverBackgroundColor={hoverBackgroundColor}
       borderRadius={borderRadius}
       fontWeight={fontWeight}
       fontSize={fontSize}

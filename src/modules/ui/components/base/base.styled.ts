@@ -12,6 +12,12 @@ export type StyledBaseProps = {
   marginBottom?: string;
   marginLeft?: string;
   marginRight?: string;
+  width?: string;
+  height?: string;
+  maxWidth?: string;
+  maxHeight?: string;
+  minWidth?: string;
+  minHeight?: string;
 };
 
 const Base = withProps<StyledBaseProps>()(styled.span)`
@@ -57,6 +63,29 @@ const Base = withProps<StyledBaseProps>()(styled.span)`
       return `margin-right: ${props.marginRight};`;
     }
   }}
+
+  ${(props) => {
+    if (props.width) {
+      return `width: ${props.width};`;
+    }
+    if (props.height) {
+      return `height: ${props.height};`;
+    }
+
+    if (props.maxWidth) {
+      return `max-width: ${props.maxWidth};`;
+    }
+    if (props.maxHeight) {
+      return `max-height: ${props.maxHeight};`;
+    }
+    if (props.minWidth) {
+      return `min-width: ${props.minWidth};`;
+    }
+    if (props.minHeight) {
+      return `min-height: ${props.minHeight};`;
+    }
+  }}
+
 `;
 
 export default Base;
