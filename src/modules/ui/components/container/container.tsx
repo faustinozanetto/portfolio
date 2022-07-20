@@ -1,12 +1,17 @@
 import React from 'react';
+import type { IBoxProps } from '../box/box';
 import StyledContainer from './container.styles';
 
-type IContainerProps = React.HTMLAttributes<HTMLDivElement> & {
-  children: React.ReactNode;
+type IContainerProps = IBoxProps & {
+  children?: React.ReactNode;
 };
 
 const Container: React.FC<IContainerProps> = (props) => {
   const { children, ...rest } = props;
-  return <StyledContainer {...rest}>{children}</StyledContainer>;
+  return (
+    <StyledContainer as="div" {...rest}>
+      {children}
+    </StyledContainer>
+  );
 };
 export default Container;

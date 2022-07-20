@@ -4,9 +4,9 @@ import Heading from '@modules/ui/components/heading/heading';
 import Text from '@modules/ui/components/text/text';
 import Grid from '@modules/ui/components/grid/grid';
 import { useTheme } from 'styled-components';
-import Section from '../../section';
-import HomeProjectCard from './project-card/home-project-card';
 import { HOME_PROJECTS } from '@lib/constants.lib';
+import Section from '../../section/section';
+import HomeProjectCard from './project-card/home-project-card';
 
 interface IHomeProjectsProps {}
 
@@ -30,7 +30,7 @@ const HomeProjects: React.FC<IHomeProjectsProps> = (props) => {
         {/* Projects */}
         <Grid
           gap="1rem"
-          templateColumns="repeat(auto-fit, minmax(300px, 1fr))"
+          templateColumns="repeat(auto-fit, minmax(325px, 1fr))"
           templateRows="repeat(auto-fit, minmax(300px, 1fr))"
           width="100%"
           padding={theme.spacing.xl}

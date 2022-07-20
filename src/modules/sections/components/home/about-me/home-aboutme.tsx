@@ -1,11 +1,10 @@
 import React from 'react';
 import Flex from '@modules/ui/components/flex/flex';
-import Box from '@modules/ui/components/box/box';
 import NextImage from 'next/image';
 import Heading from '@modules/ui/components/heading/heading';
 import Text from '@modules/ui/components/text/text';
 import Grid from '@modules/ui/components/grid/grid';
-import Section from '../../section';
+import Section from '../../section/section';
 
 interface IHomeAboutMeProps {}
 
@@ -13,7 +12,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
   const {} = props;
 
   return (
-    <Section>
+    <Section hasDivider dividerColor="black" backgroundColor="white">
       <Grid gap="1rem" templateColumns="auto 1fr" templateRows="1fr" width="100%">
         {/* Left */}
         <Flex>
@@ -28,14 +27,14 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
 
         {/* Right */}
         <Flex flexDirection="column">
-          <Heading as="h1" fontSize="6xl" textAlign="left" margin="0">
+          <Heading as="h1" fontSize="6xl" textAlign="left" color="black" margin="0">
             About me
           </Heading>
-          <Text fontSize="xl" textAlign="left" margin="0">
+          <Text fontSize="xl" textAlign="left" color="black" margin="0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia veniam et nostrum fugiat ipsam ullam,
             quod eaque nihil asperiores ut! Fuga placeat numquam expedita, odio quos quisquam itaque et.
           </Text>
-          <Text fontSize="xl" textAlign="left" margin="0">
+          <Text fontSize="xl" textAlign="left" color="black" margin="0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia veniam et nostrum fugiat ipsam ullam,
             quod eaque nihil asperiores ut! Fuga placeat numquam expedita, odio quos quisquam itaque et.
           </Text>

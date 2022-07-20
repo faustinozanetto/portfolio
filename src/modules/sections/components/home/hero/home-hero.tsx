@@ -4,7 +4,7 @@ import Heading from '@modules/ui/components/heading/heading';
 import React from 'react';
 import Button from '@modules/ui/components/buttons/button';
 import Box from '@modules/ui/components/box/box';
-import Section from '@modules/sections/components/section';
+import Section from '@modules/sections/components/section/section';
 import HomeHeroSubtitle from './subtitle/home-hero-subtitle';
 
 interface IHomeHeroProps {}
@@ -13,7 +13,7 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
   const {} = props;
 
   return (
-    <Section>
+    <Section hasDivider dividerColor="white">
       <Flex flexDirection="column">
         {/* Titles */}
         <Box width="fit-content">

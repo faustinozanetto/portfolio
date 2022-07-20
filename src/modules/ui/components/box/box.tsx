@@ -2,7 +2,7 @@ import React from 'react';
 import StyledBox from './box.styles';
 import type { IStyledBoxProps } from './box.styles';
 
-type IBoxProps = React.HTMLAttributes<HTMLDivElement> &
+export type IBoxProps = React.HTMLAttributes<HTMLDivElement> &
   IStyledBoxProps & {
     children?: React.ReactNode;
   };
