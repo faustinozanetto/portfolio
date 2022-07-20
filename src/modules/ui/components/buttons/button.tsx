@@ -7,6 +7,7 @@ import StyledButton from './button.styles';
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   StyledButtonProps & {
     children: React.ReactNode;
+    href?: string;
     leftIcon?: JSX.Element;
     rightIcon?: JSX.Element;
   };
@@ -14,6 +15,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 const Button: React.FC<ButtonProps> = (props) => {
   const {
     children,
+    href,
     variant = 'solid',
     color = 'black',
     hoverColor = 'white',
@@ -29,8 +31,9 @@ const Button: React.FC<ButtonProps> = (props) => {
   } = props;
   return (
     <StyledButton
-      as="button"
+      as={href !== '' ? 'button' : 'a'}
       type="button"
+      href={href}
       variant={variant}
       color={color}
       hoverColor={hoverColor}

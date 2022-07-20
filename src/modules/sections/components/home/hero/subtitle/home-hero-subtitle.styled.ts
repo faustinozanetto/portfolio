@@ -12,7 +12,7 @@ const StyledHomeHeroSubtitle = withProps<StyledTypographyProps>()(styled(Heading
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 100%;
     z-index: -1;
     background-color: ${(props) => props.theme.colors.primary[500]};

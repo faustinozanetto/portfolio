@@ -22,6 +22,7 @@ const BaseButon = `
   justify-content: center;
   user-select: none;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`

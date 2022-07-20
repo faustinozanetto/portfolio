@@ -39,13 +39,20 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
           {projectData.title}
         </Heading>
         {/* Description */}
-        <Text color="black" fontSize="md" textAlign="left" margin="0">
+        <Text color="black" fontSize="md" textAlign="left" margin="0" marginBottom="auto">
           {projectData.description}
         </Text>
         {/* Buttons */}
         <Flex width="100%" paddingTop={theme.spacing.lg}>
           {/* Preview Link */}
-          <Button size="md" color="white" backgroundColor="black" width="100%" leftIcon={<FiEye size={22} />}>
+          <Button
+            size="md"
+            color="white"
+            backgroundColor="black"
+            width="100%"
+            href={projectData.projectLink}
+            leftIcon={<FiEye size={22} />}
+          >
             Preview
           </Button>
           {/* Repo Link */}
@@ -54,6 +61,7 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
             backgroundColor="black"
             size="md"
             width="100%"
+            href={projectData.repoLink}
             leftIcon={<BiGitRepoForked size={22} />}
           >
             Repo
