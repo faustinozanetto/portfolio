@@ -2,17 +2,16 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import Navbar from '@components/navbar/navbar';
 import LayoutContainer, { LayoutContent } from './base-layout.styles';
-import type { BaseLayoutHeadProps } from './head/base-layout-head';
-import BaseLayoutHead from './head/base-layout-head';
 import LayoutFooter from './footer/layout-footer';
+import BaseLayoutHead from './head/base-layout-head';
 
-type BaseLayoutProps = {
+interface IBaseLayoutProps {
   children: ReactNode;
   /** Optional head props used for seo data. */
-  headProps?: BaseLayoutHeadProps;
-};
+  headProps?: React.ComponentPropsWithoutRef<typeof BaseLayoutHead>;
+}
 
-const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
+const BaseLayout: React.FC<IBaseLayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (
@@ -26,6 +25,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
       {/* CONTENT */}
       <LayoutContent>{children}</LayoutContent>
 
+      {/* FOOTER */}
       <LayoutFooter />
     </LayoutContainer>
   );

@@ -2,9 +2,9 @@ import React from 'react';
 import Heading from '@modules/ui/components/heading/heading';
 import StyledFooter, { FooterContainer } from './layout-footer.styles';
 
-export type LayoutFooterProps = {};
+interface ILayoutFooterProps {}
 
-const LayoutFooter: React.FC<LayoutFooterProps> = (props) => {
+const LayoutFooter: React.FC<ILayoutFooterProps> = (props) => {
   const {} = props;
 
   return (

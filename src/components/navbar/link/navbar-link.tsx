@@ -3,14 +3,14 @@ import type { StyledTypographyProps } from '@modules/ui/components/base/typograp
 import Link from 'next/link';
 import StyledNavbarLink from './navbar-link.styles';
 
-export type NavbarLinkProps = React.HTMLAttributes<HTMLAnchorElement> &
+type INavbarLinkProps = React.HTMLAttributes<HTMLAnchorElement> &
   StyledTypographyProps & {
     children: React.ReactNode;
     /** Link to pass to the styled a element. */
     href?: string;
   };
 
-const NavbarLink: React.FC<NavbarLinkProps> = (props) => {
+const NavbarLink: React.FC<INavbarLinkProps> = (props) => {
   const { children, href = '', ...rest } = props;
 
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import StyledNavbarLogo from './navbar-logo.styles';
 
-type NavbarLogoProps = {};
+interface INavbarLogoProps {}
 
-const NavbarLogo: React.FC<NavbarLogoProps> = (props) => {
-  const { children } = props;
+const NavbarLogo: React.FC<INavbarLogoProps> = (props) => {
+  const {} = props;
 
   return <StyledNavbarLogo href="/">Faustino</StyledNavbarLogo>;
 };

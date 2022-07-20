@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
-export type BaseLayoutHeadProps = {
-  /** Seo title */ title?: string;
+interface IBaseLayoutHeadProps {
+  /** Seo title */
+  title?: string;
   /** Seo description */
   description?: string;
   /** Seo url */
@@ -11,9 +12,9 @@ export type BaseLayoutHeadProps = {
   canonicalUrl?: string;
   /** Seo image used in twitter cards, etc. */
   image?: string;
-};
+}
 
-const BaseLayoutHead: React.FC<BaseLayoutHeadProps> = (props) => {
+const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
   const { title, description, url, canonicalUrl, image = `images/brand/snappy-logo.png` } = props;
   return (
     <Head>

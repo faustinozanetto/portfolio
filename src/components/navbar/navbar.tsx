@@ -3,10 +3,10 @@ import NavbarLink from './link/navbar-link';
 import NavbarLogo from './logo/navbar-logo';
 import StyledNavbar, { Navigation, NavbarContainer, NavbarLeft, NavbarRight } from './navbar.styles';
 
-type NavbarProps = {};
+interface INavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = (props) => {
-  const { children } = props;
+const Navbar: React.FC<INavbarProps> = (props) => {
+  const {} = props;
 
   return (
     <StyledNavbar>

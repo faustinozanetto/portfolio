@@ -30,7 +30,8 @@
       "@wrappers/*": ["wrappers/*"],
       "@public/*": ["..public/*"],
       "@typings/*": ["typings/*"],
-      "@modules/*": ["modules/*"]
+      "@modules/*": ["modules/*"],
+      "@views/*": ["views/*"]
     }
   },
   "types": ["cypress"],
