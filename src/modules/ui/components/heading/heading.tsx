@@ -1,6 +1,7 @@
 import React from 'react';
+import { useTheme } from 'styled-components';
 import type { StyledTypographyProps } from '../base/typography.styled';
-import StyledHeading from './heading.styled';
+import StyledHeading from './heading.styles';
 
 export type IHeadingProps = React.HTMLAttributes<HTMLHeadingElement> &
   StyledTypographyProps & {
@@ -9,9 +10,10 @@ export type IHeadingProps = React.HTMLAttributes<HTMLHeadingElement> &
   };
 
 const Heading: React.FC<IHeadingProps> = (props) => {
-  const { children, as = 'h1', ...rest } = props;
+  const theme = useTheme();
+  const { children, as = 'h1', padding = theme.spacing.xs, ...rest } = props;
   return (
-    <StyledHeading as={as} {...rest}>
+    <StyledHeading as={as} padding={padding} {...rest}>
       {children}
     </StyledHeading>
   );

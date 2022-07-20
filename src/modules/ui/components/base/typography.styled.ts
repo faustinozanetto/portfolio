@@ -1,9 +1,9 @@
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
-import type { StyledBaseProps } from './base.styled';
+import type { IStyledBaseProps } from './base.styled';
 import Base from './base.styled';
 
-export type StyledTypographyProps = StyledBaseProps & {
+export type StyledTypographyProps = IStyledBaseProps & {
   fontSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
   fontWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
   color?: string;

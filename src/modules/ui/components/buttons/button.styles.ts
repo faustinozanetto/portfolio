@@ -22,7 +22,7 @@ const BaseButon = `
 
 const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
   ${BaseButon}
-  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing.xxl};
+  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing['2xl']};
   border-radius: ${(props) => props.theme.borderRadius[props.borderRadius]};
   transition: ${(props) => props.theme.transitions.default};
 
@@ -73,14 +73,14 @@ const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
   ${(props) =>
     props.size === 'lg' &&
     `
-    padding: ${props.theme.spacing.xl} ${props.theme.spacing.xxl};
+    padding: ${props.theme.spacing.xl} ${props.theme.spacing['2xl']};
     font-size: ${props.theme.fontSize.lg};
   `}
 
   ${(props) =>
     props.size === 'xl' &&
     `
-    padding: ${props.theme.spacing.xl} ${props.theme.spacing.xxl};
+    padding: ${props.theme.spacing.xl} ${props.theme.spacing['3xl']};
     font-size: ${props.theme.fontSize.xl};
   `}
   }

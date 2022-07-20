@@ -47,8 +47,8 @@ export const lightTheme = {
     md: '0.75rem',
     lg: '1rem',
     xl: '2rem',
-    xxl: '4rem',
-    xxxl: '8rem',
+    '2xl': '4rem',
+    '3xl': '8rem',
   },
   borderRadius: {
     none: '0',

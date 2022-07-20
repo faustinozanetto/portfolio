@@ -1,7 +1,7 @@
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 
-export type StyledBaseProps = {
+export type IStyledBaseProps = {
   padding?: string;
   paddingTop?: string;
   paddingBottom?: string;
@@ -20,7 +20,7 @@ export type StyledBaseProps = {
   minHeight?: string;
 };
 
-const Base = withProps<StyledBaseProps>()(styled.span)`
+const Base = withProps<IStyledBaseProps>()(styled.span)`
   ${(props) => {
     if (props.padding) {
       return `padding: ${props.padding};`;

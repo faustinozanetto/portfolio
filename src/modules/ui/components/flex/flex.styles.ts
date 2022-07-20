@@ -1,7 +1,9 @@
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
+import type { IStyledBaseProps } from '../base/base.styled';
+import Base from '../base/base.styled';
 
-export interface IStyledFlexProps {
+export type IStyledFlexProps = IStyledBaseProps & {
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
   justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around';
   flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
@@ -10,9 +12,9 @@ export interface IStyledFlexProps {
   flexGrow?: number;
   flexShrink?: number;
   flexBasis?: number | string;
-}
+};
 
-export const StyledFlex = withProps<IStyledFlexProps>()(styled.div)`
+export const StyledFlex = withProps<IStyledFlexProps>()(styled(Base))`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   flex-wrap: ${(props) => props.flexWrap};

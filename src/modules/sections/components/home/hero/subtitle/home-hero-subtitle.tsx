@@ -8,7 +8,7 @@ const HomeHeroSubtitle: React.FC<IHomeHeroSubtitleProps> = (props) => {
   const { children } = props;
 
   return (
-    <StyledHomeHeroSubtitle fontSize="5xl" fontWeight="bold" textAlign="left" paddingLeft="1rem" margin="0">
+    <StyledHomeHeroSubtitle fontSize="5xl" fontWeight="bold" textAlign="left" margin="0" padding="0.25rem">
       {children}
     </StyledHomeHeroSubtitle>
   );
