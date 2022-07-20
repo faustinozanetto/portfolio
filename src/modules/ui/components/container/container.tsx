@@ -1,11 +1,11 @@
 import React from 'react';
 import StyledContainer from './container.styles';
 
-type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+type IContainerProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
 };
 
-const Container: React.FC<ContainerProps> = (props) => {
+const Container: React.FC<IContainerProps> = (props) => {
   const { children, ...rest } = props;
   return <StyledContainer {...rest}>{children}</StyledContainer>;
 };

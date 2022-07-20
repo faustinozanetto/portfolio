@@ -1,3 +1,4 @@
+import HomeHero from '@modules/sections/home/home-hero';
 import Container from '@modules/ui/components/container/container';
 import React from 'react';
 
@@ -8,7 +9,7 @@ const HomeView: React.FC<IHomeViewProps> = (props) => {
 
   return (
     <Container>
-      <h1>home</h1>
+      <HomeHero />
     </Container>
   );
 };

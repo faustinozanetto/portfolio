@@ -2,7 +2,7 @@ import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 
 export type StyledTypographyProps = {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
   weight?: 'normal' | 'semibold' | 'bold';
 };
 
@@ -43,6 +43,33 @@ const Typography = withProps<StyledTypographyProps>()(styled.span)` ${(props) =>
     props.size === 'xl' &&
     `
     font-size: ${props.theme.fontSize.xl} !important;
-  `}`;
+  `}
+
+  ${(props) =>
+    props.size === '2xl' &&
+    `
+    font-size: ${props.theme.fontSize['2xl']} !important;
+  `}
+
+  ${(props) =>
+    props.size === '3xl' &&
+    `
+    font-size: ${props.theme.fontSize['3xl']} !important;
+  `}
+
+  ${(props) =>
+    props.size === '4xl' &&
+    `
+    font-size: ${props.theme.fontSize['4xl']} !important;
+  `}
+
+  ${(props) =>
+    props.size === '5xl' &&
+    `
+    font-size: ${props.theme.fontSize['5xl']} !important;
+  `}
+
+  color: ${(props) => props.theme.colors.text} !important;
+`;
 
 export default Typography;

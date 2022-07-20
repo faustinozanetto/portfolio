@@ -4,7 +4,6 @@ import Container from '@modules/ui/components/container/container';
 const StyledNavbar = styled.div`
   width: 100%;
   z-index: 10;
-  background-color: ${(props) => props.theme.colors.background[200]};
 `;
 
 export const NavbarContainer = styled(Container)``;

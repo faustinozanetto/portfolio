@@ -10,6 +10,13 @@ const StyledNavbarLink = withProps<StyledTypographyProps>()(styled(Typography))`
   color: ${(props) => props.theme.colors.text};
   padding-left: ${(props) => props.theme.spacing.md};
   padding-right: ${(props) => props.theme.spacing.md};
+
+  transition: ${(props) => props.theme.transitions.default};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary[400]};
+    font-weight: ${(props) => props.theme.fontWeight.extrabold};
+  }
 `;
 
 export default StyledNavbarLink;
