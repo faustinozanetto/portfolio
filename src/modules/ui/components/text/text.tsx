@@ -10,9 +10,9 @@ type TextProps = React.HTMLAttributes<HTMLParagraphElement> &
 
 const Text: React.FC<TextProps> = (props) => {
   const theme = useTheme();
-  const { children, padding = theme.spacing.xs, ...rest } = props;
+  const { children, padding = theme.spacing.xs, color = 'white', ...rest } = props;
   return (
-    <StyledText as="p" padding={padding} {...rest}>
+    <StyledText as="p" padding={padding} color={color} {...rest}>
       {children}
     </StyledText>
   );

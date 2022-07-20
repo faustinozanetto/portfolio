@@ -5,8 +5,7 @@ import Base from './base.styled';
 
 export type StyledTypographyProps = IStyledBaseProps & {
   fontSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
-  fontWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
-  color?: string;
+  fontWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
   fontFamily?: string;
   lineHeight?: string;
   textAlign?: 'left' | 'center' | 'right';
@@ -38,9 +37,15 @@ const Typography = withProps<StyledTypographyProps>()(styled(Base))`
       return `text-align: ${props.textAlign};`;
     }
   }}
+
+  ${(props) => {
+    if (props.fontFamily) {
+      return `font-family: ${props.fontFamily};`;
+    }
+  }}
+
   text-decoration: ${(props) => props.textDecoration};
   text-transform: ${(props) => props.textTransform};
-  color: ${(props) => props.theme.colors.text};
 `;
 
 export default Typography;

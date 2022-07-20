@@ -1,10 +1,14 @@
 import React from 'react';
+import Box from '../box/box';
 import type { StyledButtonProps } from './button.styles';
+import { ButtonIconContainer } from './button.styles';
 import StyledButton from './button.styles';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   StyledButtonProps & {
     children: React.ReactNode;
+    leftIcon?: JSX.Element;
+    rightIcon?: JSX.Element;
   };
 
 const Button: React.FC<ButtonProps> = (props) => {
@@ -17,8 +21,10 @@ const Button: React.FC<ButtonProps> = (props) => {
     hoverBackgroundColor = '#18181b',
     borderRadius = 'md',
     fontWeight = 'bold',
-    fontSize = 'sm',
+    fontSize = 'md',
     margin = '0.5rem',
+    leftIcon,
+    rightIcon,
     ...rest
   } = props;
   return (
@@ -36,7 +42,9 @@ const Button: React.FC<ButtonProps> = (props) => {
       margin={margin}
       {...rest}
     >
+      {leftIcon && <ButtonIconContainer>{leftIcon}</ButtonIconContainer>}
       {children}
+      {rightIcon}
     </StyledButton>
   );
 };

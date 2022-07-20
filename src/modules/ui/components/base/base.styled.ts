@@ -18,6 +18,10 @@ export type IStyledBaseProps = {
   maxHeight?: string;
   minWidth?: string;
   minHeight?: string;
+  color?: string;
+  backgroundColor?: string;
+  borderRadius?: string;
+  boxShadow?: string;
 };
 
 const Base = withProps<IStyledBaseProps>()(styled.span)`
@@ -86,6 +90,29 @@ const Base = withProps<IStyledBaseProps>()(styled.span)`
     }
   }}
 
+  ${(props) => {
+    if (props.color) {
+      return `color: ${props.color};`;
+    }
+  }};
+
+  ${(props) => {
+    if (props.backgroundColor) {
+      return `background-color: ${props.backgroundColor};`;
+    }
+  }}
+
+  ${(props) => {
+    if (props.boxShadow) {
+      return `box-shadow: ${props.boxShadow};`;
+    }
+  }}
+
+  ${(props) => {
+    if (props.borderRadius) {
+      return `border-radius: ${props.theme.borderRadius[props.borderRadius]};`;
+    }
+  }}
 `;
 
 export default Base;

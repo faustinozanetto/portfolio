@@ -21,7 +21,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
             src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXIlMjBzY2llbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
             alt="About me Image"
             objectFit="cover"
-            width={400}
+            width={350}
             height={500}
           />
         </Flex>
@@ -31,6 +31,10 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
           <Heading as="h1" fontSize="6xl" textAlign="left" margin="0">
             About me
           </Heading>
+          <Text fontSize="xl" textAlign="left" margin="0">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia veniam et nostrum fugiat ipsam ullam,
+            quod eaque nihil asperiores ut! Fuga placeat numquam expedita, odio quos quisquam itaque et.
+          </Text>
           <Text fontSize="xl" textAlign="left" margin="0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia veniam et nostrum fugiat ipsam ullam,
             quod eaque nihil asperiores ut! Fuga placeat numquam expedita, odio quos quisquam itaque et.

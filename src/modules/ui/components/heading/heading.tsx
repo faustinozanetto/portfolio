@@ -6,14 +6,14 @@ import StyledHeading from './heading.styles';
 export type IHeadingProps = React.HTMLAttributes<HTMLHeadingElement> &
   StyledTypographyProps & {
     children?: React.ReactNode;
-    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
   };
 
 const Heading: React.FC<IHeadingProps> = (props) => {
   const theme = useTheme();
-  const { children, as = 'h1', padding = theme.spacing.xs, ...rest } = props;
+  const { children, as = 'h1', padding = theme.spacing.xs, color = 'white', ...rest } = props;
   return (
-    <StyledHeading as={as} padding={padding} {...rest}>
+    <StyledHeading as={as} padding={padding} color={color} {...rest}>
       {children}
     </StyledHeading>
   );

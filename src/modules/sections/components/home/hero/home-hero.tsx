@@ -29,8 +29,8 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
         </Text>
         {/* Buttons */}
         <Flex>
-          <Button>Contact Me</Button>
-          <Button variant="outline" color="white" hoverColor="black" hoverBackgroundColor="#ecfeff">
+          <Button size="md">Contact Me</Button>
+          <Button variant="outline" size="md" color="white" hoverColor="black" hoverBackgroundColor="#ecfeff">
             Check my Work
           </Button>
         </Flex>

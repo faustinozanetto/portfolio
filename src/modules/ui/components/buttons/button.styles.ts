@@ -14,15 +14,18 @@ export type StyledButtonProps = StyledTypographyProps & {
 };
 
 const BaseButon = `
-  display: flex;
+  display: inline-flex;
+  position: relative;
   align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
   justify-content: center;
+  user-select: none;
   cursor: pointer;
 `;
 
 const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
   ${BaseButon}
-  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing['2xl']};
   border-radius: ${(props) => props.theme.borderRadius[props.borderRadius]};
   transition: ${(props) => props.theme.transitions.default};
 
@@ -59,30 +62,46 @@ const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
   ${(props) =>
     props.size === 'sm' &&
     `
-    padding: ${props.theme.spacing.md} ${props.theme.spacing.lg};
+    padding-inline-start: ${props.theme.spacing.sm};
+    padding-inline-end: ${props.theme.spacing.sm};
     font-size: ${props.theme.fontSize.sm};
+    padding: ${props.theme.spacing.sm} ${props.theme.spacing.md};
   `}
 
   ${(props) =>
     props.size === 'md' &&
     `
-    padding: ${props.theme.spacing.lg} ${props.theme.spacing.xl};
+    padding-inline-start: ${props.theme.spacing.md};
+    padding-inline-end: ${props.theme.spacing.md};
     font-size: ${props.theme.fontSize.md};
+    padding: ${props.theme.spacing.md} ${props.theme.spacing.lg};
   `}
 
   ${(props) =>
     props.size === 'lg' &&
     `
-    padding: ${props.theme.spacing.xl} ${props.theme.spacing['2xl']};
+    padding-inline-start: ${props.theme.spacing.lg};
+    padding-inline-end: ${props.theme.spacing.lg};
     font-size: ${props.theme.fontSize.lg};
+    padding: ${props.theme.spacing.lg} ${props.theme.spacing.xl};
   `}
 
   ${(props) =>
     props.size === 'xl' &&
     `
-    padding: ${props.theme.spacing.xl} ${props.theme.spacing['3xl']};
+    padding-inline-start: ${props.theme.spacing.xl};
+    padding-inline-end: ${props.theme.spacing.xl};
     font-size: ${props.theme.fontSize.xl};
+    padding: ${props.theme.spacing.lg} ${props.theme.spacing['2xl']};
   `}
   }
 `;
+
+export const ButtonIconContainer = styled.span`
+  display: inline-flex;
+  align-self: center;
+  flex-shrink: 0;
+  margin-inline-end: 0.5rem;
+`;
+
 export default StyledButton;
