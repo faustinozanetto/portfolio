@@ -38,9 +38,9 @@ const Typography = withProps<StyledTypographyProps>()(styled(Base))`
       return `text-align: ${props.textAlign};`;
     }
   }}
-  text-decoration: ${(props) => props.theme.textDecoration};
-  text-transform: ${(props) => props.theme.textTransform};
-  color: ${(props) => props.theme.colors.text} !important;
+  text-decoration: ${(props) => props.textDecoration};
+  text-transform: ${(props) => props.textTransform};
+  color: ${(props) => props.theme.colors.text};
 `;
 
 export default Typography;

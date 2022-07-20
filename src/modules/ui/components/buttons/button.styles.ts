@@ -1,28 +1,60 @@
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
+import type { StyledTypographyProps } from '../base/typography.styled';
+import Typography from '../base/typography.styled';
 
-export type StyledButtonProps = {
+export type StyledButtonProps = StyledTypographyProps & {
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'solid' | 'outline';
+  backgroundColor?: string;
+  hoverBackgroundColor?: string;
+  color?: string;
+  hoverColor?: string;
+  borderRadius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
 };
 
-const StyledButton = withProps<StyledButtonProps>()(styled.button)`
+const BaseButon = `
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing.xxl};
-  border-radius: ${(props) => props.theme.borderRadius.xxl};
-  font-size: ${(props) => props.theme.fontSize.md};
-  font-weight: ${(props) => props.theme.fontWeight.bold};
-  font-family: ${(props) => props.theme.fontFamily.body};
-  color: ${(props) => props.theme.colors.text};
-  background-color: ${(props) => props.theme.colors.primary[400]};
-  border: none;
   cursor: pointer;
-  transition: 0.3s;
+`;
 
-  &:hover {
-    background-color: ${(props) => props.theme.colors.primary[500]};
-  }
+const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
+  ${BaseButon}
+  padding: ${(props) => props.theme.spacing.lg} ${(props) => props.theme.spacing.xxl};
+  border-radius: ${(props) => props.theme.borderRadius[props.borderRadius]};
+  transition: ${(props) => props.theme.transitions.default};
+
+  ${(props) => {
+    if (props.variant === 'solid') {
+      return `
+        background-color: ${props.backgroundColor};
+        color: ${props.color};
+        border: none;
+
+        &:hover {
+          background-color: ${props.hoverBackgroundColor};
+          color: ${props.hoverColor};
+        }
+    `;
+    }
+  }}
+
+  ${(props) => {
+    if (props.variant === 'outline') {
+      return `
+        border: 2px solid ${props.backgroundColor};
+        color: ${props.color};
+        background-color: transparent;
+
+        &:hover {
+          background-color: ${props.hoverBackgroundColor};
+          color: ${props.hoverColor};
+        }
+    `;
+    }
+  }}
 
   ${(props) =>
     props.size === 'sm' &&

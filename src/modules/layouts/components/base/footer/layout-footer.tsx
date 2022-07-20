@@ -10,8 +10,8 @@ const LayoutFooter: React.FC<ILayoutFooterProps> = (props) => {
   return (
     <StyledFooter>
       <FooterContainer>
-        <Heading>Made with ❤️ from Argetina 🇦🇷</Heading>
-        <Heading size="md" style={{ marginBottom: 0 }}>
+        <Heading fontSize="md">Made with ❤️ from Argetina 🇦🇷</Heading>
+        <Heading fontSize="md" style={{ marginBottom: 0 }}>
           © 2022 Faustino Zanetto. All rights reserved
         </Heading>
       </FooterContainer>

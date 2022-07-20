@@ -5,7 +5,7 @@ const LayoutContainer = styled.main`
   flex-direction: column;
   overflow: hidden;
   min-height: 100vh;
-  background-color: ${(props) => props.theme.colors.background[900]};
+  background-color: black;
 `;
 
 export const LayoutContent = styled.section`

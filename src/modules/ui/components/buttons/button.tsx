@@ -8,9 +8,26 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { children, ...rest } = props;
+  const {
+    children,
+    variant = 'solid',
+    borderRadius = 'md',
+    fontWeight = 'bold',
+    fontSize = 'sm',
+    margin = '0.5rem',
+    ...rest
+  } = props;
   return (
-    <StyledButton as="button" type="button" {...rest}>
+    <StyledButton
+      as="button"
+      type="button"
+      variant={variant}
+      borderRadius={borderRadius}
+      fontWeight={fontWeight}
+      fontSize={fontSize}
+      margin={margin}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
