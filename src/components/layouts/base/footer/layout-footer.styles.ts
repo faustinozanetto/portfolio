@@ -1,4 +1,4 @@
-import Container from '@components/ui/container/container';
+import Container from '@modules/ui/components/container/container';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`

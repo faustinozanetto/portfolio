@@ -1,10 +1,10 @@
 import React from 'react';
 import BaseLayout from '@components/layouts/base/base-layout';
 import useTheme from '@hooks/use-theme';
-import Text from '@components/ui/text/text';
-import Button from '@components/ui/buttons/button';
-import Heading from '@components/ui/heading/heading';
-import Container from '@components/ui/container/container';
+import Button from '@modules/ui/components/buttons/button';
+import Container from '@modules/ui/components/container/container';
+import Text from '@modules/ui/components/text/text';
+import Heading from '@modules/ui/components/heading/heading';
 
 type HomePageProps = {};
 

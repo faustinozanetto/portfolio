@@ -1,5 +1,5 @@
-import type { StyledTypographyProps } from '@components/ui/base/typography.styled';
-import Typography from '@components/ui/base/typography.styled';
+import type { StyledTypographyProps } from '@modules/ui/components/base/typography.styled';
+import Typography from '@modules/ui/components/base/typography.styled';
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 

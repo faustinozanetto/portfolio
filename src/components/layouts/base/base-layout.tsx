@@ -4,7 +4,7 @@ import Navbar from '@components/navbar/navbar';
 import LayoutContainer, { LayoutContent } from './base-layout.styles';
 import type { BaseLayoutHeadProps } from './head/base-layout-head';
 import BaseLayoutHead from './head/base-layout-head';
-import BaseLayoutFooter from './footer/base-layout-footer';
+import LayoutFooter from './footer/layout-footer';
 
 type BaseLayoutProps = {
   children: ReactNode;
@@ -26,7 +26,7 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
       {/* CONTENT */}
       <LayoutContent>{children}</LayoutContent>
 
-      <BaseLayoutFooter />
+      <LayoutFooter />
     </LayoutContainer>
   );
 };

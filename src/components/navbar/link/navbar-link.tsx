@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StyledTypographyProps } from '@components/ui/base/typography.styled';
+import type { StyledTypographyProps } from '@modules/ui/components/base/typography.styled';
 import Link from 'next/link';
 import StyledNavbarLink from './navbar-link.styles';
 

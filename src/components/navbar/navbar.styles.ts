@@ -1,5 +1,5 @@
-import Container from '@components/ui/container/container';
 import styled from 'styled-components';
+import Container from '@modules/ui/components/container/container';
 
 const StyledNavbar = styled.div`
   width: 100%;
