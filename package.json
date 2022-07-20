@@ -12,6 +12,7 @@
     "build:dev": "next build"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-sans": "^4.5.11",
     "framer-motion": "^6.5.1",
     "next": "12.2.2",
     "react": "18.2.0",

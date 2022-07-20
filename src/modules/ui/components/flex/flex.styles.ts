@@ -22,5 +22,4 @@ export const StyledFlex = withProps<IStyledFlexProps>()(styled.div)`
   flex-grow: ${(props) => props.flexGrow};
   flex-shrink: ${(props) => props.flexShrink};
   flex-basis: ${(props) => props.flexBasis};
-
-  `;
+`;

@@ -1,74 +1,45 @@
 import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
+import type { StyledBaseProps } from './base.styled';
+import Base from './base.styled';
 
-export type StyledTypographyProps = {
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
-  weight?: 'normal' | 'semibold' | 'bold';
+export type StyledTypographyProps = StyledBaseProps & {
+  fontSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
+  fontWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
+  color?: string;
+  fontFamily?: string;
+  lineHeight?: string;
+  textAlign?: 'left' | 'center' | 'right';
+  textDecoration?: 'none' | 'underline' | 'line-through' | 'overline';
+  textTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
 };
 
-const Typography = withProps<StyledTypographyProps>()(styled.span)` ${(props) =>
-  props.weight === 'bold' &&
-  `
-    font-weight: ${props.theme.fontWeight.bold} !important;
-  `}
+const Typography = withProps<StyledTypographyProps>()(styled(Base))`
+  ${(props) => {
+    if (props.fontWeight) {
+      return `font-weight: ${props.theme.fontWeight[props.fontWeight]};`;
+    }
+  }}
 
-  ${(props) =>
-    props.weight === 'semibold' &&
-    `
-    font-weight: ${props.theme.fontWeight.semibold} !important;
-  `}
+  ${(props) => {
+    if (props.fontSize) {
+      return `font-size: ${props.theme.fontSize[props.fontSize]};`;
+    }
+  }}
 
-  ${(props) =>
-    props.weight === 'normal' &&
-    `
-    font-weight: ${props.theme.fontWeight.medium} !important;
-  `}
+  ${(props) => {
+    if (props.lineHeight) {
+      return `line-height: ${props.lineHeight};`;
+    }
+  }}
 
-  ${(props) =>
-    props.size === 'sm' &&
-    `
-    font-size: ${props.theme.fontSize.sm} !important;
-  `}
-  ${(props) =>
-    props.size === 'md' &&
-    `
-    font-size: ${props.theme.fontSize.md} !important;
-  `}
-  ${(props) =>
-    props.size === 'lg' &&
-    `
-    font-size: ${props.theme.fontSize.lg} !important;
-  `}
-  ${(props) =>
-    props.size === 'xl' &&
-    `
-    font-size: ${props.theme.fontSize.xl} !important;
-  `}
-
-  ${(props) =>
-    props.size === '2xl' &&
-    `
-    font-size: ${props.theme.fontSize['2xl']} !important;
-  `}
-
-  ${(props) =>
-    props.size === '3xl' &&
-    `
-    font-size: ${props.theme.fontSize['3xl']} !important;
-  `}
-
-  ${(props) =>
-    props.size === '4xl' &&
-    `
-    font-size: ${props.theme.fontSize['4xl']} !important;
-  `}
-
-  ${(props) =>
-    props.size === '5xl' &&
-    `
-    font-size: ${props.theme.fontSize['5xl']} !important;
-  `}
-
+  ${(props) => {
+    if (props.textAlign) {
+      return `text-align: ${props.textAlign};`;
+    }
+  }}
+  text-decoration: ${(props) => props.theme.textDecoration};
+  text-transform: ${(props) => props.theme.textTransform};
   color: ${(props) => props.theme.colors.text} !important;
 `;
 
