@@ -1,9 +1,8 @@
 import type { IStyledFlexProps } from '@modules/ui/components/flex/flex.styles';
-import withProps from '@utils/theming/theming-utils';
 import { StyledFlex } from '@modules/ui/components/flex/flex.styles';
 import styled from 'styled-components';
 
-const StyledHomeProjectCard = withProps<IStyledFlexProps>()(styled(StyledFlex))`
+const StyledHomeProjectCard = styled(StyledFlex)<IStyledFlexProps>`
   overflow: hidden;
 `;
 

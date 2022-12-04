@@ -15,9 +15,7 @@ const NavbarLink: React.FC<INavbarLinkProps> = (props) => {
 
   return (
     <Link href={href} passHref>
-      <StyledNavbarLink as="a" {...rest}>
-        {children}
-      </StyledNavbarLink>
+      <StyledNavbarLink {...rest}>{children}</StyledNavbarLink>
     </Link>
   );
 };

@@ -1,4 +1,3 @@
-import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 import type { IStyledBaseProps } from './base.styled';
 import Base from './base.styled';
@@ -13,7 +12,7 @@ export type StyledTypographyProps = IStyledBaseProps & {
   textTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
 };
 
-const Typography = withProps<StyledTypographyProps>()(styled(Base))`
+const Typography = styled(Base)<StyledTypographyProps>`
   ${(props) => {
     if (props.fontWeight) {
       return `font-weight: ${props.theme.fontWeight[props.fontWeight]};`;

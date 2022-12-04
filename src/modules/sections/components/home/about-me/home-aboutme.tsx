@@ -1,6 +1,6 @@
 import React from 'react';
 import Flex from '@modules/ui/components/flex/flex';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import Heading from '@modules/ui/components/heading/heading';
 import Text from '@modules/ui/components/text/text';
 import Grid from '@modules/ui/components/grid/grid';
@@ -12,7 +12,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
   const {} = props;
 
   return (
-    <Section hasDivider dividerColor="black" backgroundColor="white">
+    <Section hasDivider dividerColor="black" backgroundColor="white" containerStyles={{ marginBottom: '20em' }}>
       <Grid gap="1rem" templateColumns="auto 1fr" templateRows="1fr" width="100%">
         {/* Left */}
         <Flex>

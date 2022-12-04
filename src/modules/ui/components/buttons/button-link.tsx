@@ -1,20 +1,19 @@
+import Link from 'next/link';
 import React from 'react';
 import { useTheme } from 'styled-components';
-import type { StyledButtonProps } from './button.styles';
+import type { ButtonProps } from './button';
 import StyledButton, { ButtonIconContainer } from './button.styles';
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  StyledButtonProps & {
-    children: React.ReactNode;
-    leftIcon?: JSX.Element;
-    rightIcon?: JSX.Element;
-  };
+type LinkButtonProps = ButtonProps & {
+  href: string;
+  target?: string;
+};
 
-const Button: React.FC<ButtonProps> = (props) => {
+const LinkButton: React.FC<LinkButtonProps> = (props) => {
   const theme = useTheme();
-
   const {
     children,
+    href = '/',
     variant = 'solid',
     color = 'black',
     hoverColor = 'white',
@@ -24,13 +23,15 @@ const Button: React.FC<ButtonProps> = (props) => {
     fontWeight = 'bold',
     fontSize = 'md',
     margin = '0.5rem',
+    target = '_self',
     leftIcon,
     rightIcon,
     ...rest
   } = props;
   return (
     <StyledButton
-      as="button"
+      as={Link}
+      href={href}
       type="button"
       variant={variant}
       color={color}
@@ -41,6 +42,7 @@ const Button: React.FC<ButtonProps> = (props) => {
       fontWeight={fontWeight}
       fontSize={fontSize}
       margin={margin}
+      target={target}
       {...rest}
     >
       {leftIcon && <ButtonIconContainer>{leftIcon}</ButtonIconContainer>}
@@ -50,4 +52,4 @@ const Button: React.FC<ButtonProps> = (props) => {
   );
 };
 
-export default Button;
+export default LinkButton;

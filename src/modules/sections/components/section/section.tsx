@@ -9,15 +9,16 @@ type ISectionProps = IBoxProps & {
   children?: React.ReactNode;
   hasDivider?: boolean;
   dividerColor?: string;
+  containerStyles?: IBoxProps;
 };
 
 const Section: React.FC<ISectionProps> = (props) => {
-  const { children, hasDivider = false, dividerColor, ...rest } = props;
+  const { children, hasDivider = false, dividerColor, containerStyles, ...rest } = props;
   const theme = useTheme();
 
   return (
-    <Box width="100%" {...rest}>
-      <Container marginTop={theme.spacing['2xl']} marginBottom="20rem">
+    <Box {...rest}>
+      <Container marginTop={theme.spacing['2xl']} {...containerStyles}>
         {children}
       </Container>
       {hasDivider && <SectionDivider dividerColor={dividerColor} />}

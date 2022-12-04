@@ -1,9 +1,8 @@
 import type { StyledTypographyProps } from '@modules/ui/components/base/typography.styled';
 import Typography from '@modules/ui/components/base/typography.styled';
-import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 
-const StyledNavbarLink = withProps<StyledTypographyProps>()(styled(Typography))`
+const StyledNavbarLink = styled(Typography)<StyledTypographyProps>`
   text-decoration: none;
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSize.md};

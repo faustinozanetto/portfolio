@@ -1,4 +1,3 @@
-import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 import type { IStyledBaseProps } from '../base/base.styled';
 import Base from '../base/base.styled';
@@ -14,7 +13,7 @@ export type IStyledFlexProps = IStyledBaseProps & {
   flexBasis?: number | string;
 };
 
-export const StyledFlex = withProps<IStyledFlexProps>()(styled(Base))`
+export const StyledFlex = styled(Base)<IStyledFlexProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   flex-wrap: ${(props) => props.flexWrap};

@@ -13,7 +13,7 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
   const {} = props;
 
   return (
-    <Section hasDivider dividerColor="white">
+    <Section hasDivider dividerColor="white" containerStyles={{ marginBottom: '20em' }}>
       <Flex flexDirection="column">
         {/* Titles */}
         <Box width="fit-content">

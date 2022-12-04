@@ -1,4 +1,3 @@
-import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 import type { StyledTypographyProps } from '../base/typography.styled';
 import Typography from '../base/typography.styled';
@@ -25,7 +24,7 @@ const BaseButon = `
   text-decoration: none;
 `;
 
-const StyledButton = withProps<StyledButtonProps>()(styled(Typography))`
+const StyledButton = styled(Typography)<StyledButtonProps>`
   ${BaseButon}
   border-radius: ${(props) => props.theme.borderRadius[props.borderRadius]};
   transition: ${(props) => props.theme.transitions.default};

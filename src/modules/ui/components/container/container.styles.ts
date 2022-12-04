@@ -1,11 +1,10 @@
-import withProps from '@utils/theming/theming-utils';
 import styled from 'styled-components';
 import Base from '../base/base.styled';
 import type { IStyledBoxProps } from '../box/box.styles';
 
 export type IStyledContainerProps = IStyledBoxProps;
 
-const StyledContainer = withProps<IStyledContainerProps>()(styled(Base))`
+const StyledContainer = styled(Base)<IStyledContainerProps>`
   position: relative;
   overflow: hidden;
   display: flex;

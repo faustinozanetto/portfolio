@@ -1,5 +1,5 @@
 import type { HomeProjectCardType } from '@modules/sections/components/home/projects/project-card/home-project-card.types';
-import { ProjectTechnology } from '@types/portfolio.types';
+import { ProjectTechnology } from '../types/portfolio.types';
 
 // eslint-disable-next-line import/prefer-default-export
 export const HOME_PROJECTS: HomeProjectCardType[] = [
@@ -13,7 +13,7 @@ export const HOME_PROJECTS: HomeProjectCardType[] = [
       ProjectTechnology.NestJS,
       ProjectTechnology.TypeScript,
       ProjectTechnology.CSS,
-      ProjectTechnology.ChakraUI,
+      ProjectTechnology.TailwindCSS,
     ],
     projectLink: 'https://mechatype.vercel.app/',
     repoLink: 'https://github.com/faustinozanetto/mecha-type-client',
@@ -29,7 +29,7 @@ export const HOME_PROJECTS: HomeProjectCardType[] = [
       ProjectTechnology.ChakraUI,
       ProjectTechnology.Redux,
     ],
-    projectLink: 'https://snappy.vercel.app/',
+    projectLink: 'https://snappyapp.vercel.app/',
     repoLink: 'https://github.com/faustinozanetto/snappy',
   },
   {
@@ -40,5 +40,34 @@ export const HOME_PROJECTS: HomeProjectCardType[] = [
     technologies: [ProjectTechnology.NextJS, ProjectTechnology.ChakraUI, ProjectTechnology.TypeScript],
     projectLink: 'https://klangscoffee.vercel.app/',
     repoLink: 'https://github.com/faustinozanetto/coffee-shop',
+  },
+  {
+    title: 'Toply',
+    description:
+      'Toply is a simple to use and free web application that lets you visualize your most listened-to songs on Spotify.',
+    image: '/assets/projects/toply/toply-thumbnail.jpg',
+    technologies: [
+      ProjectTechnology.NextJS,
+      ProjectTechnology.TailwindCSS,
+      ProjectTechnology.TypeScript,
+      ProjectTechnology.React,
+    ],
+    projectLink: 'https://toply.vercel.app/',
+    repoLink: 'https://github.com/faustinozanetto/toply',
+  },
+  {
+    title: 'Frontend Tools',
+    description:
+      'Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.',
+    image: '/assets/projects/frontend-tools/frontend-tools-thumbnail.png',
+    technologies: [
+      ProjectTechnology.NextJS,
+      ProjectTechnology.TailwindCSS,
+      ProjectTechnology.TypeScript,
+      ProjectTechnology.React,
+      ProjectTechnology.Redux,
+    ],
+    projectLink: 'https://frontend-tools.vercel.app/',
+    repoLink: 'https://github.com/faustinozanetto/frontend-tools',
   },
 ];

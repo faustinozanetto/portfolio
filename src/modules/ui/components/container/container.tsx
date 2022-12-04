@@ -2,7 +2,7 @@ import React from 'react';
 import type { IBoxProps } from '../box/box';
 import StyledContainer from './container.styles';
 
-type IContainerProps = IBoxProps & {
+export type IContainerProps = IBoxProps & {
   children?: React.ReactNode;
 };
 

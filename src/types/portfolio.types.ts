@@ -15,4 +15,5 @@ export enum ProjectTechnology {
   Express = 'Express',
   Redux = 'Redux',
   ChakraUI = 'Chakra UI',
+  TailwindCSS = 'TailwindCSS',
 }

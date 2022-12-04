@@ -1,17 +1,17 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import Box from '@modules/ui/components/box/box';
 import Heading from '@modules/ui/components/heading/heading';
 import Flex from '@modules/ui/components/flex/flex';
 import Text from '@modules/ui/components/text/text';
-import Button from '@modules/ui/components/buttons/button';
 import { FiEye } from 'react-icons/fi';
 import { BiGitRepoForked } from 'react-icons/bi';
+import { motion } from 'framer-motion';
+import LinkButton from '@modules/ui/components/buttons/button-link';
 import { HomeProjectCardImageContainer } from './home-project-card.styles';
 import type { HomeProjectCardType } from './home-project-card.types';
 import ProjectTechnologyBadge from './home-project-technology-badge';
-import { motion, transform } from 'framer-motion';
 
 interface IHomeProjectCardProps {
   projectData: HomeProjectCardType;
@@ -68,29 +68,29 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
             {projectData.description}
           </Text>
           {/* Buttons */}
-          <Flex width="100%" paddingTop={theme.spacing.lg}>
+          <Flex width="100%" paddingTop={theme.spacing.lg} alignItems="center" justifyContent="space-between">
             {/* Preview Link */}
-            <Button
+            <LinkButton
               size="md"
               color="white"
-              backgroundColor="black"
               width="100%"
+              backgroundColor="black"
               href={projectData.projectLink}
               leftIcon={<FiEye size={22} />}
             >
               Preview
-            </Button>
+            </LinkButton>
             {/* Repo Link */}
-            <Button
-              variant="outline"
-              backgroundColor="black"
+            <LinkButton
               size="md"
               width="100%"
+              backgroundColor="black"
+              variant="outline"
               href={projectData.repoLink}
               leftIcon={<BiGitRepoForked size={22} />}
             >
               Repo
-            </Button>
+            </LinkButton>
           </Flex>
         </Flex>
       </Box>

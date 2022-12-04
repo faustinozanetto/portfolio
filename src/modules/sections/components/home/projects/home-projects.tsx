@@ -15,7 +15,7 @@ const HomeProjects: React.FC<IHomeProjectsProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Section>
+    <Section containerStyles={{ marginBottom: '20em' }}>
       <Flex flexDirection="column" alignItems="center">
         {/* Heading */}
         <Heading as="h1" fontSize="6xl" margin="0">
@@ -23,8 +23,9 @@ const HomeProjects: React.FC<IHomeProjectsProps> = (props) => {
         </Heading>
         {/* Text */}
         <Text fontSize="xl" textAlign="center" margin="0">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas mollitia veniam et nostrum fugiat ipsam ullam,
-          quod eaque nihil asperiores ut! Fuga placeat numquam expedita, odio quos quisquam itaque et.
+          Below are a collection of my personal and profesional projects I have completed in my past years of
+          experience. You will encounter with different areas such as web development or computer graphics, using a
+          broad varierty of programming languages and technologies like C++ or Typescript.
         </Text>
 
         {/* Projects */}
