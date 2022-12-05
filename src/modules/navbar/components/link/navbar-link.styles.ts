@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledNavbarLink = styled(Typography)<StyledTypographyProps>`
   text-decoration: none;
+  cursor: pointer;
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSize.md};
   color: ${(props) => props.theme.colors.text};

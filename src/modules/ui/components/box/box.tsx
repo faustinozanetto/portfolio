@@ -9,6 +9,7 @@ export type IBoxProps = React.HTMLAttributes<HTMLDivElement> &
 
 const Box: React.FC<IBoxProps> = (props) => {
   const { children, ...rest } = props;
+
   return (
     <StyledBox as="div" {...rest}>
       {children}

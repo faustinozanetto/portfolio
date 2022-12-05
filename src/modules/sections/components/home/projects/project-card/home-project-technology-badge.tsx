@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
 import Heading from '@modules/ui/components/heading/heading';
-import type { ProjectTechnology } from '../../../../../../types/portfolio.types';
+import type { ProjectTechnology } from '../../../../../../typedefs/portfolio.types';
 
 interface IProjectTechnologyBadgeProps {
   technology: ProjectTechnology;

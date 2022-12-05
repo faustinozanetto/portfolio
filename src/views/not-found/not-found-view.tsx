@@ -13,8 +13,14 @@ const NotFoundView: React.FC = () => {
       {/* Titles */}
       <Box marginBottom="1rem">
         <Heading as="h1" fontSize="5xl" textAlign="center">
-          It looks like the page you requested
-          <Heading as="h2" fontSize="5xl" textAlign="center" fontWeight="black" color={lightTheme.colors.primary[300]}>
+          It looks like the page you requested <br />
+          <Heading
+            as="span"
+            fontSize="5xl"
+            textAlign="center"
+            fontWeight="black"
+            color={lightTheme.colors.primary[300]}
+          >
             does not exist!
           </Heading>
         </Heading>

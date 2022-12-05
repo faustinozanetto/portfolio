@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { ThemeVariant } from '../types/portfolio.types';
+import type { ThemeVariant } from '../typedefs/portfolio.types';
 
 const useDarkMode = () => {
   const [theme, setTheme] = useState<ThemeVariant>('light');

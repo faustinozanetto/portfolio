@@ -2,15 +2,7 @@ import styled from 'styled-components';
 import type { IStyledBaseProps } from './base.styled';
 import Base from './base.styled';
 
-export type StyledTypographyProps = IStyledBaseProps & {
-  fontSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
-  fontWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
-  fontFamily?: string;
-  lineHeight?: string;
-  textAlign?: 'left' | 'center' | 'right';
-  textDecoration?: 'none' | 'underline' | 'line-through' | 'overline';
-  textTransform?: 'none' | 'uppercase' | 'lowercase' | 'capitalize';
-};
+export type StyledTypographyProps = IStyledBaseProps;
 
 const Typography = styled(Base)<StyledTypographyProps>`
   ${(props) => {

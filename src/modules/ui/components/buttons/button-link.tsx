@@ -29,26 +29,25 @@ const LinkButton: React.FC<LinkButtonProps> = (props) => {
     ...rest
   } = props;
   return (
-    <StyledButton
-      as={Link}
-      href={href}
-      type="button"
-      variant={variant}
-      color={color}
-      hoverColor={hoverColor}
-      backgroundColor={backgroundColor}
-      hoverBackgroundColor={hoverBackgroundColor}
-      borderRadius={borderRadius}
-      fontWeight={fontWeight}
-      fontSize={fontSize}
-      margin={margin}
-      target={target}
-      {...rest}
-    >
-      {leftIcon && <ButtonIconContainer>{leftIcon}</ButtonIconContainer>}
-      {children}
-      {rightIcon}
-    </StyledButton>
+    <Link href={href} target={target}>
+      <StyledButton
+        type="button"
+        variant={variant}
+        color={color}
+        hoverColor={hoverColor}
+        backgroundColor={backgroundColor}
+        hoverBackgroundColor={hoverBackgroundColor}
+        borderRadius={borderRadius}
+        fontWeight={fontWeight}
+        fontSize={fontSize}
+        margin={margin}
+        {...rest}
+      >
+        {leftIcon && <ButtonIconContainer>{leftIcon}</ButtonIconContainer>}
+        {children}
+        {rightIcon}
+      </StyledButton>
+    </Link>
   );
 };
 

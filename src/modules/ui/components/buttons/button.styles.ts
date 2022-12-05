@@ -5,9 +5,7 @@ import Typography from '../base/typography.styled';
 export type StyledButtonProps = StyledTypographyProps & {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   variant?: 'solid' | 'outline';
-  backgroundColor?: string;
   hoverBackgroundColor?: string;
-  color?: string;
   hoverColor?: string;
   borderRadius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'full';
 };
