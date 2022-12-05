@@ -1,23 +1,13 @@
 import React from 'react';
-import Heading from '@modules/ui/components/heading/heading';
-import StyledFooter, { FooterContainer } from './layout-footer.styles';
 
-interface ILayoutFooterProps {}
-
-const LayoutFooter: React.FC<ILayoutFooterProps> = (props) => {
-  const {} = props;
-
+const LayoutFooter: React.FC = () => {
   return (
-    <StyledFooter>
-      <FooterContainer>
-        <Heading fontSize="md" margin="0">
-          Made with ❤️ from Argetina 🇦🇷
-        </Heading>
-        <Heading fontSize="md" margin="0">
-          © 2022 Faustino Zanetto. All rights reserved
-        </Heading>
-      </FooterContainer>
-    </StyledFooter>
+    <footer className="flex flex-col items-center justify-center p-4 text-center">
+      <div className="flex flex-col items-center justify-center">
+        <span className="text-md font-bold">Made with ❤️ from Argetina 🇦🇷</span>
+        <span className="text-sm font-bold">© 2022 Faustino Zanetto. All rights reserved</span>
+      </div>
+    </footer>
   );
 };
 

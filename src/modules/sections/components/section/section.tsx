@@ -1,28 +1,17 @@
-import type { IBoxProps } from '@modules/ui/components/box/box';
-import Box from '@modules/ui/components/box/box';
-import Container from '@modules/ui/components/container/container';
+import clsx from 'clsx';
 import React from 'react';
-import { useTheme } from 'styled-components';
-import SectionDivider from './divider/section-divider';
 
-type ISectionProps = IBoxProps & {
+type ISectionProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
-  hasDivider?: boolean;
-  dividerColor?: string;
-  containerStyles?: IBoxProps;
 };
 
 const Section: React.FC<ISectionProps> = (props) => {
-  const { children, hasDivider = false, dividerColor, containerStyles, ...rest } = props;
-  const theme = useTheme();
+  const { children, ...rest } = props;
 
   return (
-    <Box {...rest}>
-      <Container marginTop={theme.spacing['2xl']} {...containerStyles}>
-        {children}
-      </Container>
-      {hasDivider && <SectionDivider dividerColor={dividerColor} />}
-    </Box>
+    <div {...rest}>
+      <section className={clsx('mx-auto w-full max-w-6xl p-6 md:p-10 lg:p-12')}>{children}</section>
+    </div>
   );
 };
 

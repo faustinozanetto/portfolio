@@ -1,15 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-import StyledNavbarLogo from './navbar-logo.styles';
 
-interface INavbarLogoProps {}
-
-const NavbarLogo: React.FC<INavbarLogoProps> = (props) => {
-  const {} = props;
-
+const NavbarLogo: React.FC = () => {
   return (
     <Link href="/">
-      <StyledNavbarLogo>Faustino</StyledNavbarLogo>
+      <span className="text-3xl font-bold text-blue-500 transition-colors hover:text-blue-400">Faustino</span>
     </Link>
   );
 };

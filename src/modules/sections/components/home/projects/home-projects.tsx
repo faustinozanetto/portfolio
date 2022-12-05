@@ -15,32 +15,24 @@ const HomeProjects: React.FC<IHomeProjectsProps> = (props) => {
   const theme = useTheme();
 
   return (
-    <Section containerStyles={{ marginBottom: '20em' }}>
-      <Flex flexDirection="column" alignItems="center">
+    <Section className="bg-gray-100 my-4 sm:my-6 md:my-8">
+      <div className="flex flex-col">
         {/* Heading */}
-        <Heading as="h1" fontSize="6xl" margin="0">
-          Projects
-        </Heading>
+        <h2 className="text-5xl font-bold text-gray-900">Projects</h2>
         {/* Text */}
-        <Text fontSize="xl" textAlign="center" margin="0">
+        <p className="text-lg font-regular text-gray-900 sm:text-xl">
           Below are a collection of my personal and profesional projects I have completed in my past years of
           experience. You will encounter with different areas such as web development or computer graphics, using a
           broad varierty of programming languages and technologies like C++ or Typescript.
-        </Text>
+        </p>
 
         {/* Projects */}
-        <Grid
-          gap="1rem"
-          templateColumns="repeat(auto-fit, minmax(325px, 1fr))"
-          templateRows="repeat(auto-fit, minmax(300px, 1fr))"
-          width="100%"
-          padding={theme.spacing.xl}
-        >
+        <div className="grid gap-4 w-full mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {HOME_PROJECTS.map((project, index) => {
             return <HomeProjectCard key={index} projectData={project} />;
           })}
-        </Grid>
-      </Flex>
+        </div>
+      </div>
     </Section>
   );
 };

@@ -1,4 +1,5 @@
 import '@fontsource/ibm-plex-sans';
+import '@styles/global.css';
 import React from 'react';
 import type { AppProps } from 'next/app';
 import GlobalStyles, { lightTheme } from '@styles/global-styles';

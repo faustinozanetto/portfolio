@@ -1,13 +1,11 @@
-import type { IBoxProps } from '@modules/ui/components/box/box';
 import React from 'react';
-import StyledSectionDivider from './section-divider.styles';
 
-type ISectionDividerProps = IBoxProps & {
+type ISectionDividerProps = {
   dividerColor?: string;
 };
 
 const SectionDivider: React.FC<ISectionDividerProps> = (props) => {
-  const { dividerColor = 'white', ...rest } = props;
+  const { dividerColor = 'white' } = props;
 
   const generateRandomWidth = () => {
     const MAX = 1000;

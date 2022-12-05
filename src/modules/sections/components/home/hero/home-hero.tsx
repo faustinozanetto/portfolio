@@ -1,11 +1,6 @@
-import Flex from '@modules/ui/components/flex/flex';
-import Text from '@modules/ui/components/text/text';
-import Heading from '@modules/ui/components/heading/heading';
 import React from 'react';
 import Button from '@modules/ui/components/buttons/button';
-import Box from '@modules/ui/components/box/box';
 import Section from '@modules/sections/components/section/section';
-import HomeHeroSubtitle from './subtitle/home-hero-subtitle';
 
 interface IHomeHeroProps {}
 
@@ -13,28 +8,26 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
   const {} = props;
 
   return (
-    <Section hasDivider dividerColor="white" containerStyles={{ marginBottom: '20em' }}>
-      <Flex flexDirection="column">
+    <Section className="bg-gray-100 my-4 sm:my-10 md:my-14">
+      <div className="flex flex-col">
         {/* Titles */}
-        <Box width="fit-content">
-          <Heading as="h1" fontSize="6xl" textAlign="left" margin="0">
-            Hi, I'm Faustino a
-          </Heading>
-          <HomeHeroSubtitle>Software Developer</HomeHeroSubtitle>
-        </Box>
+        <div className="w-fit leading-10 mb-4">
+          <h1 className="text-4xl font-bold">Hi, I'm Faustino a</h1>
+          <h2 className="text-5xl font-extrabold text-blue-600">Software Developer</h2>
+        </div>
         {/* Paragraph */}
-        <Text fontSize="xl" fontWeight="normal" textAlign="left">
+        <p className="text-gray-900 text-lg font-medium">
           I am a young software developer from Argentina that fell in love with programming years ago. My primary focus
           is on web development, but I am also interested in computer graphics and game development.
-        </Text>
+        </p>
         {/* Buttons */}
-        <Flex>
-          <Button size="md">Contact Me</Button>
-          <Button variant="outline" size="md" color="white" hoverColor="black" hoverBackgroundColor="#ecfeff">
+        <div className="flex flex-col items-center  space-y-2 mt-2 sm:flex-row sm:space-y-0 sm:mt-4 sm:space-x-4">
+          <Button className="w-full sm:w-auto">Contact Me</Button>
+          <Button className="w-full sm:w-auto" variant="outline">
             Check my Work
           </Button>
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     </Section>
   );
 };

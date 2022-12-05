@@ -19,12 +19,6 @@ interface IHomeProjectCardProps {
 
 const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
   const { projectData } = props;
-  const theme = useTheme();
-
-  const constructBoxShadow = (): string => {
-    const baseColor = `rgba(37, 99, 235, 0.35)`;
-    return `${baseColor} 0px 5px 15px`;
-  };
 
   return (
     <motion.div
@@ -39,61 +33,43 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
         },
       }}
     >
-      <Box
-        backgroundColor={theme.colors.background[100]}
-        borderRadius="lg"
-        boxShadow={constructBoxShadow()}
-        maxWidth="325px"
-        margin="0 auto"
-      >
+      <div className="bg-gray-100 rounded-lg shadow-lg max-w-sm">
         {/* Image */}
-        <HomeProjectCardImageContainer>
+        <div className="relative h-[180px]">
           <NextImage src={projectData.image} alt={projectData.title} objectFit="cover" layout="fill" />
-        </HomeProjectCardImageContainer>
+        </div>
 
         {/* Bottom Information */}
-        <Flex flexDirection="column" alignItems="flex-start" padding={theme.spacing.md}>
+        <div className="flex flex-col items-start p-4">
           {/* Title */}
-          <Heading as="span" color="black" fontWeight="extrabold" fontSize="2xl">
-            {projectData.title}
-          </Heading>
+          <span className="text-gray-900 text-xl font-bold">{projectData.title}</span>
           {/* Technology Badges */}
-          <Flex flexDirection="row" alignItems="center">
+          <div className="flex flex-row space-x-2">
             {projectData.technologies.map((technologyBadge, index) => {
               return <ProjectTechnologyBadge key={index} technology={technologyBadge} />;
             })}
-          </Flex>
+          </div>
           {/* Description */}
-          <Text color="black" fontSize="md" textAlign="left" margin="0" marginBottom="auto">
-            {projectData.description}
-          </Text>
+          <p className="text-sm font-regular text-gray-900 sm:text-base">{projectData.description}</p>
           {/* Buttons */}
-          <Flex width="100%" paddingTop={theme.spacing.lg} alignItems="center" justifyContent="space-between">
+          <div className="flex flex-row w-full items-center justify-between mt-2">
             {/* Preview Link */}
-            <LinkButton
-              size="md"
-              color="white"
-              width="100%"
-              backgroundColor="black"
-              href={projectData.projectLink}
-              leftIcon={<FiEye size={22} />}
-            >
+            <LinkButton size="md" className="w-full" href={projectData.projectLink} leftIcon={<FiEye size={22} />}>
               Preview
             </LinkButton>
             {/* Repo Link */}
             <LinkButton
               size="md"
-              width="100%"
-              backgroundColor="black"
+              className="w-full"
               variant="outline"
               href={projectData.repoLink}
               leftIcon={<BiGitRepoForked size={22} />}
             >
               Repo
             </LinkButton>
-          </Flex>
-        </Flex>
-      </Box>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

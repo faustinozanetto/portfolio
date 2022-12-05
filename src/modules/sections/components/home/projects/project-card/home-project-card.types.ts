@@ -1,4 +1,4 @@
-import { ProjectTechnology } from '@typedefs/portfolio.types';
+import type { ProjectTechnology } from '@typedefs/portfolio.types';
 
 export type HomeProjectCardType = {
   title: string;
