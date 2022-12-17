@@ -1,5 +1,5 @@
-import React from 'react';
 import type { ProjectTechnology } from '@typedefs/portfolio.types';
+import React from 'react';
 
 interface IProjectTechnologyBadgeProps {
   technology: ProjectTechnology;
@@ -8,7 +8,7 @@ interface IProjectTechnologyBadgeProps {
 const ProjectTechnologyBadge: React.FC<IProjectTechnologyBadgeProps> = (props) => {
   const { technology } = props;
 
-  return <span className="text-blue-500 font-bold ">{technology}</span>;
+  return <span className="font-bold text-blue-500 dark:text-blue-300">{technology}</span>;
 };
 
 export default ProjectTechnologyBadge;

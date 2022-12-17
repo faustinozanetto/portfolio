@@ -1,9 +1,10 @@
 import '@fontsource/ibm-plex-sans';
 import '@styles/global.css';
-import React from 'react';
+
+import ThemeProvider from '@modules/theme/context/theme-context';
+import GlobalStyles from '@styles/global-styles';
 import type { AppProps } from 'next/app';
-import GlobalStyles, { lightTheme } from '@styles/global-styles';
-import { ThemeProvider } from 'styled-components';
+import React from 'react';
 
 type PortfolioProps = AppProps;
 
@@ -11,7 +12,7 @@ const Portfolio: React.FC<PortfolioProps> = (props) => {
   const { pageProps, Component } = props;
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider>
       <GlobalStyles />
       <Component {...pageProps} />
     </ThemeProvider>

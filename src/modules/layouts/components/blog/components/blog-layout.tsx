@@ -1,61 +1,45 @@
-import React from 'react';
-import { BlogPostMetadata } from '@modules/blog/types/blog.types';
-import BaseLayout from '../../base/base-layout';
-import Heading from '@modules/ui/components/heading/heading';
-import { MDXRemote } from 'next-mdx-remote';
-import Button from '@modules/ui/components/buttons/button';
+import type { BlogPostMetadata } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
-import Flex from '@modules/ui/components/flex/flex';
-import Text from '@modules/ui/components/text/text';
-import { useTheme } from 'styled-components';
+import Button from '@modules/ui/components/buttons/button';
 import Image from 'next/image';
-import Box from '@modules/ui/components/box/box';
+import { MDXRemote } from 'next-mdx-remote';
+
+import BaseLayout from '../../base/base-layout';
 
 interface IBlogLayoutProps {
   postSource: string;
   postMetadata: BlogPostMetadata;
 }
 
-const components = { Button, Heading };
+const components = { Button };
 
 const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
   const { postSource, postMetadata } = props;
-  const theme = useTheme();
-
   return (
     <BaseLayout
       headProps={{
         title: `${postMetadata?.title} | Faustino Zanetto`,
       }}
     >
-      <Flex flexDirection="column" width="100%">
+      <div className="flex flex-col">
         {/* Post Metadata */}
-        <Section containerStyles={{ marginBottom: '4em' }}>
-          <Heading as="h1" fontSize="5xl" color={theme.colors.primary[400]} marginBottom={theme.spacing['sm']}>
-            {postMetadata?.title}
-          </Heading>
-          <Text fontSize="2xl">{postMetadata.description}</Text>
-          <Heading as="h2" fontSize="xl">
-            {new Date(postMetadata.date).toDateString()}
-          </Heading>
-          <Flex alignItems="center" justifyContent="center" marginTop={theme.spacing['sm']}>
-            {postMetadata.tags.map((tag) => {
-              return (
-                <Heading
-                  as="span"
-                  fontSize="lg"
-                  fontWeight="bold"
-                  color={theme.colors.primary[400]}
-                  backgroundColor={theme.colors.background['100']}
-                  padding={theme.spacing['xs']}
-                  margin={theme.spacing['xs']}
-                >
-                  {tag}
-                </Heading>
-              );
-            })}
-          </Flex>
-          <Box width="100%" marginTop={theme.spacing['lg']}>
+        <Section>
+          {/* Metadata */}
+          <div className="flex flex-col">
+            <h1 className="text-4xl font-bold">{postMetadata?.title}</h1>
+            <p className="text-lg font-medium text-gray-900">{postMetadata.description}</p>
+            <span className="text-sm font-bold">{new Date(postMetadata.date).toDateString()}</span>
+            <div className="flex items-center">
+              <span className="mr-2 text-lg">Tags: </span>
+              {postMetadata.tags.map((tag) => {
+                return (
+                  <span key={tag} className="text-sm font-bold">
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
+
             <Image
               src={postMetadata.thumbnail}
               alt={''}
@@ -63,17 +47,17 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
               height={600}
               sizes="100vw"
               style={{
-                borderRadius: '1em',
+                borderRadius: '0.5em',
                 width: '100%',
                 height: 'auto',
               }}
             />
-          </Box>
+          </div>
+          <div className="blog-post py-4">
+            <MDXRemote compiledSource={postSource} components={components} />
+          </div>
         </Section>
-        <Section containerStyles={{ marginBottom: '4em' }}>
-          <MDXRemote compiledSource={postSource} components={components} />
-        </Section>
-      </Flex>
+      </div>
     </BaseLayout>
   );
 };

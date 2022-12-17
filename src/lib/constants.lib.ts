@@ -1,4 +1,5 @@
 import type { HomeProjectCardType } from '@modules/sections/components/home/projects/project-card/home-project-card.types';
+
 import { ProjectTechnology } from '../typedefs/portfolio.types';
 
 // eslint-disable-next-line import/prefer-default-export

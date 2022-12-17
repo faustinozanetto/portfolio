@@ -36,21 +36,24 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
   };
 
   const buttonStyles = clsx(
-    'rounded-lg text-base font-semibold transition-all focus:outline-none items-center inline-flex focus:ring-4 focus:ring-blue-300',
+    'inline-flex items-center justify-center rounded-lg text-base font-semibold transition-all focus:outline-none focus:ring-4 focus:ring-blue-300',
     rest.className,
     buttonSizes(),
     buttonVariants()
   );
 
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const { className, ...excludedRest } = rest;
 
   return (
     <button type="button" className={buttonStyles} ref={ref} {...excludedRest}>
-      {leftIcon && <div className="inline-flex self-center pr-1 shrink-0">{leftIcon}</div>}
+      {leftIcon && <div className="inline-flex shrink-0 self-center pr-1">{leftIcon}</div>}
       {children}
-      {rightIcon && <div className="inline-flex self-center shrink-0 pl-1">{rightIcon}</div>}
+      {rightIcon && <div className="inline-flex shrink-0 self-center pl-1">{rightIcon}</div>}
     </button>
   );
 });
+
+Button.displayName = 'Button';
 
 export default Button;

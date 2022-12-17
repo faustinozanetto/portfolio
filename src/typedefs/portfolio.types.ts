@@ -1,6 +1,3 @@
-// =================== THEMING ===================//
-export type ThemeVariant = 'light' | 'dark';
-
 // eslint-disable-next-line no-shadow
 export enum ProjectTechnology {
   React = 'React',

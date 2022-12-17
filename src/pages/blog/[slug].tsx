@@ -1,10 +1,16 @@
-import React from 'react';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import PostParser from '@modules/blog/utils/posts-parser';
-import * as fs from 'fs';
-import { POSTS_DIRECTORY } from '@modules/blog/utils/constants';
 import type { BlogPostMetadata, BlogPostSlug } from '@modules/blog/types/blog.types';
+import { POSTS_DIRECTORY } from '@modules/blog/utils/constants';
 import BlogLayout from '@modules/layouts/components/blog/components/blog-layout';
+import * as fs from 'fs';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import { serialize } from 'next-mdx-remote/serialize';
+import { join } from 'path';
+import React from 'react';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeCodeTitles from 'rehype-code-titles';
+import rehypePrism from 'rehype-prism-plus';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 interface IBlogPostPageProps {
   postSource: string;
@@ -22,7 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths: { params: BlogPostSlug }[] = filenames.map((filename) => {
     return {
       params: {
-        slug: filename.replace(/\.md$/, ''),
+        slug: filename.replace(/\.mdx$/, ''),
       },
     };
   });
@@ -35,15 +41,39 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug: string = context.params.slug as string;
-  const postParser: PostParser = new PostParser(slug);
-  const post = await postParser.parsePost();
+  const realSlug = slug.replace(/\.mdx$/, '');
+  const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
+  const fileContents = fs.readFileSync(path, 'utf8');
 
-  // @ts-ignore
+  const serialized = await serialize(fileContents, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeCodeTitles,
+        rehypePrism,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
+            },
+          },
+        ],
+      ],
+    },
+  });
+
   const postMetadata: BlogPostMetadata = {
-    ...post.frontmatter,
+    title: serialized.frontmatter.title,
+    description: serialized.frontmatter.description,
+    thumbnail: serialized.frontmatter.thumbnail,
+    tags: serialized.frontmatter.tags as unknown as string[],
+    date: serialized.frontmatter.date as unknown as Date,
   };
 
-  return { props: { postSource: post.compiledSource, postMetadata } };
+  return { props: { postSource: serialized.compiledSource, postMetadata } };
 };
 
 export default BlogPostPage;

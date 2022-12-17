@@ -1,5 +1,7 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
+
 import type { ButtonProps } from './button';
 import Button from './button';
 
@@ -11,7 +13,7 @@ type LinkButtonProps = ButtonProps & {
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
   const { children, target, href = '/', ...rest } = props;
   return (
-    <Link href={href} target={target}>
+    <Link className={clsx(rest.className, 'flex items-center justify-center')} href={href} target={target}>
       <Button {...rest}>{children}</Button>
     </Link>
   );
