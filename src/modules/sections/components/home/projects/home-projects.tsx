@@ -1,4 +1,4 @@
-import { HOME_PROJECTS } from '@lib/constants.lib';
+import { HOME_PROJECTS } from '@data/projects/projects-data';
 import React from 'react';
 
 import Section from '../../section/section';

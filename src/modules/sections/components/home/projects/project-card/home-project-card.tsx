@@ -39,7 +39,7 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
           {/* Title */}
           <span className="text-xl font-bold">{projectData.title}</span>
           {/* Technology Badges */}
-          <div className="flex flex-row space-x-2">
+          <div className="flex flex-wrap gap-1">
             {projectData.technologies.map((technologyBadge, index) => {
               return <ProjectTechnologyBadge key={index} technology={technologyBadge} />;
             })}

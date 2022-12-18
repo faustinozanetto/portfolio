@@ -13,4 +13,12 @@ export enum ProjectTechnology {
   Redux = 'Redux',
   ChakraUI = 'Chakra UI',
   TailwindCSS = 'TailwindCSS',
+  'C++' = 'C++',
+  OpenGl = 'OpenGL',
+  Assimp = 'Assimp',
+  GLFW = 'GLFW',
+  ImGui = 'ImGui',
+  GLSL = 'GLSL',
+  GLM = 'GLM',
+  Premake5 = 'Premake5',
 }

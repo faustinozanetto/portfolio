@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   size?: 'sm' | 'md' | 'lg';

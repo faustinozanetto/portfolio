@@ -1,4 +1,4 @@
-import type { BlogPostMetadata } from '@modules/blog/types/blog.types';
+import type { BlogPostMetadata, BlogPostSlug } from '@modules/blog/types/blog.types';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -7,10 +7,11 @@ import { FiEye } from 'react-icons/fi';
 
 interface IBlogPostCardProps {
   blogPost: BlogPostMetadata;
+  blogSlug: BlogPostSlug;
 }
 
 const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
-  const { blogPost } = props;
+  const { blogPost, blogSlug } = props;
 
   return (
     <motion.div
@@ -25,15 +26,15 @@ const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
         },
       }}
     >
-      <div className="max-w-sm rounded-md bg-gray-100 shadow-lg">
+      <div className="w-full rounded-lg bg-neutral-100 shadow-lg dark:bg-neutral-800 md:max-w-sm">
         {/* Image */}
         <div className="relative h-[180px]">
-          <Image src={blogPost.thumbnail} alt={blogPost.title} objectFit="cover" layout="fill" />
+          <Image src={blogPost.thumbnail} alt={blogPost.title} objectFit="cover" layout="fill" priority />
         </div>
         {/* Bottom Information */}
-        <div className="flex flex-col items-start p-4">
+        <div className="flex flex-col items-start p-4 text-neutral-900 dark:text-neutral-100">
           {/* Title */}
-          <span className="text-xl font-bold text-gray-900">{blogPost.title}</span>
+          <span className="text-xl font-bold">{blogPost.title}</span>
           {/* Technology Badges */}
           <div className="flex flex-row space-x-2">
             {blogPost.tags.map((tag) => {
@@ -41,11 +42,11 @@ const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
             })}
           </div>
           {/* Description */}
-          <p className="text-sm text-gray-900 sm:text-base">{blogPost.description}</p>
+          <p className="text-sm sm:text-base">{blogPost.description}</p>
           {/* Buttons */}
           <div className="mt-2 flex w-full flex-row items-center justify-between">
             {/* Preview Link */}
-            <LinkButton size="md" className="w-full" href="" target="_blank" leftIcon={<FiEye size={22} />}>
+            <LinkButton size="md" className="w-full" href={`/blog/${blogSlug.slug}`} leftIcon={<FiEye size={22} />}>
               Read More
             </LinkButton>
           </div>

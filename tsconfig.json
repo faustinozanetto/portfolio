@@ -31,7 +31,7 @@
       "@public/*": ["..public/*"],
       "@typings/*": ["typings/*"],
       "@modules/*": ["modules/*"],
-      "@views/*": ["views/*"]
+      "@data/*": ["data/*"]
     }
   },
   "types": ["cypress"],

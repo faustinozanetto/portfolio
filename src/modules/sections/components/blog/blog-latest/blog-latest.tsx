@@ -1,30 +1,33 @@
 import BlogPostCard from '@modules/blog/components/blog-post-card/blog-post-card';
-import type { BlogPostMetadata } from '@modules/blog/types/blog.types';
+import type { BlogPostMetadata, BlogPostSlug } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
 import React from 'react';
 
 interface IBlogLatestProps {
-  blogPosts: BlogPostMetadata[];
+  blogPosts: { metadata: BlogPostMetadata; slug: BlogPostSlug }[];
 }
 
 const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
   const { blogPosts } = props;
   return (
-    <Section className="mb-4 bg-gray-100 sm:mb-10 md:mb-14">
-      <div className="flex flex-col">
+    <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 sm:my-10 md:my-14">
+      <div className="flex flex-col space-y-4 text-neutral-900 dark:text-neutral-100 sm:space-y-8">
         {/* Titles */}
-        <div className="mb-4 w-fit leading-10">
-          <h1 className="text-5xl font-extrabold text-blue-600">Check out my latest work and news</h1>
+        <div className="w-fit leading-10">
+          <h1 className="text-5xl font-extrabold text-blue-500 dark:text-blue-300">
+            Check out my latest work and news, here in my blog
+          </h1>
         </div>
         {/* Paragraph */}
-        <p className="text-lg font-medium text-gray-900">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, magni incidunt ut alias ex dolorem
-          unde velit pariatur debitis quaerat.
+        <p className="text-lg font-medium">
+          Look through my latest post in my blog to stay up to date with new projects and news about my personal and
+          profesional carreer in the it industry. You&apos;ll find posts detailing the development of my personal
+          projects and other topics.
         </p>
 
-        <div className="grid gap-4 bg-gray-300 p-2">
+        <div className="grid gap-4">
           {blogPosts.map((blogPost) => {
-            return <BlogPostCard key={blogPost.title} blogPost={blogPost} />;
+            return <BlogPostCard key={blogPost.metadata.title} blogPost={blogPost.metadata} blogSlug={blogPost.slug} />;
           })}
         </div>
       </div>

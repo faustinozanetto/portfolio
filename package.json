@@ -34,8 +34,12 @@
       "pre-commit": "lint-staged"
     }
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
-    "@fontsource/ibm-plex-sans": "^4.5.13",
+    "@headlessui/react": "^1.7.7",
+    "@next/font": "^13.0.7",
     "clsx": "^1.2.1",
     "framer-motion": "^7.10.2",
     "next": "13.0.7",
@@ -47,8 +51,7 @@
     "rehype-code-titles": "^1.1.0",
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "styled-components": "^5.3.6"
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.0.7",

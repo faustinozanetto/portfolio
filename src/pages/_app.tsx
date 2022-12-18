@@ -1,10 +1,11 @@
-import '@fontsource/ibm-plex-sans';
 import '@styles/global.css';
 
 import ThemeProvider from '@modules/theme/context/theme-context';
-import GlobalStyles from '@styles/global-styles';
+import { Open_Sans } from '@next/font/google';
 import type { AppProps } from 'next/app';
 import React from 'react';
+
+const openSans = Open_Sans({ subsets: ['latin'] });
 
 type PortfolioProps = AppProps;
 
@@ -13,8 +14,9 @@ const Portfolio: React.FC<PortfolioProps> = (props) => {
 
   return (
     <ThemeProvider>
-      <GlobalStyles />
-      <Component {...pageProps} />
+      <main className={openSans.className}>
+        <Component {...pageProps} />
+      </main>
     </ThemeProvider>
   );
 };

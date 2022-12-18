@@ -1,4 +1,4 @@
-import type { BlogPostMetadata } from '@modules/blog/types/blog.types';
+import type { BlogPostMetadata, BlogPostSlug } from '@modules/blog/types/blog.types';
 import { POSTS_DIRECTORY } from '@modules/blog/utils/constants';
 import BaseLayout from '@modules/layouts/components/base/base-layout';
 import BlogLatest from '@modules/sections/components/blog/blog-latest/blog-latest';
@@ -9,11 +9,12 @@ import { join } from 'path';
 import React from 'react';
 
 interface IBlogPageProps {
-  blogPosts: BlogPostMetadata[];
+  blogPosts: { metadata: BlogPostMetadata; slug: BlogPostSlug }[];
 }
 
 const BlogPage: React.FC<IBlogPageProps> = (props) => {
   const { blogPosts } = props;
+
   return (
     <BaseLayout
       headProps={{
@@ -28,10 +29,12 @@ const BlogPage: React.FC<IBlogPageProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const postSlugs = fs.readdirSync(POSTS_DIRECTORY);
-  const blogPosts: BlogPostMetadata[] = await Promise.all(
-    postSlugs.map(async (slug) => {
-      const realSlug = slug.replace(/\.mdx$/, '');
+  const blogSlugs: BlogPostSlug[] = fs.readdirSync(POSTS_DIRECTORY).map((slug) => {
+    return { slug };
+  });
+  const blogPosts: { metadata: BlogPostMetadata; slug: BlogPostSlug }[] = await Promise.all(
+    blogSlugs.map(async (slug) => {
+      const realSlug = slug.slug.replace(/\.mdx$/, '');
       const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
       const fileContents = fs.readFileSync(path, 'utf8');
 
@@ -39,7 +42,7 @@ export const getStaticProps: GetStaticProps = async () => {
         parseFrontmatter: true,
       });
 
-      const postMetadata: BlogPostMetadata = {
+      const metadata: BlogPostMetadata = {
         title: serialized.frontmatter.title,
         description: serialized.frontmatter.description,
         thumbnail: serialized.frontmatter.thumbnail,
@@ -47,13 +50,15 @@ export const getStaticProps: GetStaticProps = async () => {
         date: serialized.frontmatter.date as unknown as Date,
       };
 
-      return postMetadata;
+      const parsedSlug: BlogPostSlug = { slug: realSlug };
+      return { metadata, slug: parsedSlug };
     })
   );
 
   return {
     props: {
       blogPosts,
+      blogSlugs,
     },
   };
 };

@@ -1,8 +1,6 @@
 import type { HomeProjectCardType } from '@modules/sections/components/home/projects/project-card/home-project-card.types';
+import { ProjectTechnology } from '@typedefs/portfolio.types';
 
-import { ProjectTechnology } from '../typedefs/portfolio.types';
-
-// eslint-disable-next-line import/prefer-default-export
 export const HOME_PROJECTS: HomeProjectCardType[] = [
   {
     title: 'Mecha Type',
@@ -70,5 +68,22 @@ export const HOME_PROJECTS: HomeProjectCardType[] = [
     ],
     projectLink: 'https://frontend-tools.vercel.app/',
     repoLink: 'https://github.com/faustinozanetto/frontend-tools',
+  },
+  {
+    title: 'Retro Engine',
+    description:
+      'Retro Engine is a WIP c++ project focused on implementing several computer graphics principles into a complex set of technologies and tools such as OpenGL, GLFW, Assimp and more.',
+    image: '/assets/projects/frontend-tools/frontend-tools-thumbnail.png',
+    technologies: [
+      ProjectTechnology['C++'],
+      ProjectTechnology.Assimp,
+      ProjectTechnology.OpenGl,
+      ProjectTechnology.GLFW,
+      ProjectTechnology.Premake5,
+      ProjectTechnology.GLSL,
+      ProjectTechnology.GLM,
+    ],
+    projectLink: 'https://github.com/faustinozanetto/RetroEngine',
+    repoLink: '',
   },
 ];
