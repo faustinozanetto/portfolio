@@ -7,6 +7,9 @@ module.exports = {
       fontFamily: {
         ibmplex: ['IBM Plex Sans', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        aboutMe: 'auto 1fr',
+      },
       screens: {
         xs: '320px',
         sm: '640px',

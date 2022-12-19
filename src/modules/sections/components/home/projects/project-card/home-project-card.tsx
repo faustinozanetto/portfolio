@@ -28,7 +28,7 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
         },
       }}
     >
-      <div className="w-full rounded-lg bg-neutral-100 shadow-lg dark:bg-neutral-800 md:max-w-sm">
+      <div className="w-full rounded-lg bg-neutral-200 shadow-lg dark:bg-neutral-900 md:max-w-sm">
         {/* Image */}
         <div className="relative h-[180px]">
           <NextImage src={projectData.image} alt={projectData.title} objectFit="cover" layout="fill" />

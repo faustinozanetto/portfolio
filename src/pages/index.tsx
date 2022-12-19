@@ -1,5 +1,6 @@
 import BaseLayout from '@modules/layouts/components/base/base-layout';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
+import HomeExperience from '@modules/sections/components/home/experience/home-experience';
 import HomeHero from '@modules/sections/components/home/hero/home-hero';
 import HomeProjects from '@modules/sections/components/home/projects/home-projects';
 import React from 'react';
@@ -19,6 +20,7 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
     >
       <HomeHero />
       <HomeAboutMe />
+      <HomeExperience />
       <HomeProjects />
     </BaseLayout>
   );

@@ -16,8 +16,8 @@ const ThemeToggler: React.FC = () => {
   };
 
   return (
-    <Button className="h-10 w-10" variant="outline" onClick={toggle}>
-      <div className="inline-flex shrink-0 self-center">{themeIcon()}</div>
+    <Button className="h-10 w-10" variant="outline" aria-label="Toggle Theme" onClick={toggle}>
+      <div className="inline-flex self-center">{themeIcon()}</div>
     </Button>
   );
 };

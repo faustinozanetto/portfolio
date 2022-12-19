@@ -12,8 +12,8 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
       <div className="flex flex-col text-neutral-900 dark:text-neutral-100">
         {/* Titles */}
         <div className="mb-4 w-fit leading-10">
-          <h1 className="text-4xl font-bold">Hi, I&apos;m Faustino a</h1>
-          <h2 className="text-5xl font-extrabold text-blue-600 dark:text-blue-300">Software Developer</h2>
+          <h1 className="text-3xl font-bold sm:text-4xl">Hi, I&apos;m Faustino a</h1>
+          <h2 className="text-4xl font-extrabold text-blue-600 dark:text-blue-300 sm:text-5xl">Software Developer</h2>
         </div>
         {/* Paragraph */}
         <p className="text-lg font-medium">

@@ -10,7 +10,7 @@ const Section: React.FC<ISectionProps> = (props) => {
 
   return (
     <div {...rest}>
-      <section className={clsx('mx-auto w-full max-w-5xl p-6 md:p-10 lg:p-12')}>{children}</section>
+      <section className={clsx('mx-auto w-full max-w-6xl p-6 md:p-14 lg:p-16')}>{children}</section>
     </div>
   );
 };
