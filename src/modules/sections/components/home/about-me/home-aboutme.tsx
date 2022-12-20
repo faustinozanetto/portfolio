@@ -26,7 +26,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
 
         {/* Right */}
         <div className="flex flex-col space-y-2 text-neutral-900 dark:text-neutral-100 sm:space-y-4">
-          <h2 className="text-4xl font-bold sm:text-5xl">About me</h2>
+          <h2 className="text-5xl font-extrabold text-blue-500 dark:text-blue-300">About me</h2>
           <p className="text-lg sm:text-xl">
             I&apos;m a simple young guy from Argentina that fell in love with computers a while ago. Since little I have
             always been interested in computers and programming. Back in the day, I started coding my very first

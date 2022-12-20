@@ -67,7 +67,11 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
     })
   );
 
-  return blogPosts;
+  const sortedPosts: BlogPost[] = blogPosts.sort((a, b) => {
+    return new Date(a.metadata.date).getTime() - new Date(b.metadata.date).getTime();
+  });
+
+  return sortedPosts;
 };
 
 /**

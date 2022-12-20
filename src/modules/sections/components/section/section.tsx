@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React from 'react';
 
 type ISectionProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -10,7 +9,7 @@ const Section: React.FC<ISectionProps> = (props) => {
 
   return (
     <div {...rest}>
-      <section className={clsx('mx-auto w-full max-w-6xl p-6 md:p-14 lg:p-16')}>{children}</section>
+      <section className="container mx-auto max-w-screen-lg px-8 py-5 lg:py-8 xl:px-5">{children}</section>
     </div>
   );
 };
