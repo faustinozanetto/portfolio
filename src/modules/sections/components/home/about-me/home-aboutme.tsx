@@ -14,7 +14,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
 
   return (
     <Section className=" bg-neutral-200 dark:bg-neutral-800">
-      <div className="grid grid-cols-1 grid-rows-1 items-center justify-center gap-4 sm:grid-cols-aboutMe sm:grid-rows-1 sm:gap-6">
+      <div className="grid grid-cols-1 grid-rows-1 items-center justify-center gap-4 md:grid-cols-aboutMe md:grid-rows-1 md:gap-6">
         {/* Left */}
         <NextImage
           src="/assets/images/faustino.png"

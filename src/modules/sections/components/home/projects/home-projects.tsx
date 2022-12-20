@@ -11,7 +11,7 @@ const HomeProjects: React.FC = () => {
         {/* Heading */}
         <h2 className="text-4xl font-bold sm:text-5xl">Projects</h2>
         {/* Text */}
-        <p className="text-lg sm:text-xl">
+        <p className="text-center text-lg sm:text-xl">
           Below are a collection of my personal and profesional projects I have completed in my past years of
           experience. You will encounter with different areas such as web development or computer graphics, using a
           broad varierty of programming languages and technologies like C++ or Typescript.

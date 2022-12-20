@@ -1,10 +1,10 @@
 import BlogPostCard from '@modules/blog/components/blog-post-card/blog-post-card';
-import type { BlogPostMetadata, BlogPostSlug } from '@modules/blog/types/blog.types';
+import type { BlogPost } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
 import React from 'react';
 
 interface IBlogLatestProps {
-  blogPosts: { metadata: BlogPostMetadata; slug: BlogPostSlug }[];
+  blogPosts: BlogPost[];
 }
 
 const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
@@ -25,9 +25,9 @@ const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
           projects and other topics.
         </p>
 
-        <div className="grid gap-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((blogPost) => {
-            return <BlogPostCard key={blogPost.metadata.title} blogPost={blogPost.metadata} blogSlug={blogPost.slug} />;
+            return <BlogPostCard key={blogPost.metadata.title} blogPost={blogPost} />;
           })}
         </div>
       </div>
