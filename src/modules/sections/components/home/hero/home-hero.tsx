@@ -16,7 +16,7 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
           <h2 className="text-4xl font-extrabold text-blue-600 dark:text-blue-300 sm:text-5xl">Software Developer</h2>
         </div>
         {/* Paragraph */}
-        <p className="text-lg font-medium">
+        <p className="text-base font-medium sm:text-lg">
           I am a young software developer from Argentina that fell in love with programming years ago. My primary focus
           is on web development, but I am also interested in computer graphics and game development.
         </p>

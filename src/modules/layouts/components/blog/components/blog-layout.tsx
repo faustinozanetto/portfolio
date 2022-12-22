@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote';
 
 import BaseLayout from '../../base/base-layout';
+import PostAuthorDetails from '@modules/blog/components/post/post-author-details';
 
 interface IBlogLayoutProps {
   blogPostCompiled: BlogPostCompiled;
@@ -47,18 +48,16 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
               src={blogPostCompiled.blogPost.metadata.thumbnail}
               alt="Blog post thumbnail"
               width={1000}
-              height={800}
+              height={1000}
               className="my-2 h-auto w-full rounded-xl drop-shadow-xl sm:my-4"
             />
           </div>
-          {/* Actual post */}
+          {/* Actual post from mdx file */}
           <div className="blog-post py-4">
             <MDXRemote compiledSource={blogPostCompiled.compiledSource} components={components} />
           </div>
           {/* Author bottom details */}
-          <div className="mt-3 rounded-2xl bg-neutral-200 p-8 dark:bg-neutral-800 dark:text-neutral-400">
-            <div className="flex flex-wrap items-start sm:flex-nowrap sm:space-x-6"></div>
-          </div>
+          <PostAuthorDetails blogAuthor={blogPostCompiled.blogPost.metadata.author} />
         </article>
       </Section>
     </BaseLayout>

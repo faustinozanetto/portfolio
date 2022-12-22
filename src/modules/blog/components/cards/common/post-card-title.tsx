@@ -10,7 +10,7 @@ const PostCardTitle: React.FC<IPostCardTitleProps> = (props) => {
   const { title, href } = props;
 
   return (
-    <h2 className="text-xl font-bold  leading-snug tracking-tight sm:text-2xl">
+    <h2 className="text-lg font-bold  leading-snug tracking-tight sm:text-xl">
       <Link href={href}>
         <span
           className="bg-gradient-to-r from-blue-200 to-blue-100 bg-[length:0px_10px] bg-left-bottom

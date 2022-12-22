@@ -101,6 +101,7 @@ export const getBlogPostBySlug = async (slug: BlogPostSlug): Promise<BlogPostCom
           },
         ],
       ],
+      format: 'mdx',
     },
   });
 

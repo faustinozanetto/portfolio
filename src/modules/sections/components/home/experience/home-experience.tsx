@@ -7,7 +7,7 @@ const HomeExperience: React.FC = () => {
     <Section className="bg-neutral-100 dark:bg-neutral-900">
       <div className="flex flex-col items-center justify-center space-y-4 text-neutral-900 dark:text-neutral-100">
         {/* Heading */}
-        <h2 className="text-5xl font-extrabold text-blue-500 dark:text-blue-300">Experience</h2>
+        <h2 className="text-4xl font-extrabold text-blue-500 dark:text-blue-300 sm:text-5xl">Experience</h2>
       </div>
     </Section>
   );

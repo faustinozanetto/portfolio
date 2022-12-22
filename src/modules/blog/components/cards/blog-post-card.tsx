@@ -53,7 +53,7 @@ const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
           {/* Tags */}
           <PostCardTags tags={blogPost.metadata.tags} />
           {/* Description */}
-          <p className="text-base sm:text-lg">{blogPost.metadata.description}</p>
+          <p className="text-base font-medium sm:text-lg">{blogPost.metadata.description}</p>
           {/* Preview Link */}
           {/* <LinkButton size="md" className="w-full " href={`/blog/${blogPost.slug.slug}`} leftIcon={<FiEye size={22} />}>
             Read More

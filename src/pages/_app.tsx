@@ -1,4 +1,5 @@
 import '@styles/global.css';
+import '@styles/code-blocks.css';
 
 import ThemeProvider from '@modules/theme/context/theme-context';
 import { Open_Sans } from '@next/font/google';

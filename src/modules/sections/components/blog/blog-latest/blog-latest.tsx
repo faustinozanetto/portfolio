@@ -19,7 +19,7 @@ const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
         </h2>
 
         {/* Paragraph */}
-        <p className="text-lg font-medium">
+        <p className="text-base font-medium sm:text-lg">
           Look through my latest post in my blog to stay up to date with new projects and news about my personal and
           profesional carreer in the it industry. You&apos;ll find posts detailing the development of my personal
           projects and other topics.

@@ -25,7 +25,7 @@ const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
           </div>
 
           {/* Paragraph */}
-          <p className="text-lg font-medium">
+          <p className="text-base font-medium sm:text-lg">
             If you think that this is a mistakan error, please contact me to report the issue and help me make the site
             better, thanks :).
           </p>
