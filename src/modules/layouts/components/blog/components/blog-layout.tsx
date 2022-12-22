@@ -1,5 +1,6 @@
 import PostCardAuthorDetails from '@modules/blog/components/cards/common/post-card-author-details';
 import PostCardTags from '@modules/blog/components/cards/common/post-card-tags';
+import PostAuthorDetails from '@modules/blog/components/post/post-author-details';
 import type { BlogPostCompiled } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
 import Button from '@modules/ui/components/buttons/button';
@@ -7,7 +8,6 @@ import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote';
 
 import BaseLayout from '../../base/base-layout';
-import PostAuthorDetails from '@modules/blog/components/post/post-author-details';
 
 interface IBlogLayoutProps {
   blogPostCompiled: BlogPostCompiled;
