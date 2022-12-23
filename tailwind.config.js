@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
@@ -9,6 +12,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         aboutMe: 'auto 1fr',
+      },
+      colors: {
+        primary: colors.blue,
       },
       screens: {
         xs: '320px',
@@ -32,5 +38,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require
+  plugins: [require('@tailwindcss/typography')],
 };

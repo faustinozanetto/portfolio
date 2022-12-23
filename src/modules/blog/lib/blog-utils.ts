@@ -1,14 +1,43 @@
 import fs from 'fs';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { join } from 'path';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
+import rehypeKatex from 'rehype-katex';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 import type { BlogPost, BlogPostAuthor, BlogPostCompiled, BlogPostMetadata, BlogPostSlug } from '../types/blog.types';
 import { POSTS_DIRECTORY } from '../utils/constants';
+
+const getSerializedContent = async (fileContents: string): Promise<MDXRemoteSerializeResult> => {
+  const serializedContent: MDXRemoteSerializeResult = await serialize(fileContents, {
+    parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm, remarkMath],
+      rehypePlugins: [
+        rehypeKatex,
+        rehypeSlug,
+        rehypeCodeTitles,
+        rehypePrism,
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
+            },
+          },
+        ],
+      ],
+      format: 'mdx',
+    },
+  }).then((data) => data);
+  return serializedContent;
+};
 
 /**
  * Returns an array containing all the blog post slugs.
@@ -49,9 +78,7 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
       const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
       const fileContents = fs.readFileSync(path, 'utf8');
 
-      const serialized = await serialize(fileContents, {
-        parseFrontmatter: true,
-      });
+      const serialized = await getSerializedContent(fileContents);
 
       const metadata: BlogPostMetadata = {
         title: serialized.frontmatter.title,
@@ -84,26 +111,7 @@ export const getBlogPostBySlug = async (slug: BlogPostSlug): Promise<BlogPostCom
   const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(path, 'utf8');
 
-  const serialized = await serialize(fileContents, {
-    parseFrontmatter: true,
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [
-        rehypeSlug,
-        rehypeCodeTitles,
-        rehypePrism,
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['anchor'],
-            },
-          },
-        ],
-      ],
-      format: 'mdx',
-    },
-  });
+  const serialized = await getSerializedContent(fileContents);
 
   const metadata: BlogPostMetadata = {
     title: serialized.frontmatter.title,
