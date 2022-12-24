@@ -1,6 +1,8 @@
 import { getAllBlogPosts } from '@modules/blog/lib/blog-utils';
 import type { BlogPost } from '@modules/blog/types/blog.types';
 import BaseLayout from '@modules/layouts/components/base/base-layout';
+import { getAllProjects } from '@modules/projects/lib/project-utils';
+import type { Project } from '@modules/projects/types/projects.types';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import HomeBlog from '@modules/sections/components/home/blog/home-blog';
 import HomeExperience from '@modules/sections/components/home/experience/home-experience';
@@ -11,10 +13,11 @@ import React from 'react';
 
 interface IHomePageProps {
   blogPosts: BlogPost[];
+  projects: Project[];
 }
 
 const HomePage: React.FC<IHomePageProps> = (props) => {
-  const { blogPosts } = props;
+  const { blogPosts, projects } = props;
 
   return (
     <BaseLayout
@@ -27,7 +30,7 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
       <HomeHero />
       <HomeAboutMe />
       <HomeExperience />
-      <HomeProjects />
+      <HomeProjects projects={projects} />
       <HomeBlog blogPosts={blogPosts} />
     </BaseLayout>
   );
@@ -37,7 +40,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = await getAllBlogPosts().then((posts) => {
     return posts.slice(0, 4);
   });
-  return { props: { blogPosts } };
+  const projects = getAllProjects().slice(0, 6);
+  return { props: { blogPosts, projects } };
 };
 
 export default HomePage;

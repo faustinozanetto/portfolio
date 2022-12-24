@@ -7,7 +7,7 @@ const generateSitemap = (slugs: string[]) => `<?xml version="1.0" encoding="UTF-
           .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://leerob.io/${slug}`}</loc>
+                    <loc>${`https://faustinozanetto.vercel.app/${slug}`}</loc>
                 </url>
             `;
           })

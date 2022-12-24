@@ -13,7 +13,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
   const {} = props;
 
   return (
-    <Section className=" bg-neutral-200 dark:bg-neutral-800">
+    <Section alternateColors>
       <div className="grid grid-cols-1 grid-rows-1 items-center gap-4 md:grid-cols-aboutMe md:grid-rows-1 md:gap-6">
         {/* Left */}
         <NextImage

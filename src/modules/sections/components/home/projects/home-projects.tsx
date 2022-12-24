@@ -1,12 +1,17 @@
-import { HOME_PROJECTS } from '@data/projects/projects-data';
+import type { Project } from '@modules/projects/types/projects.types';
 import React from 'react';
 
 import Section from '../../section/section';
 import HomeProjectCard from './project-card/home-project-card';
 
-const HomeProjects: React.FC = () => {
+interface IHomeProjectsProp {
+  projects: Project[];
+}
+
+const HomeProjects: React.FC<IHomeProjectsProp> = (props) => {
+  const { projects } = props;
   return (
-    <Section className="bg-neutral-200 dark:bg-neutral-800">
+    <Section alternateColors>
       <div className="flex flex-col items-center justify-center space-y-4 text-neutral-900 dark:text-neutral-100">
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-blue-500 dark:text-blue-300 sm:text-5xl">Projects</h2>
@@ -19,8 +24,8 @@ const HomeProjects: React.FC = () => {
 
         {/* Projects */}
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {HOME_PROJECTS.map((project, index) => {
-            return <HomeProjectCard key={index} projectData={project} />;
+          {projects.map((project, index) => {
+            return <HomeProjectCard key={index} project={project} />;
           })}
         </div>
       </div>

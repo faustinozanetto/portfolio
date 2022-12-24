@@ -1,5 +1,6 @@
 import useMediaQuery from '@hooks/use-media-query';
 import type { BlogPost } from '@modules/blog/types/blog.types';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 import BlogPostCard from '../cards/blog-post-card';
@@ -17,8 +18,25 @@ const BlogFeed: React.FC<IBlogFeedProps> = (props) => {
       <div className="sm:col-span-3">
         <BlogPostCard blogPost={blogPosts[0]} variant={isSmallDevice ? 'portrait' : 'landscape'} />
       </div>
-      {blogPosts.slice(1, blogPosts.length).map((blogPost) => {
-        return <BlogPostCard key={blogPost.metadata.title} blogPost={blogPost} />;
+      {blogPosts.slice(1, blogPosts.length).map((blogPost, index) => {
+        return (
+          <motion.div
+            key={blogPost.metadata.title + index}
+            whileHover="hover"
+            initial="initial"
+            whileInView="hover"
+            variants={{
+              initial: {
+                translateY: '0px',
+              },
+              hover: {
+                translateY: '-5px',
+              },
+            }}
+          >
+            <BlogPostCard blogPost={blogPost} />
+          </motion.div>
+        );
       })}
     </div>
   );

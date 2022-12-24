@@ -8,7 +8,8 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
   const {} = props;
 
   return (
-    <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 sm:my-10 md:my-14">
+    // bg-neutral-100 dark:bg-neutral-900
+    <Section className="my-4  sm:my-10 md:my-14">
       <div className="flex flex-col text-neutral-900 dark:text-neutral-100">
         {/* Titles */}
         <div className="mb-4 w-fit leading-10">
