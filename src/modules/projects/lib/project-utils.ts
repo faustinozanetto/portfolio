@@ -1,4 +1,4 @@
-import { projects } from '@data/projects/projects-data.json';
+import projects from '@data/projects/projects-data.json';
 
 import type { Project, ProjectData, ProjectSlug } from '../types/projects.types';
 
