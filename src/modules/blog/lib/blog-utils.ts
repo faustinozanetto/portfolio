@@ -107,20 +107,25 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
  * @returns The promise of the blog post.
  */
 export const getBlogPostBySlug = async (slug: BlogPostSlug): Promise<BlogPostCompiled> => {
-  const realSlug = slug.slug.replace(/\.mdx$/, '');
-  const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
-  const fileContents = fs.readFileSync(path, 'utf8');
+  return new Promise((resolve, reject) => {
+    try {
+      const realSlug = slug.slug.replace(/\.mdx$/, '');
+      const path = join(POSTS_DIRECTORY, `${realSlug}.mdx`);
+      const fileContents = fs.readFileSync(path, { encoding: 'utf-8', flag: 'r' });
+      getSerializedContent(fileContents).then((serialized) => {
+        const metadata: BlogPostMetadata = {
+          title: serialized.frontmatter.title,
+          description: serialized.frontmatter.description,
+          thumbnail: serialized.frontmatter.thumbnail,
+          tags: serialized.frontmatter.tags as unknown as string[],
+          date: serialized.frontmatter.date as unknown as Date,
+          author: serialized.frontmatter.author as unknown as BlogPostAuthor,
+        };
 
-  const serialized = await getSerializedContent(fileContents);
-
-  const metadata: BlogPostMetadata = {
-    title: serialized.frontmatter.title,
-    description: serialized.frontmatter.description,
-    thumbnail: serialized.frontmatter.thumbnail,
-    tags: serialized.frontmatter.tags as unknown as string[],
-    date: serialized.frontmatter.date as unknown as Date,
-    author: serialized.frontmatter.author as unknown as BlogPostAuthor,
-  };
-
-  return { blogPost: { slug, metadata }, compiledSource: serialized.compiledSource };
+        resolve({ blogPost: { slug, metadata }, compiledSource: serialized.compiledSource });
+      });
+    } catch (error) {
+      reject(new Error('The specified file could not be found!'));
+    }
+  });
 };

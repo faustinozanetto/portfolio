@@ -18,17 +18,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug: string = context.params.slug as string;
-  const blogPostCompiled: BlogPostCompiled = await getBlogPostBySlug({ slug }).then((post) => {
-    return post;
-  });
-
-  return { props: { blogPostCompiled } };
+  try {
+    const blogPost = await getBlogPostBySlug({ slug }).then((post) => {
+      return post;
+    });
+    return { props: { blogPostCompiled: blogPost } };
+  } catch (error) {
+    return { notFound: true };
+  }
 };
 
 export default BlogPostPage;

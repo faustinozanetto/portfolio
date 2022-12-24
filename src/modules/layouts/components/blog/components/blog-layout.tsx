@@ -53,7 +53,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
             />
           </div>
           {/* Actual post from mdx file */}
-          <div className="blog-post prose-neutral prose w-full max-w-none py-4 dark:prose-invert">
+          <div className="blog-post prose prose-neutral w-full max-w-none py-4 dark:prose-invert">
             <MDXRemote compiledSource={blogPostCompiled.compiledSource} components={components} />
           </div>
           {/* Author bottom details */}
