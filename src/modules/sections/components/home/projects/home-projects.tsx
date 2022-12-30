@@ -1,4 +1,4 @@
-import ProjectCard from '@modules/projects/components/cards/project-card';
+import ProjectsFeed from '@modules/projects/components/projects-feed';
 import type { Project } from '@modules/projects/types/projects.types';
 import React from 'react';
 
@@ -11,7 +11,7 @@ interface IHomeProjectsProp {
 const HomeProjects: React.FC<IHomeProjectsProp> = (props) => {
   const { projects } = props;
   return (
-    <Section alternateColors>
+    <Section>
       <div className="flex flex-col items-center justify-center space-y-4 text-neutral-900 dark:text-neutral-100">
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-primary-500 dark:text-primary-300 sm:text-5xl">Projects</h2>
@@ -23,11 +23,7 @@ const HomeProjects: React.FC<IHomeProjectsProp> = (props) => {
         </p>
 
         {/* Projects */}
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => {
-            return <ProjectCard key={index} project={project} />;
-          })}
-        </div>
+        <ProjectsFeed projects={projects} />
       </div>
     </Section>
   );

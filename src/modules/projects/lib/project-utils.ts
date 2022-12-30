@@ -33,7 +33,7 @@ export const getAllProjectsSlugs = (): ProjectSlug[] => {
 export const getAllProjects = (): Project[] => {
   const mappedProjects: Project[] = projects.map((project: ProjectData) => {
     return {
-      data: project,
+      metadata: project,
       slug: { slug: generateProjectSlug(project) },
     };
   });
@@ -51,5 +51,5 @@ export const getProjectBySlug = (slug: ProjectSlug): Project => {
     return generateProjectSlug(project) === slug.slug;
   });
   if (!foundProject) throw new Error('Could not find project with the given slug');
-  return { data: foundProject, slug };
+  return { metadata: foundProject, slug };
 };

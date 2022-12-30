@@ -12,6 +12,6 @@ export type ProjectSlug = {
 };
 
 export type Project = {
-  data: ProjectData;
+  metadata: ProjectData;
   slug: ProjectSlug;
 };

@@ -9,7 +9,7 @@ interface IProjectPageProps {
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
   const { project } = props;
-  return <h1>{project.data.title}</h1>;
+  return <h1>{project.metadata.title}</h1>;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

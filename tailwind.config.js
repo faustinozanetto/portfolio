@@ -7,21 +7,11 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      fontFamily: {
-        ibmplex: ['IBM Plex Sans', 'sans-serif'],
-      },
       gridTemplateColumns: {
         aboutMe: 'auto 1fr',
       },
       colors: {
         primary: colors.sky,
-      },
-      screens: {
-        xs: '320px',
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
       },
       fontSize: {
         xs: '.75rem',

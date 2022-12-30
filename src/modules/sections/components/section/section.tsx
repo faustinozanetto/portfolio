@@ -3,6 +3,7 @@ import React from 'react';
 
 type ISectionProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
+  /** Optional: Wether to alternate color scheme or not. */
   alternateColors?: boolean;
 };
 

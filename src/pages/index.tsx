@@ -29,8 +29,8 @@ const HomePage: React.FC<IHomePageProps> = (props) => {
     >
       <HomeHero />
       <HomeAboutMe />
-      <HomeExperience />
       <HomeProjects projects={projects} />
+      <HomeExperience />
       <HomeBlog blogPosts={blogPosts} />
     </BaseLayout>
   );
