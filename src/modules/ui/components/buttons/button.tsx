@@ -28,15 +28,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => 
   const buttonVariants = (): string => {
     switch (variant) {
       case 'outline':
-        return 'hover:bg-blue-300 hover:text-blue-800';
+        return 'hover:bg-primary-300 hover:text-primary-800';
       case 'solid':
       default:
-        return 'bg-blue-200 text-blue-800 hover:bg-blue-300';
+        return 'bg-primary-200 text-primary-800 hover:bg-primary-300';
     }
   };
 
   const buttonStyles = clsx(
-    'inline-flex items-center justify-center rounded-lg text-base font-semibold transition-all focus:outline-none focus:ring-4 focus:ring-blue-300',
+    'inline-flex items-center justify-center rounded-lg text-base font-semibold transition-all focus:outline-none focus:ring-4 focus:ring-primary-300',
     rest.className,
     buttonSizes(),
     buttonVariants()

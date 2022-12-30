@@ -95,7 +95,7 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
   );
 
   const sortedPosts: BlogPost[] = blogPosts.sort((a, b) => {
-    return new Date(a.metadata.date).getTime() - new Date(b.metadata.date).getTime();
+    return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
   });
 
   return sortedPosts;

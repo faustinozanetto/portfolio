@@ -24,7 +24,7 @@ const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
       <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 sm:my-10 md:my-14">
         <div className="flex flex-col space-y-4 text-neutral-900 dark:text-neutral-100 sm:space-y-8">
           {/* Titles */}
-          <h2 className="text-center text-3xl font-extrabold leading-10 text-blue-500 dark:text-blue-300 sm:text-4xl md:text-5xl">
+          <h2 className="text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:text-4xl md:text-5xl">
             Take a look at all the projects I&apos;ve worked on!
           </h2>
 

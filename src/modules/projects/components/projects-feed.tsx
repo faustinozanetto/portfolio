@@ -1,4 +1,4 @@
-import HomeProjectCard from '@modules/sections/components/home/projects/project-card/home-project-card';
+import HomeProjectCard from '@modules/projects/components/cards/project-card';
 import React from 'react';
 
 import type { Project } from '../types/projects.types';

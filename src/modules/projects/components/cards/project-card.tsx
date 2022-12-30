@@ -1,14 +1,14 @@
 import type { Project } from '@modules/projects/types/projects.types';
 import { motion } from 'framer-motion';
-import NextImage from 'next/legacy/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import React from 'react';
 
-interface IHomeProjectCardProps {
+interface IProjectCardProps {
   project: Project;
 }
 
-const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
+const ProjectCard: React.FC<IProjectCardProps> = (props) => {
   const { project } = props;
 
   return (
@@ -28,7 +28,7 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
         <div className="group w-full cursor-pointer overflow-hidden rounded-lg bg-neutral-100 shadow-lg transition-all dark:bg-neutral-900">
           {/* Image */}
           <div className="relative h-[180px]">
-            <NextImage src={project.data.image} alt={project.data.title} objectFit="cover" layout="fill" />
+            <Image src={project.data.image} alt={project.data.title} objectFit="cover" layout="fill" loading="lazy" />
           </div>
 
           {/* Bottom Information */}
@@ -36,11 +36,11 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
             {/* Title */}
             <span className="text-xl font-bold">{project.data.title}</span>
             {/* Technology Badges */}
-            <div className="flex flex-wrap gap-1">
-              {project.data.technologies.map((technology, index) => {
+            <div className="flex flex-wrap space-x-1 text-primary-300 opacity-70">
+              {project.data.technologies.map((technology) => {
                 return (
-                  <span key={index} className="font-bold text-blue-500 dark:text-blue-300">
-                    {technology}
+                  <span key={technology} className="font-medium">
+                    {`#${technology}`}
                   </span>
                 );
               })}
@@ -79,4 +79,4 @@ const HomeProjectCard: React.FC<IHomeProjectCardProps> = (props) => {
   );
 };
 
-export default HomeProjectCard;
+export default ProjectCard;

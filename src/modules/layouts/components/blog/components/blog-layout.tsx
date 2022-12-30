@@ -28,7 +28,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
         <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
           {/* Metadata */}
           <div className="flex flex-col">
-            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-blue-500 dark:text-blue-300 sm:mb-4 sm:text-4xl sm:leading-normal md:mb-6">
+            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:mb-4 sm:text-4xl sm:leading-normal md:mb-6">
               {blogPostCompiled.blogPost.metadata.title}
             </h1>
             {/* Description */}

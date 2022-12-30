@@ -21,7 +21,9 @@ const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
           {/* Titles */}
           <div className="leading-tight">
             <h1 className="text-4xl font-bold sm:text-5xl">It looks like the page you requested </h1>
-            <span className="text-4xl font-bold text-blue-500 dark:text-blue-300 sm:text-5xl">does not exist!</span>
+            <span className="text-4xl font-bold text-primary-500 dark:text-primary-300 sm:text-5xl">
+              does not exist!
+            </span>
           </div>
 
           {/* Paragraph */}

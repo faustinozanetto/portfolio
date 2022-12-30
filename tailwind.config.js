@@ -14,7 +14,7 @@ module.exports = {
         aboutMe: 'auto 1fr',
       },
       colors: {
-        primary: colors.blue,
+        primary: colors.sky,
       },
       screens: {
         xs: '320px',

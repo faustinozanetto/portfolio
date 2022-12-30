@@ -17,7 +17,7 @@ const Section: React.FC<ISectionProps> = (props) => {
       )}
       {...rest}
     >
-      <section className="container mx-auto max-w-screen-lg p-4 sm:p-6 lg:p-8">{children}</section>
+      <section className="container mx-auto w-full max-w-5xl items-start justify-center p-4 lg:p-8">{children}</section>
     </div>
   );
 };

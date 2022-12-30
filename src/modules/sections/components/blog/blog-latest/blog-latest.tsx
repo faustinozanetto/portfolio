@@ -36,7 +36,7 @@ const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
     <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 sm:my-10 md:my-14">
       <div className="flex flex-col space-y-4 text-neutral-900 dark:text-neutral-100 sm:space-y-8">
         {/* Titles */}
-        <h2 className="text-center text-3xl font-extrabold leading-10 text-blue-500 dark:text-blue-300 sm:text-4xl md:text-5xl">
+        <h2 className="text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:text-4xl md:text-5xl">
           Check out my latest work and news, here in my blog
         </h2>
 
@@ -48,7 +48,7 @@ const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
         </p>
 
         <div className="flex flex-col items-start">
-          <h3 className="text-center text-2xl font-extrabold leading-10 text-blue-500 dark:text-blue-300">
+          <h3 className="text-center text-2xl font-extrabold leading-10 text-primary-500 dark:text-primary-300">
             Filter by Tags
           </h3>
           <div className="flex flex-wrap items-center justify-center space-x-2">
@@ -57,9 +57,9 @@ const BlogLatest: React.FC<IBlogLatestProps> = (props) => {
                 <span
                   key={tag}
                   className={clsx(
-                    'cursor-pointer  hover:text-blue-500 dark:hover:text-blue-300 sm:text-lg',
+                    'cursor-pointer  hover:text-primary-500 dark:hover:text-primary-300 sm:text-lg',
                     selectedTag === tag
-                      ? 'font-bold text-blue-500 dark:text-blue-300'
+                      ? 'font-bold text-primary-500 dark:text-primary-300'
                       : 'text-neutral-800 dark:text-neutral-300'
                   )}
                   onClick={() => setSelectedTag(tag)}

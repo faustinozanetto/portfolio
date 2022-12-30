@@ -15,7 +15,7 @@ const HomeBlog: React.FC<IHomeBlogProps> = (props) => {
     <Section>
       <div className="flex flex-col items-center justify-center space-y-4 text-neutral-900 dark:text-neutral-100">
         {/* Heading */}
-        <h2 className="text-4xl font-extrabold text-blue-500 dark:text-blue-300 sm:text-5xl">Checkout my Blog</h2>
+        <h2 className="text-4xl font-extrabold text-primary-500 dark:text-primary-300 sm:text-5xl">Checkout my Blog</h2>
         <p className="text-center text-base font-medium sm:text-lg">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore odio praesentium placeat culpa esse
           doloribus in quaerat facilis quidem corporis, nisi error, quis maxime enim saepe! Incidunt quis aliquam,
