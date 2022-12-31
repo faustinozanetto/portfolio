@@ -33,7 +33,6 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
             src={thumbnail}
             alt={title}
             className="h-full w-full bg-cover object-cover"
-            sizes="80vw"
             width={500}
             height={500}
             loading="lazy"
