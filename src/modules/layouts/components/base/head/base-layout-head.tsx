@@ -15,7 +15,7 @@ interface IBaseLayoutHeadProps {
 }
 
 const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
-  const { title, description, url, canonicalUrl, image = `images/brand/snappy-logo.png` } = props;
+  const { title, description, url, canonicalUrl, image = `assets/images/faustino.png` } = props;
   return (
     <Head>
       <title>{title}</title>
@@ -30,13 +30,13 @@ const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <link rel="canonical" href={canonicalUrl} />
-      <meta content="#4f46e5" name="theme-color" />
+      <meta content="#7DD3FC" name="theme-color" />
 
       {/* Open graph */}
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="452" />
-      <meta property="og:image:height" content="175" />
+      <meta property="og:image:width" content="457" />
+      <meta property="og:image:height" content="457" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:locale" content="en" />
       <meta property="og:type" content="website" />
