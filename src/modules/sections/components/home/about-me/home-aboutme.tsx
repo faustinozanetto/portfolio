@@ -20,8 +20,9 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
           src="/assets/images/faustino.png"
           alt="About me Image"
           className="mx-auto h-60 w-60 rounded-3xl sm:h-64 sm:w-64 md:h-72 md:w-72"
-          width={800}
-          height={800}
+          width={600}
+          height={600}
+          priority
         />
 
         {/* Right */}

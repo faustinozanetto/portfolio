@@ -13,6 +13,9 @@ module.exports = {
       colors: {
         primary: colors.sky,
       },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+      },
       fontSize: {
         xs: '.75rem',
         sm: '.875rem',
@@ -28,6 +31,6 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line global-require
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
   plugins: [require('@tailwindcss/typography')],
 };
