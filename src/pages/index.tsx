@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = await getAllBlogPosts().then((posts) => {
     return posts.slice(0, 4);
   });
-  const projects = getAllProjects().slice(0, 6);
+  const projects = getAllProjects().slice(0, 4);
   return { props: { blogPosts, projects } };
 };
 
