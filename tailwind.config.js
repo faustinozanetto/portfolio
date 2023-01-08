@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         primary: colors.sky,
+        ...colors,
       },
       fontFamily: {
         sans: ['var(--font-sans)'],

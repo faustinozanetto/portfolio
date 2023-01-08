@@ -43,7 +43,8 @@ const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = getAllProjects();
+  const projects: Project[] = await getAllProjects();
+
   return { props: { projects } };
 };
 

@@ -1,3 +1,4 @@
+import ProjectLayout from '@modules/layouts/components/project/components/project-layout';
 import { getAllProjectsSlugs, getProjectBySlug } from '@modules/projects/lib/project-utils';
 import type { Project } from '@modules/projects/types/projects.types';
 import type { GetStaticPaths, GetStaticProps } from 'next';
@@ -9,7 +10,7 @@ interface IProjectPageProps {
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
   const { project } = props;
-  return <h1>{project.metadata.title}</h1>;
+  return <ProjectLayout project={project} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -30,7 +31,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const slug: string = context.params.slug as string;
 
   try {
-    const project = getProjectBySlug({ slug });
+    const project = await getProjectBySlug({ slug });
     return {
       props: {
         project,

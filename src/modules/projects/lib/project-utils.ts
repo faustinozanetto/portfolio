@@ -3,6 +3,26 @@ import projects from '@data/projects/projects-data.json';
 import type { Project, ProjectData, ProjectSlug } from '../types/projects.types';
 
 /**
+ * Gets the amount of stars of a project from github.
+ * @param project The project to fetch the stars.
+ * @returns The stars.
+ */
+const getProjectStars = async (project: Partial<ProjectData>): Promise<number> => {
+  try {
+    const githubProjectName: string = project.repoLink.split('/').slice(-1)[0];
+
+    const stars = await fetch(`https://api.github.com/repos/faustinozanetto/${githubProjectName}`)
+      .then((res) => res.json())
+      .then((repository) => repository.stargazers_count || 0);
+    console.log({ name: project.title, stars });
+
+    return stars;
+  } catch (error) {
+    throw new Error('An error occurred while trying to fetch project stars.');
+  }
+};
+
+/**
  * Generates the project slug by a given project data. The format is converte all words to lowercase and join them with -. Example: Frontend Tools -> frontend-tools
  * @param projectData The project data to base the slug.
  * @returns The slug.
@@ -30,13 +50,20 @@ export const getAllProjectsSlugs = (): ProjectSlug[] => {
  * Returns an array of projects containing the data of each project and the slug.
  * @returns The array of projects.
  */
-export const getAllProjects = (): Project[] => {
-  const mappedProjects: Project[] = projects.map((project: ProjectData) => {
-    return {
-      metadata: project,
-      slug: { slug: generateProjectSlug(project) },
-    };
-  });
+export const getAllProjects = async (): Promise<Project[]> => {
+  const mappedProjects: Project[] = await Promise.all(
+    projects.map(async (project) => {
+      const projectStars = await await getProjectStars(project);
+
+      return {
+        metadata: {
+          ...project,
+          stars: projectStars,
+        },
+        slug: { slug: generateProjectSlug(project) },
+      };
+    })
+  );
 
   return mappedProjects;
 };
@@ -46,10 +73,11 @@ export const getAllProjects = (): Project[] => {
  * @param slug Slug of the project to search.
  * @returns The project.
  */
-export const getProjectBySlug = (slug: ProjectSlug): Project => {
+export const getProjectBySlug = async (slug: ProjectSlug): Promise<Project> => {
   const foundProject: ProjectData = projects.find((project: ProjectData) => {
     return generateProjectSlug(project) === slug.slug;
   });
   if (!foundProject) throw new Error('Could not find project with the given slug');
-  return { metadata: foundProject, slug };
+  const stars = await getProjectStars(foundProject);
+  return { metadata: { ...foundProject, stars }, slug };
 };
