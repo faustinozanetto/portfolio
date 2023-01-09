@@ -10,9 +10,9 @@ import type { Project, ProjectData, ProjectSlug } from '../types/projects.types'
  */
 const getProjectStars = async (project: Partial<ProjectData>): Promise<number> => {
   try {
-    if (DEV) return 0;
+    if (DEV || !project.repoLink.exists) return 0;
 
-    const githubProjectName: string = project.repoLink.split('/').slice(-1)[0];
+    const githubProjectName: string = project.repoLink.link.split('/').slice(-1)[0];
 
     const stars = await fetch(`https://api.github.com/repos/faustinozanetto/${githubProjectName}`)
       .then((res) => res.json())

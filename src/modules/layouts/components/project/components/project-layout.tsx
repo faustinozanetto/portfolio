@@ -20,8 +20,8 @@ const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
       }}
     >
       <Section>
-        <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
-          <div className="flex flex-col space-y-2 sm:flex-row">
+        <article className="flex flex-col items-center justify-center space-y-2 text-neutral-900 dark:text-neutral-100 sm:space-y-4 md:space-y-8">
+          <div className="flex flex-col space-y-2 sm:flex-row ">
             {/* Metadata */}
             <div className="flex flex-col space-y-2 sm:w-4/5">
               <h1 className="text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:text-start sm:text-5xl sm:leading-normal">
@@ -49,28 +49,37 @@ const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
                 })}
               </div>
             </div>
+            {/* Link Buttons */}
             <div className="space-y-2 sm:w-1/5">
-              {/* <h3 className="flex flex-row items-center text-lg font-semibold leading-snug sm:text-start sm:text-xl sm:leading-normal">
-                Stars:
-                {project.metadata.stars} <FiStar size={22} />
-              </h3> */}
-              <DemoButton className="w-full" href={project.metadata.projectLink}>
-                Demo
-              </DemoButton>
-              <RepoButton className="w-full" href={project.metadata.repoLink}>
-                Repo
-              </RepoButton>
+              {project.metadata.projectLink.exists && (
+                <DemoButton className="w-full" href={project.metadata.projectLink.link}>
+                  Demo
+                </DemoButton>
+              )}
+              {project.metadata.repoLink.exists && (
+                <RepoButton className="w-full" href={project.metadata.repoLink.link}>
+                  Repo
+                </RepoButton>
+              )}
             </div>
           </div>
-          {/* Thumbnail */}
-          <Image
-            src={project.metadata.image}
-            alt="Project thumbnail"
-            width={1000}
-            height={1000}
-            priority
-            className="my-4 h-auto w-full rounded-xl drop-shadow-xl sm:my-6"
-          />
+          {/* Thumbnails */}
+          <div className="container columns-1 gap-4 sm:columns-2">
+            {project.metadata.thumbnails.length > 0 &&
+              project.metadata.thumbnails.map((thumbnail, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={thumbnail}
+                    alt="Project thumbnail"
+                    className="mb-4 w-full rounded-xl"
+                    width={800}
+                    height={800}
+                    priority
+                  />
+                );
+              })}
+          </div>
         </article>
       </Section>
     </BaseLayout>
