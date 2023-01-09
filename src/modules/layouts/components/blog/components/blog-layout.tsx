@@ -49,6 +49,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
               alt="Blog post thumbnail"
               width={1000}
               height={1000}
+              priority
               className="my-2 h-auto w-full rounded-xl drop-shadow-xl sm:my-4"
             />
           </div>

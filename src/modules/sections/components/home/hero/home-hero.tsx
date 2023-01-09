@@ -1,5 +1,6 @@
 import Section from '@modules/sections/components/section/section';
 import Button from '@modules/ui/components/buttons/button';
+import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
 interface IHomeHeroProps {}
@@ -26,9 +27,9 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
         {/* Buttons */}
         <div className="mt-2 flex flex-col  items-center space-y-2 sm:mt-4 sm:flex-row sm:space-y-0 sm:space-x-4">
           <Button className="w-full sm:w-auto">Contact Me</Button>
-          <Button className="w-full sm:w-auto" variant="outline">
+          <LinkButton className="w-full sm:w-auto" variant="outline" href="/projects" aria-label="Check my Work Button">
             Check my Work
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </Section>

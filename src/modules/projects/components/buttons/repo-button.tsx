@@ -12,7 +12,14 @@ const RepoButton: React.FC<IRepoButtonProps> = (props) => {
   const { href, children, ...rest } = props;
 
   return (
-    <LinkButton colorScheme="orange" href={href} leftIcon={<FiGithub size={22} />} target="_blank" {...rest}>
+    <LinkButton
+      colorScheme="orange"
+      href={href}
+      leftIcon={<FiGithub size={22} />}
+      target="_blank"
+      aria-label="Repo Button"
+      {...rest}
+    >
       {children}
     </LinkButton>
   );

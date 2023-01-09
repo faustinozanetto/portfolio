@@ -17,6 +17,7 @@ const PostAuthorDetails: React.FC<IPostAuthorDetailsProps> = (props) => {
           alt={`Blog Author ${blogAuthor.name}`}
           width={500}
           height={500}
+          priority
           className="relative mt-1 h-24 w-24 shrink-0 rounded-full"
         />
         <div className="flex flex-col text-center sm:text-start">

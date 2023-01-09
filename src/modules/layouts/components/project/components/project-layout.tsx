@@ -68,7 +68,8 @@ const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
             alt="Project thumbnail"
             width={1000}
             height={1000}
-            className="my-2 h-auto w-full rounded-xl drop-shadow-xl sm:my-4"
+            priority
+            className="my-4 h-auto w-full rounded-xl drop-shadow-xl sm:my-6"
           />
         </article>
       </Section>

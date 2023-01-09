@@ -1,4 +1,5 @@
 import projects from '@data/projects/projects-data.json';
+import { DEV } from '@modules/core/utils/constants';
 
 import type { Project, ProjectData, ProjectSlug } from '../types/projects.types';
 
@@ -9,12 +10,13 @@ import type { Project, ProjectData, ProjectSlug } from '../types/projects.types'
  */
 const getProjectStars = async (project: Partial<ProjectData>): Promise<number> => {
   try {
+    if (DEV) return 0;
+
     const githubProjectName: string = project.repoLink.split('/').slice(-1)[0];
 
     const stars = await fetch(`https://api.github.com/repos/faustinozanetto/${githubProjectName}`)
       .then((res) => res.json())
       .then((repository) => repository.stargazers_count || 0);
-    console.log({ name: project.title, stars });
 
     return stars;
   } catch (error) {

@@ -12,7 +12,14 @@ const DemoButton: React.FC<IDemoButtonProps> = (props) => {
   const { href, children, ...rest } = props;
 
   return (
-    <LinkButton colorScheme="teal" href={href} leftIcon={<FiGlobe size={22} />} target="_blank" {...rest}>
+    <LinkButton
+      colorScheme="teal"
+      href={href}
+      leftIcon={<FiGlobe size={22} />}
+      target="_blank"
+      aria-label="Demo Button"
+      {...rest}
+    >
       {children}
     </LinkButton>
   );

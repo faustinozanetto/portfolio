@@ -35,7 +35,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
             className="h-full w-full bg-cover object-cover"
             width={500}
             height={500}
-            loading="lazy"
+            priority
           />
         </div>
 

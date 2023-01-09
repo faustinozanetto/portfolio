@@ -1,8 +1,10 @@
+import useFilterData from '@hooks/use-filter-data';
 import BaseLayout from '@modules/layouts/components/base/base-layout';
 import ProjectsFeed from '@modules/projects/components/projects-feed';
 import { getAllProjects } from '@modules/projects/lib/project-utils';
 import type { Project } from '@modules/projects/types/projects.types';
 import Section from '@modules/sections/components/section/section';
+import clsx from 'clsx';
 import type { GetStaticProps } from 'next';
 import React from 'react';
 
@@ -12,6 +14,35 @@ interface IProjectsPageProps {
 
 const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
   const { projects } = props;
+
+  /**
+   * Function that generates the posible filters from the projects.
+   * @returns The posible filters.
+   */
+  const getFiltersFunc = (): string[] => {
+    const filtersSet = new Set<string>();
+    projects
+      .map((project) => project.metadata.technologies)
+      .map((technologies) => technologies.forEach((technology) => filtersSet.add(technology)));
+    return Array.from(filtersSet.values());
+  };
+
+  /**
+   * Function that handles the filtering for the useFilterData hook.
+   * @param data The data to filter.
+   * @param filter The selected filter.
+   * @returns The filtered data.
+   */
+  const filterFunc = (data: Project[], filter: string): Project[] => {
+    return data.filter((project) => project.metadata.technologies.includes(filter));
+  };
+
+  const { filteredData, posibleFilters, selectedFilter, setSelectedFilter } = useFilterData<Project, string>(
+    projects,
+    'all',
+    getFiltersFunc,
+    filterFunc
+  );
 
   return (
     <BaseLayout
@@ -34,8 +65,30 @@ const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
             profesional carreer in the it industry. You&apos;ll find posts detailing the development of my personal
             projects and other topics.
           </p>
-
-          <ProjectsFeed projects={projects} />
+          <div className="flex flex-col items-start">
+            <h3 className="text-center text-2xl font-extrabold leading-10 text-primary-500 dark:text-primary-300">
+              Filter by Technologies
+            </h3>
+            <div className="flex flex-wrap items-center justify-center space-x-2">
+              {posibleFilters.concat('all').map((fil) => {
+                return (
+                  <span
+                    key={fil}
+                    className={clsx(
+                      'cursor-pointer  hover:text-primary-500 dark:hover:text-primary-300 sm:text-lg',
+                      selectedFilter === fil
+                        ? 'font-bold text-primary-500 dark:text-primary-300'
+                        : 'text-neutral-800 dark:text-neutral-300'
+                    )}
+                    onClick={() => setSelectedFilter(fil)}
+                  >
+                    {fil}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+          <ProjectsFeed projects={filteredData} />
         </div>
       </Section>
     </BaseLayout>
