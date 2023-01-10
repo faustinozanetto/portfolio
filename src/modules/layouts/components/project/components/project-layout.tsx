@@ -1,17 +1,23 @@
 import DemoButton from '@modules/projects/components/buttons/demo-button';
 import RepoButton from '@modules/projects/components/buttons/repo-button';
+import ProjectThumbnailModal from '@modules/projects/components/project-thumbnail-modal';
+import { useProjectThumnbail } from '@modules/projects/context/project-thumbnails-context';
 import type { Project } from '@modules/projects/types/projects.types';
 import Section from '@modules/sections/components/section/section';
-import Image from 'next/image';
+import Image from '@modules/ui/components/images/image';
 
 import BaseLayout from '../../base/base-layout';
 
 interface IProjectLayoutProps {
+  /**
+   * Project to data to use.
+   */
   project: Project;
 }
 
 const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
   const { project } = props;
+  const { selectedThumbnail, setSelectedThumbnail } = useProjectThumnbail();
 
   return (
     <BaseLayout
@@ -69,10 +75,13 @@ const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
               project.metadata.thumbnails.map((thumbnail, index) => {
                 return (
                   <Image
-                    key={index}
+                    key={`thumb-${index}`}
                     src={thumbnail}
                     alt="Project thumbnail"
-                    className="mb-4 w-full rounded-xl"
+                    className="mb-4 w-full cursor-pointer rounded-xl"
+                    onClick={() => {
+                      setSelectedThumbnail(thumbnail);
+                    }}
                     width={800}
                     height={800}
                     priority
@@ -80,6 +89,8 @@ const ProjectLayout: React.FC<IProjectLayoutProps> = (props) => {
                 );
               })}
           </div>
+
+          <ProjectThumbnailModal thumbnail={selectedThumbnail} onClose={() => setSelectedThumbnail('')} />
         </article>
       </Section>
     </BaseLayout>

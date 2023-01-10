@@ -4,7 +4,7 @@ import PostAuthorDetails from '@modules/blog/components/post/post-author-details
 import type { BlogPostCompiled } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
 import Button from '@modules/ui/components/buttons/button';
-import Image from 'next/image';
+import Image from '@modules/ui/components/images/image';
 import { MDXRemote } from 'next-mdx-remote';
 
 import BaseLayout from '../../base/base-layout';

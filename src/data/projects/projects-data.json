@@ -57,8 +57,8 @@
     "title": "Toply",
     "description": "Toply is a simple to use and free web application that lets you visualize your most listened-to songs on Spotify.",
     "thumbnails": [
-      "/assets/projects/toply/toply-thumbnail.jpg",
-      "/assets/projects/toply/toply-thumbnail-2.jpg",
+      "/assets/projects/toply/toply-thumbnail-1.png",
+      "/assets/projects/toply/toply-thumbnail-2.png",
       "/assets/projects/toply/toply-thumbnail-3.png",
       "/assets/projects/toply/toply-thumbnail-4.png"
     ],

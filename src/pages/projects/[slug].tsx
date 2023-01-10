@@ -1,4 +1,5 @@
 import ProjectLayout from '@modules/layouts/components/project/components/project-layout';
+import ProjectThumbnailProvider from '@modules/projects/context/project-thumbnails-context';
 import { getAllProjectsSlugs, getProjectBySlug } from '@modules/projects/lib/project-utils';
 import type { Project } from '@modules/projects/types/projects.types';
 import type { GetStaticPaths, GetStaticProps } from 'next';
@@ -10,7 +11,11 @@ interface IProjectPageProps {
 
 const ProjectPage: React.FC<IProjectPageProps> = (props) => {
   const { project } = props;
-  return <ProjectLayout project={project} />;
+  return (
+    <ProjectThumbnailProvider>
+      <ProjectLayout project={project} />
+    </ProjectThumbnailProvider>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

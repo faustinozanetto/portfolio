@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from '@modules/ui/components/images/image';
 import React from 'react';
 import { FiCalendar } from 'react-icons/fi';
 
@@ -17,10 +17,10 @@ const PostCardAuthorDetails: React.FC<IPostCardAuthorDetailsProps> = (props) => 
       <Image
         src={author.image}
         alt={`Blog Author ${author.name}`}
+        priority
         width={45}
         height={45}
         className="rounded-3xl"
-        priority
       />
       <div className="flex flex-col">
         <span className="font-bold">{author.name}</span>

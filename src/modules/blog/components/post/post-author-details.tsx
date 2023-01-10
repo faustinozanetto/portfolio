@@ -1,5 +1,5 @@
 import type { BlogPostAuthor } from '@modules/blog/types/blog.types';
-import Image from 'next/image';
+import Image from '@modules/ui/components/images/image';
 import React from 'react';
 
 interface IPostAuthorDetailsProps {
