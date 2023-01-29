@@ -13,7 +13,7 @@ interface IBlogFeedProps {
 
 const BlogPostsFeed: React.FC<IBlogFeedProps> = (props) => {
   const { blogPosts } = props;
-  const isSmallDevice = useMediaQuery(`(max-width: ${theme.screens.sm}`);
+  const isMediumDevice = useMediaQuery(`(max-width: ${theme.screens.md}`);
 
   return (
     <CardsFeed
@@ -24,7 +24,7 @@ const BlogPostsFeed: React.FC<IBlogFeedProps> = (props) => {
       renderFeatured={(cardProps: BlogPost) => {
         return React.createElement(BlogPostCard, {
           blogPost: cardProps,
-          variant: isSmallDevice ? 'portrait' : 'landscape',
+          variant: isMediumDevice ? 'portrait' : 'landscape',
         });
       }}
     />

@@ -31,7 +31,10 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
         <Image
           src={thumbnail}
           alt={title}
-          className={clsx(variant === 'portrait' ? 'h-[180px]' : 'h-auto sm:h-[275px]', 'object-cover')}
+          className={clsx(
+            variant === 'portrait' ? 'h-[180px] w-full' : 'h-auto md:h-[275px]',
+            'bg-no-repeat object-cover'
+          )}
           width={500}
           height={500}
           priority
@@ -40,7 +43,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
         {/* Bottom Information */}
         <div className="flex w-full flex-col space-y-1 p-4 text-neutral-900 dark:text-neutral-100">
           {/* Title */}
-          <h2 className="text-lg font-semibold leading-snug tracking-tight sm:text-xl">
+          <h2 className="text-lg font-semibold leading-snug tracking-tight md:text-xl">
             <span
               className="bg-gradient-to-r from-primary-300 to-primary-200 bg-[length:0px_10px] bg-left-bottom
           bg-no-repeat

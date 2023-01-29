@@ -5,6 +5,7 @@ import { getAllProjects } from '@modules/projects/lib/project-utils';
 import type { Project } from '@modules/projects/types/projects.types';
 import Section from '@modules/sections/components/section/section';
 import clsx from 'clsx';
+import { m } from 'framer-motion';
 import type { GetStaticProps } from 'next';
 import React from 'react';
 
@@ -52,30 +53,62 @@ const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
           'Home page of my personal portfolio, where you can find more information about me and the projects ive worked on.',
       }}
     >
-      <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 sm:my-10 md:my-14">
-        <div className="flex flex-col space-y-4 text-neutral-900 dark:text-neutral-100 sm:space-y-8">
+      <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 md:my-10 lg:my-14">
+        <div className="flex flex-col space-y-4 text-neutral-900 dark:text-neutral-100 md:space-y-8">
           {/* Titles */}
-          <h2 className="text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:text-4xl md:text-5xl">
+          <m.h2
+            className="text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 md:text-4xl lg:text-5xl"
+            initial={{ opacity: 0, translateY: -20 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{
+              type: 'tween',
+              duration: 0.15,
+            }}
+          >
             Take a look at all the projects I&apos;ve worked on!
-          </h2>
+          </m.h2>
 
           {/* Paragraph */}
-          <p className="text-base font-medium sm:text-lg">
+          <m.p
+            className="text-center text-base md:text-lg"
+            initial={{ opacity: 0, translateY: -20 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{
+              type: 'tween',
+              duration: 0.25,
+            }}
+          >
             Look through my latest post in my blog to stay up to date with new projects and news about my personal and
             profesional carreer in the it industry. You&apos;ll find posts detailing the development of my personal
             projects and other topics.
-          </p>
+          </m.p>
           <div className="flex flex-col items-start">
-            <h3 className="text-center text-2xl font-extrabold leading-10 text-primary-500 dark:text-primary-300">
+            <m.h3
+              className="text-center text-2xl font-extrabold leading-10 text-primary-500 dark:text-primary-300"
+              initial={{ opacity: 0, translateY: -20 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{
+                type: 'tween',
+                duration: 0.35,
+              }}
+            >
               Filter by Technologies
-            </h3>
-            <div className="flex flex-wrap items-center justify-center space-x-2">
+            </m.h3>
+            <m.div
+              className="flex flex-wrap items-center justify-center space-x-2"
+              initial={{ opacity: 0, translateY: -20 }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              transition={{
+                type: 'tween',
+                duration: 0.25,
+              }}
+            >
               {posibleFilters.concat('all').map((fil) => {
                 return (
                   <span
                     key={fil}
                     className={clsx(
-                      'cursor-pointer  hover:text-primary-500 dark:hover:text-primary-300 sm:text-lg',
+                      'cursor-pointer  hover:text-primary-500 dark:hover:text-primary-300 md:text-lg',
                       selectedFilter === fil
                         ? 'font-bold text-primary-500 dark:text-primary-300'
                         : 'text-neutral-800 dark:text-neutral-300'
@@ -86,7 +119,7 @@ const ProjectsPage: React.FC<IProjectsPageProps> = (props) => {
                   </span>
                 );
               })}
-            </div>
+            </m.div>
           </div>
           <ProjectsFeed projects={filteredData} />
         </div>

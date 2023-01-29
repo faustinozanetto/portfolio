@@ -28,11 +28,11 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
         <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
           {/* Metadata */}
           <div className="flex flex-col">
-            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:mb-4 sm:text-5xl sm:leading-normal md:mb-6">
+            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 md:mb-6 md:text-5xl md:leading-normal">
               {blogPostCompiled.blogPost.metadata.title}
             </h1>
             {/* Description */}
-            <p className="text-base font-medium sm:text-lg">{blogPostCompiled.blogPost.metadata.description}</p>
+            <p className="text-base md:text-lg">{blogPostCompiled.blogPost.metadata.description}</p>
 
             {/* Author & Date */}
             <PostCardAuthorDetails
@@ -50,7 +50,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
               width={1000}
               height={1000}
               priority
-              className="my-2 h-auto w-full rounded-xl drop-shadow-xl sm:my-4"
+              className="my-2 h-auto w-full rounded-xl drop-shadow-xl md:my-4"
             />
           </div>
           {/* Actual post from mdx file */}

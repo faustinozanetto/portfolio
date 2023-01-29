@@ -11,12 +11,12 @@ const Navbar: React.FC<INavbarProps> = (props) => {
 
   return (
     <div className="flex w-full bg-neutral-200 drop-shadow-md dark:bg-neutral-800">
-      <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 sm:justify-between">
+      <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 md:justify-between">
         {/* Left: NavbarLogo */}
         <NavbarLogo />
 
         {/* RIGHT */}
-        <div className="hidden sm:flex sm:items-center sm:justify-center sm:space-x-6">
+        <div className="hidden md:flex md:items-center md:justify-center md:space-x-6">
           {/* Links */}
           <NavbarLink href="/">Home</NavbarLink>
           <NavbarLink href="/blog">Blog</NavbarLink>

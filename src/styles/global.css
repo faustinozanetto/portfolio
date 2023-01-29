@@ -22,3 +22,10 @@ body {
 .skeleton * {
   visibility: hidden;
 }
+
+.truncate-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

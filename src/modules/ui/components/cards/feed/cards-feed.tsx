@@ -27,13 +27,13 @@ const CardsFeed: React.FC<CardsFeedProps> = (props) => {
     const featured = renderFeatured(data[0]);
     return (
       <>
-        <div className="sm:col-span-2 md:col-span-3">{featured}</div>
+        <div className="md:col-span-3">{featured}</div>
         {data.slice(1, data.length).map(render)}
       </>
     );
   }, [data, render, renderFeatured]);
 
-  return <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">{content}</div>;
+  return <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">{content}</div>;
 };
 
 export default CardsFeed;

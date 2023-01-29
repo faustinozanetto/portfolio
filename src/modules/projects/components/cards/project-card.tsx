@@ -30,7 +30,7 @@ const ProjectCard: React.FC<IProjectCardProps> = (props) => {
         })}
       </div>
       {/* Description */}
-      <p className="text-sm sm:text-base">{project.metadata.description}</p>
+      <p className="truncate-text text-sm md:text-base">{project.metadata.description}</p>
     </Card>
   );
 };

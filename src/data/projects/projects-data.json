@@ -4,6 +4,7 @@
     "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
     "thumbnails": ["/assets/projects/mecha-type/mecha-type-thumbnail.png"],
     "technologies": ["nextjs", "nestjs", "typescript", "tailwindcss"],
+    "date": "08/10/21",
     "projectLink": {
       "exists": true,
       "link": "https://mechatype.vercel.app/"
@@ -23,6 +24,7 @@
       "/assets/projects/snappy/snappy-thumbnail-4.png"
     ],
     "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
+    "date": "05/22/22",
     "projectLink": {
       "exists": true,
       "link": "https://snappyapp.vercel.app/"
@@ -44,6 +46,7 @@
       "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-6.png"
     ],
     "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
+    "date": "07/15/22",
     "projectLink": {
       "exists": true,
       "link": "https://klangscoffee.vercel.app/"
@@ -63,6 +66,7 @@
       "/assets/projects/toply/toply-thumbnail-4.png"
     ],
     "technologies": ["nextjs", "eslint", "typescript", "tailwindcss"],
+    "date": "10/20/22",
     "projectLink": {
       "exists": true,
       "link": "https://toply.vercel.app/"
@@ -77,6 +81,7 @@
     "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.",
     "thumbnails": ["/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"],
     "technologies": ["nextjs", "redux", "typescript", "tailwindcss"],
+    "date": "09/19/22",
     "projectLink": {
       "exists": true,
       "link": "https://frontend-tools.vercel.app/"
@@ -99,12 +104,34 @@
       "/assets/projects/retro-engine/retro-engine-thumbnail-7.png"
     ],
     "technologies": ["c++", "opengl", "lua", "assimp", "glfw", "glad", "glm", "entt"],
+    "date": "12/22/22",
     "projectLink": {
       "exists": false
     },
     "repoLink": {
       "exists": true,
       "link": "https://github.com/faustinozanetto/RetroEngine"
+    }
+  },
+  {
+    "title": "Iconzy",
+    "description": "Iconzy is a personal project for customizing and browsing free icon packs for your personal projects.",
+    "thumbnails": [
+      "/assets/projects/iconzy/iconzy-thumbnail-1.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-2.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-3.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-4.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-5.png"
+    ],
+    "technologies": ["react", "typescript", "tailwindcss", "husky", "nextjs"],
+    "date": "01/15/23",
+    "projectLink": {
+      "exists": true,
+      "link": "https://iconzyeditor.vercel.app/icons"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/iconzy"
     }
   }
 ]

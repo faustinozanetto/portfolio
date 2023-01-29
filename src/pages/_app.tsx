@@ -4,6 +4,7 @@ import 'katex/dist/katex.css';
 
 import ThemeProvider from '@modules/theme/context/theme-context';
 import { Open_Sans } from '@next/font/google';
+import { domAnimation, LazyMotion } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import React from 'react';
 
@@ -15,11 +16,13 @@ const Portfolio: React.FC<PortfolioProps> = (props) => {
   const { pageProps, Component } = props;
 
   return (
-    <main className={`${openSans.variable} font-sans`}>
-      <ThemeProvider>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </main>
+    <LazyMotion features={domAnimation}>
+      <main className={`${openSans.variable} font-sans`}>
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </main>
+    </LazyMotion>
   );
 };
 

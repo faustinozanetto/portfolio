@@ -55,7 +55,7 @@ export const getAllProjectsSlugs = (): ProjectSlug[] => {
 export const getAllProjects = async (): Promise<Project[]> => {
   const mappedProjects: Project[] = await Promise.all(
     projects.map(async (project) => {
-      const projectStars = await await getProjectStars(project);
+      const projectStars = await getProjectStars(project);
 
       return {
         metadata: {
@@ -67,7 +67,12 @@ export const getAllProjects = async (): Promise<Project[]> => {
     })
   );
 
-  return mappedProjects;
+  return mappedProjects.sort((a, b) => {
+    const aDate = new Date(a.metadata.date);
+    const bDate = new Date(b.metadata.date);
+
+    return bDate.getTime() - aDate.getTime();
+  });
 };
 
 /**

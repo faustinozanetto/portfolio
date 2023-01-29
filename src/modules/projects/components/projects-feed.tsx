@@ -13,7 +13,7 @@ interface IProjectsFeedProps {
 
 const ProjectsFeed: React.FC<IProjectsFeedProps> = (props) => {
   const { projects } = props;
-  const isSmallDevice = useMediaQuery(`(max-width: ${theme.screens.sm}`);
+  const isMediumDevice = useMediaQuery(`(max-width: ${theme.screens.md}`);
 
   return (
     <CardsFeed
@@ -24,7 +24,7 @@ const ProjectsFeed: React.FC<IProjectsFeedProps> = (props) => {
       renderFeatured={(cardProps: Project) => {
         return React.createElement(ProjectCard, {
           project: cardProps,
-          variant: isSmallDevice ? 'portrait' : 'landscape',
+          variant: isMediumDevice ? 'portrait' : 'landscape',
         });
       }}
     />

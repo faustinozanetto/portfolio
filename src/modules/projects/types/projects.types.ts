@@ -10,6 +10,7 @@ export type ProjectData = {
   technologies: string[];
   projectLink: ProjectLink;
   repoLink: ProjectLink;
+  date: string;
   stars?: number;
 };
 
