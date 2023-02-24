@@ -18,9 +18,9 @@ const PostCardAuthorDetails: React.FC<IPostCardAuthorDetailsProps> = (props) => 
         src={author.image}
         alt={`Blog Author ${author.name}`}
         priority
-        width={45}
-        height={45}
-        className="rounded-3xl"
+        width={85}
+        height={85}
+        className="h-12 w-12 rounded-3xl md:h-16 md:w-16"
       />
       <div className="flex flex-col">
         <span className="font-bold">{author.name}</span>

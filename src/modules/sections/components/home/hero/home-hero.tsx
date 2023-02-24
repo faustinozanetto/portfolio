@@ -61,7 +61,7 @@ const HomeHero: React.FC<IHomeHeroProps> = (props) => {
             duration: 0.25,
             delay: 0.3,
           }}
-          className="mt-2 flex flex-col items-center space-y-2 md:mt-4 md:flex-row md:space-y-0 md:space-x-4"
+          className="mt-4 flex flex-col items-center space-y-2 md:mt-6 md:flex-row md:space-y-0 md:space-x-4"
         >
           <Button className="w-full md:w-auto">Contact Me</Button>
           <LinkButton

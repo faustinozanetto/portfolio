@@ -27,7 +27,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
       <Section>
         <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
           {/* Metadata */}
-          <div className="flex flex-col">
+          <div className="flex w-full flex-col space-y-2">
             <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 md:mb-6 md:text-5xl md:leading-normal">
               {blogPostCompiled.blogPost.metadata.title}
             </h1>
@@ -54,7 +54,7 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
             />
           </div>
           {/* Actual post from mdx file */}
-          <div className="blog-post prose prose-neutral w-full max-w-none py-4 dark:prose-invert">
+          <div className="blog-post prose-sm w-full !max-w-full py-4 dark:prose-invert md:prose-base lg:prose">
             <MDXRemote compiledSource={blogPostCompiled.compiledSource} components={components} />
           </div>
           {/* Author bottom details */}

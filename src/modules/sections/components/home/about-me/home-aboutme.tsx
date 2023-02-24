@@ -36,7 +36,7 @@ const HomeAbutMe: React.FC<IHomeAboutMeProps> = (props) => {
         </m.div>
 
         {/* Right */}
-        <div className="flex flex-col items-center space-y-2 text-neutral-900 dark:text-neutral-100 md:items-start md:space-y-4">
+        <div className="flex flex-col items-center space-y-2 text-center text-neutral-900 dark:text-neutral-100 md:items-start md:space-y-4 md:text-start">
           <m.h2
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}

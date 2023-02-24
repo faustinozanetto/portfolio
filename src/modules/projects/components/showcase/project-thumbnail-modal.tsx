@@ -36,7 +36,7 @@ const ProjectThumbnailModal: React.FC<IProjectThumbnailModalProps> = (props) => 
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="max-w-4xl overflow-hidden rounded-2xl bg-neutral-200 p-4 text-left align-middle shadow-xl transition-all dark:bg-neutral-800">
+              <Dialog.Panel className="max-w-2xl overflow-hidden rounded-2xl bg-neutral-200 p-2 text-left align-middle shadow-xl transition-all dark:bg-neutral-800 md:max-w-3xl md:p-4">
                 {thumbnail && (
                   <Image
                     src={thumbnail}

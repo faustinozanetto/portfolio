@@ -35,7 +35,7 @@ const HomeBlog: React.FC<IHomeBlogProps> = (props) => {
             duration: 0.25,
             delay: 0.15,
           }}
-          className="text-base md:text-center md:text-lg"
+          className="text-center text-base md:text-lg"
         >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore odio praesentium placeat culpa esse
           doloribus in quaerat facilis quidem corporis, nisi error, quis maxime enim saepe! Incidunt quis aliquam,

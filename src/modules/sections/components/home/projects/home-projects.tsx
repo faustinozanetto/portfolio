@@ -35,7 +35,7 @@ const HomeProjects: React.FC<IHomeProjectsProp> = (props) => {
             duration: 0.25,
             delay: 0.15,
           }}
-          className="text-base md:text-center md:text-lg"
+          className="text-center text-base md:text-lg"
         >
           Below are a collection of my personal and profesional projects I have completed in my past years of
           experience. You will encounter with different areas such as web development or computer graphics, using a
