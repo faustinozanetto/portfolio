@@ -1,5 +1,5 @@
+import Image from '@modules/ui/components/images/image';
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -28,21 +28,22 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
         )}
       >
         {/* Image */}
-        <div className={clsx(variant === 'portrait' ? 'h-[180px]' : 'h-auto sm:h-[275px]')}>
-          <Image
-            src={thumbnail}
-            alt={title}
-            className="h-full w-full bg-cover object-cover"
-            width={500}
-            height={500}
-            loading="lazy"
-          />
-        </div>
+        <Image
+          src={thumbnail}
+          alt={title}
+          className={clsx(
+            variant === 'portrait' ? 'h-[180px] w-full' : 'h-auto md:h-[275px]',
+            'bg-no-repeat object-cover'
+          )}
+          width={500}
+          height={500}
+          priority
+        />
 
         {/* Bottom Information */}
         <div className="flex w-full flex-col space-y-1 p-4 text-neutral-900 dark:text-neutral-100">
           {/* Title */}
-          <h2 className="text-lg font-semibold leading-snug tracking-tight sm:text-xl">
+          <h2 className="text-lg font-semibold leading-snug tracking-tight md:text-xl">
             <span
               className="bg-gradient-to-r from-primary-300 to-primary-200 bg-[length:0px_10px] bg-left-bottom
           bg-no-repeat

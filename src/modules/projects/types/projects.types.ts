@@ -1,10 +1,17 @@
+export type ProjectLink = {
+  exists: boolean;
+  link?: string;
+};
+
 export type ProjectData = {
   title: string;
   description: string;
-  image: string;
+  thumbnails: string[];
   technologies: string[];
-  projectLink: string;
-  repoLink: string;
+  projectLink: ProjectLink;
+  repoLink: ProjectLink;
+  date: string;
+  stars?: number;
 };
 
 export type ProjectSlug = {

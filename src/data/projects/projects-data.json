@@ -2,49 +2,157 @@
   {
     "title": "Mecha Type",
     "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
-    "image": "/assets/projects/mecha-type/mecha-type-thumbnail.png",
+    "thumbnails": ["/assets/projects/mecha-type/mecha-type-thumbnail.png"],
     "technologies": ["nextjs", "nestjs", "typescript", "tailwindcss"],
-    "projectLink": "https://mechatype.vercel.app/",
-    "repoLink": "https://github.com/faustinozanetto/mecha-type-client"
+    "date": "08/10/21",
+    "projectLink": {
+      "exists": true,
+      "link": "https://mechatype.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/mecha-type-client"
+    }
   },
   {
     "title": "Snappy",
     "description": "Snappy is a web created with NextJS. It's main purpose is to create code snippets that are highly customizable with ease. It features multiple configuration options and a set of ready to use presets.",
-    "image": "/assets/projects/snappy/snappy-thumbnail.png",
+    "thumbnails": [
+      "/assets/projects/snappy/snappy-thumbnail-1.png",
+      "/assets/projects/snappy/snappy-thumbnail-2.png",
+      "/assets/projects/snappy/snappy-thumbnail-3.png",
+      "/assets/projects/snappy/snappy-thumbnail-4.png"
+    ],
     "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
-    "projectLink": "https://snappyapp.vercel.app/",
-    "repoLink": "https://github.com/faustinozanetto/snappy"
+    "date": "05/22/22",
+    "projectLink": {
+      "exists": true,
+      "link": "https://snappyapp.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/snappy"
+    }
   },
   {
     "title": "Klangs Coffee",
     "description": "Klangs Coffee is a fictional coffee shop located in Buenos Aires, Argentina. It was created to showcase my skills with CSS and React. It features a simple layout of multiple sections.",
-    "image": "/assets/projects/klangs-coffee/klangs-coffee-thumbnail.jpg",
+    "thumbnails": [
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-1.png",
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-2.png",
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-3.png",
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-4.png",
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-5.png",
+      "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-6.png"
+    ],
     "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
-    "projectLink": "https://klangscoffee.vercel.app/",
-    "repoLink": "https://github.com/faustinozanetto/coffee-shop"
+    "date": "07/15/22",
+    "projectLink": {
+      "exists": true,
+      "link": "https://klangscoffee.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/coffee-shop"
+    }
   },
   {
     "title": "Toply",
-    "description": "Toply is a simple to use and free web application that lets you visualize your most listened-to songs on Spotify.",
-    "image": "/assets/projects/toply/toply-thumbnail.jpg",
-    "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
-    "projectLink": "https://toply.vercel.app/",
-    "repoLink": "https://github.com/faustinozanetto/toply"
+    "description": "Toply is a simple to use and free web application that lets you visualize your most listened-to songs and artists on Spotify. The user is also capable of generating a image that can be shared in their social media!",
+    "thumbnails": [
+      "/assets/projects/toply/toply-thumbnail-1.png",
+      "/assets/projects/toply/toply-thumbnail-2.png",
+      "/assets/projects/toply/toply-thumbnail-3.png",
+      "/assets/projects/toply/toply-thumbnail-4.png"
+    ],
+    "technologies": ["nextjs", "eslint", "typescript", "tailwindcss"],
+    "date": "10/20/22",
+    "projectLink": {
+      "exists": true,
+      "link": "https://toply.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/toply"
+    }
   },
   {
     "title": "Frontend Tools",
     "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.",
-    "image": "/assets/projects/frontend-tools/frontend-tools-thumbnail.png",
+    "thumbnails": ["/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"],
     "technologies": ["nextjs", "redux", "typescript", "tailwindcss"],
-    "projectLink": "https://frontend-tools.vercel.app/",
-    "repoLink": "https://github.com/faustinozanetto/frontend-tools"
+    "date": "09/19/22",
+    "projectLink": {
+      "exists": true,
+      "link": "https://frontend-tools.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/frontend-tools"
+    }
   },
   {
     "title": "Retro Engine",
     "description": "Retro Engine is a WIP c++ project focused on implementing several computer graphics principles into a complex set of technologies and tools such as OpenGL, GLFW, Assimp and more.",
-    "image": "/assets/projects/frontend-tools/frontend-tools-thumbnail.png",
+    "thumbnails": [
+      "/assets/projects/retro-engine/retro-engine-thumbnail-1.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-2.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-3.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-4.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-5.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-6.png",
+      "/assets/projects/retro-engine/retro-engine-thumbnail-7.png"
+    ],
     "technologies": ["c++", "opengl", "lua", "assimp", "glfw", "glad", "glm", "entt"],
-    "projectLink": "https://github.com/faustinozanetto/RetroEngine",
-    "repoLink": ""
+    "date": "12/22/22",
+    "projectLink": {
+      "exists": false
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/RetroEngine"
+    }
+  },
+  {
+    "title": "Iconzy",
+    "description": "Iconzy is a personal project for customizing and browsing free icon packs for your personal projects.",
+    "thumbnails": [
+      "/assets/projects/iconzy/iconzy-thumbnail-1.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-2.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-3.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-4.png",
+      "/assets/projects/iconzy/iconzy-thumbnail-5.png"
+    ],
+    "technologies": ["react", "typescript", "tailwindcss", "husky", "nextjs"],
+    "date": "01/15/23",
+    "projectLink": {
+      "exists": true,
+      "link": "https://iconzy.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/iconzy"
+    }
+  },
+  {
+    "title": "Digital Agency",
+    "description": "Digital Agency is a simple landing page for a fictional Marketing Agency.",
+    "thumbnails": [
+      "/assets/projects/digital-agency/digital-agency-thumbnail-1.png",
+      "/assets/projects/digital-agency/digital-agency-thumbnail-2.png",
+      "/assets/projects/digital-agency/digital-agency-thumbnail-3.png",
+      "/assets/projects/digital-agency/digital-agency-thumbnail-4.png",
+      "/assets/projects/digital-agency/digital-agency-thumbnail-5.png"
+    ],
+    "technologies": ["react", "tailwindcss", "typescript", "vitejs"],
+    "date": "08/18/22",
+    "projectLink": {
+      "exists": true,
+      "link": "https://digital-agency-sigma.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/digital-agency"
+    }
   }
 ]

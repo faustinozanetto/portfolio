@@ -17,7 +17,7 @@ const ProjectCard: React.FC<IProjectCardProps> = (props) => {
     <Card
       href={`/projects/${project.slug.slug}`}
       title={project.metadata.title}
-      thumbnail={project.metadata.image}
+      thumbnail={project.metadata.thumbnails.length && project.metadata.thumbnails[0]}
       variant={variant}
     >
       <div className="flex flex-wrap space-x-1 text-primary-600 opacity-70 dark:text-primary-300">
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<IProjectCardProps> = (props) => {
         })}
       </div>
       {/* Description */}
-      <p className="text-sm sm:text-base">{project.metadata.description}</p>
+      <p className="truncate-text text-sm md:text-base">{project.metadata.description}</p>
     </Card>
   );
 };

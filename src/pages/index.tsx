@@ -40,8 +40,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = await getAllBlogPosts().then((posts) => {
     return posts.slice(0, 4);
   });
-  const projects = getAllProjects().slice(0, 4);
-  return { props: { blogPosts, projects } };
+  const projects: Project[] = await getAllProjects();
+  return { props: { blogPosts, projects: projects.slice(0, 4) } };
 };
 
 export default HomePage;

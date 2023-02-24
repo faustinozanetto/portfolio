@@ -4,7 +4,7 @@ import PostAuthorDetails from '@modules/blog/components/post/post-author-details
 import type { BlogPostCompiled } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
 import Button from '@modules/ui/components/buttons/button';
-import Image from 'next/image';
+import Image from '@modules/ui/components/images/image';
 import { MDXRemote } from 'next-mdx-remote';
 
 import BaseLayout from '../../base/base-layout';
@@ -27,12 +27,12 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
       <Section>
         <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
           {/* Metadata */}
-          <div className="flex flex-col">
-            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 sm:mb-4 sm:text-5xl sm:leading-normal md:mb-6">
+          <div className="flex w-full flex-col space-y-2">
+            <h1 className="mb-2 text-center text-3xl font-extrabold leading-10 text-primary-500 dark:text-primary-300 md:mb-6 md:text-5xl md:leading-normal">
               {blogPostCompiled.blogPost.metadata.title}
             </h1>
             {/* Description */}
-            <p className="text-base font-medium sm:text-lg">{blogPostCompiled.blogPost.metadata.description}</p>
+            <p className="text-base md:text-lg">{blogPostCompiled.blogPost.metadata.description}</p>
 
             {/* Author & Date */}
             <PostCardAuthorDetails
@@ -49,11 +49,12 @@ const BlogLayout: React.FC<IBlogLayoutProps> = (props) => {
               alt="Blog post thumbnail"
               width={1000}
               height={1000}
-              className="my-2 h-auto w-full rounded-xl drop-shadow-xl sm:my-4"
+              priority
+              className="my-2 h-auto w-full rounded-xl drop-shadow-xl md:my-4"
             />
           </div>
           {/* Actual post from mdx file */}
-          <div className="blog-post prose prose-neutral w-full max-w-none py-4 dark:prose-invert">
+          <div className="blog-post prose-sm w-full !max-w-full py-4 dark:prose-invert md:prose-base lg:prose">
             <MDXRemote compiledSource={blogPostCompiled.compiledSource} components={components} />
           </div>
           {/* Author bottom details */}
