@@ -4,11 +4,11 @@ import BlogLayout from '@modules/layouts/components/blog/components/blog-layout'
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 
-interface IBlogPostPageProps {
+type BlogPostPageProps = {
   blogPostCompiled: BlogPostCompiled;
-}
+};
 
-const BlogPostPage: React.FC<IBlogPostPageProps> = (props) => {
+const BlogPostPage: React.FC<BlogPostPageProps> = (props) => {
   const { blogPostCompiled } = props;
   return <BlogLayout blogPostCompiled={blogPostCompiled} />;
 };

@@ -1,121 +1,91 @@
 import clsx from 'clsx';
 import React from 'react';
 
-type AvailableColorSchemes =
-  | 'primary'
-  | 'red'
-  | 'orange'
-  | 'yellow'
-  | 'green'
-  | 'teal'
-  | 'blue'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
+import {
+  BUTTON_BASE_STYLES,
+  BUTTON_COLOR_SCHEMES,
+  BUTTON_SIZES,
+  ICON_END_CLASSES,
+  ICON_SIZE_CLASSES,
+  ICON_START_CLASSES,
+} from './button-styles';
 
-type ColorSchemes = {
-  [key in AvailableColorSchemes]: { outline: string; solid: string };
+export type HTMLButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+
+export type ButtonVariants = 'outline' | 'solid' | 'ghost';
+export type ButtonSizes = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
+export type ButtonColorSchemes = 'primary' | 'secondary' | 'danger';
+
+export type AvailableColorSchemes = {
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  [key in ButtonColorSchemes]: { [key in ButtonVariants]: string };
 };
 
-const PARSED_COLOR_SCHEMES: ColorSchemes = {
-  primary: {
-    outline: 'hover:bg-primary-300 hover:text-primary-800 focus:ring-primary-300',
-    solid: 'bg-primary-200 text-primary-800 hover:bg-primary-300 focus:ring-primary-300',
-  },
-  red: {
-    outline: 'hover:bg-red-300 hover:text-red-800 focus:ring-red-300',
-    solid: 'bg-red-200 text-red-800 hover:bg-red-300 focus:ring-red-300',
-  },
-  pink: {
-    outline: 'hover:bg-pink-300 hover:text-pink-800 focus:ring-pink-300',
-    solid: 'bg-pink-200 text-pink-800 hover:bg-pink-300 focus:ring-pink-300',
-  },
-  orange: {
-    outline: 'hover:bg-orange-300 hover:text-orange-800 focus:ring-orange-300',
-    solid: 'bg-orange-200 text-orange-800 hover:bg-orange-300 focus:ring-orange-300',
-  },
-  yellow: {
-    outline: 'hover:bg-yellow-300 hover:text-yellow-800 focus:ring-yellow-300',
-    solid: 'bg-yellow-200 text-yellow-800 hover:bg-yellow-300 focus:ring-yellow-300',
-  },
-  green: {
-    outline: 'hover:bg-green-300 hover:text-green-800 focus:ring-green-300',
-    solid: 'bg-green-200 text-green-800 hover:bg-green-300 focus:ring-green-300',
-  },
-  teal: {
-    outline: 'hover:bg-teal-300 hover:text-teal-800 focus:ring-teal-300',
-    solid: 'bg-teal-200 text-teal-800 hover:bg-teal-300 focus:ring-teal-300',
-  },
-  blue: {
-    outline: 'hover:bg-blue-300 hover:text-blue-800 focus:ring-blue-300',
-    solid: 'bg-blue-200 text-blue-800 hover:bg-blue-300 focus:ring-blue-300',
-  },
-  indigo: {
-    outline: 'hover:bg-indigo-300 hover:text-indigo-800 focus:ring-indigo-300',
-    solid: 'bg-indigo-200 text-indigo-800 hover:bg-indigo-300 focus:ring-indigo-300',
-  },
-  purple: {
-    outline: 'hover:bg-purple-300 hover:text-purple-800 focus:ring-purple-300',
-    solid: 'bg-purple-200 text-purple-800 hover:bg-purple-300 focus:ring-purple-300',
-  },
+export type AvaiableSizeVariants = {
+  [key in ButtonSizes]: string;
 };
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  children?: React.ReactNode;
-  /** Optional: Left icon of the button. */
-  leftIcon?: JSX.Element;
-  /** Optional: Right icon of the button. */
-  rightIcon?: JSX.Element;
+export type ButtonStyle = {
   /** Optional: Size of the button, defaults to md. */
-  size?: 'sm' | 'md' | 'lg';
+  size?: ButtonSizes;
   /** Optional: Variant of the button, defaults to solid. */
-  variant?: 'outline' | 'solid';
+  variant?: ButtonVariants;
   /** Optional: Color scheme of the button, defaults to primary. */
-  colorScheme?: AvailableColorSchemes;
+  colorScheme?: ButtonColorSchemes;
 };
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
-  const { children, leftIcon, rightIcon, colorScheme = 'primary', size = 'md', variant = 'solid', ...rest } = props;
+type ButtonIconPosition = 'start' | 'end';
 
-  const getButtonSizes = (): string => {
-    switch (size) {
-      case 'sm':
-        return 'py-2.5 px-3 text-base';
-      case 'md':
-        return 'px-5 py-2.5 text-md';
-      case 'lg':
-        return 'px-10 py-3.5 text-lg';
-      default:
-        return 'py-3 px-2.5 text-base';
-    }
-  };
+export type ButtonProps = ButtonStyle & {
+  disabled?: boolean;
+  className?: string;
+  icon?: React.ReactElement;
+  iconPosition?: ButtonIconPosition;
+  children?: React.ReactNode;
+};
 
-  const getButtonVariants = (): string => {
-    return variant === 'solid' ? PARSED_COLOR_SCHEMES[colorScheme].solid : PARSED_COLOR_SCHEMES[colorScheme].outline;
-  };
+export type ButtonContentProps = ButtonProps & {
+  loading?: boolean;
+};
 
+const getButtonStyles = (style: ButtonStyle, ...rest: string[]): string => {
+  const { size = 'base', colorScheme = 'primary', variant = 'solid' } = style;
+  return clsx(BUTTON_BASE_STYLES, BUTTON_SIZES[size], BUTTON_COLOR_SCHEMES[colorScheme][variant], ...rest);
+};
+
+const ButtonContent: React.FC<ButtonContentProps> = (props) => {
+  const { loading, icon, iconPosition = 'start', size = 'base', children } = props;
+
+  return (
+    <React.Fragment>
+      {loading && <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">Loading</span>}
+      {icon && iconPosition === 'start' && (
+        <span className={clsx({ invisible: loading }, ICON_SIZE_CLASSES[size], ICON_START_CLASSES[size])}>{icon}</span>
+      )}
+      <span className={clsx({ invisible: loading })}>{children}</span>
+      {icon && iconPosition === 'end' && (
+        <span className={clsx({ invisible: loading }, ICON_SIZE_CLASSES[size], ICON_END_CLASSES[size])}>{icon}</span>
+      )}
+    </React.Fragment>
+  );
+};
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   // eslint-disable-next-line unused-imports/no-unused-vars
-  const { className, ...excludedRest } = rest;
+  const { className = '', disabled, size, variant, colorScheme, icon, ...rest } = props;
 
   return (
     <button
       ref={ref}
+      className={getButtonStyles({ size, variant, colorScheme }, className)}
       type="button"
-      className={clsx(
-        `inline-flex items-center justify-center rounded-lg text-base font-semibold transition-all focus:outline-none focus:ring-4`,
-        getButtonSizes(),
-        getButtonVariants(),
-        rest.className
-      )}
-      {...excludedRest}
+      aria-disabled={disabled}
+      disabled={disabled}
+      {...rest}
     >
-      {leftIcon && <div className="inline-flex shrink-0 self-center pr-1">{leftIcon}</div>}
-      {children}
-      {rightIcon && <div className="inline-flex shrink-0 self-center pl-1">{rightIcon}</div>}
+      <ButtonContent {...props} />
     </button>
   );
 });
 
 Button.displayName = 'Button';
-
-export default Button;

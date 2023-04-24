@@ -3,11 +3,7 @@ import Section from '@modules/sections/components/section/section';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
-interface INotFoundPageProps {}
-
-const NotFoundPage: React.FC<INotFoundPageProps> = (props) => {
-  const {} = props;
-
+const NotFoundPage: React.FC = () => {
   return (
     <BaseLayout
       headProps={{

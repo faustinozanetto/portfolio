@@ -81,9 +81,9 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
       const serialized = await getSerializedContent(fileContents);
 
       const metadata: BlogPostMetadata = {
-        title: serialized.frontmatter.title,
-        description: serialized.frontmatter.description,
-        thumbnail: serialized.frontmatter.thumbnail,
+        title: serialized.frontmatter.title as string,
+        description: serialized.frontmatter.description as string,
+        thumbnail: serialized.frontmatter.thumbnail as string,
         tags: serialized.frontmatter.tags as unknown as string[],
         date: serialized.frontmatter.date as unknown as Date,
         author: serialized.frontmatter.author as unknown as BlogPostAuthor,
@@ -114,9 +114,9 @@ export const getBlogPostBySlug = async (slug: BlogPostSlug): Promise<BlogPostCom
       const fileContents = fs.readFileSync(path, { encoding: 'utf-8', flag: 'r' });
       getSerializedContent(fileContents).then((serialized) => {
         const metadata: BlogPostMetadata = {
-          title: serialized.frontmatter.title,
-          description: serialized.frontmatter.description,
-          thumbnail: serialized.frontmatter.thumbnail,
+          title: serialized.frontmatter.title as string,
+          description: serialized.frontmatter.description as string,
+          thumbnail: serialized.frontmatter.thumbnail as string,
           tags: serialized.frontmatter.tags as unknown as string[],
           date: serialized.frontmatter.date as unknown as Date,
           author: serialized.frontmatter.author as unknown as BlogPostAuthor,

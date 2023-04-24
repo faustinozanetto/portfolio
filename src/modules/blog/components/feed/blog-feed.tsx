@@ -6,12 +6,12 @@ import theme from 'tailwindcss/defaultTheme';
 
 import BlogPostCard from '../cards/blog-post-card';
 
-interface IBlogFeedProps {
+type BlogFeedProps = {
   /** Blog posts to display in the feed */
   blogPosts: BlogPost[];
-}
+};
 
-const BlogPostsFeed: React.FC<IBlogFeedProps> = (props) => {
+const BlogPostsFeed: React.FC<BlogFeedProps> = (props) => {
   const { blogPosts } = props;
   const isMediumDevice = useMediaQuery(`(max-width: ${theme.screens.md}`);
 

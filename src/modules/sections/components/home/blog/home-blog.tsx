@@ -6,47 +6,47 @@ import React from 'react';
 
 import Section from '../../section/section';
 
-interface IHomeBlogProps {
+type HomeBlogProps = {
   blogPosts: BlogPost[];
-}
+};
 
-const HomeBlog: React.FC<IHomeBlogProps> = (props) => {
+const HomeBlog: React.FC<HomeBlogProps> = (props) => {
   const { blogPosts } = props;
   return (
     <Section>
-      <div className="flex flex-col items-center justify-center space-y-4 text-neutral-900 dark:text-neutral-100">
-        {/* Heading */}
-        <m.h2
-          initial={{ opacity: 0, translateY: -20 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          transition={{
-            type: 'tween',
-            duration: 0.25,
-          }}
-          className="text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:text-5xl"
-        >
-          Checkout my Blog
-        </m.h2>
-        <m.p
-          initial={{ opacity: 0, translateY: -20 }}
-          whileInView={{ opacity: 1, translateY: 0 }}
-          transition={{
-            type: 'tween',
-            duration: 0.25,
-            delay: 0.15,
-          }}
-          className="text-center text-base md:text-lg"
-        >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore odio praesentium placeat culpa esse
-          doloribus in quaerat facilis quidem corporis, nisi error, quis maxime enim saepe! Incidunt quis aliquam,
-          blanditiis nisi ratione maxime sapiente provident aut culpa autem alias soluta?
-        </m.p>
-        {/* Feed */}
-        <BlogFeed blogPosts={blogPosts} />
-        <LinkButton className="w-full md:w-auto" href="/blog">
-          Checkout More
-        </LinkButton>
-      </div>
+      {/* Heading */}
+      <m.h2
+        initial={{ opacity: 0, translateY: -20 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: 'tween',
+          duration: 0.25,
+        }}
+        className="mb-2 text-3xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-4xl lg:text-5xl"
+      >
+        Checkout my Blog
+      </m.h2>
+      <m.p
+        initial={{ opacity: 0, translateY: -20 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: 'tween',
+          duration: 0.25,
+          delay: 0.15,
+        }}
+        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+      >
+        Below are some of the posts I´ve wrote across the years and are hosted here in my personal blog for people to
+        read them and learn something more about me. You can find posts about technical topic such as web development or
+        game programming and also gardening stuff!.
+      </m.p>
+      {/* Feed */}
+      <BlogFeed blogPosts={blogPosts} />
+      <LinkButton className="w-full md:w-auto" href="/blog">
+        Checkout More
+      </LinkButton>
     </Section>
   );
 };

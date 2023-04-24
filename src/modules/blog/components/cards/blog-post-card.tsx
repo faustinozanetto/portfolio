@@ -27,7 +27,7 @@ const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
       {/* Tags */}
       <PostCardTags tags={blogPost.metadata.tags} />
       {/* Description */}
-      <p className="truncate-text text-sm md:text-base">{blogPost.metadata.description}</p>
+      <p className="truncate-text">{blogPost.metadata.description}</p>
       {/* Preview Link */}
       {/* <LinkButton size="md" className="w-full " href={`/blog/${blogPost.slug.slug}`} leftIcon={<FiEye size={22} />}>
             Read More

@@ -22,7 +22,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
     <Link href={href} ref={ref}>
       <div
         className={clsx(
-          'group cursor-pointer overflow-hidden rounded-lg bg-neutral-100 shadow-lg dark:bg-neutral-800',
+          'group cursor-pointer overflow-hidden rounded-lg bg-neutral-100 drop-shadow-xl dark:bg-neutral-800',
           variant === 'portrait' && 'w-full md:max-w-sm',
           variant === 'landscape' && 'grid grid-cols-2'
         )}
@@ -35,15 +35,15 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
             variant === 'portrait' ? 'h-[180px] w-full' : 'h-auto md:h-[275px]',
             'bg-no-repeat object-cover'
           )}
-          width={500}
-          height={500}
+          width={400}
+          height={400}
           priority
         />
 
         {/* Bottom Information */}
         <div className="flex w-full flex-col space-y-1 p-4 text-neutral-900 dark:text-neutral-100">
           {/* Title */}
-          <h2 className="text-lg font-semibold leading-snug tracking-tight md:text-xl">
+          <h3 className="text-xl font-semibold leading-snug tracking-tight">
             <span
               className="bg-gradient-to-r from-primary-300 to-primary-200 bg-[length:0px_10px] bg-left-bottom
           bg-no-repeat
@@ -55,7 +55,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
             >
               {title}
             </span>
-          </h2>
+          </h3>
           {/* Rest of the childrens */}
           {children}
         </div>

@@ -6,12 +6,12 @@ import theme from 'tailwindcss/defaultTheme';
 import type { Project } from '../types/projects.types';
 import ProjectCard from './cards/project-card';
 
-interface IProjectsFeedProps {
+type ProjectsFeedProps = {
   /** Projects to display in the feed */
   projects: Project[];
-}
+};
 
-const ProjectsFeed: React.FC<IProjectsFeedProps> = (props) => {
+const ProjectsFeed: React.FC<ProjectsFeedProps> = (props) => {
   const { projects } = props;
   const isMediumDevice = useMediaQuery(`(max-width: ${theme.screens.md}`);
 

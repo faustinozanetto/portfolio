@@ -5,11 +5,11 @@ import type { Project } from '@modules/projects/types/projects.types';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 
-interface IProjectPageProps {
+type ProjectPageProps = {
   project: Project;
-}
+};
 
-const ProjectPage: React.FC<IProjectPageProps> = (props) => {
+const ProjectPage: React.FC<ProjectPageProps> = (props) => {
   const { project } = props;
   return (
     <BaseLayout

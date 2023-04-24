@@ -1,4 +1,5 @@
 import type { ProjectData } from '@modules/projects/types/projects.types';
+import { m } from 'framer-motion';
 import React from 'react';
 
 import DemoButton from '../buttons/demo-button';
@@ -13,7 +14,17 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
   const { projectLink, repoLink } = props;
 
   return (
-    <div className="space-y-2 md:w-1/5">
+    <m.div
+      className="space-y-2 md:w-1/5"
+      initial={{ opacity: 0, translateX: 20 }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+        delay: 0.35,
+      }}
+    >
       {projectLink.exists && (
         <DemoButton className="w-full" href={projectLink.link}>
           Demo
@@ -24,7 +35,7 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
           Repo
         </RepoButton>
       )}
-    </div>
+    </m.div>
   );
 };
 

@@ -11,12 +11,12 @@ import HomeProjects from '@modules/sections/components/home/projects/home-projec
 import type { GetStaticProps } from 'next';
 import React from 'react';
 
-interface IHomePageProps {
+type HomePageProps = {
   blogPosts: BlogPost[];
   projects: Project[];
-}
+};
 
-const HomePage: React.FC<IHomePageProps> = (props) => {
+const HomePage: React.FC<HomePageProps> = (props) => {
   const { blogPosts, projects } = props;
 
   return (
