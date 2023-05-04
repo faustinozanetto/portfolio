@@ -5,14 +5,14 @@ import React, { memo } from 'react';
 import PostCardAuthorDetails from './common/post-card-author-details';
 import PostCardTags from './common/post-card-tags';
 
-interface IBlogPostCardProps {
+type BlogPostCardProps = {
   /** Data to display in the blog post card. */
   blogPost: BlogPost;
   /** Optional: Variant of the project card. */
   variant?: 'landscape' | 'portrait';
-}
+};
 
-const BlogPostCard: React.FC<IBlogPostCardProps> = (props) => {
+const BlogPostCard: React.FC<BlogPostCardProps> = (props) => {
   const { blogPost, variant = 'portrait' } = props;
 
   return (

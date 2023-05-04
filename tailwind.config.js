@@ -14,6 +14,9 @@ module.exports = {
         primary: colors.sky,
         secondary: colors.cyan,
       },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+      },
       keyframes: {
         blink: {
           '0%, 100%': {

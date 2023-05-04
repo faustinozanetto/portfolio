@@ -1,12 +1,11 @@
 import Section from '@modules/sections/components/section/section';
-import { Button } from '@modules/ui/components/buttons/button';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import { m } from 'framer-motion';
 import React from 'react';
 
 const HomeHero: React.FC = () => {
   return (
-    <Section className="my-4 md:my-8 lg:my-14">
+    <Section id="hero" className="my-4 md:my-8 lg:my-14">
       {/* Titles */}
       <div className="mb-4 w-fit leading-10">
         <m.h1
@@ -62,13 +61,21 @@ const HomeHero: React.FC = () => {
         }}
         className="mt-4 flex flex-col items-center space-y-2 md:mt-6 md:flex-row md:space-x-4 md:space-y-0"
       >
-        <Button className="w-full md:w-auto">Contact Me</Button>
+        <LinkButton
+          href="mailto:zanettofaustino@gmail.com"
+          aria-label="Contact Me"
+          className="w-full md:w-auto"
+          size="lg"
+        >
+          Contact Me
+        </LinkButton>
         <LinkButton
           className="w-full md:w-auto"
           colorScheme="secondary"
           href="/assets/Resumee.pdf"
           target="_blank"
           aria-label="Check my Work Button"
+          size="lg"
         >
           Open Resumee
         </LinkButton>

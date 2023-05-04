@@ -1,21 +1,21 @@
 import Head from 'next/head';
 import React from 'react';
 
-interface IBaseLayoutHeadProps {
-  /** Seo title */
+type BaseLayoutHeadProps = {
+  /** Optional: Seo title. */
   title?: string;
-  /** Seo description */
+  /** Optional: Seo description. */
   description?: string;
-  /** Seo url */
+  /** Optional: Seo url. */
   url?: string;
-  /** Seo canonical url */
+  /** Optional: Seo canonical url. */
   canonicalUrl?: string;
-  /** Seo image used in twitter cards, etc. */
+  /** Optional: Seo image used in twitter cards, etc. */
   image?: string;
-}
+};
 
-const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
-  const { title, description, url, canonicalUrl, image = `assets/images/faustino.png` } = props;
+const BaseLayoutHead: React.FC<BaseLayoutHeadProps> = (props) => {
+  const { title, description, url, canonicalUrl, image = '/assets/images/faustino.png' } = props;
   return (
     <Head>
       <title>{title}</title>
@@ -26,7 +26,7 @@ const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
       <meta name="robots" content="index" />
       <meta name="description" content={description} />
 
-      <meta content="Faustino Zanetto, Faustino, Zanetto, Portfolio" />
+      <meta content="Faustino Zanetto, Software Developer, Portfolio, React, Web Development" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <link rel="canonical" href={canonicalUrl} />
@@ -35,8 +35,8 @@ const BaseLayoutHead: React.FC<IBaseLayoutHeadProps> = (props) => {
       {/* Open graph */}
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="457" />
-      <meta property="og:image:height" content="457" />
+      <meta property="og:image:width" content="2000" />
+      <meta property="og:image:height" content="1000" />
       <meta property="og:image:alt" content={title} />
       <meta property="og:locale" content="en" />
       <meta property="og:type" content="website" />

@@ -12,7 +12,7 @@ type HomeProjectsProps = {
 const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
   const { projects } = props;
   return (
-    <Section>
+    <Section id="projects">
       {/* Heading */}
       <m.h2
         initial={{ opacity: 0, translateY: -20 }}
@@ -22,7 +22,7 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
           type: 'tween',
           duration: 0.25,
         }}
-        className="mb-2 text-3xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-4xl lg:text-5xl"
+        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
       >
         Some of My Projects
       </m.h2>

@@ -75,6 +75,31 @@ export const getAllProjects = async (): Promise<Project[]> => {
   });
 };
 
+export const getFeaturedProjects = async (): Promise<Project[]> => {
+  const mappedProjects: Project[] = await Promise.all(
+    projects
+      .filter((project) => project.is_featured)
+      .map(async (project) => {
+        const projectStars = await getProjectStars(project);
+
+        return {
+          metadata: {
+            ...project,
+            stars: projectStars,
+          },
+          slug: { slug: generateProjectSlug(project) },
+        };
+      })
+  );
+
+  return mappedProjects.sort((a, b) => {
+    const aDate = new Date(a.metadata.date);
+    const bDate = new Date(b.metadata.date);
+
+    return bDate.getTime() - aDate.getTime();
+  });
+};
+
 /**
  * Returns a project by a given slug if found.
  * @param slug Slug of the project to search.

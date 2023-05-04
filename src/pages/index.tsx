@@ -1,11 +1,11 @@
 import { getAllBlogPosts } from '@modules/blog/lib/blog-utils';
 import type { BlogPost } from '@modules/blog/types/blog.types';
 import BaseLayout from '@modules/layouts/components/base/base-layout';
-import { getAllProjects } from '@modules/projects/lib/project-utils';
+import { getFeaturedProjects } from '@modules/projects/lib/project-utils';
 import type { Project } from '@modules/projects/types/projects.types';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import HomeBlog from '@modules/sections/components/home/blog/home-blog';
-import HomeExperience from '@modules/sections/components/home/experience/home-experience';
+import HomeEducation from '@modules/sections/components/home/education/home-education';
 import HomeHero from '@modules/sections/components/home/hero/home-hero';
 import HomeProjects from '@modules/sections/components/home/projects/home-projects';
 import type { GetStaticProps } from 'next';
@@ -30,7 +30,7 @@ const HomePage: React.FC<HomePageProps> = (props) => {
       <HomeHero />
       <HomeAboutMe />
       <HomeProjects projects={projects} />
-      <HomeExperience />
+      <HomeEducation />
       <HomeBlog blogPosts={blogPosts} />
     </BaseLayout>
   );
@@ -40,8 +40,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const blogPosts = await getAllBlogPosts().then((posts) => {
     return posts.slice(0, 4);
   });
-  const projects: Project[] = await getAllProjects();
-  return { props: { blogPosts, projects: projects.slice(0, 4) } };
+  const projects: Project[] = await getFeaturedProjects();
+  return { props: { blogPosts, projects } };
 };
 
 export default HomePage;

@@ -4,13 +4,13 @@ export type ProjectLink = {
 };
 
 export type ProjectData = {
+  is_featured: boolean;
   title: string;
   description: string;
   thumbnails: string[];
   technologies: string[];
   projectLink: ProjectLink;
   repoLink: ProjectLink;
-  date: string;
   stars?: number;
 };
 

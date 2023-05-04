@@ -1,9 +1,9 @@
-import { useTheme } from '@modules/theme/context/theme-context';
+import { useThemeContext } from '@modules/theme/context/theme-context';
 import { IconButton } from '@modules/ui/components/icon-button/icon-button';
 import React from 'react';
 
 const ThemeToggler: React.FC = () => {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle } = useThemeContext();
 
   const renderTogglerIcon = () => {
     if (theme === 'dark')

@@ -4,11 +4,7 @@ import NavbarLink from './link/navbar-link';
 import NavbarLogo from './logo/navbar-logo';
 import ThemeToggler from './theme-toggler/theme-toggler';
 
-interface INavbarProps {}
-
-const Navbar: React.FC<INavbarProps> = (props) => {
-  const {} = props;
-
+const Navbar: React.FC = () => {
   return (
     <div className="flex w-full bg-neutral-200 drop-shadow-md dark:bg-neutral-800">
       <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 md:justify-between">

@@ -2,11 +2,11 @@ import type { BlogPostAuthor } from '@modules/blog/types/blog.types';
 import Image from '@modules/ui/components/images/image';
 import React from 'react';
 
-interface IPostAuthorDetailsProps {
+type PostAuthorDetailsProps = {
   blogAuthor: BlogPostAuthor;
-}
+};
 
-const PostAuthorDetails: React.FC<IPostAuthorDetailsProps> = (props) => {
+const PostAuthorDetails: React.FC<PostAuthorDetailsProps> = (props) => {
   const { blogAuthor } = props;
 
   return (

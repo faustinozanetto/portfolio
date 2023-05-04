@@ -1,40 +1,31 @@
 [
   {
-    "title": "Mecha Type",
-    "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
-    "thumbnails": ["/assets/projects/mecha-type/mecha-type-thumbnail.png"],
-    "technologies": ["nextjs", "nestjs", "typescript", "tailwindcss"],
-    "date": "08/10/21",
-    "projectLink": {
-      "exists": true,
-      "link": "https://mechatype.vercel.app/"
-    },
-    "repoLink": {
-      "exists": true,
-      "link": "https://github.com/faustinozanetto/mecha-type-client"
-    }
-  },
-  {
-    "title": "Snappy",
-    "description": "Snappy is a web created with NextJS. It's main purpose is to create code snippets that are highly customizable with ease. It features multiple configuration options and a set of ready to use presets.",
+    "is_featured": true,
+    "title": "Gardentify",
+    "description": "Gardentify is a web application that lets you manage and keep tracks of the plants in your garden.",
     "thumbnails": [
-      "/assets/projects/snappy/snappy-thumbnail-1.png",
-      "/assets/projects/snappy/snappy-thumbnail-2.png",
-      "/assets/projects/snappy/snappy-thumbnail-3.png",
-      "/assets/projects/snappy/snappy-thumbnail-4.png"
+      "/assets/projects/gardentify/gardentify-thumbnail-1.png",
+      "/assets/projects/gardentify/gardentify-thumbnail-2.png"
     ],
-    "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
-    "date": "05/22/22",
+    "technologies": [
+      "react",
+      "tailwindcss",
+      "typescript",
+      "graphql",
+      "nestjs",
+      "prisma"
+    ],
     "projectLink": {
       "exists": true,
-      "link": "https://snappyapp.vercel.app/"
+      "link": "https://gardentify.vercel.app/"
     },
     "repoLink": {
       "exists": true,
-      "link": "https://github.com/faustinozanetto/snappy"
+      "link": "https://github.com/faustinozanetto/gardentify"
     }
   },
   {
+    "is_featured": true,
     "title": "Klangs Coffee",
     "description": "Klangs Coffee is a fictional coffee shop located in Buenos Aires, Argentina. It was created to showcase my skills with CSS and React. It features a simple layout of multiple sections.",
     "thumbnails": [
@@ -45,8 +36,12 @@
       "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-5.png",
       "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-6.png"
     ],
-    "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
-    "date": "07/15/22",
+    "technologies": [
+      "nextjs",
+      "chakraui",
+      "typescript",
+      "tailwindcss"
+    ],
     "projectLink": {
       "exists": true,
       "link": "https://klangscoffee.vercel.app/"
@@ -57,6 +52,54 @@
     }
   },
   {
+    "is_featured": false,
+    "title": "Mecha Type",
+    "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
+    "thumbnails": [
+      "/assets/projects/mecha-type/mecha-type-thumbnail.png"
+    ],
+    "technologies": [
+      "nextjs",
+      "nestjs",
+      "typescript",
+      "tailwindcss"
+    ],
+    "projectLink": {
+      "exists": true,
+      "link": "https://mechatype.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/mecha-type-client"
+    }
+  },
+  {
+    "is_featured": false,
+    "title": "Snappy",
+    "description": "Snappy is a web created with NextJS. It's main purpose is to create code snippets that are highly customizable with ease. It features multiple configuration options and a set of ready to use presets.",
+    "thumbnails": [
+      "/assets/projects/snappy/snappy-thumbnail-1.png",
+      "/assets/projects/snappy/snappy-thumbnail-2.png",
+      "/assets/projects/snappy/snappy-thumbnail-3.png",
+      "/assets/projects/snappy/snappy-thumbnail-4.png"
+    ],
+    "technologies": [
+      "nextjs",
+      "chakraui",
+      "typescript",
+      "tailwindcss"
+    ],
+    "projectLink": {
+      "exists": true,
+      "link": "https://snappyapp.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/snappy"
+    }
+  },
+  {
+    "is_featured": true,
     "title": "Toply",
     "description": "Toply is a simple to use and free web application that lets you visualize your most listened-to songs and artists on Spotify. The user is also capable of generating a image that can be shared in their social media!",
     "thumbnails": [
@@ -65,8 +108,12 @@
       "/assets/projects/toply/toply-thumbnail-3.png",
       "/assets/projects/toply/toply-thumbnail-4.png"
     ],
-    "technologies": ["nextjs", "eslint", "typescript", "tailwindcss"],
-    "date": "10/20/22",
+    "technologies": [
+      "nextjs",
+      "eslint",
+      "typescript",
+      "tailwindcss"
+    ],
     "projectLink": {
       "exists": true,
       "link": "https://toply.vercel.app/"
@@ -77,11 +124,18 @@
     }
   },
   {
+    "is_featured": false,
     "title": "Frontend Tools",
     "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.",
-    "thumbnails": ["/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"],
-    "technologies": ["nextjs", "redux", "typescript", "tailwindcss"],
-    "date": "09/19/22",
+    "thumbnails": [
+      "/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"
+    ],
+    "technologies": [
+      "nextjs",
+      "redux",
+      "typescript",
+      "tailwindcss"
+    ],
     "projectLink": {
       "exists": true,
       "link": "https://frontend-tools.vercel.app/"
@@ -92,6 +146,7 @@
     }
   },
   {
+    "is_featured": false,
     "title": "Retro Engine",
     "description": "Retro Engine is a WIP c++ project focused on implementing several computer graphics principles into a complex set of technologies and tools such as OpenGL, GLFW, Assimp and more.",
     "thumbnails": [
@@ -103,8 +158,16 @@
       "/assets/projects/retro-engine/retro-engine-thumbnail-6.png",
       "/assets/projects/retro-engine/retro-engine-thumbnail-7.png"
     ],
-    "technologies": ["c++", "opengl", "lua", "assimp", "glfw", "glad", "glm", "entt"],
-    "date": "12/22/22",
+    "technologies": [
+      "c++",
+      "opengl",
+      "lua",
+      "assimp",
+      "glfw",
+      "glad",
+      "glm",
+      "entt"
+    ],
     "projectLink": {
       "exists": false
     },
@@ -114,6 +177,7 @@
     }
   },
   {
+    "is_featured": true,
     "title": "Iconzy",
     "description": "Iconzy is a personal project for customizing and browsing free icon packs for your personal projects.",
     "thumbnails": [
@@ -123,8 +187,13 @@
       "/assets/projects/iconzy/iconzy-thumbnail-4.png",
       "/assets/projects/iconzy/iconzy-thumbnail-5.png"
     ],
-    "technologies": ["react", "typescript", "tailwindcss", "husky", "nextjs"],
-    "date": "01/15/23",
+    "technologies": [
+      "react",
+      "typescript",
+      "tailwindcss",
+      "husky",
+      "nextjs"
+    ],
     "projectLink": {
       "exists": true,
       "link": "https://iconzy.vercel.app/"
@@ -135,6 +204,7 @@
     }
   },
   {
+    "is_featured": false,
     "title": "Digital Agency",
     "description": "Digital Agency is a simple landing page for a fictional Marketing Agency.",
     "thumbnails": [
@@ -144,8 +214,12 @@
       "/assets/projects/digital-agency/digital-agency-thumbnail-4.png",
       "/assets/projects/digital-agency/digital-agency-thumbnail-5.png"
     ],
-    "technologies": ["react", "tailwindcss", "typescript", "vitejs"],
-    "date": "08/18/22",
+    "technologies": [
+      "react",
+      "tailwindcss",
+      "typescript",
+      "vitejs"
+    ],
     "projectLink": {
       "exists": true,
       "link": "https://digital-agency-sigma.vercel.app/"

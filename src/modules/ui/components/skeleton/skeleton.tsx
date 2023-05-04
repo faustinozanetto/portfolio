@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface ISkeletonProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+type SkeletonProps = {
   isLoaded: boolean;
-}
+  children: React.ReactNode;
+};
 
-const Skeleton = React.forwardRef<HTMLDivElement, ISkeletonProps>((props, ref) => {
+const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {
   const { isLoaded, children, ...rest } = props;
 
   return (

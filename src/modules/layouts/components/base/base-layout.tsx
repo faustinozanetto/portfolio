@@ -5,13 +5,13 @@ import React from 'react';
 import LayoutFooter from './footer/layout-footer';
 import BaseLayoutHead from './head/base-layout-head';
 
-interface IBaseLayoutProps {
+type BaseLayoutProps = {
   children: ReactNode;
   /** Optional head props used for seo data. */
   headProps?: React.ComponentPropsWithoutRef<typeof BaseLayoutHead>;
-}
+};
 
-const BaseLayout: React.FC<IBaseLayoutProps> = (props) => {
+const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
   const { children, headProps } = props;
 
   return (

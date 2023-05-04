@@ -1,21 +1,28 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import React from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export type ThemeType = 'dark' | 'light';
 
-interface IThemeContextProps {
+type ThemeContextState = {
   theme: ThemeType;
   toggle: () => void;
-}
+};
 
-const initialState: IThemeContextProps = {
+const initialState: ThemeContextState = {
   theme: 'dark',
   toggle: () => {},
 };
 
-const ThemeContext = createContext<IThemeContextProps>(initialState);
+const ThemeContext = createContext<ThemeContextState>(initialState);
 
-export const useTheme = () => {
-  return useContext(ThemeContext);
+/**
+ * Hook for accessing the theme context.
+ * @returns The theme context.
+ */
+export const useThemeContext = () => {
+  const context = useContext(ThemeContext);
+  if (!context) throw new Error('Tried to use ThemeContext with no context avaiable!');
+  return context;
 };
 
 type ThemeProviderProps = {
@@ -26,15 +33,20 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState<ThemeType>(initialState.theme);
 
+  const updateLocalItem = (appliedTheme: ThemeType) => {
+    window.localStorage.setItem('theme', appliedTheme);
+  };
+
   const updateBodyClasses = (appliedTheme: ThemeType) => {
     if (appliedTheme === 'light') document.body.classList.remove('dark');
     else document.body.classList.add('dark');
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('theme') as ThemeType;
+    const localTheme = (window.localStorage.getItem('theme') as ThemeType) || initialState.theme;
     if (localTheme) {
       setTheme(localTheme);
+      updateLocalItem(localTheme);
       updateBodyClasses(localTheme);
     }
   }, []);
@@ -42,17 +54,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const toggle = () => {
     setTheme((prev) => {
       const newTheme: ThemeType = prev === 'dark' ? 'light' : 'dark';
-      window.localStorage.setItem('theme', newTheme);
+      updateLocalItem(newTheme);
       updateBodyClasses(newTheme);
       return newTheme;
     });
   };
 
-  const memoizedState = useMemo(() => {
-    return { theme, toggle };
-  }, [theme]);
-
-  return <ThemeContext.Provider value={memoizedState}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
 };
 
 export default ThemeProvider;

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-interface CardsFeedProps {
+type CardsFeedProps = {
   /** Array of data to display in the feed. */
   data: unknown[];
   /**
@@ -16,7 +16,7 @@ interface CardsFeedProps {
    * @returns The card component
    */
   renderFeatured: (props: unknown) => JSX.Element;
-}
+};
 
 const CardsFeed: React.FC<CardsFeedProps> = (props) => {
   const { data, render, renderFeatured } = props;

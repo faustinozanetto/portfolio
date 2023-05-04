@@ -3,14 +3,14 @@ import type { CardProps } from '@modules/ui/components/cards/card';
 import Card from '@modules/ui/components/cards/card';
 import React from 'react';
 
-interface IProjectCardProps {
+type ProjectCardProps = {
   /** Data to display in the project card. */
   project: Project;
   /** Optional: Variant of the project card. */
   variant?: CardProps['variant'];
-}
+};
 
-const ProjectCard: React.FC<IProjectCardProps> = (props) => {
+const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   const { project, variant = 'portrait' } = props;
 
   return (
