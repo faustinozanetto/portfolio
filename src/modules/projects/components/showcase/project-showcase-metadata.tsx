@@ -2,6 +2,8 @@ import type { ProjectData } from '@modules/projects/types/projects.types';
 import { m } from 'framer-motion';
 import React from 'react';
 
+import ProjectCardTechnologies from '../cards/project-card-technologies';
+
 type ProjectShowcaseMetadataProps = {
   metadata: ProjectData;
 };
@@ -42,7 +44,7 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
 
       {/* Technologies */}
       <m.div
-        className="flex flex-wrap space-x-1"
+        className="flex flex-wrap items-center gap-2"
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         viewport={{ once: true }}
@@ -53,13 +55,7 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
         }}
       >
         <span className="font-semibold text-neutral-900 dark:text-neutral-100">Technologies: </span>
-        {technologies.map((tag) => {
-          return (
-            <span key={tag} className="font-medium text-neutral-800 dark:text-neutral-200">
-              {`#${tag}`}
-            </span>
-          );
-        })}
+        <ProjectCardTechnologies technologies={technologies} />
       </m.div>
     </div>
   );

@@ -22,9 +22,9 @@ const HomePage: React.FC<HomePageProps> = (props) => {
   return (
     <BaseLayout
       headProps={{
-        title: 'Home | Faustino Zanetto',
+        title: 'Home Page | Faustino Zanetto',
         description:
-          'Home page of my personal portfolio, where you can find more information about me and the projects ive worked on.',
+          'My web developer portfolio showcases my work and skills in various projects, with a focus on creating effective and visually appealing solutions.',
       }}
     >
       <HomeHero />

@@ -26,12 +26,12 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
       }}
     >
       {projectLink.exists && projectLink.link ? (
-        <DemoButton className="w-full" href={projectLink.link}>
+        <DemoButton className="w-full" size="lg" href={projectLink.link}>
           Demo
         </DemoButton>
       ) : null}
       {repoLink.exists && repoLink.link ? (
-        <RepoButton className="w-full" href={repoLink.link}>
+        <RepoButton className="w-full" size="lg" href={repoLink.link}>
           Repo
         </RepoButton>
       ) : null}

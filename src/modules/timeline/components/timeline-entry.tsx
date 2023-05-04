@@ -19,7 +19,7 @@ const TimelineEntry: React.FC<TimelineEntryProps> = (props) => {
 
   return (
     <li className="group relative mb-6 ml-6 transition-all">
-      <div className="absolute -left-10 top-0 rounded-lg bg-primary-600 p-1.5 group-hover:scale-110 dark:bg-primary-800">
+      <div className="absolute -left-10 top-0 rounded-lg bg-primary-600 p-1.5 group-hover:scale-110 dark:bg-primary-800 md:-left-11">
         {icon}
       </div>
       <h3 className="mb-1 text-lg font-semibold leading-tight text-neutral-900 group-hover:text-primary-700 dark:text-neutral-100 dark:group-hover:text-primary-300 md:text-xl">

@@ -12,21 +12,21 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
   const { author, date } = props;
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="mb-2 flex items-center space-x-2">
       <Image
         src={author.image}
         alt={`Blog Author ${author.name}`}
         priority
         width={85}
         height={85}
-        className="h-12 w-12 rounded-3xl md:h-16 md:w-16"
+        className="h-10 w-10 rounded-full md:h-14 md:w-14"
       />
       <div className="flex flex-col">
         <span className="font-bold text-neutral-900 dark:text-neutral-50">{author.name}</span>
         <div className="flex flex-row items-center space-x-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 stroke-neutral-900 dark:stroke-neutral-100"
+            className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-100"
             viewBox="0 0 24 24"
             strokeWidth="2"
             fill="none"
@@ -43,7 +43,7 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
           </svg>
           <time
             dateTime={new Date(date).toDateString()}
-            className="font-semibold text-neutral-900 dark:text-neutral-100"
+            className="text-sm font-medium text-neutral-900 dark:text-neutral-100"
           >
             {new Date(date).toDateString()}
           </time>

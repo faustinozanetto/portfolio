@@ -26,7 +26,8 @@ const BaseLayoutHead: React.FC<BaseLayoutHeadProps> = (props) => {
       <meta name="robots" content="index" />
       <meta name="description" content={description} />
 
-      <meta content="Faustino Zanetto, Software Developer, Portfolio, React, Web Development" />
+      <meta name="author" content="Faustino Zanetto" />
+      <meta name="keywords" content="Faustino Zanetto, Software Developer, Portfolio, React, Web Development" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <link rel="canonical" href={canonicalUrl} />

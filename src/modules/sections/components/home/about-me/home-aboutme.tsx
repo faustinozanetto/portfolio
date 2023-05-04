@@ -25,6 +25,7 @@ const HomeAbutMe: React.FC = () => {
           <Image
             src="/assets/images/faustino.png"
             alt="About me Image"
+            title="Faustino Zanetto"
             className="mx-auto h-64 w-64 rounded-3xl md:h-72 md:w-72"
             width={350}
             height={350}

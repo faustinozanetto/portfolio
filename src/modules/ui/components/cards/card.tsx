@@ -41,9 +41,9 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
         />
 
         {/* Bottom Information */}
-        <div className="flex w-full flex-col space-y-1 p-4 text-neutral-900 dark:text-neutral-100">
+        <div className="flex w-full flex-col p-4 text-neutral-900 dark:text-neutral-100">
           {/* Title */}
-          <h3 className="text-xl font-semibold leading-snug tracking-tight">
+          <h3 className="mb-1 text-xl font-semibold leading-snug tracking-tight">
             <span
               className="bg-gradient-to-r from-primary-300 to-primary-200 bg-[length:0px_10px] bg-left-bottom
           bg-no-repeat

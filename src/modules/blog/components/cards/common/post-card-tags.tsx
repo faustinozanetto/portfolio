@@ -8,12 +8,14 @@ const PostCardTags: React.FC<PostCardTagsProps> = (props) => {
   const { tags } = props;
 
   return (
-    <div className="mt-1 flex flex-wrap space-x-1">
-      <span className="font-semibold text-neutral-900 dark:text-neutral-100">Tags: </span>
+    <div className="mb-1.5 flex flex-wrap gap-1">
       {tags.map((tag) => {
         return (
-          <span key={tag} className="font-medium text-neutral-800 dark:text-neutral-200">
-            {`#${tag}`}
+          <span
+            key={tag}
+            className="rounded-lg bg-primary-300 px-1 text-sm font-semibold text-neutral-800 dark:bg-primary-800 dark:text-neutral-200"
+          >
+            {tag}
           </span>
         );
       })}

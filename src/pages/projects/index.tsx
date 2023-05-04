@@ -53,7 +53,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = (props) => {
           'Home page of my personal portfolio, where you can find more information about me and the projects ive worked on.',
       }}
     >
-      <Section className="my-4 bg-neutral-100 dark:bg-neutral-900 md:my-10 lg:my-14">
+      <Section className="bg-neutral-100 dark:bg-neutral-900">
         {/* Titles */}
         <m.h1
           className="mb-2 text-4xl font-extrabold text-primary-600 dark:text-primary-300 md:mb-4 md:text-5xl"

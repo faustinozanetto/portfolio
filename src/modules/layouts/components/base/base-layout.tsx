@@ -16,16 +16,9 @@ const BaseLayout: React.FC<BaseLayoutProps> = (props) => {
 
   return (
     <div className="flex min-h-screen flex-col overflow-hidden subpixel-antialiased transition-all">
-      {/* HEAD */}
       <BaseLayoutHead {...headProps} />
-
-      {/* NAVBAR */}
       <Navbar />
-
-      {/* CONTENT */}
       <div className="flex flex-1 flex-col bg-neutral-100 dark:bg-neutral-900">{children}</div>
-
-      {/* FOOTER */}
       <LayoutFooter />
     </div>
   );

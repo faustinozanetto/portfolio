@@ -23,12 +23,12 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
                 duration: 0.35,
                 delay: 0.25 + 0.15 * index,
               }}
-              className="mb-4 w-full cursor-pointer shadow-xl"
+              className="mb-4 w-full cursor-pointer rounded-xl"
             >
               <Image
                 src={thumbnail}
                 alt="Project thumbnail"
-                className="w-full rounded-xl"
+                className="h-full rounded-xl shadow-lg"
                 width={500}
                 height={500}
                 priority={index < 3}
