@@ -25,16 +25,16 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
         delay: 0.35,
       }}
     >
-      {projectLink.exists && (
+      {projectLink.exists && projectLink.link ? (
         <DemoButton className="w-full" href={projectLink.link}>
           Demo
         </DemoButton>
-      )}
-      {repoLink.exists && (
+      ) : null}
+      {repoLink.exists && repoLink.link ? (
         <RepoButton className="w-full" href={repoLink.link}>
           Repo
         </RepoButton>
-      )}
+      ) : null}
     </m.div>
   );
 };

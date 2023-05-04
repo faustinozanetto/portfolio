@@ -1,45 +1,57 @@
 {
   "compilerOptions": {
-    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "target": "ESNext",
+    "outDir": "out",
+    "declaration": true,
+    "sourceMap": true,
+
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
     "jsx": "preserve",
-    "downlevelIteration": true,
+    "noEmit": true,
+    "isolatedModules": true,
     "incremental": true,
+
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
       "@contexts/*": ["contexts/*"],
-      "@generated/*": ["generated/*"],
       "@hooks/*": ["hooks/*"],
       "@lib/*": ["lib/*"],
-      "@pages/*": ["pages/*"],
+      "@pages/*": ["src/pages/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
       "@typedefs/*": ["typedefs/*"],
       "@state/*": ["state/*"],
-      "@wrappers/*": ["wrappers/*"],
       "@public/*": ["..public/*"],
       "@typings/*": ["typings/*"],
-      "@modules/*": ["modules/*"],
-      "@data/*": ["data/*"]
+      "@modules/*": ["modules/*"]
     }
   },
-  "types": ["cypress"],
-  "include": ["next-env.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "./cypress"],
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
-  }
+  "types": ["node"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

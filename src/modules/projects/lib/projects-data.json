@@ -7,14 +7,7 @@
       "/assets/projects/gardentify/gardentify-thumbnail-1.png",
       "/assets/projects/gardentify/gardentify-thumbnail-2.png"
     ],
-    "technologies": [
-      "react",
-      "tailwindcss",
-      "typescript",
-      "graphql",
-      "nestjs",
-      "prisma"
-    ],
+    "technologies": ["react", "tailwindcss", "typescript", "graphql", "nestjs", "prisma"],
     "projectLink": {
       "exists": true,
       "link": "https://gardentify.vercel.app/"
@@ -36,12 +29,7 @@
       "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-5.png",
       "/assets/projects/klangs-coffee/klangs-coffee-thumbnail-6.png"
     ],
-    "technologies": [
-      "nextjs",
-      "chakraui",
-      "typescript",
-      "tailwindcss"
-    ],
+    "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
     "projectLink": {
       "exists": true,
       "link": "https://klangscoffee.vercel.app/"
@@ -55,15 +43,8 @@
     "is_featured": false,
     "title": "Mecha Type",
     "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
-    "thumbnails": [
-      "/assets/projects/mecha-type/mecha-type-thumbnail.png"
-    ],
-    "technologies": [
-      "nextjs",
-      "nestjs",
-      "typescript",
-      "tailwindcss"
-    ],
+    "thumbnails": ["/assets/projects/mecha-type/mecha-type-thumbnail.png"],
+    "technologies": ["nextjs", "nestjs", "typescript", "tailwindcss"],
     "projectLink": {
       "exists": true,
       "link": "https://mechatype.vercel.app/"
@@ -83,12 +64,7 @@
       "/assets/projects/snappy/snappy-thumbnail-3.png",
       "/assets/projects/snappy/snappy-thumbnail-4.png"
     ],
-    "technologies": [
-      "nextjs",
-      "chakraui",
-      "typescript",
-      "tailwindcss"
-    ],
+    "technologies": ["nextjs", "chakraui", "typescript", "tailwindcss"],
     "projectLink": {
       "exists": true,
       "link": "https://snappyapp.vercel.app/"
@@ -108,12 +84,7 @@
       "/assets/projects/toply/toply-thumbnail-3.png",
       "/assets/projects/toply/toply-thumbnail-4.png"
     ],
-    "technologies": [
-      "nextjs",
-      "eslint",
-      "typescript",
-      "tailwindcss"
-    ],
+    "technologies": ["nextjs", "eslint", "typescript", "tailwindcss"],
     "projectLink": {
       "exists": true,
       "link": "https://toply.vercel.app/"
@@ -127,15 +98,8 @@
     "is_featured": false,
     "title": "Frontend Tools",
     "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.",
-    "thumbnails": [
-      "/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"
-    ],
-    "technologies": [
-      "nextjs",
-      "redux",
-      "typescript",
-      "tailwindcss"
-    ],
+    "thumbnails": ["/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"],
+    "technologies": ["nextjs", "redux", "typescript", "tailwindcss"],
     "projectLink": {
       "exists": true,
       "link": "https://frontend-tools.vercel.app/"
@@ -158,16 +122,7 @@
       "/assets/projects/retro-engine/retro-engine-thumbnail-6.png",
       "/assets/projects/retro-engine/retro-engine-thumbnail-7.png"
     ],
-    "technologies": [
-      "c++",
-      "opengl",
-      "lua",
-      "assimp",
-      "glfw",
-      "glad",
-      "glm",
-      "entt"
-    ],
+    "technologies": ["c++", "opengl", "lua", "assimp", "glfw", "glad", "glm", "entt"],
     "projectLink": {
       "exists": false
     },
@@ -187,13 +142,7 @@
       "/assets/projects/iconzy/iconzy-thumbnail-4.png",
       "/assets/projects/iconzy/iconzy-thumbnail-5.png"
     ],
-    "technologies": [
-      "react",
-      "typescript",
-      "tailwindcss",
-      "husky",
-      "nextjs"
-    ],
+    "technologies": ["react", "typescript", "tailwindcss", "husky", "nextjs"],
     "projectLink": {
       "exists": true,
       "link": "https://iconzy.vercel.app/"
@@ -214,12 +163,7 @@
       "/assets/projects/digital-agency/digital-agency-thumbnail-4.png",
       "/assets/projects/digital-agency/digital-agency-thumbnail-5.png"
     ],
-    "technologies": [
-      "react",
-      "tailwindcss",
-      "typescript",
-      "vitejs"
-    ],
+    "technologies": ["react", "tailwindcss", "typescript", "vitejs"],
     "projectLink": {
       "exists": true,
       "link": "https://digital-agency-sigma.vercel.app/"

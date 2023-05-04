@@ -1,7 +1,7 @@
-import projects from '@data/projects/projects-data.json';
 import { DEV } from '@modules/core/utils/constants';
 
 import type { Project, ProjectData, ProjectSlug } from '../types/projects.types';
+import projects from './projects-data.json';
 
 /**
  * Gets the amount of stars of a project from github.
@@ -10,9 +10,9 @@ import type { Project, ProjectData, ProjectSlug } from '../types/projects.types'
  */
 const getProjectStars = async (project: Partial<ProjectData>): Promise<number> => {
   try {
-    if (DEV || !project.repoLink.exists) return 0;
+    if (DEV || !project.repoLink || project.repoLink.link === undefined) return 0;
 
-    const githubProjectName: string = project.repoLink.link.split('/').slice(-1)[0];
+    const githubProjectName = project.repoLink.link.split('/').slice(-1)[0];
 
     const stars = await fetch(`https://api.github.com/repos/faustinozanetto/${githubProjectName}`)
       .then((res) => res.json())
@@ -67,12 +67,7 @@ export const getAllProjects = async (): Promise<Project[]> => {
     })
   );
 
-  return mappedProjects.sort((a, b) => {
-    const aDate = new Date(a.metadata.date);
-    const bDate = new Date(b.metadata.date);
-
-    return bDate.getTime() - aDate.getTime();
-  });
+  return mappedProjects;
 };
 
 export const getFeaturedProjects = async (): Promise<Project[]> => {
@@ -92,12 +87,7 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
       })
   );
 
-  return mappedProjects.sort((a, b) => {
-    const aDate = new Date(a.metadata.date);
-    const bDate = new Date(b.metadata.date);
-
-    return bDate.getTime() - aDate.getTime();
-  });
+  return mappedProjects;
 };
 
 /**
@@ -106,7 +96,7 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
  * @returns The project.
  */
 export const getProjectBySlug = async (slug: ProjectSlug): Promise<Project> => {
-  const foundProject: ProjectData = projects.find((project: ProjectData) => {
+  const foundProject = projects.find((project: ProjectData) => {
     return generateProjectSlug(project) === slug.slug;
   });
   if (!foundProject) throw new Error('Could not find project with the given slug');

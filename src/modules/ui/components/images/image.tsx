@@ -1,6 +1,5 @@
 import type { ImageProps as NextImageProps } from 'next/image';
 import NextImage from 'next/image';
-import React from 'react';
 import { useState } from 'react';
 
 import Skeleton from '../skeleton/skeleton';

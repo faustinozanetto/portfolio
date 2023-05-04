@@ -33,7 +33,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
           alt={title}
           className={clsx(
             variant === 'portrait' ? 'h-[180px]' : 'h-auto md:h-[275px]',
-            'bg-no-repeat object-cover w-full'
+            'w-full bg-no-repeat object-cover'
           )}
           width={400}
           height={400}

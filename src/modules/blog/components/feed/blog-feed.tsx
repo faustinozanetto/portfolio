@@ -18,10 +18,10 @@ const BlogPostsFeed: React.FC<BlogFeedProps> = (props) => {
   return (
     <CardsFeed
       data={blogPosts}
-      render={(cardProps: BlogPost, index) => {
+      render={(cardProps, index) => {
         return React.createElement(BlogPostCard, { key: index, blogPost: cardProps, variant: 'portrait' });
       }}
-      renderFeatured={(cardProps: BlogPost) => {
+      renderFeatured={(cardProps) => {
         return React.createElement(BlogPostCard, {
           blogPost: cardProps,
           variant: isMediumDevice ? 'portrait' : 'landscape',

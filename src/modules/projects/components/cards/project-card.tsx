@@ -13,11 +13,13 @@ type ProjectCardProps = {
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   const { project, variant = 'portrait' } = props;
 
+  const fallbackThumbnail = 'assets/projects/gardentify-thumbnail-1.png';
+
   return (
     <Card
       href={`/projects/${project.slug.slug}`}
       title={project.metadata.title}
-      thumbnail={project.metadata.thumbnails.length && project.metadata.thumbnails[0]}
+      thumbnail={project.metadata.thumbnails[0] ?? fallbackThumbnail}
       variant={variant}
     >
       <div className="flex flex-wrap space-x-1 text-primary-600 opacity-70 dark:text-primary-300">

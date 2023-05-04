@@ -1,33 +1,32 @@
 import React, { useMemo } from 'react';
 
-type CardsFeedProps = {
+type CardsFeedProps<T> = {
   /** Array of data to display in the feed. */
-  data: unknown[];
+  data: T[];
   /**
    * Render function called to display the cards.
    * @param props The props of the Card Component
    * @param index Index of each card.
    * @returns The card component
    */
-  render: (props: unknown, index: number) => JSX.Element;
+  render: (props: T, index: number) => JSX.Element;
   /**
    * Render function called to display the featured card.
    * @param props The props of the Card Component
    * @returns The card component
    */
-  renderFeatured: (props: unknown) => JSX.Element;
+  renderFeatured: (props: T) => JSX.Element;
 };
 
-const CardsFeed: React.FC<CardsFeedProps> = (props) => {
+const CardsFeed = <T,>(props: CardsFeedProps<T>) => {
   const { data, render, renderFeatured } = props;
 
   const content = useMemo(() => {
-    if (!data.length) return;
+    if (data.length === 0) return;
 
-    const featured = renderFeatured(data[0]);
     return (
       <>
-        <div className="md:col-span-3">{featured}</div>
+        {data.length && data[0] ? <div className="md:col-span-3">{renderFeatured(data[0])}</div> : null}
         {data.slice(1, data.length).map(render)}
       </>
     );

@@ -23,7 +23,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug: string = context.params.slug as string;
+  const { params } = context;
+
+  if (params === undefined) return { notFound: true };
+
+  const slug: string = params.slug as string;
   try {
     const blogPost = await getBlogPostBySlug({ slug }).then((post) => {
       return post;
