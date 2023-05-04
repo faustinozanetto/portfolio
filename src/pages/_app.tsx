@@ -3,6 +3,7 @@ import '@styles/code-blocks.css';
 import 'katex/dist/katex.css';
 
 import ThemeProvider from '@modules/theme/context/theme-context';
+import { Analytics } from '@vercel/analytics/react';
 import { domAnimation, LazyMotion } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
@@ -24,6 +25,7 @@ const Portfolio: React.FC<PortfolioProps> = (props) => {
       <ThemeProvider>
         <main className={`${InterFont.variable} scroll-smooth font-sans antialiased`}>
           <Component {...pageProps} />
+          <Analytics />
         </main>
       </ThemeProvider>
     </LazyMotion>
