@@ -38,9 +38,10 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
         }}
         className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
       >
-        Below are a collection of my personal and profesional projects I have completed in my past years of experience.
-        You will encounter with different areas such as web development or computer graphics, using a broad varierty of
-        programming languages and technologies like C++ or Typescript.
+        Below, you will find a compilation of both my personal and professional projects, representing my diverse range
+        of experience accumulated over the years. These projects span various domains, including web development and
+        computer graphics, and demonstrate my proficiency in a wide array of programming languages and technologies,
+        such as C++ and Typescript.
       </m.p>
 
       {/* Projects */}

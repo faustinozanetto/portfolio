@@ -110,7 +110,7 @@ const HomeEducation: React.FC = () => {
         }}
         className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
       >
-        As a web developer, my education has been a crucial component of my journey towards building innovative and
+        As a software developer, my education has been a crucial component of my journey towards building innovative and
         impactful digital solutions. I am currently undergoing a degree in Computer Science, which provided me with a
         solid foundation in programming fundamentals and web development concepts.
       </m.p>

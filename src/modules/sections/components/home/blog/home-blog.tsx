@@ -38,9 +38,10 @@ const HomeBlog: React.FC<HomeBlogProps> = (props) => {
         }}
         className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
       >
-        Below are some of the posts I´ve wrote across the years and are hosted here in my personal blog for people to
-        read them and learn something more about me. You can find posts about technical topic such as web development or
-        game programming and also gardening stuff!.
+        Here is a selection of posts I have written over the years, all hosted on my personal blog. These articles offer
+        readers the opportunity to delve deeper into my areas of expertise and gain insight into my diverse interests.
+        Within my blog, you will find an assortment of technical topics encompassing web development, game programming,
+        and even gardening-related content.
       </m.p>
       {/* Feed */}
       <BlogFeed blogPosts={blogPosts} />

@@ -7,7 +7,7 @@ import ThemeToggler from './theme-toggler/theme-toggler';
 const Navbar: React.FC = () => {
   return (
     <div className="flex w-full bg-neutral-200 drop-shadow-md dark:bg-neutral-800">
-      <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 md:justify-between">
+      <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 md:max-w-6xl md:justify-between lg:max-w-7xl">
         {/* Left: NavbarLogo */}
         <NavbarLogo />
 

@@ -18,7 +18,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = (props) => {
 
   return (
     <Section>
-      <article className="flex flex-col items-center justify-center space-y-2 text-neutral-900 dark:text-neutral-100 md:space-y-4 lg:space-y-8">
+      <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
         <div className="flex w-full flex-col space-y-2 md:flex-row">
           <ProjectShowcaseMetadata metadata={project.metadata} />
           <ProjectShowcaseButtons repoLink={project.metadata.repoLink} projectLink={project.metadata.projectLink} />

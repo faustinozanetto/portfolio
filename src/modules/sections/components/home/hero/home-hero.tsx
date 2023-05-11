@@ -7,7 +7,7 @@ const HomeHero: React.FC = () => {
   return (
     <Section id="hero" className="my-4 md:my-8 lg:my-14">
       {/* Titles */}
-      <div className="mb-4 w-fit leading-10">
+      <div className="mb-2 leading-10 md:mb-4">
         <m.h1
           initial={{ opacity: 0, translateY: -20 }}
           whileInView={{ opacity: 1, translateY: 0 }}
@@ -44,10 +44,11 @@ const HomeHero: React.FC = () => {
           duration: 0.25,
           delay: 0.25,
         }}
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+        className="mb-2 max-w-5xl text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
       >
-        I am a young software developer from Argentina that fell in love with programming years ago. My primary focus is
-        on web development, but I am also interested in computer graphics and game development.
+        I&apos;m a passionate young software developer from Argentina who discovered my love for programming years ago.
+        While my primary focus lies in web development, I have a keen interest in exploring the realms of computer
+        graphics and game development as well.
       </m.p>
       {/* Buttons */}
       <m.div

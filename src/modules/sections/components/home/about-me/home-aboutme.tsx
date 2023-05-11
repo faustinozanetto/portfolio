@@ -59,9 +59,9 @@ const HomeAbutMe: React.FC = () => {
             }}
             className="mb-2 md:mb-4 md:text-lg"
           >
-            I&apos;m a young guy from Argentina that fell in love with computers a while ago. Since little I have always
-            been interested in computers and programming. Back in the day, I started coding my very first projects using{' '}
-            <HighlightedWord>Java</HighlightedWord> and Minecraft.
+            From a tender age, I found myself captivated by the realms of programming and technology. It was during
+            those formative years that I embarked on my coding journey, delving into the world of Java and Minecraft, as
+            I undertook my very first projects.
           </m.p>
           <m.p
             initial={{ opacity: 0, translateY: -20 }}
@@ -72,13 +72,11 @@ const HomeAbutMe: React.FC = () => {
               duration: 0.25,
               delay: 0.35,
             }}
-            className="md:text-lg"
+            className="mb-2 md:mb-4 md:text-lg"
           >
-            Nowadays I&apos;m more into coding for the web industry using tools such as{' '}
-            <HighlightedWord>React</HighlightedWord> and Typescript combined with{' '}
-            <HighlightedWord>NextJs</HighlightedWord> and TailwindCSS. Although web is my primary focus at the moment,
-            I&apos;m also interested in computer graphics and rendering in general using{' '}
-            <HighlightedWord>C++</HighlightedWord> and OpenGL.
+            Presently, my focus has shifted towards the captivating realm of web development. Employing an array of
+            powerful tools such as React and Typescript, complemented by frameworks like Next.js and styling libraries
+            like TailwindCSS.
           </m.p>
         </div>
       </div>

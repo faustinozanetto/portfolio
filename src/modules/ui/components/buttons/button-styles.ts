@@ -39,9 +39,9 @@ export const ICON_SIZE_CLASSES = {
   xs: 'h-4 w-4',
   sm: 'h-4 w-4',
   base: 'h-5 w-5',
-  lg: 'h-5 w-5',
-  xl: 'h-5 w-5',
-  '2xl': 'h-6 w-6',
+  lg: 'h-6 w-6',
+  xl: 'h-6 w-6',
+  '2xl': 'h-7 w-7',
 };
 export const ICON_START_CLASSES = {
   xs: '-ml-0.5 mr-1.5',
