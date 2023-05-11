@@ -5,7 +5,7 @@ import React from 'react';
 import Section from '../../section/section';
 
 const HighlightedWord: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <span className="font-bold italic text-primary-600 dark:text-primary-300">{children}</span>;
+  return <span className="font-bold text-primary-600 dark:text-primary-300">{children}</span>;
 };
 
 const HomeAbutMe: React.FC = () => {
@@ -60,8 +60,9 @@ const HomeAbutMe: React.FC = () => {
             className="mb-2 md:mb-4 md:text-lg"
           >
             From a tender age, I found myself captivated by the realms of programming and technology. It was during
-            those formative years that I embarked on my coding journey, delving into the world of Java and Minecraft, as
-            I undertook my very first projects.
+            those formative years that I embarked on my coding journey, delving into the world of{' '}
+            <HighlightedWord>Java</HighlightedWord> and <HighlightedWord>Minecraft</HighlightedWord>, as I undertook my
+            very first projects.
           </m.p>
           <m.p
             initial={{ opacity: 0, translateY: -20 }}
@@ -75,8 +76,10 @@ const HomeAbutMe: React.FC = () => {
             className="mb-2 md:mb-4 md:text-lg"
           >
             Presently, my focus has shifted towards the captivating realm of web development. Employing an array of
-            powerful tools such as React and Typescript, complemented by frameworks like Next.js and styling libraries
-            like TailwindCSS.
+            powerful tools such as <HighlightedWord>React</HighlightedWord> and{' '}
+            <HighlightedWord>Typescript</HighlightedWord>, complemented by frameworks like{' '}
+            <HighlightedWord>Next JS</HighlightedWord> and styling libraries like{' '}
+            <HighlightedWord>TailwindCSS</HighlightedWord>.
           </m.p>
         </div>
       </div>
