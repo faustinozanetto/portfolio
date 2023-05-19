@@ -11,7 +11,7 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
   {
     title: 'Bachelors Degree in Computer Science',
     description:
-      'Estudio Ciencias de la Computación porque me apasiona el potencial de la tecnología para resolver problemas y mejorar la vida de las personas. Me he enfocado en aprender lenguajes de programación, algoritmos y estructuras de datos, y en mejorar mis habilidades de desarrollo de software.',
+      'I am currently pursuing a bachelo&apos;s degree in Computer Science, driven by my unwavering passion for exploring the boundless possibilities of technology. With a strong focus on programming languages, algorithms, and data structures, I am dedicated to honing my software development skills. Through my studies, I aim to harness the power of technology to address real-world challenges and make a positive impact on people&apos;s lives.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

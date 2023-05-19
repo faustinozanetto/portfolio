@@ -6,12 +6,13 @@ import Navbar from '@modules/navbar/components/navbar';
 import ThemeProvider from '@modules/theme/context/theme-context';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Source_Sans_Pro } from 'next/font/google';
 import React from 'react';
 
-const sourceSansPro = Inter({
+const sourceSansPro = Source_Sans_Pro({
   variable: '--font-sans',
   subsets: ['latin'],
+  weight: ['200', '300', '400', '600', '700', '900'],
   display: 'swap',
 });
 
