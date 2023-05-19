@@ -1,51 +1,51 @@
-import clsx from 'clsx';
-import * as React from 'react';
+import { cn } from '@modules/ui/lib/ui.lib';
+import type { VariantProps } from 'class-variance-authority';
+import { cva } from 'class-variance-authority';
+import React from 'react';
 
-import type { ButtonStyle, HTMLButtonProps } from '../buttons/button';
-import { BUTTON_COLOR_SCHEMES } from '../buttons/button-styles';
-import { ICON_BUTTON_BASE_STYLES, ICON_BUTTON_SIZES } from './icon-button-styles';
+const iconButtonVariants = cva(
+  'relative inline-flex appearance-none items-center justify-center whitespace-nowrap rounded-lg font-semibold text-neutral-900 shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-4 disabled:cursor-not-allowed dark:text-neutral-50',
+  {
+    variants: {
+      variant: {
+        default:
+          'bg-primary-300 text-white hover:bg-primary-500/90 focus-visible:ring-primary-400 dark:bg-primary-700 dark:hover:bg-primary-900/90',
+        outline:
+          'border-2 border-primary-300 hover:border-primary-400 hover:bg-primary-400 focus-visible:ring-primary-300 dark:border-primary-600 dark:hover:bg-primary-600 dark:focus-visible:ring-primary-500',
+        ghost:
+          'hover:border-primary-400 hover:bg-primary-500 focus-visible:ring-primary-300 dark:border-primary-600 dark:hover:bg-primary-800 dark:focus-visible:ring-primary-500',
+        danger:
+          'bg-red-300 text-white hover:bg-red-500/90 focus-visible:ring-red-400 dark:bg-red-700 dark:hover:bg-red-900/90',
+      },
+      size: {
+        sm: 'p-2',
+        base: 'p-2.5',
+        lg: 'p-3',
+        xl: 'px-7 py-4 text-lg',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'base',
+    },
+  }
+);
 
-const getButtonStyles = (style: ButtonStyle, ...rest: string[]): string => {
-  const { size = 'base', colorScheme = 'primary', variant = 'solid' } = style;
-  return clsx(ICON_BUTTON_BASE_STYLES, ICON_BUTTON_SIZES[size], BUTTON_COLOR_SCHEMES[colorScheme][variant], ...rest);
-};
+export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof iconButtonVariants> & {
+    icon: React.ReactElement;
+  };
 
-type IconButtonContentProps = IconButtonProps & {
-  loading?: boolean;
-  icon: React.ReactNode;
-};
-
-const IconButtonContent: React.FC<IconButtonContentProps> = (props) => {
-  const { loading, icon } = props;
-
-  return (
-    <React.Fragment>
-      {loading && <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">Loading</span>}
-      <span className={clsx({ invisible: loading })}>{icon}</span>
-    </React.Fragment>
-  );
-};
-
-export type IconButtonProps = ButtonStyle & {
-  disabled?: boolean;
-  icon: React.ReactElement;
-};
-
-export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps & HTMLButtonProps>((props, ref) => {
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const { className = '', disabled, size, variant, colorScheme, icon, ...rest } = props;
-
-  return (
-    <button
-      ref={ref}
-      className={getButtonStyles({ size, variant, colorScheme }, clsx(className))}
-      type="button"
-      aria-disabled={disabled}
-      {...rest}
-    >
-      <IconButtonContent {...props} />
-    </button>
-  );
-});
+const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, icon, variant, size, ...props }, ref) => {
+    return (
+      <button className={cn(iconButtonVariants({ variant, size, className }))} ref={ref} {...props}>
+        {icon}
+      </button>
+    );
+  }
+);
 
 IconButton.displayName = 'IconButton';
+
+export default IconButton;

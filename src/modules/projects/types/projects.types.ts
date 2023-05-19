@@ -4,7 +4,7 @@ export type ProjectLink = {
 };
 
 export type ProjectData = {
-  is_featured: boolean;
+  isFeatured: boolean;
   title: string;
   description: string;
   thumbnails: string[];

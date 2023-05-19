@@ -1,5 +1,7 @@
+'use client';
+
 import type { ProjectData } from '@modules/projects/types/projects.types';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 import DemoButton from '../buttons/demo-button';
@@ -14,7 +16,7 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
   const { projectLink, repoLink } = props;
 
   return (
-    <m.div
+    <motion.div
       className="space-y-2 md:w-1/5"
       initial={{ opacity: 0, translateX: 20 }}
       whileInView={{ opacity: 1, translateX: 0 }}
@@ -25,17 +27,9 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
         delay: 0.35,
       }}
     >
-      {projectLink.exists && projectLink.link ? (
-        <DemoButton className="w-full" size="lg" href={projectLink.link}>
-          Demo
-        </DemoButton>
-      ) : null}
-      {repoLink.exists && repoLink.link ? (
-        <RepoButton className="w-full" size="lg" href={repoLink.link}>
-          Repo
-        </RepoButton>
-      ) : null}
-    </m.div>
+      {projectLink.exists && projectLink.link ? <DemoButton href={projectLink.link}>Demo</DemoButton> : null}
+      {repoLink.exists && repoLink.link ? <RepoButton href={repoLink.link}>Repo</RepoButton> : null}
+    </motion.div>
   );
 };
 

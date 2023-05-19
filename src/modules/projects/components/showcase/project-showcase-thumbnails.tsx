@@ -1,5 +1,7 @@
+'use client';
+
 import type { ProjectData } from '@modules/projects/types/projects.types';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
@@ -15,7 +17,7 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
       {thumbnails.length > 0 &&
         thumbnails.map((thumbnail, index) => {
           return (
-            <m.div
+            <motion.div
               key={`thumb-${index}`}
               initial={{ opacity: 0, translateY: -30 }}
               animate={{ opacity: 1, translateY: 0 }}
@@ -33,7 +35,7 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
                 height={500}
                 priority={index < 3}
               />
-            </m.div>
+            </motion.div>
           );
         })}
     </div>

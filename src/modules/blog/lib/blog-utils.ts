@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { join } from 'path';

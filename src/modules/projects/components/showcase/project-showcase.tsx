@@ -1,5 +1,4 @@
 import type { Project } from '@modules/projects/types/projects.types';
-import Section from '@modules/sections/components/section/section';
 import React from 'react';
 
 import ProjectShowcaseButtons from './project-showcase-buttons';
@@ -17,7 +16,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = (props) => {
   const { project } = props;
 
   return (
-    <Section>
+    <section className="container mx-auto my-8 w-full max-w-5xl items-start justify-center p-4 md:my-12 md:max-w-6xl md:p-8 lg:my-16 lg:max-w-7xl">
       <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
         <div className="flex w-full flex-col space-y-2 md:flex-row">
           <ProjectShowcaseMetadata metadata={project.metadata} />
@@ -25,7 +24,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = (props) => {
         </div>
         <ProjectShowcaseThumbnails thumbnails={project.metadata.thumbnails} />
       </article>
-    </Section>
+    </section>
   );
 };
 

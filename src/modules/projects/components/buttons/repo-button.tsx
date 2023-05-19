@@ -1,23 +1,23 @@
-import type { LinkButtonProps } from '@modules/ui/components/buttons/button-link';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
-type IRepoButtonProps = LinkButtonProps & {
+type RepoButtonProps = {
   href: string;
   children?: React.ReactNode;
 };
 
-const RepoButton: React.FC<IRepoButtonProps> = (props) => {
-  const { href, children, ...rest } = props;
+const RepoButton: React.FC<RepoButtonProps> = (props) => {
+  const { href, children } = props;
 
   return (
     <LinkButton
-      colorScheme="primary"
       href={href}
+      className="w-full"
+      variant="outline"
       icon={
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="stroke-neutral-900 dark:stroke-neutral-100"
+          className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-100"
           viewBox="0 0 24 24"
           strokeWidth="2"
           fill="none"
@@ -30,7 +30,6 @@ const RepoButton: React.FC<IRepoButtonProps> = (props) => {
       }
       target="_blank"
       aria-label="Repo Button"
-      {...rest}
     >
       {children}
     </LinkButton>

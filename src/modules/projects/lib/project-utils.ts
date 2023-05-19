@@ -73,7 +73,7 @@ export const getAllProjects = async (): Promise<Project[]> => {
 export const getFeaturedProjects = async (): Promise<Project[]> => {
   const mappedProjects: Project[] = await Promise.all(
     projects
-      .filter((project) => project.is_featured)
+      .filter((project) => project.isFeatured)
       .map(async (project) => {
         const projectStars = await getProjectStars(project);
 

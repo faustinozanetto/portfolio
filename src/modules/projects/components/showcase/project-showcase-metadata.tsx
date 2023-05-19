@@ -1,5 +1,7 @@
+'use client';
+
 import type { ProjectData } from '@modules/projects/types/projects.types';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 import ProjectCardTechnologies from '../cards/project-card-technologies';
@@ -14,7 +16,7 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
 
   return (
     <div className="flex w-full flex-col">
-      <m.h1
+      <motion.h1
         className="mb-2 text-4xl font-extrabold leading-none tracking-tight text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl lg:text-6xl"
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -25,10 +27,10 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
         }}
       >
         {title}
-      </m.h1>
+      </motion.h1>
 
       {/* Description */}
-      <m.p
+      <motion.p
         className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -40,10 +42,10 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
         }}
       >
         {description}
-      </m.p>
+      </motion.p>
 
       {/* Technologies */}
-      <m.div
+      <motion.div
         className="flex flex-wrap items-center gap-2"
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -56,7 +58,7 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
       >
         <span className="font-semibold text-neutral-900 dark:text-neutral-100">Technologies: </span>
         <ProjectCardTechnologies technologies={technologies} />
-      </m.div>
+      </motion.div>
     </div>
   );
 };

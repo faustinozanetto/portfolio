@@ -1,6 +1,26 @@
 [
   {
-    "is_featured": true,
+    "isFeatured": true,
+    "title": "Shortly",
+    "description": "Shortly is a free and easy to use URL Shortener website with plenty of features to explore.",
+    "thumbnails": [
+      "/assets/projects/shortly/shortly-thumbnail-1.png",
+      "/assets/projects/shortly/shortly-thumbnail-2.png",
+      "/assets/projects/shortly/shortly-thumbnail-3.png",
+      "/assets/projects/shortly/shortly-thumbnail-4.png"
+    ],
+    "technologies": ["react", "tailwindcss", "typescript", "turborepo", "prisma"],
+    "projectLink": {
+      "exists": true,
+      "link": "https://shortlyto.vercel.app/"
+    },
+    "repoLink": {
+      "exists": true,
+      "link": "https://github.com/faustinozanetto/shortly"
+    }
+  },
+  {
+    "isFeatured": true,
     "title": "Gardentify",
     "description": "Gardentify is a web application that lets you manage and keep tracks of the plants in your garden.",
     "thumbnails": [
@@ -17,8 +37,9 @@
       "link": "https://github.com/faustinozanetto/gardentify"
     }
   },
+
   {
-    "is_featured": true,
+    "isFeatured": false,
     "title": "Klangs Coffee",
     "description": "Klangs Coffee is a fictional coffee shop located in Buenos Aires, Argentina. It was created to showcase my skills with CSS and React. It features a simple layout of multiple sections.",
     "thumbnails": [
@@ -40,7 +61,7 @@
     }
   },
   {
-    "is_featured": false,
+    "isFeatured": false,
     "title": "Mecha Type",
     "description": "Mecha Type is a web application creation with the intent of impronving the user's typing skills along with other features. It has been developed with NextJS and NestJS.",
     "thumbnails": ["/assets/projects/mecha-type/mecha-type-thumbnail.png"],
@@ -55,7 +76,7 @@
     }
   },
   {
-    "is_featured": false,
+    "isFeatured": false,
     "title": "Snappy",
     "description": "Snappy is a web created with NextJS. It's main purpose is to create code snippets that are highly customizable with ease. It features multiple configuration options and a set of ready to use presets.",
     "thumbnails": [
@@ -75,7 +96,7 @@
     }
   },
   {
-    "is_featured": true,
+    "isFeatured": true,
     "title": "Toply",
     "description": "Toply is a simple to use and free web application that lets you visualize your most listened-to songs and artists on Spotify. The user is also capable of generating a image that can be shared in their social media!",
     "thumbnails": [
@@ -95,7 +116,7 @@
     }
   },
   {
-    "is_featured": false,
+    "isFeatured": false,
     "title": "Frontend Tools",
     "description": "Frontend Tools is a colecction of tools that are commonly used in frontend web development such as gradient editor, shadow generator, etc. Image generated with DeviceFrames.",
     "thumbnails": ["/assets/projects/frontend-tools/frontend-tools-thumbnail-1.png"],
@@ -110,7 +131,7 @@
     }
   },
   {
-    "is_featured": false,
+    "isFeatured": false,
     "title": "Retro Engine",
     "description": "Retro Engine is a WIP c++ project focused on implementing several computer graphics principles into a complex set of technologies and tools such as OpenGL, GLFW, Assimp and more.",
     "thumbnails": [
@@ -132,7 +153,7 @@
     }
   },
   {
-    "is_featured": true,
+    "isFeatured": true,
     "title": "Iconzy",
     "description": "Iconzy is a personal project for customizing and browsing free icon packs for your personal projects.",
     "thumbnails": [
@@ -153,7 +174,7 @@
     }
   },
   {
-    "is_featured": false,
+    "isFeatured": false,
     "title": "Digital Agency",
     "description": "Digital Agency is a simple landing page for a fictional Marketing Agency.",
     "thumbnails": [

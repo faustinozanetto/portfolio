@@ -1,11 +1,12 @@
+'use client';
 import PostCardAuthorDetails from '@modules/blog/components/cards/common/post-card-author-details';
 import PostCardTags from '@modules/blog/components/cards/common/post-card-tags';
 import PostAuthorDetails from '@modules/blog/components/post/post-author-details';
 import type { BlogPostCompiled } from '@modules/blog/types/blog.types';
 import Section from '@modules/sections/components/section/section';
-import { Button } from '@modules/ui/components/buttons/button';
+import Button from '@modules/ui/components/buttons/button';
 import Image from '@modules/ui/components/images/image';
-import { m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { MDXRemote } from 'next-mdx-remote';
 
 import BaseLayout from '../../base/base-layout';
@@ -29,7 +30,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = (props) => {
         <article className="flex flex-col items-center justify-center text-neutral-900 dark:text-neutral-100">
           {/* Metadata */}
           <div className="flex w-full flex-col">
-            <m.h1
+            <motion.h1
               className="mb-2 text-4xl font-extrabold leading-none tracking-tight text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl lg:text-6xl"
               initial={{ opacity: 0, translateY: -20 }}
               whileInView={{ opacity: 1, translateY: 0 }}
@@ -40,9 +41,9 @@ const BlogLayout: React.FC<BlogLayoutProps> = (props) => {
               }}
             >
               {blogPostCompiled.blogPost.metadata.title}
-            </m.h1>
+            </motion.h1>
             {/* Description */}
-            <m.p
+            <motion.p
               className="mb-2 text-lg font-normal text-neutral-800 dark:text-neutral-300 md:mb-4 lg:text-xl"
               initial={{ opacity: 0, translateY: -20 }}
               whileInView={{ opacity: 1, translateY: 0 }}
@@ -54,10 +55,10 @@ const BlogLayout: React.FC<BlogLayoutProps> = (props) => {
               }}
             >
               {blogPostCompiled.blogPost.metadata.description}
-            </m.p>
+            </motion.p>
 
             {/* Author & Date */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0, translateY: -20 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
@@ -71,10 +72,10 @@ const BlogLayout: React.FC<BlogLayoutProps> = (props) => {
                 author={blogPostCompiled.blogPost.metadata.author}
                 date={blogPostCompiled.blogPost.metadata.date}
               />
-            </m.div>
+            </motion.div>
 
             {/* Tags */}
-            <m.div
+            <motion.div
               initial={{ opacity: 0, translateY: -20 }}
               whileInView={{ opacity: 1, translateY: 0 }}
               viewport={{ once: true }}
@@ -85,7 +86,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = (props) => {
               }}
             >
               <PostCardTags tags={blogPostCompiled.blogPost.metadata.tags} />
-            </m.div>
+            </motion.div>
 
             {/* Thumbnail */}
             <Image

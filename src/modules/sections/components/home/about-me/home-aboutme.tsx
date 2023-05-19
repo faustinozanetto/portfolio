@@ -1,4 +1,6 @@
-import { m } from 'framer-motion';
+'use client';
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
@@ -13,7 +15,7 @@ const HomeAbutMe: React.FC = () => {
     <Section id="about" alternateColors>
       <div className="grid items-center gap-4 md:grid-cols-aboutMe md:gap-6">
         {/* Left */}
-        <m.div
+        <motion.div
           initial={{ opacity: 0, translateY: -20 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           viewport={{ once: true }}
@@ -31,11 +33,11 @@ const HomeAbutMe: React.FC = () => {
             height={350}
             priority
           />
-        </m.div>
+        </motion.div>
 
         {/* Right */}
         <div className="text-neutral-900 dark:text-neutral-100">
-          <m.h2
+          <motion.h2
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             viewport={{ once: true }}
@@ -47,8 +49,8 @@ const HomeAbutMe: React.FC = () => {
             className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
           >
             About me
-          </m.h2>
-          <m.p
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             viewport={{ once: true }}
@@ -63,8 +65,8 @@ const HomeAbutMe: React.FC = () => {
             those formative years that I embarked on my coding journey, delving into the world of{' '}
             <HighlightedWord>Java</HighlightedWord> and <HighlightedWord>Minecraft</HighlightedWord>, as I undertook my
             very first projects.
-          </m.p>
-          <m.p
+          </motion.p>
+          <motion.p
             initial={{ opacity: 0, translateY: -20 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             viewport={{ once: true }}
@@ -80,7 +82,7 @@ const HomeAbutMe: React.FC = () => {
             <HighlightedWord>Typescript</HighlightedWord>, complemented by frameworks like{' '}
             <HighlightedWord>Next JS</HighlightedWord> and styling libraries like{' '}
             <HighlightedWord>TailwindCSS</HighlightedWord>.
-          </m.p>
+          </motion.p>
         </div>
       </div>
     </Section>

@@ -3,10 +3,16 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'unsplash.it'],
   },
+  experimental: {
+    appDir: true,
+  },
   reactStrictMode: true,
   swcMinify: true,
-  poweredByHeader: false,
-  trailingSlash: true,
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  },
 };
 
 module.exports = nextConfig;

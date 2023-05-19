@@ -1,8 +1,8 @@
+import ThemeToggler from '@modules/theme/components/theme-toggler';
 import React from 'react';
 
 import NavbarLink from './link/navbar-link';
 import NavbarLogo from './logo/navbar-logo';
-import ThemeToggler from './theme-toggler/theme-toggler';
 
 const Navbar: React.FC = () => {
   return (

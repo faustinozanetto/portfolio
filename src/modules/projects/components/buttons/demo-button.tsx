@@ -1,22 +1,21 @@
-import type { LinkButtonProps } from '@modules/ui/components/buttons/button-link';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
-type DemoButtonProps = LinkButtonProps & {
+type DemoButtonProps = {
   href: string;
   children?: React.ReactNode;
 };
 
 const DemoButton: React.FC<DemoButtonProps> = (props) => {
-  const { href, children, ...rest } = props;
+  const { href, children } = props;
 
   return (
     <LinkButton
-      colorScheme="secondary"
       href={href}
+      className="w-full"
       icon={
         <svg
-          className="stroke-neutral-900 dark:stroke-neutral-100"
+          className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-100"
           viewBox="0 0 24 24"
           strokeWidth="2"
           fill="none"
@@ -30,7 +29,6 @@ const DemoButton: React.FC<DemoButtonProps> = (props) => {
       }
       target="_blank"
       aria-label="Demo Button"
-      {...rest}
     >
       {children}
     </LinkButton>

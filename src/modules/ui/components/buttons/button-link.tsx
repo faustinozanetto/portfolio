@@ -1,20 +1,19 @@
-import clsx from 'clsx';
+import { cn } from '@modules/ui/lib/ui.lib';
+import type { VariantProps } from 'class-variance-authority';
 import Link from 'next/link';
 import React from 'react';
 
-import type { ButtonProps } from './button';
-import { Button } from './button';
+import { buttonVariants } from './button';
 
-export type LinkButtonProps = ButtonProps & {
-  href: string;
-  target?: string;
-};
+export type LinkButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
+  VariantProps<typeof buttonVariants> & { icon?: JSX.Element | null };
 
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
-  const { children, target, href = '/', ...rest } = props;
+  const { children, variant = 'base', size = 'base', className, icon, ...rest } = props;
   return (
-    <Link className={clsx(rest.className, 'flex items-center justify-center')} href={href} target={target}>
-      <Button {...rest}>{children}</Button>
+    <Link className={cn(buttonVariants({ size, variant }), className)} {...rest}>
+      {icon ? <span className="mr-2">{icon}</span> : null}
+      {children}
     </Link>
   );
 };

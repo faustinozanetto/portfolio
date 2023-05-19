@@ -1,3 +1,5 @@
+'use client';
+
 import useMediaQuery from '@hooks/use-media-query';
 import CardsFeed from '@modules/ui/components/cards/feed/cards-feed';
 import React from 'react';

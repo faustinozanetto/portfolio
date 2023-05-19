@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { cn } from '@modules/ui/lib/ui.lib';
 import React from 'react';
 
 type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -8,13 +8,14 @@ type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const Section: React.FC<SectionProps> = (props) => {
-  const { children, alternateColors = false, ...rest } = props;
+  const { children, className, alternateColors = false, ...rest } = props;
 
   return (
     <div
-      className={clsx(
+      className={cn(
         alternateColors ? 'bg-neutral-200 dark:bg-neutral-800' : 'bg-neutral-100 dark:bg-neutral-900',
-        rest.className
+        'w-full',
+        className
       )}
       {...rest}
     >
