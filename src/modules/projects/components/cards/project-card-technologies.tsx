@@ -1,3 +1,4 @@
+import { Badge } from '@modules/ui/components/badge/badge';
 import React from 'react';
 
 type ProjectCardTechnologiesProps = {
@@ -10,14 +11,7 @@ const ProjectCardTechnologies: React.FC<ProjectCardTechnologiesProps> = (props) 
   return (
     <div className="flex flex-wrap gap-1">
       {technologies.map((technology) => {
-        return (
-          <span
-            key={technology}
-            className="rounded-lg bg-primary-300 px-1 text-sm font-semibold text-neutral-800 dark:bg-primary-800 dark:text-neutral-200"
-          >
-            {technology}
-          </span>
-        );
+        return <Badge key={technology}>{technology}</Badge>;
       })}
     </div>
   );

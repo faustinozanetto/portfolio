@@ -3,12 +3,9 @@ import React from 'react';
 
 import ProjectShowcaseButtons from './project-showcase-buttons';
 import ProjectShowcaseMetadata from './project-showcase-metadata';
-import ProjectShowcaseThumbnails from './project-showcase-thumbnails';
+import ProjectShowcaseThumbnails from './thumbnails/project-showcase-thumbnails';
 
 type ProjectShowcaseProps = {
-  /**
-   * Project to data to use.
-   */
   project: Project;
 };
 

@@ -12,9 +12,8 @@ const Image: React.FC<ImageProps> = ({ ...props }: { css?: any } & Omit<ImagePro
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <Skeleton isLoaded={imageLoaded}>
+    <Skeleton className="rounded-lg" isLoaded={imageLoaded}>
       <NextImage
-        quality={90}
         onLoadingComplete={() => {
           setImageLoaded(true);
         }}

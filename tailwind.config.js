@@ -7,12 +7,20 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          '2xl': '1400px',
+        },
+      },
       gridTemplateColumns: {
         aboutMe: 'auto 1fr',
       },
       colors: {
         primary: colors.sky,
         secondary: colors.cyan,
+        background: colors.zinc,
       },
       fontFamily: {
         sans: ['var(--font-sans)'],
@@ -33,5 +41,5 @@ module.exports = {
     },
   },
   // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
 };

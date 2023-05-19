@@ -18,7 +18,7 @@ const HomeHero: React.FC = () => {
             type: 'tween',
             duration: 0.25,
           }}
-          className="text-3xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl lg:text-5xl"
+          className="text-4xl font-bold text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
         >
           Hi, I&apos;m Faustino a
         </motion.h1>
@@ -31,7 +31,7 @@ const HomeHero: React.FC = () => {
             duration: 0.25,
             delay: 0.15,
           }}
-          className="text-4xl font-extrabold text-primary-600 dark:text-primary-300 md:text-5xl lg:text-6xl"
+          className="text-5xl font-extrabold text-primary-600 dark:text-primary-300 md:text-6xl lg:text-7xl"
         >
           Software Developer
         </motion.h2>

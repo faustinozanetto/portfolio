@@ -2,8 +2,8 @@
 
 import type { ProjectData } from '@modules/projects/types/projects.types';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import React from 'react';
+import ProjectShowcaseThumbnail from './project-showcase-thumbnail';
 
 type ProjectShowcaseThumbnailsProps = {
   thumbnails: ProjectData['thumbnails'];
@@ -13,7 +13,7 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
   const { thumbnails } = props;
 
   return (
-    <div className="mt-4 grid gap-4 md:mt-6 md:grid-cols-2 lg:mt-8 lg:grid-cols-3">
+    <div className="mt-4 grid gap-4 md:mt-6 md:grid-cols-2 lg:mt-8 lg:grid-cols-3 items-center">
       {thumbnails.length > 0 &&
         thumbnails.map((thumbnail, index) => {
           return (
@@ -25,16 +25,9 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
                 duration: 0.35,
                 delay: 0.25 + 0.15 * index,
               }}
-              className="mb-4 w-full cursor-pointer rounded-xl"
+              className="justify-center flex cursor-pointer"
             >
-              <Image
-                src={thumbnail}
-                alt="Project thumbnail"
-                className="h-full rounded-xl shadow-lg"
-                width={500}
-                height={500}
-                priority={index < 3}
-              />
+              <ProjectShowcaseThumbnail thumbnail={thumbnail} />
             </motion.div>
           );
         })}

@@ -31,7 +31,7 @@ const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) 
 
       {/* Description */}
       <motion.p
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+        className="text-sm mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg md:mr-4"
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         viewport={{ once: true }}
