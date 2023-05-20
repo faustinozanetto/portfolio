@@ -1,3 +1,4 @@
+import { Badge } from '@modules/ui/components/badge/badge';
 import React from 'react';
 
 type PostCardTagsProps = {
@@ -10,14 +11,7 @@ const PostCardTags: React.FC<PostCardTagsProps> = (props) => {
   return (
     <div className="mb-1.5 flex flex-wrap gap-1">
       {tags.map((tag) => {
-        return (
-          <span
-            key={tag}
-            className="rounded-lg bg-primary-300 px-1 text-sm font-semibold text-neutral-800 dark:bg-primary-800 dark:text-neutral-200"
-          >
-            {tag}
-          </span>
-        );
+        return <Badge key={tag}>{tag}</Badge>;
       })}
     </div>
   );

@@ -1,12 +1,10 @@
 'use client';
 
+import { allBlogPosts } from '@contentlayer/generated';
 import BlogFeed from '@modules/blog/components/feed/blog-feed';
-import { getAllBlogPosts } from '@modules/blog/lib/blog-utils';
 import { motion } from 'framer-motion';
 
 export default async function BlogPage() {
-  const blogPosts = await getAllBlogPosts();
-
   return (
     <section className="container mx-auto my-8 w-full max-w-5xl items-start justify-center p-4 md:my-12 md:max-w-6xl md:p-8 lg:my-16 lg:max-w-7xl">
       {/* Titles */}
@@ -40,7 +38,7 @@ export default async function BlogPage() {
         and other topics.
       </motion.p>
 
-      <BlogFeed blogPosts={blogPosts} />
+      <BlogFeed blogPosts={allBlogPosts} />
     </section>
   );
 }

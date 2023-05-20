@@ -12,7 +12,7 @@ const HighlightedWord: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
 const HomeAbutMe: React.FC = () => {
   return (
-    <Section id="about" alternateColors>
+    <Section className="z-10" id="about" alternateColors>
       <div className="grid items-center gap-4 md:grid-cols-aboutMe md:gap-6">
         {/* Left */}
         <motion.div
@@ -25,7 +25,7 @@ const HomeAbutMe: React.FC = () => {
           }}
         >
           <Image
-            src="/assets/images/faustino.png"
+            src="/assets/images/faustino.webp"
             alt="About me Image"
             title="Faustino Zanetto"
             className="mx-auto h-64 w-64 rounded-3xl md:h-72 md:w-72"

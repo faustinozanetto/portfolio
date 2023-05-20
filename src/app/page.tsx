@@ -1,4 +1,4 @@
-import { getAllBlogPosts } from '@modules/blog/lib/blog-utils';
+import { allBlogPosts } from '@contentlayer/generated';
 import { getFeaturedProjects } from '@modules/projects/lib/project-utils';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import HomeBlog from '@modules/sections/components/home/blog/home-blog';
@@ -7,8 +7,7 @@ import HomeHero from '@modules/sections/components/home/hero/home-hero';
 import HomeProjects from '@modules/sections/components/home/projects/home-projects';
 
 export default async function HomePage() {
-  let blogPosts = await getAllBlogPosts();
-  blogPosts = blogPosts.slice(0, 4);
+  const blogPosts = allBlogPosts.slice(0, 4);
   const projects = await getFeaturedProjects();
 
   return (

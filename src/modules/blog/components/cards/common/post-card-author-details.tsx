@@ -1,7 +1,6 @@
+import { BlogPostAuthor } from '@contentlayer/generated';
 import Image from '@modules/ui/components/images/image';
 import React from 'react';
-
-import type { BlogPostAuthor } from '../../../types/blog.types';
 
 type PostCardAuthorDetailsProps = {
   author: BlogPostAuthor;
@@ -41,10 +40,7 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
             <line x1="11" y1="15" x2="12" y2="15" />
             <line x1="12" y1="15" x2="12" y2="18" />
           </svg>
-          <time
-            dateTime={new Date(date).toDateString()}
-            className="text-sm font-medium text-neutral-900 dark:text-neutral-100"
-          >
+          <time dateTime={new Date(date).toDateString()} className="text-sm text-neutral-900 dark:text-neutral-100">
             {new Date(date).toDateString()}
           </time>
         </div>

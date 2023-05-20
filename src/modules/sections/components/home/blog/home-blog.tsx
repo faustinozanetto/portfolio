@@ -1,12 +1,12 @@
 'use client';
 
 import BlogFeed from '@modules/blog/components/feed/blog-feed';
-import type { BlogPost } from '@modules/blog/types/blog.types';
 import LinkButton from '@modules/ui/components/buttons/button-link';
 import { motion } from 'framer-motion';
 import React from 'react';
 
 import Section from '../../section/section';
+import { BlogPost } from '@contentlayer/generated';
 
 type HomeBlogProps = {
   blogPosts: BlogPost[];

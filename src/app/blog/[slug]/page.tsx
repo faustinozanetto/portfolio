@@ -1,8 +1,10 @@
-import { siteConfig } from '@config/config';
-import { getAllBlogPostSlugs, getBlogPostBySlug } from '@modules/blog/lib/blog-utils';
-import type { BlogPostCompiled } from '@modules/blog/types/blog.types';
-import BlogLayout from '@modules/layouts/components/blog/components/blog-layout';
+import '@styles/markdown.css';
+
+import { allBlogPosts } from '@contentlayer/generated';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import BlogPostContent from '@modules/blog/components/post/blog-post-content';
+import { siteConfig } from '@config/config';
 
 type BlogPostPageProps = {
   params: {
@@ -10,35 +12,54 @@ type BlogPostPageProps = {
   };
 };
 
-const getBlogPostFromProps = async (props: BlogPostPageProps): Promise<BlogPostCompiled> => {
-  const { params } = props;
-  const { slug } = params;
-  const blogPost = await getBlogPostBySlug({ slug });
-  return blogPost;
-};
+async function getBlogPostFromParams(params: BlogPostPageProps['params']) {
+  const doc = allBlogPosts.find((doc) => doc.slugAsParams === params.slug);
 
-export async function generateStaticParams() {
-  const blogPosts = await getAllBlogPostSlugs();
+  if (!doc) {
+    return null;
+  }
 
-  return blogPosts.map((blogPost) => ({
-    slug: blogPost.slug,
+  return doc;
+}
+
+export async function generateStaticParams(): Promise<BlogPostPageProps['params'][]> {
+  return allBlogPosts.map((blogPost) => ({
+    slug: blogPost.slugAsParams,
   }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const blogPost = await getBlogPostFromProps({ params });
+  const blogPost = await getBlogPostFromParams(params);
+
+  if (!blogPost) {
+    notFound();
+  }
+
   return {
-    title: blogPost.blogPost.metadata.title,
-    description: blogPost.blogPost.metadata.description,
+    title: blogPost.title,
+    description: blogPost.description,
+    publisher: 'Faustino Zanetto',
     openGraph: {
-      title: blogPost.blogPost.metadata.title,
-      description: blogPost.blogPost.metadata.description,
-      url: `${siteConfig.url}/blog/${params.slug}`,
+      title: blogPost.title,
+      description: blogPost.description,
+      type: 'article',
+      url: `${siteConfig.url}/blog/${blogPost.slug}`,
+      publishedTime: blogPost.publishDate,
       images: [
         {
-          url: blogPost.blogPost.metadata.thumbnail,
-          width: 1500,
-          height: 1000,
+          url: blogPost.image,
+          alt: blogPost.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: blogPost.title,
+      description: blogPost.description,
+      images: [
+        {
+          url: blogPost.image,
+          alt: blogPost.title,
         },
       ],
     },
@@ -46,7 +67,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage(props: BlogPostPageProps) {
-  const blogPost = await getBlogPostFromProps(props);
+  const blogPost = await getBlogPostFromParams(props.params);
 
-  return <BlogLayout blogPostCompiled={blogPost} />;
+  if (!blogPost) {
+    notFound();
+  }
+
+  return <BlogPostContent blogPost={blogPost} />;
 }

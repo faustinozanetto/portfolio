@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = (props) => {
   return (
     <div
       className={cn(
-        alternateColors ? 'bg-neutral-200 dark:bg-neutral-800' : 'bg-neutral-100 dark:bg-neutral-900',
+        alternateColors ? 'bg-background-200 dark:bg-background-800' : 'bg-background-100 dark:bg-background-900',
         'w-full',
         className
       )}

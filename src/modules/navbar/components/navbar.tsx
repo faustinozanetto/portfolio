@@ -6,13 +6,13 @@ import NavbarLogo from './logo/navbar-logo';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="flex w-full bg-neutral-200 drop-shadow-md dark:bg-neutral-800 h-20">
-      <nav className="mx-auto flex w-full max-w-5xl flex-row items-center justify-center p-4 md:max-w-6xl md:justify-between lg:max-w-7xl">
+    <div className="bg-background-200/70 dark:bg-background-800/70 sticky left-0 right-0 top-0 z-20 h-20 w-full border-b-2 border-b-background-300 p-4 backdrop-blur-lg dark:border-b-background-800">
+      <div className="container mx-auto flex items-center justify-center md:justify-between">
         {/* Left: NavbarLogo */}
         <NavbarLogo />
 
         {/* RIGHT */}
-        <div className="hidden md:flex md:items-center md:justify-center md:space-x-6">
+        <nav className="hidden md:flex md:items-center md:justify-center md:space-x-4">
           {/* Links */}
           <NavbarLink href="/">Home</NavbarLink>
           <NavbarLink href="/blog">Blog</NavbarLink>
@@ -21,8 +21,8 @@ const Navbar: React.FC = () => {
           <NavbarLink href="/contact">Contact</NavbarLink>
 
           <ThemeToggler />
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   );
 };
