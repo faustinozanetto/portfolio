@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
   icons: {
-    shortcut: 'favicons/favicon.ico',
+    shortcut: 'assets/images/favicons/favicon.ico',
   },
 };
 
