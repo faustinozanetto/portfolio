@@ -3,10 +3,11 @@ import React from 'react';
 
 const BlogPostContentBack: React.FC = () => {
   return (
-    <div className="absolute right-4 top-4">
+    <div className="absolute right-4 top-4 md:top-8 lg:top-10">
       <LinkButton
         href="/blog"
         variant="ghost"
+        aria-label="Go Back"
         size="sm"
         icon={
           <svg

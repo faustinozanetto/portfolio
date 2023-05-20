@@ -11,7 +11,6 @@ export type ProjectData = {
   technologies: string[];
   projectLink: ProjectLink;
   repoLink: ProjectLink;
-  stars?: number;
 };
 
 export type ProjectSlug = {

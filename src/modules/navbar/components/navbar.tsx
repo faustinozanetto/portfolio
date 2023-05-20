@@ -17,8 +17,7 @@ const Navbar: React.FC = () => {
           <NavbarLink href="/">Home</NavbarLink>
           <NavbarLink href="/blog">Blog</NavbarLink>
           <NavbarLink href="/projects">Projects</NavbarLink>
-          <NavbarLink href="/about">About</NavbarLink>
-          <NavbarLink href="/contact">Contact</NavbarLink>
+          <NavbarLink href="#contact">Contact</NavbarLink>
 
           <ThemeToggler />
         </nav>
