@@ -10,7 +10,7 @@ const HomeHero: React.FC = () => {
     <Section className="relative" id="hero">
       {/* Gradients */}
       <div aria-hidden="true" className="absolute inset-0 left-1/3 -translate-x-1/3 transform animate-hero-background">
-        <div className="rounded-fulls dark:from-primary-800/50 dark:via-secondary-900/50 dark:to-primary-800/40 from-primary-300 via-primary-100 to-secondary-200 h-[50rem] w-[90rem] origin-top-left -translate-x-[15rem] -rotate-12 bg-gradient-to-tl blur-3xl "></div>
+        <div className="rounded-full dark:from-primary-800/50 dark:via-secondary-900/50 dark:to-primary-800/40 from-primary-300 via-primary-100 to-secondary-200 h-[40rem] w-[40rem] md:h-[60rem] md:w-[60rem] bg-gradient-to-tl blur-3xl lg:h-[80rem] lg:w-[80rem]"></div>
       </div>
       <div className="relative z-10">
         {/* Titles */}
@@ -79,7 +79,7 @@ const HomeHero: React.FC = () => {
           </LinkButton>
           <LinkButton
             className="w-full md:w-auto"
-            href="/assets/Resumee.pdf"
+            href="/Resumee.pdf"
             target="_blank"
             variant="ghost"
             aria-label="Check my Work Button"

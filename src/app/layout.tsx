@@ -82,7 +82,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ThemeProvider attribute="class" defaultTheme="system" enableColorScheme enableSystem>
           <main className="flex min-h-screen flex-col">
             <Navbar />
-            <div className="flex-1">{children}</div>
+            <div className="flex-1 overflow-x-hidden">{children}</div>
             <Footer />
           </main>
           <Analytics />

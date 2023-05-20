@@ -21,11 +21,9 @@
   </p>
 </div>
 
-> My personal portfolio.
-
 ## ✨ About
 
-This projects involves developing a personal portfolio with features such as blog with mdx posts, projects page and much more.
+The project at hand is a web developer portfolio, designed to showcase my skills, experience, and projects in the field of web development. This portfolio serves as a comprehensive representation of my capabilities as a web developer, highlighting my proficiency in front-end and back-end technologies. With a focus on clean code, responsive design, and user-friendly interfaces, this portfolio demonstrates my commitment to delivering high-quality websites.
 
 ## 🚀 Installation and Usage
 
@@ -48,13 +46,14 @@ The project is being developed with the latest technlogoies used in the industry
 - Husky
 - ESLint
 - Prettier
+- Content Layer
 - And more
 
 ## 👤 Author
 
 **Faustino Zanetto**
 
-- Website: https://faustinozanetto.vercel.app/
+- Website: https://faustinozanetto.com
 - Twitter: [@faustinozanetto](https://twitter.com/faustinozanetto)
 - Github: [@faustinozanetto](https://github.com/faustinozanetto)
 - LinkedIn: [@faustinozanetto](https://linkedin.com/in/faustino-zanetto-4294a3213)

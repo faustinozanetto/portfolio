@@ -10,9 +10,9 @@ const HighlightedWord: React.FC<{ children: React.ReactNode }> = ({ children }) 
   return <span className="font-bold text-primary-600 dark:text-primary-300">{children}</span>;
 };
 
-const HomeAbutMe: React.FC = () => {
+const HomeAboutMe: React.FC = () => {
   return (
-    <Section className="z-10" id="about" alternateColors>
+    <Section className="z-20" id="about" alternateColors>
       <div className="grid items-center gap-4 md:grid-cols-aboutMe md:gap-6">
         {/* Left */}
         <motion.div
@@ -28,7 +28,7 @@ const HomeAbutMe: React.FC = () => {
             src="/assets/images/faustino.webp"
             alt="About me Image"
             title="Faustino Zanetto"
-            className="mx-auto h-64 w-64 rounded-3xl md:h-72 md:w-72"
+            className="bg-cover object-cover h-64 w-full rounded-3xl md:h-72 md:w-72"
             width={350}
             height={350}
             priority
@@ -89,4 +89,4 @@ const HomeAbutMe: React.FC = () => {
   );
 };
 
-export default HomeAbutMe;
+export default HomeAboutMe;
