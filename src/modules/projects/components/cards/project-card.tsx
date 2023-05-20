@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
     >
       <ProjectCardTechnologies technologies={project.metadata.technologies} />
       {/* Description */}
-      <p className="truncate-text mt-1.5">{project.metadata.description}</p>
+      <p className="line-clamp-4 mt-1.5">{project.metadata.description}</p>
     </Card>
   );
 };

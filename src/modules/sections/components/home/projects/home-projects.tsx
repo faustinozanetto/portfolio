@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 import Section from '../../section/section';
+import Link from 'next/link';
+import { buttonVariants } from '@modules/ui/components/buttons/button';
 
 type HomeProjectsProps = {
   projects: Project[];
@@ -43,7 +45,11 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
         Below, you will find a compilation of both my personal and professional projects, representing my diverse range
         of experience accumulated over the years. These projects span various domains, including web development and
         computer graphics, and demonstrate my proficiency in a wide array of programming languages and technologies,
-        such as C++ and Typescript.
+        such as C++ and Typescript. Learn more at{' '}
+        <Link href="/projects" className="underline decoration-primary-600 dark:decoration-primary-400 decoration-2">
+          Projects
+        </Link>
+        .
       </motion.p>
 
       {/* Projects */}

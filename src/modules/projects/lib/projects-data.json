@@ -4,10 +4,10 @@
     "title": "Shortly",
     "description": "Shortly is a user-friendly and completely free URL Shortener website that offers a plethora of exciting features to explore. With options like password protection and the ability to set an expiration date for your shortened links, Shortly provides a secure and customizable experience. Additionally, it offers a convenient user dashboard complete with graphical representations that showcase the performance of your links, allowing you to track their effectiveness effortlessly.",
     "thumbnails": [
-      "/assets/projects/shortly/shortly-thumbnail-1.png",
-      "/assets/projects/shortly/shortly-thumbnail-2.png",
-      "/assets/projects/shortly/shortly-thumbnail-3.png",
-      "/assets/projects/shortly/shortly-thumbnail-4.png"
+      "/assets/projects/shortly/shortly-thumbnail-1.webp",
+      "/assets/projects/shortly/shortly-thumbnail-2.webp",
+      "/assets/projects/shortly/shortly-thumbnail-3.webp",
+      "/assets/projects/shortly/shortly-thumbnail-4.webp"
     ],
     "technologies": ["react", "tailwindcss", "typescript", "turborepo", "prisma"],
     "projectLink": {

@@ -15,6 +15,7 @@ export const buttonVariants = cva(
           'text-neutral-900 hover:text-primary-50 hover:bg-primary-500 focus-visible:ring-primary-400 dark:text-neutral-50 dark:hover:bg-primary-700',
         danger:
           'bg-red-400 text-neutral-900 hover:bg-red-500 focus-visible:ring-red-400 dark:bg-red-700 dark:text-neutral-50 dark:hover:bg-red-800',
+        link: 'underline-offset-4 hover:underline text-neutral-900 dark:text-neutral-50',
         unstyled: '',
       },
       size: {

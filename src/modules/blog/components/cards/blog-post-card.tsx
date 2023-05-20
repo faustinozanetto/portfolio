@@ -22,7 +22,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = (props) => {
       {/* Tags */}
       <PostCardTags tags={blogPost.tags} />
       {/* Description */}
-      <p className="truncate-text">{blogPost.description}</p>
+      <p className="line-clamp-4">{blogPost.description}</p>
       {/* Preview Link */}
       {/* <LinkButton size="md" className="w-full " href={`/blog/${blogPost.slug.slug}`} leftIcon={<FiEye size={22} />}>
             Read More

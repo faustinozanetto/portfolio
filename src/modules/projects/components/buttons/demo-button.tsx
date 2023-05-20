@@ -15,7 +15,7 @@ const DemoButton: React.FC<DemoButtonProps> = (props) => {
       className="w-full"
       icon={
         <svg
-          className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-100"
+          className="h-5 w-5 stroke-neutral-100"
           viewBox="0 0 24 24"
           strokeWidth="2"
           fill="none"

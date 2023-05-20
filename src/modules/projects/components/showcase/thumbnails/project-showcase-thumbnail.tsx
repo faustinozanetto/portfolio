@@ -18,18 +18,21 @@ const ProjectShowcaseThumbnail: React.FC<ProjectShowcaseThumbnailProps> = (props
         <Image
           src={thumbnail}
           alt="Project thumbnail"
-          className="w-full rounded-lg shadow-lg"
-          width={300}
-          height={300}
+          className="rounded-lg shadow-lg"
+          quality={50}
+          width={350}
+          height={350}
         />
       </DialogTrigger>
-      <DialogContent className="max-w-[350px] sm:max-w-[425px] md:max-w-5xl">
+      <DialogContent className="max-w-[350px] sm:max-w-[425px] md:max-w-6xl">
         <Image
           src={thumbnail}
           alt="Project thumbnail"
           className="w-full rounded-lg shadow-lg"
-          width={800}
-          height={800}
+          loading="lazy"
+          quality={90}
+          width={1250}
+          height={1000}
         />
       </DialogContent>
     </Dialog>
