@@ -2,6 +2,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  :root {
+    --border: 213, 27%, 84%;
+  }
+
+  .dark {
+    --border: 240, 5%, 26%;
+  }
+}
+
 html {
   --scroll-behavior: smooth!important;
   scroll-behavior: smooth!important;

@@ -12,7 +12,7 @@ const BlogPostContentBack: React.FC = () => {
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-50"
+            className="h-5 w-5 stroke-current"
             viewBox="0 0 24 24"
             strokeWidth="2"
             fill="none"

@@ -20,6 +20,7 @@ module.exports = {
       colors: {
         secondary: colors.cyan,
         background: colors.zinc,
+        border: 'hsl(var(--border))',
         primary: {
           50: '#eef6ff',
           100: '#d9eaff',

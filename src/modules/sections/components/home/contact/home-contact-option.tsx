@@ -12,11 +12,16 @@ export type HomeContactOptionProps = {
 const HomeContactOption: React.FC<HomeContactOptionProps> = (props) => {
   const { icon, href, type, label, isExternalPage = true } = props;
   return (
-    <div className="flex items-center justify-center gap-2 bg-background-100 dark:bg-background-900 shadow-lg rounded-lg p-4 w-[300px] hover:scale-105 transition-transform">
+    <div className="flex items-center justify-center gap-2 bg-background-100 dark:bg-background-900 shadow-lg rounded-lg p-4 w-[300px] hover:scale-105 transition-transform border border-border">
       <div className="h-10 w-10 rounded-lg bg-primary-600 p-2 dark:bg-primary-800">{icon}</div>
       <div className="items-start flex flex-col mr-auto">
         <span className="block leading-none">{type}</span>
-        <Link href={href} target={isExternalPage ? '_blank' : '_self'} className="text-md font-semibold">
+        <Link
+          href={href}
+          target={isExternalPage ? '_blank' : '_self'}
+          prefetch={false}
+          className="text-md font-semibold"
+        >
           {label}
         </Link>
       </div>

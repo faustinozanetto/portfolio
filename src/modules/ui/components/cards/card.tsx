@@ -22,7 +22,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
     <Link href={href} ref={ref}>
       <div
         className={clsx(
-          'group cursor-pointer overflow-hidden rounded-lg bg-background-100 shadow-2xl dark:bg-background-800',
+          'group cursor-pointer overflow-hidden rounded-lg bg-background-100 shadow-2xl dark:bg-background-800 border border-border',
           variant === 'portrait' && 'w-full md:max-w-sm',
           variant === 'landscape' && 'grid grid-cols-2'
         )}

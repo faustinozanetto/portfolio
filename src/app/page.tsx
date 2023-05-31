@@ -1,4 +1,5 @@
 import { allBlogPosts } from '@contentlayer/generated';
+import HomeScrollTop from '@modules/home/components/home-scroll-top';
 import { getFeaturedProjects } from '@modules/projects/lib/project-utils';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import HomeBlog from '@modules/sections/components/home/blog/home-blog';
@@ -12,13 +13,15 @@ export default async function HomePage() {
   const projects = await getFeaturedProjects();
 
   return (
-    <div className="flex w-full flex-col items-center justify-center">
+    <div className="relative flex w-full flex-col items-center justify-center">
       <HomeHero />
       <HomeAboutMe />
       <HomeProjects projects={projects} />
       <HomeEducation />
       <HomeBlog blogPosts={blogPosts} />
       <HomeContact />
+
+      <HomeScrollTop />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import NavbarLogo from './logo/navbar-logo';
 
 const Navbar: React.FC = () => {
   return (
-    <div className="bg-background-200/70 dark:bg-background-800/70 sticky left-0 right-0 top-0 z-20 h-20 w-full border-b-2 border-b-background-300 p-4 backdrop-blur-lg dark:border-b-background-800">
+    <div className="bg-background-200/70 dark:bg-background-800/70 z-[999] h-20 border-b-2 border-b-border w-full p-4 backdrop-blur-lg">
       <div className="container mx-auto flex items-center justify-center md:justify-between">
         {/* Left: NavbarLogo */}
         <NavbarLogo />
