@@ -5,10 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import Section from '../../section/section';
-
-const HighlightedWord: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <span className="font-bold text-primary-600 dark:text-primary-300">{children}</span>;
-};
+import HighlightedWord from '@modules/common/components/highlighted-word';
 
 const HomeAboutMe: React.FC = () => {
   return (
@@ -29,8 +26,8 @@ const HomeAboutMe: React.FC = () => {
             alt="About me Image"
             title="Faustino Zanetto"
             className="bg-cover object-cover h-64 w-full rounded-3xl md:h-72 md:w-72 border border-border"
-            width={350}
-            height={350}
+            width={550}
+            height={550}
             priority
           />
         </motion.div>

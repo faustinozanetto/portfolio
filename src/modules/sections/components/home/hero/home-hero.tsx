@@ -72,6 +72,7 @@ const HomeHero: React.FC = () => {
           <LinkButton
             href="mailto:zanettofaustino@gmail.com"
             aria-label="Contact Me"
+            title="Contact Me"
             className="w-full md:w-auto"
             size="lg"
           >
@@ -80,6 +81,7 @@ const HomeHero: React.FC = () => {
           <LinkButton
             className="w-full md:w-auto"
             href="/Resumee.pdf"
+            title="Resumee"
             target="_blank"
             variant="ghost"
             aria-label="Check my Work Button"

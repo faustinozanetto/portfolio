@@ -16,7 +16,7 @@ type HomeProjectsProps = {
 const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
   const { projects } = props;
   return (
-    <Section className="z-20" id="projects">
+    <Section className="z-20" alternateColors id="projects">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, translateY: -20 }}
@@ -46,7 +46,11 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
         of experience accumulated over the years. These projects span various domains, including web development and
         computer graphics, and demonstrate my proficiency in a wide array of programming languages and technologies,
         such as C++ and Typescript. Learn more at{' '}
-        <Link href="/projects" className="underline decoration-primary-600 dark:decoration-primary-400 decoration-2">
+        <Link
+          href="/projects"
+          title="Projects"
+          className="underline decoration-primary-600 dark:decoration-primary-400 decoration-2"
+        >
           Projects
         </Link>
         .

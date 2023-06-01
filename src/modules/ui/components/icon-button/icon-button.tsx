@@ -8,12 +8,11 @@ const iconButtonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-primary-300 text-white hover:bg-primary-500/90 focus-visible:ring-primary-400 dark:bg-primary-700 dark:hover:bg-primary-900/90',
+        base: 'bg-primary-500 text-neutral-50 hover:bg-primary-600 focus-visible:ring-primary-400 dark:bg-primary-700 dark:text-neutral-50 dark:hover:bg-primary-800',
         outline:
-          'border-2 border-primary-300 hover:border-primary-400 hover:bg-primary-400 focus-visible:ring-primary-300 dark:border-primary-600 dark:hover:bg-primary-600 dark:focus-visible:ring-primary-500',
+          'border-2 border-primary-500  text-neutral-900 hover:text-neutral-50 hover:border-primary-600 hover:bg-primary-600 focus-visible:ring-primary-300 dark:border-primary-700 dark:hover:bg-primary-800 dark:text-neutral-50 dark:focus-visible:ring-primary-500',
         ghost:
-          'hover:border-primary-400 hover:bg-primary-500 focus-visible:ring-primary-300 dark:border-primary-600 dark:hover:bg-primary-800 dark:focus-visible:ring-primary-500',
+          'text-neutral-900 hover:text-primary-50 hover:bg-primary-500 focus-visible:ring-primary-400 dark:text-neutral-50 dark:hover:bg-primary-700',
         danger:
           'bg-red-300 text-white hover:bg-red-500/90 focus-visible:ring-red-400 dark:bg-red-700 dark:hover:bg-red-900/90',
       },
@@ -25,7 +24,7 @@ const iconButtonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'base',
       size: 'base',
     },
   }

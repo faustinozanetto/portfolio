@@ -15,9 +15,10 @@ const HomeContactOption: React.FC<HomeContactOptionProps> = (props) => {
     <div className="flex items-center justify-center gap-2 bg-background-100 dark:bg-background-900 shadow-lg rounded-lg p-4 w-[300px] hover:scale-105 transition-transform border border-border">
       <div className="h-10 w-10 rounded-lg bg-primary-600 p-2 dark:bg-primary-800">{icon}</div>
       <div className="items-start flex flex-col mr-auto">
-        <span className="block leading-none">{type}</span>
+        <h3 className="block leading-none">{type}</h3>
         <Link
           href={href}
+          title={label}
           target={isExternalPage ? '_blank' : '_self'}
           prefetch={false}
           className="text-md font-semibold"

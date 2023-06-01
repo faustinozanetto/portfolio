@@ -15,7 +15,7 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 dark:stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -37,7 +37,7 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 dark:stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -65,7 +65,7 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 dark:stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -87,7 +87,7 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
 
 const HomeEducation: React.FC = () => {
   return (
-    <Section id="education" alternateColors>
+    <Section id="education">
       <motion.h2
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}

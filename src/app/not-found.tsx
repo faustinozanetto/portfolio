@@ -20,7 +20,7 @@ const NotFoundPage: React.FC = () => {
           </p>
 
           <div className="flex w-full flex-col gap-2">
-            <Link href="/" className={cn(buttonVariants(), 'w-full')}>
+            <Link href="/" title="Go Home" className={cn(buttonVariants(), 'w-full')}>
               Go Home
             </Link>
           </div>

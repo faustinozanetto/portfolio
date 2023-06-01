@@ -74,7 +74,7 @@ const CONTACT_OPTIONS: HomeContactOptionProps[] = [
 
 const HomeContact: React.FC = () => {
   return (
-    <Section className="text-center" id="contact" alternateColors>
+    <Section className="text-center" id="contact">
       <motion.h2
         initial={{ opacity: 0, translateY: -20 }}
         whileInView={{ opacity: 1, translateY: 0 }}

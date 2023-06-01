@@ -15,6 +15,7 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
       <Image
         src={author.image}
         alt={`Blog Author ${author.name}`}
+        title="Blog Author"
         priority
         width={85}
         height={85}

@@ -12,6 +12,7 @@ const DemoButton: React.FC<DemoButtonProps> = (props) => {
   return (
     <LinkButton
       href={href}
+      title="Project Demo"
       className="w-full"
       icon={
         <svg

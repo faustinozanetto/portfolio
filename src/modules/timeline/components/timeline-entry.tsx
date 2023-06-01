@@ -3,7 +3,7 @@ import React from 'react';
 type TimelineEntryProps = {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: JSX.Element;
   from: Date | string;
   to: Date | string;
   children?: React.ReactNode;
@@ -19,8 +19,8 @@ const TimelineEntry: React.FC<TimelineEntryProps> = (props) => {
 
   return (
     <li className="group relative mb-6 ml-6 transition-all">
-      <div className="absolute -left-10 top-0 rounded-lg bg-primary-600 p-1.5 group-hover:scale-110 dark:bg-primary-800 md:-left-11">
-        {icon}
+      <div className="absolute top-0 rounded-lg bg-primary-600 p-1.5 group-hover:scale-110 dark:bg-primary-800 -left-10 md:-left-11">
+        {React.cloneElement(icon)}
       </div>
       <h3 className="mb-1 text-lg font-semibold leading-tight text-neutral-900 group-hover:text-primary-700 dark:text-neutral-100 dark:group-hover:text-primary-300 md:text-xl">
         {title}

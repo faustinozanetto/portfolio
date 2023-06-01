@@ -20,7 +20,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
           <p className="max-w-lg text-center font-bold text-red-800 dark:text-red-300 md:text-lg">{error.message}</p>
 
           <div className="flex w-full flex-col gap-2">
-            <Link href="/" className={cn(buttonVariants({}), 'w-full')}>
+            <Link href="/" title="Go Home" className={cn(buttonVariants({}), 'w-full')}>
               Go Home
             </Link>
           </div>

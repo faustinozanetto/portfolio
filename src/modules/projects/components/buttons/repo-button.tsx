@@ -12,6 +12,7 @@ const RepoButton: React.FC<RepoButtonProps> = (props) => {
   return (
     <LinkButton
       href={href}
+      title="Project Repo"
       className="w-full"
       variant="outline"
       icon={

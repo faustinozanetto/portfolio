@@ -6,6 +6,7 @@ const BlogPostContentBack: React.FC = () => {
     <div className="absolute right-4 top-4 md:top-8 lg:top-10">
       <LinkButton
         href="/blog"
+        title="Go Back"
         variant="ghost"
         aria-label="Go Back"
         size="sm"
