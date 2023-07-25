@@ -79,10 +79,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={interFont.variable} suppressHydrationWarning>
-      <body
-        className="bg-background-50 dark:bg-background-900 overflow-x-hidden font-sans antialiased scroll-smooth"
-        suppressHydrationWarning
-      >
+      <body className="bg-background-50 dark:bg-background-900 overflow-x-hidden font-sans antialiased scroll-smooth">
         <Providers>
           <main className="flex min-h-screen flex-col">
             <Navbar />
