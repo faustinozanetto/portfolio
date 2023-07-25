@@ -5,9 +5,8 @@ import type { Project } from '@modules/projects/types/projects.types';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-import Section from '../../section/section';
 import Link from 'next/link';
-import { buttonVariants } from '@modules/ui/components/buttons/button';
+import Section from '../../section/section';
 
 type HomeProjectsProps = {
   projects: Project[];

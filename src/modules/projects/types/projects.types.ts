@@ -4,13 +4,13 @@ export type ProjectLink = {
 };
 
 export type ProjectData = {
-  isFeatured: boolean;
-  title: string;
   description: string;
-  thumbnails: string[];
-  technologies: string[];
+  isFeatured: boolean;
   projectLink: ProjectLink;
   repoLink: ProjectLink;
+  technologies: string[];
+  thumbnails: string[];
+  title: string;
 };
 
 export type ProjectSlug = {

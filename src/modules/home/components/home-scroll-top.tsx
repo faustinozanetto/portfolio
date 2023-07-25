@@ -1,4 +1,5 @@
 'use client';
+
 import useRevealOnScroll from '@modules/common/hooks/use-reveal-on-scroll';
 import IconButton from '@modules/ui/components/icon-button/icon-button';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -8,6 +9,8 @@ const HomeScrollTop: React.FC = () => {
   const { show } = useRevealOnScroll({ revealScroll: 200 });
 
   const handleScrollTop = () => {
+    if (typeof window === 'undefined') return;
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

@@ -6,7 +6,7 @@ import React from 'react';
 import { buttonVariants } from './button';
 
 export type LinkButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
-  VariantProps<typeof buttonVariants> & { icon?: JSX.Element | null };
+  VariantProps<typeof buttonVariants> & { icon?: React.ReactNode | null };
 
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
   const { children, variant = 'base', size = 'base', className, icon, ...rest } = props;

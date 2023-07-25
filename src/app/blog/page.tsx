@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { allBlogPosts } from '@contentlayer/generated';
 import BlogFeed from '@modules/blog/components/feed/blog-feed';
 import { motion } from 'framer-motion';

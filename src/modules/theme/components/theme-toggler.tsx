@@ -1,15 +1,14 @@
 'use client';
 
 import Button from '@modules/ui/components/buttons/button';
-import { useTheme } from 'next-themes';
+import { useTheme } from 'next-theme-kit';
 import React from 'react';
 
 const ThemeToggler: React.FC = () => {
   const { theme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
-    if (theme === 'dark') setTheme('light');
-    else setTheme('dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   return (

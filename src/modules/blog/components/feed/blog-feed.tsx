@@ -5,8 +5,8 @@ import CardsFeed from '@modules/ui/components/cards/feed/cards-feed';
 import React from 'react';
 import theme from 'tailwindcss/defaultTheme';
 
-import BlogPostCard from '../cards/blog-post-card';
 import { BlogPost } from '@contentlayer/generated';
+import BlogPostCard from '../cards/blog-post-card';
 
 type BlogFeedProps = {
   /** Blog posts to display in the feed */
@@ -20,15 +20,15 @@ const BlogPostsFeed: React.FC<BlogFeedProps> = (props) => {
   return (
     <CardsFeed
       data={blogPosts}
-      render={(cardProps, index) => {
-        return React.createElement(BlogPostCard, { key: index, blogPost: cardProps, variant: 'portrait' });
-      }}
-      renderFeatured={(cardProps) => {
-        return React.createElement(BlogPostCard, {
+      render={(cardProps, index) =>
+        React.createElement(BlogPostCard, { key: index, blogPost: cardProps, variant: 'portrait' })
+      }
+      renderFeatured={(cardProps) =>
+        React.createElement(BlogPostCard, {
           blogPost: cardProps,
           variant: isMediumDevice ? 'portrait' : 'landscape',
-        });
-      }}
+        })
+      }
     />
   );
 };

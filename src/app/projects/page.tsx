@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 import ProjectsFeed from '@modules/projects/components/projects-feed';
 import { getAllProjects } from '@modules/projects/lib/project-utils';
 import { motion } from 'framer-motion';

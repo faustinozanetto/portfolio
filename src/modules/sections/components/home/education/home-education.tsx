@@ -85,43 +85,41 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
   },
 ];
 
-const HomeEducation: React.FC = () => {
-  return (
-    <Section id="education">
-      <motion.h2
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-        }}
-        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
-      >
-        Education
-      </motion.h2>
-      {/* Text */}
-      <motion.p
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-          delay: 0.15,
-        }}
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
-      >
-        As a software developer, my education has been a crucial component of my journey towards building innovative and
-        impactful digital solutions. I am currently undergoing a degree in Computer Science, which provided me with a
-        solid foundation in programming fundamentals and web development concepts.
-      </motion.p>
+const HomeEducation: React.FC = () => (
+  <Section id="education">
+    <motion.h2
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+      }}
+      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+    >
+      Education
+    </motion.h2>
+    {/* Text */}
+    <motion.p
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+        delay: 0.15,
+      }}
+      className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+    >
+      As a software developer, my education has been a crucial component of my journey towards building innovative and
+      impactful digital solutions. I am currently undergoing a degree in Computer Science, which provided me with a
+      solid foundation in programming fundamentals and web development concepts.
+    </motion.p>
 
-      <div className="mx-4 mt-6 md:mx-8 lg:mx-14">
-        <Timeline entries={EDUCATION_ENTRIES} />
-      </div>
-    </Section>
-  );
-};
+    <div className="mx-4 mt-6 md:mx-8 lg:mx-14">
+      <Timeline entries={EDUCATION_ENTRIES} />
+    </div>
+  </Section>
+);
 
 export default HomeEducation;

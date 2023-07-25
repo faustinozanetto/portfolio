@@ -1,6 +1,5 @@
 'use client';
 
-import { Dialog, DialogContent, DialogTrigger } from '@modules/ui/components/dialog/dialog';
 import Image from '@modules/ui/components/images/image';
 
 import React from 'react';

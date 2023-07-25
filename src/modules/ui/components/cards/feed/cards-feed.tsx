@@ -9,13 +9,13 @@ type CardsFeedProps<T> = {
    * @param index Index of each card.
    * @returns The card component
    */
-  render: (props: T, index: number) => JSX.Element;
+  render: (props: T, index: number) => React.ReactNode;
   /**
    * Render function called to display the featured card.
    * @param props The props of the Card Component
    * @returns The card component
    */
-  renderFeatured: (props: T) => JSX.Element;
+  renderFeatured: (props: T) => React.ReactNode;
 };
 
 const CardsFeed = <T,>(props: CardsFeedProps<T>) => {
@@ -24,6 +24,7 @@ const CardsFeed = <T,>(props: CardsFeedProps<T>) => {
   const content = useMemo(() => {
     if (data.length === 0) return;
 
+    // eslint-disable-next-line consistent-return
     return (
       <>
         {data.length && data[0] ? <div className="md:col-span-3">{renderFeatured(data[0])}</div> : null}

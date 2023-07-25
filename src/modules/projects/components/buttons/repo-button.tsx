@@ -2,8 +2,8 @@ import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
 type RepoButtonProps = {
-  href: string;
   children?: React.ReactNode;
+  href: string;
 };
 
 const RepoButton: React.FC<RepoButtonProps> = (props) => {

@@ -2,8 +2,8 @@ import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
 
 type DemoButtonProps = {
-  href: string;
   children?: React.ReactNode;
+  href: string;
 };
 
 const DemoButton: React.FC<DemoButtonProps> = (props) => {

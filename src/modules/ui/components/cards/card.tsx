@@ -5,14 +5,14 @@ import React from 'react';
 
 export type CardProps = {
   children: React.ReactNode;
-  /** Optional: Variant of the project card. */
-  variant?: 'landscape' | 'portrait';
   /** Link to navigate when clicked */
   href: string;
-  /**  Title to show in the card */
-  title: string;
   /** Thumbnail to display */
   thumbnail: string;
+  /**  Title to show in the card */
+  title: string;
+  /** Optional: Variant of the project card. */
+  variant?: 'landscape' | 'portrait';
 };
 
 const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {

@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 
+import HighlightedWord from '@modules/common/components/highlighted-word';
 import Section from '../../section/section';
 import HomeSkillsCard, { HomeSkillsCardProps } from './home-skills-card';
-import HighlightedWord from '@modules/common/components/highlighted-word';
 
 const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
   {
@@ -20,7 +20,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M13.219 2.25C14.27 4.731 9.449 6.252 9 8.32c-.41 1.899 2.856 4.125 2.86 4.125-.499-.785-.862-1.447-1.36-2.672-.844-2.068 5.142-3.934 2.719-7.523Zm3.187 3.445s-4.216.267-4.43 3.024c-.096 1.227 1.114 1.872 1.149 2.765.03.73-.727 1.336-.727 1.336s1.357-.246 1.782-1.36c.468-1.235-.914-2.08-.774-3.07.135-.946 3-2.695 3-2.695Zm1.032 6.352c-.443-.02-.94.143-1.383.469.873-.194 1.617.354 1.617.984 0 1.412-2.016 2.742-2.016 2.742s3.117-.348 3.117-2.672c0-.958-.6-1.488-1.335-1.523Zm-8.274.023c-1.087.038-3.258.217-3.258 1.055 0 1.166 5.057 1.257 8.672.54 0 0 .985-.686 1.242-.938-2.37.492-7.78.568-7.78.14 0-.392 1.733-.797 1.733-.797s-.246-.011-.609 0Zm-.328 2.157c-.595 0-1.477.463-1.477.914 0 .908 4.477 1.605 7.782.28l-1.149-.702c-2.241.732-6.38.489-5.156-.492Zm.562 2.039c-.811 0-1.335.512-1.335.89 0 1.163 4.848 1.278 6.773.094l-1.219-.797c-1.435.618-5.048.71-4.219-.187ZM6.68 17.32c-1.325-.026-2.18.575-2.18 1.078 0 2.681 13.57 2.552 13.57-.187 0-.454-.536-.671-.726-.773 1.107 2.619-11.086 2.414-11.086.867 0-.352.902-.703 1.734-.54l-.703-.398a4.471 4.471 0 0 0-.61-.047Zm12.82 1.805c-2.063 1.995-7.283 2.71-12.54 1.477 5.257 2.197 12.514.975 12.54-1.477Z"></path>
+        <path d="M13.219 2.25C14.27 4.731 9.449 6.252 9 8.32c-.41 1.899 2.856 4.125 2.86 4.125-.499-.785-.862-1.447-1.36-2.672-.844-2.068 5.142-3.934 2.719-7.523Zm3.187 3.445s-4.216.267-4.43 3.024c-.096 1.227 1.114 1.872 1.149 2.765.03.73-.727 1.336-.727 1.336s1.357-.246 1.782-1.36c.468-1.235-.914-2.08-.774-3.07.135-.946 3-2.695 3-2.695Zm1.032 6.352c-.443-.02-.94.143-1.383.469.873-.194 1.617.354 1.617.984 0 1.412-2.016 2.742-2.016 2.742s3.117-.348 3.117-2.672c0-.958-.6-1.488-1.335-1.523Zm-8.274.023c-1.087.038-3.258.217-3.258 1.055 0 1.166 5.057 1.257 8.672.54 0 0 .985-.686 1.242-.938-2.37.492-7.78.568-7.78.14 0-.392 1.733-.797 1.733-.797s-.246-.011-.609 0Zm-.328 2.157c-.595 0-1.477.463-1.477.914 0 .908 4.477 1.605 7.782.28l-1.149-.702c-2.241.732-6.38.489-5.156-.492Zm.562 2.039c-.811 0-1.335.512-1.335.89 0 1.163 4.848 1.278 6.773.094l-1.219-.797c-1.435.618-5.048.71-4.219-.187ZM6.68 17.32c-1.325-.026-2.18.575-2.18 1.078 0 2.681 13.57 2.552 13.57-.187 0-.454-.536-.671-.726-.773 1.107 2.619-11.086 2.414-11.086.867 0-.352.902-.703 1.734-.54l-.703-.398a4.471 4.471 0 0 0-.61-.047Zm12.82 1.805c-2.063 1.995-7.283 2.71-12.54 1.477 5.257 2.197 12.514.975 12.54-1.477Z" />
       </svg>
     ),
   },
@@ -138,63 +138,59 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
   },
 ];
 
-const HomeSkills: React.FC = () => {
-  return (
-    <Section className="z-20" id="projects">
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-        }}
-        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
-      >
-        Skills
-      </motion.h2>
-      {/* Text */}
-      <motion.p
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-          delay: 0.15,
-        }}
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
-      >
-        In my journey as a software and web developer, I have cultivated a versatile skill set to tackle diverse
-        projects. I specialize in front-end development, proficient in languages like HTML, CSS, and Typescript, and
-        frameworks such as <HighlightedWord>React</HighlightedWord> and <HighlightedWord>NextJS</HighlightedWord>. I
-        have expertise in crafting intuitive user interfaces and ensuring responsive and visually engaging websites. I
-        also use other tools and technologies but I do not find them relevant to display here, things such as{' '}
-        <HighlightedWord>GraphQL</HighlightedWord>, Prisma, NestJS, etc.
-      </motion.p>
+const HomeSkills: React.FC = () => (
+  <Section className="z-20" id="projects">
+    {/* Heading */}
+    <motion.h2
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+      }}
+      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+    >
+      Skills
+    </motion.h2>
+    {/* Text */}
+    <motion.p
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+        delay: 0.15,
+      }}
+      className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+    >
+      In my journey as a software and web developer, I have cultivated a versatile skill set to tackle diverse projects.
+      I specialize in front-end development, proficient in languages like HTML, CSS, and Typescript, and frameworks such
+      as <HighlightedWord>React</HighlightedWord> and <HighlightedWord>NextJS</HighlightedWord>. I have expertise in
+      crafting intuitive user interfaces and ensuring responsive and visually engaging websites. I also use other tools
+      and technologies but I do not find them relevant to display here, things such as{' '}
+      <HighlightedWord>GraphQL</HighlightedWord>, Prisma, NestJS, etc.
+    </motion.p>
 
-      <div className="mx-4 mt-6 md:mx-8 lg:mx-14 grid grid-cols-2 md:grid-cols-4 gap-4">
-        {SKILLS_ENTRIES.map((skill, index) => {
-          return (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, translateY: -20 }}
-              whileInView={{ opacity: 1, translateY: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                type: 'tween',
-                duration: 0.25,
-                delay: index * 0.15 + 0.15,
-              }}
-            >
-              <HomeSkillsCard {...skill} />
-            </motion.div>
-          );
-        })}
-      </div>
-    </Section>
-  );
-};
+    <div className="mx-4 mt-6 md:mx-8 lg:mx-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+      {SKILLS_ENTRIES.map((skill, index) => (
+        <motion.div
+          key={skill.title}
+          initial={{ opacity: 0, translateY: -20 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            type: 'tween',
+            duration: 0.25,
+            delay: index * 0.15 + 0.15,
+          }}
+        >
+          <HomeSkillsCard {...skill} />
+        </motion.div>
+      ))}
+    </div>
+  </Section>
+);
 
 export default HomeSkills;

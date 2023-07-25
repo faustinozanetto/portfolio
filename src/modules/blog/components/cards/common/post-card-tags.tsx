@@ -10,9 +10,9 @@ const PostCardTags: React.FC<PostCardTagsProps> = (props) => {
 
   return (
     <div className="mb-1.5 flex flex-wrap gap-1">
-      {tags.map((tag) => {
-        return <Badge key={tag}>{tag}</Badge>;
-      })}
+      {tags.map((tag) => (
+        <Badge key={tag}>{tag}</Badge>
+      ))}
     </div>
   );
 };

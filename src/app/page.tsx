@@ -1,3 +1,4 @@
+import React from 'react';
 import { allBlogPosts } from '@contentlayer/generated';
 import HomeScrollTop from '@modules/home/components/home-scroll-top';
 import { getFeaturedProjects } from '@modules/projects/lib/project-utils';

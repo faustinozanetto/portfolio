@@ -20,15 +20,15 @@ const ProjectsFeed: React.FC<ProjectsFeedProps> = (props) => {
   return (
     <CardsFeed
       data={projects}
-      render={(cardProps: Project, index) => {
-        return React.createElement(ProjectCard, { key: index, project: cardProps, variant: 'portrait' });
-      }}
-      renderFeatured={(cardProps: Project) => {
-        return React.createElement(ProjectCard, {
+      render={(cardProps: Project, index) =>
+        React.createElement(ProjectCard, { key: index, project: cardProps, variant: 'portrait' })
+      }
+      renderFeatured={(cardProps: Project) =>
+        React.createElement(ProjectCard, {
           project: cardProps,
           variant: isMediumDevice ? 'portrait' : 'landscape',
-        });
-      }}
+        })
+      }
     />
   );
 };

@@ -4,9 +4,9 @@ import BlogFeed from '@modules/blog/components/feed/blog-feed';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-import Section from '../../section/section';
 import { BlogPost } from '@contentlayer/generated';
 import Link from 'next/link';
+import Section from '../../section/section';
 
 type HomeBlogProps = {
   blogPosts: BlogPost[];

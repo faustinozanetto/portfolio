@@ -4,7 +4,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
-const computedFields: ComputedFields<'BlogPost'> = {
+const blogComputedFields: ComputedFields<'BlogPost'> = {
   slug: {
     type: 'string',
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
@@ -63,7 +63,7 @@ export const BlogPost = defineDocumentType(() => ({
       of: BlogPostAuthor,
     },
   },
-  computedFields,
+  computedFields: blogComputedFields,
 }));
 
 export default makeSource({
@@ -77,7 +77,6 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: 'one-dark-pro',
-
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted

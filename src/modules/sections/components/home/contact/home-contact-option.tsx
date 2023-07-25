@@ -2,11 +2,11 @@ import Link from 'next/link';
 import React from 'react';
 
 export type HomeContactOptionProps = {
-  icon: React.ReactElement;
   href: string;
-  type: string;
-  label: string;
+  icon: React.ReactElement;
   isExternalPage?: boolean;
+  label: string;
+  type: string;
 };
 
 const HomeContactOption: React.FC<HomeContactOptionProps> = (props) => {

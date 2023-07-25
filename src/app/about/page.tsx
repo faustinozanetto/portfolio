@@ -1,3 +1,4 @@
+import React from 'react';
 import Section from '@modules/sections/components/section/section';
 
 export default async function AboutPage() {

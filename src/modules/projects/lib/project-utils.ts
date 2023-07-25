@@ -19,9 +19,7 @@ const generateProjectSlug = (projectData: ProjectData): string => {
  * @returns The array of slugs.
  */
 export const getAllProjectsSlugs = (): ProjectSlug[] => {
-  const slugs: ProjectSlug[] = projects.map((project: ProjectData) => {
-    return { slug: generateProjectSlug(project) };
-  });
+  const slugs: ProjectSlug[] = projects.map((project: ProjectData) => ({ slug: generateProjectSlug(project) }));
   return slugs;
 };
 
@@ -31,14 +29,12 @@ export const getAllProjectsSlugs = (): ProjectSlug[] => {
  */
 export const getAllProjects = async (): Promise<Project[]> => {
   const mappedProjects: Project[] = await Promise.all(
-    projects.map(async (project) => {
-      return {
-        metadata: {
-          ...project,
-        },
-        slug: { slug: generateProjectSlug(project) },
-      };
-    })
+    projects.map(async (project) => ({
+      metadata: {
+        ...project,
+      },
+      slug: { slug: generateProjectSlug(project) },
+    }))
   );
 
   return mappedProjects;
@@ -48,14 +44,12 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
   const mappedProjects: Project[] = await Promise.all(
     projects
       .filter((project) => project.isFeatured)
-      .map(async (project) => {
-        return {
-          metadata: {
-            ...project,
-          },
-          slug: { slug: generateProjectSlug(project) },
-        };
-      })
+      .map(async (project) => ({
+        metadata: {
+          ...project,
+        },
+        slug: { slug: generateProjectSlug(project) },
+      }))
   );
 
   return mappedProjects;
@@ -67,9 +61,7 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
  * @returns The project.
  */
 export const getProjectBySlug = async (slug: ProjectSlug): Promise<Project> => {
-  const foundProject = projects.find((project: ProjectData) => {
-    return generateProjectSlug(project) === slug.slug;
-  });
+  const foundProject = projects.find((project: ProjectData) => generateProjectSlug(project) === slug.slug);
   if (!foundProject) throw new Error('Could not find project with the given slug');
   return { metadata: { ...foundProject }, slug };
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 
 export type HomeSkillsCardProps = {
+  icon: React.ReactNode;
   title: string;
-  icon: JSX.Element;
 };
 
 const HomeSkillsCard: React.FC<HomeSkillsCardProps> = (props) => {

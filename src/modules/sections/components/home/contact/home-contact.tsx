@@ -72,44 +72,42 @@ const CONTACT_OPTIONS: HomeContactOptionProps[] = [
   },
 ];
 
-const HomeContact: React.FC = () => {
-  return (
-    <Section className="text-center" id="contact">
-      <motion.h2
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-        }}
-        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
-      >
-        👋 Get in Touch
-      </motion.h2>
-      {/* Text */}
-      <motion.p
-        initial={{ opacity: 0, translateY: -20 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          type: 'tween',
-          duration: 0.25,
-          delay: 0.15,
-        }}
-        className="mb-2 mx-auto max-w-3xl text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
-      >
-        Feel free to get in touch with me if you have any questions, project inquiries, or if you would like to discuss
-        a collaboration. You can reach me through the contact form on my portfolio website.
-      </motion.p>
+const HomeContact: React.FC = () => (
+  <Section className="text-center" id="contact">
+    <motion.h2
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+      }}
+      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+    >
+      👋 Get in Touch
+    </motion.h2>
+    {/* Text */}
+    <motion.p
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        type: 'tween',
+        duration: 0.25,
+        delay: 0.15,
+      }}
+      className="mb-2 mx-auto max-w-3xl text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+    >
+      Feel free to get in touch with me if you have any questions, project inquiries, or if you would like to discuss a
+      collaboration. You can reach me through the contact form on my portfolio website.
+    </motion.p>
 
-      <div className="flex gap-4 mx-auto max-w-3xl mt-4 md:mt-8 justify-center flex-wrap">
-        {CONTACT_OPTIONS.map((option, index) => {
-          return <HomeContactOption key={option.type} {...option} />;
-        })}
-      </div>
-    </Section>
-  );
-};
+    <div className="flex gap-4 mx-auto max-w-3xl mt-4 md:mt-8 justify-center flex-wrap">
+      {CONTACT_OPTIONS.map((option) => (
+        <HomeContactOption key={option.type} {...option} />
+      ))}
+    </div>
+  </Section>
+);
 
 export default HomeContact;

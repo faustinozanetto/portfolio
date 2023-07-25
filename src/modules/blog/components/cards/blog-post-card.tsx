@@ -1,9 +1,9 @@
 import Card from '@modules/ui/components/cards/card';
 import React, { memo } from 'react';
 
+import { BlogPost } from '@contentlayer/generated';
 import PostCardAuthorDetails from './common/post-card-author-details';
 import PostCardTags from './common/post-card-tags';
-import { BlogPost } from '@contentlayer/generated';
 
 type BlogPostCardProps = {
   /** Data to display in the blog post card. */

@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import React from 'react';
 
 type SkeletonProps = {
-  isLoaded: boolean;
-  className?: string;
   children: React.ReactNode;
+  className?: string;
+  isLoaded: boolean;
 };
 
 const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {

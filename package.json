@@ -21,13 +21,13 @@
   "scripts": {
     "start:dev": "next dev",
     "start:prod": "next start",
-    "build:dev": "next build",
+    "build": "next build",
     "eslint": "next lint --fix --dir src",
     "prettier": "prettier -l \"src/**/*.{js,jsx,md,ts,tsx}\"",
     "lint": "yarn prettier && yarn eslint"
   },
   "lint-staged": {
-    "extends": "./lint-staged.config.js"
+    "extends": "./lint-staged.config.ts"
   },
   "husky": {
     "hooks": {
@@ -36,24 +36,24 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
-    "@vercel/analytics": "^1.0.1",
     "@radix-ui/react-dialog": "1.0.4",
+    "@vercel/analytics": "^1.0.1",
     "class-variance-authority": "0.6.0",
-    "tailwind-merge": "1.12.0",
     "clsx": "^1.2.1",
+    "contentlayer": "^0.3.1",
     "framer-motion": "^10.12.10",
     "next": "^13.4.1",
-    "next-themes": "0.2.1",
+    "next-contentlayer": "^0.3.1",
+    "next-theme-kit": "^0.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
-    "contentlayer": "^0.3.1",
-    "next-contentlayer": "^0.3.1",
-    "shiki": "^0.14.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "0.9.6",
     "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1"
+    "remark-gfm": "^3.0.1",
+    "shiki": "^0.14.0",
+    "tailwind-merge": "1.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
@@ -67,8 +67,7 @@
     "@typescript-eslint/parser": "^5.50.0",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.33.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-airbnb": "19.0.4",
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
@@ -78,6 +77,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-tailwindcss": "^3.8.3",
+    "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
@@ -85,7 +85,7 @@
     "prettier": "^2.8.3",
     "tailwindcss": "^3.2.4",
     "tailwindcss-animate": "1.0.5",
-    "vercel": "^29.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vercel": "^29.0.0"
   }
 }

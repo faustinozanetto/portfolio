@@ -1,21 +1,24 @@
 import { useEffect, useState } from 'react';
 
 type UseRevealOnScrollPayload = {
-  revealScroll: number;
   initialShow?: boolean;
+  revealScroll: number;
 };
 
 const useRevealOnScroll = ({ revealScroll, initialShow = false }: UseRevealOnScrollPayload) => {
   const [show, setShow] = useState<boolean>(initialShow);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     window.addEventListener('scroll', scrollEventListener);
+    // eslint-disable-next-line consistent-return
     return () => window.removeEventListener('scroll', scrollEventListener);
   }, []);
 
   const scrollEventListener = () => {
-    const window_scroll = document.body.scrollTop || document.documentElement.scrollTop;
-    setShow(window_scroll > revealScroll);
+    const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    setShow(windowScroll > revealScroll);
   };
 
   return { show };

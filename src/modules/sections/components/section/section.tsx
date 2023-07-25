@@ -2,9 +2,9 @@ import { cn } from '@modules/ui/lib/ui.lib';
 import React from 'react';
 
 type SectionProps = React.HTMLAttributes<HTMLDivElement> & {
-  children?: React.ReactNode;
   /** Optional: Wether to alternate color scheme or not. */
   alternateColors?: boolean;
+  children?: React.ReactNode;
 };
 
 const Section: React.FC<SectionProps> = (props) => {

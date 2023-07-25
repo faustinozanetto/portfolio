@@ -36,13 +36,11 @@ export type IconButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, icon, variant, size, ...props }, ref) => {
-    return (
-      <button className={cn(iconButtonVariants({ variant, size, className }))} ref={ref} {...props}>
-        {icon}
-      </button>
-    );
-  }
+  ({ className, icon, type = 'button', variant, size, ...props }, ref) => (
+    <button ref={ref} className={cn(iconButtonVariants({ variant, size, className }))} type={type} {...props}>
+      {icon}
+    </button>
+  )
 );
 
 IconButton.displayName = 'IconButton';

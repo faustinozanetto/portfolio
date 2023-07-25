@@ -3,11 +3,11 @@ import '../styles/global.css';
 import { siteConfig } from '@config/config';
 import Footer from '@modules/footer/components/footer';
 import Navbar from '@modules/navbar/components/navbar';
-import ThemeProvider from '@modules/theme/context/theme-context';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
+import Providers from './providers';
 
 const interFont = Inter({
   variable: '--font-sans',
@@ -79,15 +79,18 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={interFont.variable} suppressHydrationWarning>
-      <body className="bg-background-50 dark:bg-background-900 overflow-x-hidden font-sans antialiased scroll-smooth">
-        <ThemeProvider attribute="class" defaultTheme="system" enableColorScheme enableSystem>
+      <body
+        className="bg-background-50 dark:bg-background-900 overflow-x-hidden font-sans antialiased scroll-smooth"
+        suppressHydrationWarning
+      >
+        <Providers>
           <main className="flex min-h-screen flex-col">
             <Navbar />
             <div className="flex-1 overflow-x-hidden">{children}</div>
             <Footer />
           </main>
           <Analytics />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

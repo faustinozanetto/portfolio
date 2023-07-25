@@ -1,3 +1,4 @@
+import React from 'react';
 import { siteConfig } from '@config/config';
 import ProjectShowcase from '@modules/projects/components/showcase/project-showcase';
 import { getAllProjects, getProjectBySlug } from '@modules/projects/lib/project-utils';

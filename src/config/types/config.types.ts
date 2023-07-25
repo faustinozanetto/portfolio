@@ -1,5 +1,5 @@
 export type SiteConfig = {
-  name: string;
   description: string;
+  name: string;
   url: string;
 };

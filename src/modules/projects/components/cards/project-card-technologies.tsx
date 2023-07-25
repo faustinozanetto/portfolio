@@ -10,9 +10,9 @@ const ProjectCardTechnologies: React.FC<ProjectCardTechnologiesProps> = (props) 
 
   return (
     <div className="flex flex-wrap gap-1">
-      {technologies.map((technology) => {
-        return <Badge key={technology}>{technology}</Badge>;
-      })}
+      {technologies.map((technology) => (
+        <Badge key={technology}>{technology}</Badge>
+      ))}
     </div>
   );
 };
