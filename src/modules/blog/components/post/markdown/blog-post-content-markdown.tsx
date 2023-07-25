@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/heading-has-content */
+
 'use client';
 
 import { cn } from '@modules/ui/lib/ui.lib';
@@ -6,43 +9,29 @@ import React from 'react';
 import Image from 'next/image';
 
 const components = {
-  h1: ({ className, children, ...props }) => (
-    <h1 className={cn('mt-2 scroll-m-20 text-4xl font-bold tracking-tight', className)} {...props}>
-      {children}
-    </h1>
+  h1: ({ className, ...props }) => (
+    <h1 className={cn('mt-2 scroll-m-20 text-4xl font-bold tracking-tight', className)} {...props} />
   ),
-  h2: ({ className, children, ...props }) => (
+  h2: ({ className, ...props }) => (
     <h2
       className={cn('mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0', className)}
       {...props}
-    >
-      {children}
-    </h2>
+    />
   ),
-  h3: ({ className, children, ...props }) => (
-    <h3 className={cn('mt-8 scroll-m-20 text-2xl font-semibold tracking-tight', className)} {...props}>
-      {children}
-    </h3>
+  h3: ({ className, ...props }) => (
+    <h3 className={cn('mt-8 scroll-m-20 text-2xl font-semibold tracking-tight', className)} {...props} />
   ),
-  h4: ({ className, children, ...props }) => (
-    <h4 className={cn('mt-8 scroll-m-20 text-xl font-semibold tracking-tight', className)} {...props}>
-      {children}
-    </h4>
+  h4: ({ className, ...props }) => (
+    <h4 className={cn('mt-8 scroll-m-20 text-xl font-semibold tracking-tight', className)} {...props} />
   ),
-  h5: ({ className, children, ...props }) => (
-    <h5 className={cn('mt-8 scroll-m-20 text-lg font-semibold tracking-tight', className)} {...props}>
-      {children}
-    </h5>
+  h5: ({ className, ...props }) => (
+    <h5 className={cn('mt-8 scroll-m-20 text-lg font-semibold tracking-tight', className)} {...props} />
   ),
-  h6: ({ className, children, ...props }) => (
-    <h6 className={cn('mt-8 scroll-m-20 text-base font-semibold tracking-tight', className)} {...props}>
-      {children}
-    </h6>
+  h6: ({ className, ...props }) => (
+    <h6 className={cn('mt-8 scroll-m-20 text-base font-semibold tracking-tight', className)} {...props} />
   ),
-  a: ({ className, children, ...props }) => (
-    <a className={cn('font-medium underline underline-offset-4', className)} {...props}>
-      {children}
-    </a>
+  a: ({ className, ...props }) => (
+    <a className={cn('font-medium underline underline-offset-4', className)} {...props} />
   ),
   p: ({ className, ...props }) => <p className={cn('leading-7 [&:not(:first-child)]:mt-6', className)} {...props} />,
   ul: ({ className, ...props }) => <ul className={cn('my-6 ml-6 list-disc', className)} {...props} />,
@@ -111,6 +100,7 @@ const BlogPostContentMarkdown: React.FC<BlogPostContentMarkdownProps> = (props) 
 
   return (
     <div className="">
+      {/* @ts-ignore */}
       <MDXComponent components={components} />
     </div>
   );
