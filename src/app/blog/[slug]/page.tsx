@@ -37,12 +37,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     notFound();
   }
 
+  const title = `${blogPost.title} | Faustino Zanetto`;
+
   return {
-    title: blogPost.title,
+    title,
     description: blogPost.description,
     publisher: 'Faustino Zanetto',
     openGraph: {
-      title: blogPost.title,
+      title,
       description: blogPost.description,
       type: 'article',
       url: `${siteConfig.url}/blog/${blogPost.slug}`,
@@ -50,18 +52,18 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       images: [
         {
           url: blogPost.image,
-          alt: blogPost.title,
+          alt: title,
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: blogPost.title,
+      title,
       description: blogPost.description,
       images: [
         {
           url: blogPost.image,
-          alt: blogPost.title,
+          alt: title,
         },
       ],
     },
