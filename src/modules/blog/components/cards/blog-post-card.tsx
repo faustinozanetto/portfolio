@@ -16,7 +16,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = (props) => {
   const { blogPost, variant = 'portrait' } = props;
 
   return (
-    <Card href={`${blogPost.slug}`} title={blogPost.title} thumbnail={blogPost.image} variant={variant}>
+    <Card href={blogPost.slug} title={blogPost.title} thumbnail={blogPost.image} variant={variant}>
       {/* Author & Date */}
       <PostCardAuthorDetails author={blogPost.author} date={new Date(blogPost.publishDate)} />
       {/* Tags */}

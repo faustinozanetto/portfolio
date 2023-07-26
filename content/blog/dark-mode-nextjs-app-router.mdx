@@ -272,11 +272,14 @@ By activating the `useLocalStorage` prop in our theme provider, we've enabled th
 
 ## Conclusion
 
-
 Setting up themes in Next.js can indeed be tricky due to its server-side rendering (SSR) nature. If you choose a simple context and hooks approach for managing themes, you may encounter flickering issues during page loads. This happens because the server doesn't have information about the current theme, causing React to wait for rendering the UI until it can access the theme.
 
 Fortunately, the **next-theme-kit** package offers a solution to this problem. It uses a custom script tag under the hood, which intelligently retrieves the current theme from local storage. As a result, React no longer needs to wait to render the UI before accessing the theme information.
 
 By leveraging this capability, **next-theme-kit** ensures that the theme-switching process is seamless, without any flickering or visual glitches during page loads. It provides a reliable and user-friendly solution for managing themes in **Next.js** applications, making the overall development experience smoother and more enjoyable.
+
+Thank you for exploring the theme setup in **Next.js** and learning about the benefits of using **next-theme-kit** to avoid flickering issues during page loads. If you're interested in diving deeper or want to try it out yourself, the complete code and implementation are available in the repository: [repository](https://github.com/faustinozanetto/next-app-router-themes-blog).
+
+Feel free to check out the repository, contribute, or raise any issues you might encounter. Happy coding! 🚀
 
 If you encounter any issues or have suggestions while reading the article feel free to open an Issue at my [repo](https://github.com/faustinozanetto/portfolio). Thank you for taking the time to read the article! 🤗
