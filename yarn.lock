@@ -7627,10 +7627,10 @@ next-contentlayer@0.3.4:
     "@contentlayer/core" "0.3.4"
     "@contentlayer/utils" "0.3.4"
 
-next-theme-kit@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/next-theme-kit/-/next-theme-kit-0.1.6.tgz#8cd4da9f484ed34d184a8c78405d33e5d9dc4e74"
-  integrity sha512-Y+qaZ3ft9kmLEupdZrHW2OauaVXe+T+2zYZn78E2Li7WwsfXmpOazFAxC/HLACVf6/IucZEXiHuA6KdcSgAGVA==
+next-theme-kit@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/next-theme-kit/-/next-theme-kit-0.2.1.tgz#684b338996c9d910ebda0f6bbeae7eca898a02af"
+  integrity sha512-4/E12lN8hciljWm3A0i2RYT0m/7ogA8Z5Ng31XAqbTajQ04AMqeJ1cJ+2EOBvKcSmKn9zctMYdNP05fxPav7lw==
 
 next@^13.4.1:
   version "13.4.12"
