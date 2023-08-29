@@ -1,11 +1,13 @@
 name: Main
 
-on: [push]
+on:
+  push:
 
 jobs:
   run-ci:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
 
     name: Run Type Check & Linters
     runs-on: ubuntu-latest
