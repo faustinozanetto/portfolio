@@ -39,17 +39,24 @@ const components = {
   li: ({ className, ...props }) => <li className={cn('mt-2', className)} {...props} />,
   blockquote: ({ className, ...props }) => (
     <blockquote
-      className={cn(
-        'mt-6 border-l-2 border-l-primary-500 dark:border-l-primary-700 pl-6 italic [&>*]:text-neutral-600 dark:[&>*]:text-neutral-400',
-        className
-      )}
+      className={cn('mt-6 border-l-2 border-l-primary pl-6 italic [&>*]:text-muted-foreground', className)}
       {...props}
     />
   ),
-  img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  img: ({ className, src, alt, width, height, placeholder, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    if (!src) return;
+
     // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn('rounded-md border', className)} alt={alt} {...props} />
-  ),
+    <Image
+      className={cn('rounded-md border', className)}
+      src={src}
+      alt={alt ?? 'Image'}
+      width={Number(width) ?? 400}
+      height={Number(height) ?? 400}
+      {...props}
+    />;
+  },
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
@@ -75,13 +82,7 @@ const components = {
     />
   ),
   pre: ({ className, ...props }) => (
-    <pre
-      className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border bg-background-50 dark:bg-background-950 py-4',
-        className
-      )}
-      {...props}
-    />
+    <pre className={cn('mb-4 mt-6 overflow-x-auto rounded-lg border py-4', className)} {...props} />
   ),
   code: ({ className, ...props }) => (
     <code className={cn('relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm', className)} {...props} />

@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { ComputedFields, defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';

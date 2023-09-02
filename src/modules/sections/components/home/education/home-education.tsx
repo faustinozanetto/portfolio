@@ -11,11 +11,11 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
   {
     title: 'Bachelors Degree in Computer Science',
     description:
-      'I am currently pursuing a bachelors degree in Computer Science, driven by my unwavering passion for exploring the boundless possibilities of technology. With a strong focus on programming languages, algorithms, and data structures, I am dedicated to honing my software development skills.',
+      'I am currently pursuing a bachelors degree in Computer Science, driven by my unwavering passion for exploring the boundless possibilities of technology. With a strong focus on programming languages, algorithms, and data structures.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-background md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -33,11 +33,11 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
   {
     title: 'Selft Taught Programming',
     description:
-      'Programming has been one of my favorite hobbies since I was young. As time went by, I realized that increasing my knowledge in this area was the right decision. Therefore, I continued to read and learn new things to enhance my skills.',
+      'Programming has been one of my favorite hobbies since I was young. As time went by, I realized that increasing my knowledge in this area was the right decision.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-background md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -61,11 +61,11 @@ const EDUCATION_ENTRIES: React.ComponentPropsWithoutRef<typeof TimelineEntry>[] 
   {
     title: 'English - B2 Cambridge',
     description:
-      'I began learning English when I was young, during my primary school years. Later on, I enrolled in a private institution to further improve my language skills. In 2019, I took the Cambridge FCE Test and achieved a score of 177, which corresponds to a B2 level of proficiency.',
+      'I began learning English when I was young, during my primary school years. Later on, I enrolled in a private institution to further improve my language skills. In 2019, I took the Cambridge FCE Test and achieved a score of 177.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 stroke-neutral-100 md:h-6 md:w-6"
+        className="h-5 w-5 stroke-background md:h-6 md:w-6"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -95,7 +95,7 @@ const HomeEducation: React.FC = () => (
         type: 'tween',
         duration: 0.25,
       }}
-      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+      className="mb-2 text-4xl font-extrabold text-primary md:mb-4 md:text-5xl"
     >
       Education
     </motion.h2>
@@ -109,11 +109,11 @@ const HomeEducation: React.FC = () => (
         duration: 0.25,
         delay: 0.15,
       }}
-      className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+      className="mb-2 md:mb-4 md:text-lg"
     >
       As a software developer, my education has been a crucial component of my journey towards building innovative and
       impactful digital solutions. I am currently undergoing a degree in Computer Science, which provided me with a
-      solid foundation in programming fundamentals and web development concepts.
+      solid foundation in programming fundamentals.
     </motion.p>
 
     <div className="mx-4 mt-6 md:mx-8 lg:mx-14">

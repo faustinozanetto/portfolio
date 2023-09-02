@@ -13,7 +13,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -29,7 +29,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -45,7 +45,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -61,7 +61,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -77,7 +77,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -93,7 +93,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -109,7 +109,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -125,7 +125,7 @@ const SKILLS_ENTRIES: HomeSkillsCardProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 fill-background-900 dark:fill-background-50"
+        className="h-12 w-12 fill-primary"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -149,7 +149,7 @@ const HomeSkills: React.FC = () => (
         type: 'tween',
         duration: 0.25,
       }}
-      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+      className="mb-2 text-4xl font-extrabold text-primary md:mb-4 md:text-5xl"
     >
       Skills
     </motion.h2>
@@ -163,14 +163,11 @@ const HomeSkills: React.FC = () => (
         duration: 0.25,
         delay: 0.15,
       }}
-      className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+      className="mb-2 md:mb-4 md:text-lg"
     >
       In my journey as a software and web developer, I have cultivated a versatile skill set to tackle diverse projects.
       I specialize in front-end development, proficient in languages like HTML, CSS, and Typescript, and frameworks such
-      as <HighlightedWord>React</HighlightedWord> and <HighlightedWord>NextJS</HighlightedWord>. I have expertise in
-      crafting intuitive user interfaces and ensuring responsive and visually engaging websites. I also use other tools
-      and technologies but I do not find them relevant to display here, things such as{' '}
-      <HighlightedWord>GraphQL</HighlightedWord>, Prisma, NestJS, etc.
+      as <HighlightedWord>React</HighlightedWord> and <HighlightedWord>NextJS</HighlightedWord>.
     </motion.p>
 
     <div className="mx-4 mt-6 md:mx-8 lg:mx-14 grid grid-cols-2 md:grid-cols-4 gap-4">

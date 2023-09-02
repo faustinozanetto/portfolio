@@ -22,11 +22,11 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
         className="h-10 w-10 rounded-full md:h-14 md:w-14"
       />
       <div className="flex flex-col">
-        <span className="font-bold text-neutral-900 dark:text-neutral-50">{author.name}</span>
+        <span className="font-bold">{author.name}</span>
         <div className="flex flex-row items-center space-x-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 stroke-neutral-900 dark:stroke-neutral-100"
+            className="h-5 w-5 stroke-current"
             viewBox="0 0 24 24"
             strokeWidth="2"
             fill="none"
@@ -41,7 +41,7 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
             <line x1="11" y1="15" x2="12" y2="15" />
             <line x1="12" y1="15" x2="12" y2="18" />
           </svg>
-          <time dateTime={new Date(date).toDateString()} className="text-sm text-neutral-900 dark:text-neutral-100">
+          <time dateTime={new Date(date).toDateString()} className="text-sm">
             {new Date(date).toDateString()}
           </time>
         </div>

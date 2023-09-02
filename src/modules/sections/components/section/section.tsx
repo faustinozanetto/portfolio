@@ -11,14 +11,7 @@ const Section: React.FC<SectionProps> = (props) => {
   const { children, className, alternateColors = false, ...rest } = props;
 
   return (
-    <div
-      className={cn(
-        alternateColors ? 'bg-background-200 dark:bg-background-800' : 'bg-background-100 dark:bg-background-900',
-        'w-full',
-        className
-      )}
-      {...rest}
-    >
+    <div className={cn(alternateColors ? 'bg-background' : 'bg-background-alternate', 'w-full', className)} {...rest}>
       <section className="container mx-auto my-8 w-full max-w-5xl items-start justify-center p-4 md:my-12 md:max-w-6xl md:p-8 lg:my-16 lg:max-w-7xl">
         {children}
       </section>

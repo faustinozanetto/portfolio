@@ -14,7 +14,7 @@ const CONTACT_OPTIONS: HomeContactOptionProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="stroke-neutral-100 "
+        className="stroke-background"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -33,7 +33,7 @@ const CONTACT_OPTIONS: HomeContactOptionProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="stroke-neutral-100 "
+        className="stroke-background"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -57,7 +57,7 @@ const CONTACT_OPTIONS: HomeContactOptionProps[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="stroke-neutral-100 "
+        className="stroke-background"
         viewBox="0 0 24 24"
         strokeWidth="2"
         fill="none"
@@ -82,7 +82,7 @@ const HomeContact: React.FC = () => (
         type: 'tween',
         duration: 0.25,
       }}
-      className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+      className="mb-2 text-4xl font-extrabold text-primarymd:mb-4 md:text-5xl"
     >
       👋 Get in Touch
     </motion.h2>
@@ -96,7 +96,7 @@ const HomeContact: React.FC = () => (
         duration: 0.25,
         delay: 0.15,
       }}
-      className="mb-2 mx-auto max-w-3xl text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+      className="mb-2 mx-auto max-w-3xl md:mb-4 md:text-lg"
     >
       Feel free to get in touch with me if you have any questions, project inquiries, or if you would like to discuss a
       collaboration. You can reach me through the contact form on my portfolio website.

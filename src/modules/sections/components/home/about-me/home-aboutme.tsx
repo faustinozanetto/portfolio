@@ -32,7 +32,7 @@ const HomeAboutMe: React.FC = () => (
       </motion.div>
 
       {/* Right */}
-      <div className="text-neutral-900 dark:text-neutral-100">
+      <div>
         <motion.h2
           initial={{ opacity: 0, translateY: -20 }}
           whileInView={{ opacity: 1, translateY: 0 }}
@@ -42,7 +42,7 @@ const HomeAboutMe: React.FC = () => (
             duration: 0.25,
             delay: 0.15,
           }}
-          className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+          className="mb-2 text-4xl font-extrabold text-primary md:mb-4 md:text-5xl"
         >
           About me
         </motion.h2>

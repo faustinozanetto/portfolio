@@ -1,11 +1,18 @@
 'use client';
 
 import React from 'react';
-import { allBlogPosts } from '@contentlayer/generated';
-import BlogFeed from '@modules/blog/components/feed/blog-feed';
-import { motion } from 'framer-motion';
 
-export default function BlogPage() {
+import ProjectsFeed from '@modules/projects/components/projects-feed';
+import { motion } from 'framer-motion';
+import { Project } from '../types/projects.types';
+
+type ProjectsPageListProps = {
+  projects: Project[];
+};
+
+export const ProjectsPageList: React.FC<ProjectsPageListProps> = (props) => {
+  const { projects } = props;
+
   return (
     <section className="container mx-auto my-8 w-full max-w-5xl items-start justify-center p-4 md:my-12 md:max-w-6xl md:p-8 lg:my-16 lg:max-w-7xl">
       {/* Titles */}
@@ -19,7 +26,7 @@ export default function BlogPage() {
           duration: 0.25,
         }}
       >
-        Check out my latest work and news, here in my blog
+        Take a look at all the projects I&apos;ve worked on!
       </motion.h1>
 
       {/* Paragraph */}
@@ -34,12 +41,12 @@ export default function BlogPage() {
           delay: 0.15,
         }}
       >
-        Look through my latest post in my blog to stay up to date with new projects and news about my personal and
-        profesional carreer in the it industry. You&apos;ll find posts detailing the development of my personal projects
-        and other topics.
+        Here, you will find a showcase of the diverse range of projects I have worked on throughout my journey as a web
+        developer. Each project represents a unique challenge and an opportunity for me to demonstrate my skills,
+        creativity, and passion for crafting exceptional web experiences.
       </motion.p>
 
-      <BlogFeed blogPosts={allBlogPosts} />
+      <ProjectsFeed projects={projects} />
     </section>
   );
-}
+};

@@ -22,7 +22,7 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
     <Link href={href} ref={ref}>
       <div
         className={clsx(
-          'group cursor-pointer overflow-hidden rounded-lg bg-background-100 shadow-2xl dark:bg-background-800 border border-border',
+          'group cursor-pointer overflow-hidden rounded-lg bg-card shadow-2xl border border-border',
           variant === 'portrait' && 'w-full md:max-w-sm',
           variant === 'landscape' && 'grid grid-cols-2'
         )}
@@ -42,22 +42,20 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
         />
 
         {/* Bottom Information */}
-        <div className="flex w-full flex-col p-4 text-neutral-900 dark:text-neutral-100">
+        <div className="flex w-full flex-col p-4">
           {/* Title */}
           <h3 className="mb-1 text-xl font-semibold leading-snug tracking-tight">
             <span
-              className="bg-gradient-to-r from-primary-300 to-primary-200 bg-[length:0px_10px] bg-left-bottom
+              className="bg-gradient-to-r from-primary to-secondary bg-[length:0px_10px] bg-left-bottom
           bg-no-repeat
           transition-[background-size]
           duration-500
           hover:bg-[length:100%_4px]
-          group-hover:bg-[length:100%_10px]
-          dark:from-primary-600 dark:to-primary-800"
+          group-hover:bg-[length:100%_10px]"
             >
               {title}
             </span>
           </h3>
-          {/* Rest of the childrens */}
           {children}
         </div>
       </div>

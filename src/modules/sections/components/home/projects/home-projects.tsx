@@ -25,7 +25,7 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
           type: 'tween',
           duration: 0.25,
         }}
-        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+        className="mb-2 text-4xl font-extrabold text-primary md:mb-4 md:text-5xl"
       >
         Some of My Projects
       </motion.h2>
@@ -39,17 +39,12 @@ const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
           duration: 0.25,
           delay: 0.15,
         }}
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+        className="mb-2 md:mb-4 md:text-lg"
       >
         Below, you will find a compilation of both my personal and professional projects, representing my diverse range
         of experience accumulated over the years. These projects span various domains, including web development and
-        computer graphics, and demonstrate my proficiency in a wide array of programming languages and technologies,
-        such as C++ and Typescript. Learn more at{' '}
-        <Link
-          href="/projects"
-          title="Projects"
-          className="underline decoration-primary-600 dark:decoration-primary-400 decoration-2"
-        >
+        computer graphics. Learn more at{' '}
+        <Link href="/projects" title="Projects" className="underline decoration-primary decoration-2">
           Projects
         </Link>
         .

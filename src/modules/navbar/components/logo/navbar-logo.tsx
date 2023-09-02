@@ -3,9 +3,7 @@ import React from 'react';
 
 const NavbarLogo: React.FC = () => (
   <Link href="/" title="Home Page">
-    <span className="text-3xl font-bold text-primary-500 transition-colors hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-500">
-      Faustino
-    </span>
+    <span className="text-3xl font-bold text-primary transition-colors hover:text-secondary">Faustino</span>
   </Link>
 );
 

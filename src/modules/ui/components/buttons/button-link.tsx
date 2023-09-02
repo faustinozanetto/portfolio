@@ -9,7 +9,7 @@ export type LinkButtonProps = React.ComponentPropsWithoutRef<typeof Link> &
   VariantProps<typeof buttonVariants> & { icon?: React.ReactNode | null };
 
 const LinkButton: React.FC<LinkButtonProps> = (props) => {
-  const { children, variant = 'base', size = 'base', className, icon, ...rest } = props;
+  const { children, variant = 'default', size = 'default', className, icon, ...rest } = props;
   return (
     <Link className={cn(buttonVariants({ size, variant }), className)} {...rest}>
       {icon ? <span className="mr-2">{icon}</span> : null}

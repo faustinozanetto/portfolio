@@ -25,7 +25,7 @@ const HomeBlog: React.FC<HomeBlogProps> = (props) => {
           type: 'tween',
           duration: 0.25,
         }}
-        className="mb-2 text-4xl font-extrabold text-primary-500 dark:text-primary-300 md:mb-4 md:text-5xl"
+        className="mb-2 text-4xl font-extrabold text-primary md:mb-4 md:text-5xl"
       >
         Checkout my Blog
       </motion.h2>
@@ -38,13 +38,12 @@ const HomeBlog: React.FC<HomeBlogProps> = (props) => {
           duration: 0.25,
           delay: 0.15,
         }}
-        className="mb-2 text-neutral-900 dark:text-neutral-100 md:mb-4 md:text-lg"
+        className="mb-2 md:mb-4 md:text-lg"
       >
         Here is a selection of posts I have written over the years, all hosted on my personal blog. These articles offer
         readers the opportunity to delve deeper into my areas of expertise and gain insight into my diverse interests.
-        Within my blog, you will find an assortment of technical topics encompassing web development, game programming,
-        and even gardening-related content. Read more at{' '}
-        <Link href="/blog" className="underline decoration-primary-600 dark:decoration-primary-400 decoration-2">
+        Read more at{' '}
+        <Link href="/blog" className="underline decoration-primary decoration-2">
           Blog
         </Link>
         .

@@ -10,9 +10,7 @@ const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) 
   const { blogPost } = props;
   return (
     <div>
-      <time className="block text-sm text-neutral-800 dark:text-neutral-300">
-        Published on {new Date(blogPost.publishDate).toDateString()}
-      </time>
+      <time className="block text-sm">Published on {new Date(blogPost.publishDate).toDateString()}</time>
       <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl font-extrabold">
         {blogPost.title}
       </h1>
@@ -36,7 +34,7 @@ const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) 
         alt={`${blogPost.title} Image`}
         width={720}
         height={420}
-        className="my-4 rounded-lg border-2 border-primary-400 dark:border-primary-800 w-full md:my-6"
+        className="my-4 rounded-lg border-2 border-primary w-full md:my-6"
         priority
       />
     </div>
