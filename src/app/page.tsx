@@ -1,7 +1,6 @@
 import React from 'react';
-import { allBlogPosts } from '@contentlayer/generated';
+import { allBlogPosts, allProjects } from '@contentlayer/generated';
 import HomeScrollTop from '@modules/home/components/home-scroll-top';
-import { getFeaturedProjects } from '@modules/projects/lib/project-utils';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import HomeBlog from '@modules/sections/components/home/blog/home-blog';
 import HomeContact from '@modules/sections/components/home/contact/home-contact';
@@ -10,9 +9,9 @@ import HomeHero from '@modules/sections/components/home/hero/home-hero';
 import HomeProjects from '@modules/sections/components/home/projects/home-projects';
 import HomeSkills from '@modules/sections/components/home/skills/home-skills';
 
-export default async function HomePage() {
+export default function HomePage() {
   const blogPosts = allBlogPosts.slice(0, 4);
-  const projects = await getFeaturedProjects();
+  const projects = allProjects.slice(0, 4);
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">

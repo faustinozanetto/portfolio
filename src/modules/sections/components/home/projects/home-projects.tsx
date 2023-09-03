@@ -1,11 +1,11 @@
 'use client';
 
-import ProjectsFeed from '@modules/projects/components/projects-feed';
-import type { Project } from '@modules/projects/types/projects.types';
-import { motion } from 'framer-motion';
 import React from 'react';
+import ProjectsFeed from '@modules/projects/components/projects-feed';
+import { motion } from 'framer-motion';
 
 import Link from 'next/link';
+import { Project } from '@contentlayer/generated';
 import Section from '../../section/section';
 
 type HomeProjectsProps = {

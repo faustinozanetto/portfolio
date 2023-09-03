@@ -1,18 +1,18 @@
 'use client';
 
-import type { ProjectData } from '@modules/projects/types/projects.types';
 import { motion } from 'framer-motion';
 import React from 'react';
 
+import { Project } from '@contentlayer/generated';
 import ProjectCardTechnologies from '../cards/project-card-technologies';
 
 type ProjectShowcaseMetadataProps = {
-  metadata: ProjectData;
+  project: Project;
 };
 
 const ProjectShowcaseMetadata: React.FC<ProjectShowcaseMetadataProps> = (props) => {
-  const { metadata } = props;
-  const { title, description, technologies } = metadata;
+  const { project } = props;
+  const { title, description, technologies } = project;
 
   return (
     <div className="flex w-full flex-col">

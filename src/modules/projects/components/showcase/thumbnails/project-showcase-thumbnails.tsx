@@ -1,12 +1,12 @@
 'use client';
 
-import type { ProjectData } from '@modules/projects/types/projects.types';
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Project } from '@contentlayer/generated';
 import ProjectShowcaseThumbnail from './project-showcase-thumbnail';
 
 type ProjectShowcaseThumbnailsProps = {
-  thumbnails: ProjectData['thumbnails'];
+  thumbnails: Project['thumbnails'];
 };
 
 const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (props) => {

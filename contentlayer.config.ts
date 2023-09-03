@@ -16,6 +16,17 @@ const blogComputedFields: ComputedFields<'BlogPost'> = {
   },
 };
 
+const projectComputedFields: ComputedFields<'Project'> = {
+  slug: {
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: 'string',
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  },
+};
+
 const BlogPostAuthor = defineNestedType(() => ({
   name: 'BlogPostAuthor',
   fields: {
@@ -24,6 +35,16 @@ const BlogPostAuthor = defineNestedType(() => ({
       required: true,
     },
     image: {
+      type: 'string',
+      required: true,
+    },
+  },
+}));
+
+const ExternalLink = defineNestedType(() => ({
+  name: 'ExternalLink',
+  fields: {
+    link: {
       type: 'string',
       required: true,
     },
@@ -67,9 +88,58 @@ export const BlogPost = defineDocumentType(() => ({
   computedFields: blogComputedFields,
 }));
 
+export const Project = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: `projects/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    isFeatured: {
+      type: 'boolean',
+      required: true,
+    },
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    thumbnails: {
+      type: 'list',
+      of: {
+        type: 'string',
+      },
+      required: true,
+    },
+    publishDate: {
+      type: 'date',
+      required: true,
+    },
+    projectLink: {
+      type: 'nested',
+      of: ExternalLink,
+      required: false,
+    },
+    repoLink: {
+      type: 'nested',
+      of: ExternalLink,
+      required: false,
+    },
+    technologies: {
+      type: 'list',
+      of: {
+        type: 'string',
+      },
+      required: true,
+    },
+  },
+  computedFields: projectComputedFields,
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [BlogPost],
+  documentTypes: [BlogPost, Project],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

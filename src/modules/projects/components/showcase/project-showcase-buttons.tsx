@@ -1,15 +1,15 @@
 'use client';
 
-import type { ProjectData } from '@modules/projects/types/projects.types';
 import { motion } from 'framer-motion';
 import React from 'react';
 
+import { Project } from '@contentlayer/generated';
 import DemoButton from '../buttons/demo-button';
 import RepoButton from '../buttons/repo-button';
 
 type ProjectShowcaseButtonsProps = {
-  projectLink: ProjectData['projectLink'];
-  repoLink: ProjectData['repoLink'];
+  projectLink: Project['projectLink'];
+  repoLink: Project['repoLink'];
 };
 
 const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) => {
@@ -27,8 +27,8 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
         delay: 0.35,
       }}
     >
-      {projectLink.exists && projectLink.link ? <DemoButton href={projectLink.link}>Demo</DemoButton> : null}
-      {repoLink.exists && repoLink.link ? <RepoButton href={repoLink.link}>Repo</RepoButton> : null}
+      {projectLink && projectLink.link ? <DemoButton href={projectLink.link}>Demo</DemoButton> : null}
+      {repoLink && repoLink.link ? <RepoButton href={repoLink.link}>Repo</RepoButton> : null}
     </motion.div>
   );
 };

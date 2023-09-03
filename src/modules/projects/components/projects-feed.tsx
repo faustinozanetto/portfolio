@@ -5,7 +5,7 @@ import CardsFeed from '@modules/ui/components/cards/feed/cards-feed';
 import React from 'react';
 import theme from 'tailwindcss/defaultTheme';
 
-import type { Project } from '../types/projects.types';
+import { Project } from '@contentlayer/generated';
 import ProjectCard from './cards/project-card';
 
 type ProjectsFeedProps = {
