@@ -1,7 +1,4 @@
-// eslint-disable-next-line import/no-import-module-exports
-import type { UserConfig } from '@commitlint/types';
-
-const configuration: UserConfig = {
+const configuration = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'header-max-length': [0, 'always', 150],
