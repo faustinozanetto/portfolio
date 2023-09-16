@@ -68,15 +68,17 @@ const HomeHero: React.FC = () => (
         }}
         className="mt-4 flex flex-col items-center space-y-2 md:mt-6 md:flex-row md:space-x-4 md:space-y-0"
       >
-        <LinkButton
-          href="mailto:zanettofaustino@gmail.com"
-          aria-label="Contact Me"
-          title="Contact Me"
-          className="w-full md:w-auto"
-          size="lg"
-        >
-          Contact Me
-        </LinkButton>
+        <div className="relative w-full md:w-auto">
+          <LinkButton
+            href="mailto:zanettofaustino@gmail.com"
+            aria-label="Contact Me"
+            title="Contact Me"
+            className="w-full md:w-auto"
+            size="lg"
+          >
+            Contact Me
+          </LinkButton>
+        </div>
         <LinkButton
           className="w-full md:w-auto"
           href="/Resumee.pdf"
