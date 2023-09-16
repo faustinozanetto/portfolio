@@ -14,25 +14,43 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Set up Node
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: lts/*
-          cache: 'yarn'
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Check linting
-        run: yarn lint
+        run: pnpm lint
 
       - name: Build package
-        run: yarn build
+        run: pnpm build
 
       - name: Check commits messages
         uses: wagoid/commitlint-github-action@v5
