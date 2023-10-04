@@ -1,15 +1,22 @@
 'use client';
 
-import Button from '@modules/ui/components/buttons/button';
+import { Button } from '@modules/ui/components/buttons/button';
 import { useTheme } from 'next-theme-kit';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ThemeToggler: React.FC = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   const handleThemeChange = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <Button aria-label="Toggle Theme" className="h-10 w-10 px-2" variant="ghost" onClick={handleThemeChange}>

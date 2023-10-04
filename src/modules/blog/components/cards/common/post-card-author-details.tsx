@@ -1,6 +1,6 @@
-import { BlogPostAuthor } from '@contentlayer/generated';
-import Image from '@modules/ui/components/images/image';
 import React from 'react';
+import Image from 'next/image';
+import { BlogPostAuthor } from '@contentlayer/generated';
 
 type PostCardAuthorDetailsProps = {
   author: BlogPostAuthor;
@@ -11,19 +11,19 @@ const PostCardAuthorDetails: React.FC<PostCardAuthorDetailsProps> = (props) => {
   const { author, date } = props;
 
   return (
-    <div className="mb-2 flex items-center space-x-2">
+    <div className="mb-2 flex items-center gap-2">
       <Image
         src={author.image}
         alt={`Blog Author ${author.name}`}
         title="Blog Author"
-        priority
         width={85}
         height={85}
+        loading="lazy"
         className="h-10 w-10 rounded-full md:h-14 md:w-14"
       />
       <div className="flex flex-col">
         <span className="font-bold">{author.name}</span>
-        <div className="flex flex-row items-center space-x-1">
+        <div className="flex flex-row items-center gap-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 stroke-current"

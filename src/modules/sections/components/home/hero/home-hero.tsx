@@ -66,7 +66,7 @@ const HomeHero: React.FC = () => (
           duration: 0.25,
           delay: 0.35,
         }}
-        className="mt-4 flex flex-col items-center space-y-2 md:mt-6 md:flex-row md:space-x-4 md:space-y-0"
+        className="mt-4 flex flex-col items-center gap-2 md:mt-6 md:flex-row md:gap-4"
       >
         <div className="relative w-full md:w-auto">
           <LinkButton

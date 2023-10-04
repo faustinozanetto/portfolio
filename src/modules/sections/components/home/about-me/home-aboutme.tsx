@@ -27,7 +27,7 @@ const HomeAboutMe: React.FC = () => (
           className="bg-cover object-cover h-64 w-full rounded-3xl md:h-72 md:w-72 border border-border"
           width={550}
           height={550}
-          priority
+          loading="lazy"
         />
       </motion.div>
 

@@ -30,6 +30,7 @@ export const metadata: Metadata = {
       url: 'https://www.faustinozanetto.com',
     },
   ],
+  themeColor: '#2563eb',
   creator: 'Faustino Zanetto',
   metadataBase: new URL(siteConfig.url),
   openGraph: {

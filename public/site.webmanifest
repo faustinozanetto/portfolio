@@ -1,10 +1,10 @@
 {
   "name": "Faustino Zanetto",
-  "short_name": "FaustinoZanetto",
+  "short_name": "Faustino Zanetto",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#7DD3FC",
-  "theme_color": "#7DD3FC",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
   "orientation": "portrait-primary",
   "dir": "ltr",
   "lang": "en-US",

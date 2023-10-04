@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://faustinozanetto.vercel.app/sitemap.xml
+Sitemap: https://faustinozanetto.com/sitemap.xml

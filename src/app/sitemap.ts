@@ -1,16 +1,21 @@
 import { siteConfig } from '@config/config';
-import { allBlogPosts } from '@contentlayer/generated';
+import { allBlogPosts, allProjects } from '@contentlayer/generated';
 
 export default async function sitemap() {
   const blogs = allBlogPosts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
+    url: `${siteConfig.url}${post.slug}`,
     lastModified: post.publishDate,
   }));
 
-  const routes = ['', '/blog', '/projects', '/about', '/contact'].map((route) => ({
+  const projects = allProjects.map((project) => ({
+    url: `${siteConfig.url}${project.slug}`,
+    lastModified: project.publishDate,
+  }));
+
+  const routes = ['', '/blog', '/projects'].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...blogs, ...projects];
 }

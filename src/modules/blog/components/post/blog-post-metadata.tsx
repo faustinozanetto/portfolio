@@ -15,7 +15,7 @@ const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) 
         {blogPost.title}
       </h1>
       {/* Author Details */}
-      <div className="mt-4 flex space-x-4 items-center">
+      <div className="mt-4 flex gap-4 items-center">
         <Image
           src={blogPost.author.image}
           alt={`Blog Author ${blogPost.author.name}`}

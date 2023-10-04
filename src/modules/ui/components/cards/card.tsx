@@ -1,7 +1,7 @@
-import Image from '@modules/ui/components/images/image';
-import clsx from 'clsx';
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import clsx from 'clsx';
 
 export type CardProps = {
   children: React.ReactNode;
@@ -19,10 +19,10 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
   const { href, title, thumbnail, children, variant = 'portrait' } = props;
 
   return (
-    <Link href={href} ref={ref}>
+    <Link href={href} title={title} ref={ref}>
       <div
         className={clsx(
-          'group cursor-pointer overflow-hidden rounded-lg bg-card shadow-2xl border border-border',
+          'group cursor-pointer overflow-hidden rounded-lg bg-card shadow border',
           variant === 'portrait' && 'w-full md:max-w-sm',
           variant === 'landscape' && 'grid grid-cols-2'
         )}
@@ -35,10 +35,10 @@ const Card = React.forwardRef<HTMLAnchorElement, CardProps>((props, ref) => {
             variant === 'portrait' ? 'h-[180px]' : 'h-auto md:h-[275px]',
             'w-full bg-no-repeat object-cover'
           )}
+          loading="lazy"
           title={`Project ${title} Thumbnail`}
           width={400}
           height={400}
-          priority
         />
 
         {/* Bottom Information */}

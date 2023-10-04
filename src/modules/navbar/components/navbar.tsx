@@ -8,11 +8,10 @@ const Navbar: React.FC = () => (
   <div className="bg-background z-[999] border-b-2 border-b-border w-full p-4 backdrop-blur-lg">
     <div className="container mx-auto flex items-center justify-center md:justify-between">
       <NavbarLogo />
-      <nav className="hidden md:flex md:items-center md:justify-center md:space-x-4">
+      <nav className="hidden md:flex md:items-center md:justify-center md:gap-4">
         <NavbarLink href="/">Home</NavbarLink>
         <NavbarLink href="/blog">Blog</NavbarLink>
         <NavbarLink href="/projects">Projects</NavbarLink>
-        <NavbarLink href="#contact">Contact</NavbarLink>
         <ThemeToggler />
       </nav>
     </div>

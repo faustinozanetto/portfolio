@@ -1,26 +1,8 @@
-import clsx from 'clsx';
+import { cn } from '@modules/ui/lib/ui.lib';
 import React from 'react';
 
-type SkeletonProps = {
-  children: React.ReactNode;
-  className?: string;
-  isLoaded: boolean;
-};
+function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn('animate-pulse rounded-md bg-muted', className)} {...props} />;
+}
 
-const Skeleton = React.forwardRef<HTMLDivElement, SkeletonProps>((props, ref) => {
-  const { isLoaded, className, children, ...rest } = props;
-
-  return (
-    <div
-      ref={ref}
-      className={clsx(!isLoaded && 'skeleton animate-blink cursor-default bg-gray-300 bg-clip-padding', className)}
-      {...rest}
-    >
-      {children}
-    </div>
-  );
-});
-
-Skeleton.displayName = 'Skeleton';
-
-export default Skeleton;
+export { Skeleton };

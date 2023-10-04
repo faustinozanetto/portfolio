@@ -43,7 +43,7 @@ const HomeBlog: React.FC<HomeBlogProps> = (props) => {
         Here is a selection of posts I have written over the years, all hosted on my personal blog. These articles offer
         readers the opportunity to delve deeper into my areas of expertise and gain insight into my diverse interests.
         Read more at{' '}
-        <Link href="/blog" className="underline decoration-primary decoration-2">
+        <Link href="/blog" title="Blog" className="underline decoration-primary decoration-2">
           Blog
         </Link>
         .

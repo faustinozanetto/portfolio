@@ -1,7 +1,7 @@
+import React from 'react';
+import Link from 'next/link';
 import { cn } from '@modules/ui/lib/ui.lib';
 import type { VariantProps } from 'class-variance-authority';
-import Link from 'next/link';
-import React from 'react';
 
 import { buttonVariants } from './button';
 
