@@ -18,8 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   return (
     <Card href={project.slug} title={project.title} thumbnail={project.thumbnails[0]} variant={variant}>
       <ProjectCardTechnologies technologies={project.technologies} />
-      {/* Description */}
-      <p className="line-clamp-4 mt-1.5">{project.description}</p>
+      <p className="line-clamp mt-1.5">{project.description}</p>
     </Card>
   );
 };

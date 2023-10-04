@@ -1,5 +1,5 @@
-import ThemeToggler from '@modules/theme/components/theme-toggler';
 import React from 'react';
+import ThemeToggler from '@modules/theme/components/theme-toggler';
 
 import NavbarLink from './link/navbar-link';
 import NavbarLogo from './logo/navbar-logo';

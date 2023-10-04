@@ -1,15 +1,16 @@
 import '../styles/global.css';
 
+import React from 'react';
 import { siteConfig } from '@config/config';
 import Footer from '@modules/footer/components/footer';
 import Navbar from '@modules/navbar/components/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import React from 'react';
+import { Libre_Franklin } from 'next/font/google';
+import GoogleAnalytics from '@modules/google/components/google-analytics';
 import Providers from './providers';
 
-const interFont = Inter({
+const libreFranklingFont = Libre_Franklin({
   variable: '--font-sans',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -78,8 +79,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={interFont.variable} suppressHydrationWarning>
-      <body className="bg-background-50 dark:bg-background-900 overflow-x-hidden font-sans antialiased scroll-smooth">
+    <html lang="en" className={libreFranklingFont.variable} suppressHydrationWarning>
+      <body className="bg-background overflow-x-hidden font-sans subpixel-antialiased scroll-smooth">
         <Providers>
           <main className="flex min-h-screen flex-col">
             <Navbar />
@@ -87,6 +88,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Footer />
           </main>
           <Analytics />
+          <GoogleAnalytics />
         </Providers>
       </body>
     </html>
