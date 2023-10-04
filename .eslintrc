@@ -21,6 +21,7 @@
     "import/prefer-default-export": "off",
     "no-nested-ternary": "off",
     "no-plusplus": "off",
+    "camelcase": "off",
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",

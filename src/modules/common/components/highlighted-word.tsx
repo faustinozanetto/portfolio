@@ -7,7 +7,7 @@ type HighlightedWordProps = {
 const HighlightedWord: React.FC<HighlightedWordProps> = (props) => {
   const { children } = props;
 
-  return <span className="font-bold text-primary-600 dark:text-primary-300">{children}</span>;
+  return <span className="font-bold text-primary">{children}</span>;
 };
 
 export default HighlightedWord;

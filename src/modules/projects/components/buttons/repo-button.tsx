@@ -1,5 +1,5 @@
-import LinkButton from '@modules/ui/components/buttons/button-link';
 import React from 'react';
+import LinkButton from '@modules/ui/components/buttons/button-link';
 
 type RepoButtonProps = {
   children?: React.ReactNode;

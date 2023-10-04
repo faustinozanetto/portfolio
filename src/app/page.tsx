@@ -11,7 +11,9 @@ import HomeSkills from '@modules/sections/components/home/skills/home-skills';
 
 export default function HomePage() {
   const blogPosts = allBlogPosts.slice(0, 4);
-  const projects = allProjects.slice(0, 4);
+  const projects = allProjects
+    .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+    .slice(0, 4);
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center">
@@ -22,7 +24,6 @@ export default function HomePage() {
       <HomeEducation />
       <HomeBlog blogPosts={blogPosts} />
       <HomeContact />
-
       <HomeScrollTop />
     </div>
   );
