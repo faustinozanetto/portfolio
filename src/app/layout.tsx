@@ -7,7 +7,6 @@ import Navbar from '@modules/navbar/components/navbar';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Libre_Franklin } from 'next/font/google';
-import GoogleAnalytics from '@modules/google/components/google-analytics';
 import Providers from './providers';
 
 const libreFranklingFont = Libre_Franklin({
@@ -74,7 +73,7 @@ export const metadata: Metadata = {
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
   icons: {
-    shortcut: 'assets/images/favicons/favicon.ico',
+    shortcut: 'favicon.ico',
   },
 };
 
@@ -89,7 +88,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Footer />
           </main>
           <Analytics />
-          <GoogleAnalytics />
+          {/* <GoogleAnalytics /> */}
         </Providers>
       </body>
     </html>

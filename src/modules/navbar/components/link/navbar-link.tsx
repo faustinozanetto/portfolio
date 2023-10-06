@@ -1,17 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 
-type NavbarLinkProps = {
+type NavbarLinkProps = LinkProps & {
   children: React.ReactNode;
-  /** Link to pass to the styled a element. */
-  href?: string;
 };
 
 const NavbarLink: React.FC<NavbarLinkProps> = (props) => {
-  const { children, href = '/' } = props;
+  const { children, ...rest } = props;
 
   return (
-    <Link href={href}>
+    <Link {...rest}>
       <span className="font-semibold text-primary transition-all hover:underline hover:decoration-primary hover:decoration-2">
         {children}
       </span>

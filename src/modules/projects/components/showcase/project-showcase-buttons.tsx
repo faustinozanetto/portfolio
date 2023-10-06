@@ -17,7 +17,7 @@ const ProjectShowcaseButtons: React.FC<ProjectShowcaseButtonsProps> = (props) =>
 
   return (
     <motion.div
-      className="gap-2 md:w-1/5"
+      className="flex flex-col gap-2 md:w-1/5"
       initial={{ opacity: 0, translateX: 20 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       viewport={{ once: true }}

@@ -1,10 +1,15 @@
 'use client';
 
-import { Button } from '@modules/ui/components/buttons/button';
+import { Button, ButtonProps } from '@modules/ui/components/buttons/button';
+import { cn } from '@modules/ui/lib/ui.lib';
 import { useTheme } from 'next-theme-kit';
 import React, { useEffect, useState } from 'react';
 
-const ThemeToggler: React.FC = () => {
+type ThemeTogglerProps = Omit<ButtonProps, 'onClick' | 'aria-label'> & {};
+
+const ThemeToggler: React.FC<ThemeTogglerProps> = (props) => {
+  const { className, variant = 'ghost', ...rest } = props;
+
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -19,7 +24,13 @@ const ThemeToggler: React.FC = () => {
   if (!isMounted) return null;
 
   return (
-    <Button aria-label="Toggle Theme" className="h-10 w-10 px-2" variant="ghost" onClick={handleThemeChange}>
+    <Button
+      aria-label="Toggle Theme"
+      className={cn('h-10 w-10 px-2', className)}
+      variant={variant}
+      onClick={handleThemeChange}
+      {...rest}
+    >
       {/* Sun Icon */}
       <svg
         className="h-6 w-6 rotate-0 scale-100 stroke-current transition-all dark:scale-0"
