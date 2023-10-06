@@ -61,7 +61,7 @@
     "@tailwindcss/typography": "0.5.9",
     "@types/node": "18.11.10",
     "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
+    "@types/react-dom": "18.2.11",
     "@typescript-eslint/eslint-plugin": "6.7.4",
     "@types/gtag.js": "0.0.14",
     "@typescript-eslint/parser": "6.0.0",
