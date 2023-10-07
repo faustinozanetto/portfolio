@@ -1,5 +1,6 @@
-import { BlogPost } from '@contentlayer/generated';
 import React from 'react';
+import { BlogPost } from '@contentlayer/generated';
+import ScrollToTop from '@modules/common/components/scroll-to-top';
 import BlogPostContentMetadata from './blog-post-metadata';
 import BlogPostContentMarkdown from './markdown/blog-post-content-markdown';
 import BlogPostContentBack from './blog-post-content-back';
@@ -18,6 +19,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = (props) => {
       {/* Renderer Markdown */}
       <BlogPostContentMarkdown code={blogPost.body.code} />
       <hr className="mt-12" />
+      <ScrollToTop />
     </article>
   );
 };

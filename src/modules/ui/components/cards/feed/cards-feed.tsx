@@ -33,7 +33,7 @@ const CardsFeed = <T,>(props: CardsFeedProps<T>) => {
     );
   }, [data, render, renderFeatured]);
 
-  return <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">{content}</div>;
+  return <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">{content}</div>;
 };
 
 export default CardsFeed;

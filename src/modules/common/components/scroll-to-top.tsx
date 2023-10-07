@@ -6,7 +6,7 @@ import useRevealOnScroll from '@modules/common/hooks/use-reveal-on-scroll';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@modules/ui/components/buttons/button';
 
-const HomeScrollTop: React.FC = () => {
+const ScrollToTop: React.FC = () => {
   const { show } = useRevealOnScroll({ revealScroll: 200 });
 
   const handleScrollTop = () => {
@@ -47,4 +47,4 @@ const HomeScrollTop: React.FC = () => {
   );
 };
 
-export default HomeScrollTop;
+export default ScrollToTop;

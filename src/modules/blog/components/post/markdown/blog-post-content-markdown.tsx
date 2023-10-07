@@ -82,7 +82,7 @@ const components = {
     />
   ),
   pre: ({ className, ...props }) => (
-    <pre className={cn('mb-4 mt-6 overflow-x-auto rounded-lg border py-4', className)} {...props} />
+    <pre className={cn('mb-4 mt-6 overflow-x-auto rounded-lg border p-4', className)} {...props} />
   ),
   code: ({ className, ...props }) => (
     <code className={cn('relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm', className)} {...props} />

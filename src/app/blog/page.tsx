@@ -6,6 +6,8 @@ import BlogFeed from '@modules/blog/components/feed/blog-feed';
 import { motion } from 'framer-motion';
 
 export default function BlogPage() {
+  const posts = allBlogPosts.sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime());
+
   return (
     <section className="container mx-auto my-8 w-full max-w-5xl items-start justify-center p-4 md:my-12 md:max-w-6xl md:p-8 lg:my-16 lg:max-w-7xl">
       {/* Titles */}
@@ -39,7 +41,7 @@ export default function BlogPage() {
         and other topics.
       </motion.p>
 
-      <BlogFeed blogPosts={allBlogPosts} />
+      <BlogFeed blogPosts={posts} />
     </section>
   );
 }

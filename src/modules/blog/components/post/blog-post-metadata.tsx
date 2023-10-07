@@ -9,11 +9,9 @@ type BlogPostContentMetadataProps = {
 const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) => {
   const { blogPost } = props;
   return (
-    <div>
+    <div className="mt-6">
       <time className="block text-sm">Published on {new Date(blogPost.publishDate).toDateString()}</time>
-      <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl font-extrabold">
-        {blogPost.title}
-      </h1>
+      <h1 className="inline-block font-heading text-4xl leading-tight lg:text-5xl font-extrabold">{blogPost.title}</h1>
       {/* Author Details */}
       <div className="mt-4 flex gap-4 items-center">
         <Image

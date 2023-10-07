@@ -22,7 +22,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = (props) => {
       {/* Tags */}
       <PostCardTags tags={blogPost.tags} />
       {/* Description */}
-      <p className="line-clamp-4">{blogPost.description}</p>
+      <p className="line-clamp">{blogPost.description}</p>
     </Card>
   );
 };
