@@ -1,9 +1,8 @@
-/* eslint-disable no-underscore-dangle */
 import { ComputedFields, defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 const blogComputedFields: ComputedFields<'BlogPost'> = {
   slug: {
@@ -137,6 +136,28 @@ export const Project = defineDocumentType(() => ({
   computedFields: projectComputedFields,
 }));
 
+/** @type {import('rehype-pretty-code').Options} */
+const rehypePrettyCodeOptions = {
+  theme: 'min-dark',
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      // if code block has a empty line, add a space instead of keeping it blank
+      node.children = [{ type: 'text', value: ' ' }];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    const nodeClass = node.properties.className;
+    if (nodeClass && nodeClass.length > 0) {
+      node.properties.className.push('line--highlighted');
+    } else {
+      node.properties.className = ['line--highlighted'];
+    }
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ['word--highlighted'];
+  },
+};
+
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [BlogPost, Project],
@@ -144,25 +165,8 @@ export default makeSource({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      [
-        rehypePrettyCode,
-        {
-          theme: 'one-dark-pro',
-          onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
-            if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }];
-            }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted');
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted'];
-          },
-        },
-      ],
+      // @ts-ignore
+      [rehypePrettyCode, rehypePrettyCodeOptions],
       [
         rehypeAutolinkHeadings,
         {

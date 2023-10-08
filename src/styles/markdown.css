@@ -1,36 +1,78 @@
-[data-rehype-pretty-code-fragment] pre {
-  @apply rounded-lg shadow-lg;
+[data-rehype-pretty-code-fragment] {
+  @apply shadow;
+
+  overflow: hidden;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 [data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
-  counter-reset: line;
+  display: grid;
+  min-width: 100%;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+  border: none;
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+
   box-decoration-break: clone;
+  counter-reset: line;
 }
-[data-rehype-pretty-code-fragment] .line {
-  @apply px-4 py-1;
+
+[data-rehype-pretty-code-fragment] pre {
+  border-radius: 0.25rem;
+
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 }
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+
+[data-rehype-pretty-code-title] {
+  @apply shadow;
+
+  background-color: rgb(31, 31, 31);
+  color: rgba(255, 255, 255, 0.8);
+
+  margin-bottom: 0.25rem;
+  border-radius: 0.25rem;
+
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  font-size: 1rem;
+  line-height: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+[data-rehype-pretty-code-fragment] [data-line] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  border-left-width: 4px;
+  border-left-color: transparent;
+}
+
+[data-rehype-pretty-code-fragment] [data-line]::before {
+  color: rgba(255, 255, 255, 0.5);
+
   counter-increment: line;
   content: counter(line);
+
   display: inline-block;
   width: 1rem;
   margin-right: 1rem;
   text-align: right;
-  color: gray;
 }
+
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-background bg-opacity-10;
+  @apply border-l-primary bg-background/10;
 }
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
-}
+
 [data-rehype-pretty-code-fragment] .word--highlighted {
   @apply rounded-md bg-background bg-opacity-10 p-1;
-}
-[data-rehype-pretty-code-title] {
-  @apply mt-4 py-2 px-4 text-sm font-medium;
-}
-[data-rehype-pretty-code-title] + pre {
-  @apply mt-0;
 }

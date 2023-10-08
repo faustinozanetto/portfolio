@@ -83,7 +83,7 @@ Once this command completes, we will have successfully integrated the core Conte
 
 With our essential dependencies in place, the next crucial step is configuring our Next.js application. To achieve this, we need to make adjustments to the `next.config.js` file, which is located in the root folder of our project. Follow these steps to apply the necessary changes:
 
-```javascript
+```javascript showLineNumbers
 const { withContentlayer } = require('next-contentlayer');
 
 /** @type {import('next').NextConfig} */
@@ -100,27 +100,23 @@ Now, it's time to enhance our development experience by adding a path alias to o
 
 2. Add the following changes to your `tsconfig.json`:
 
-```json
-  {
-    "compilerOptions": {
-      "baseUrl": "./src",
-      "paths": {
-        ...otherPaths
-        "@contentlayer/generated": ["../.contentlayer/generated"]
-      }
-    },
-    "include": [
-      ...otherIncludes
-      ".contentlayer/generated"
-    ]
-  }
+```json title="TSConfig Update" showLineNumbers {5, 8}
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@contentlayer/generated": ["../.contentlayer/generated"]
+    }
+  },
+  "include": [".contentlayer/generated"]
+}
 ```
 
 By doing so, we tell the Typescript compiler that it should include the file that `contentlayer` will generate as an output as well as setting up the path alias.
 
 We also need to add a folder to our `.gitignore` file so that we do not push unwanted files to our repository. Locate your `.gitignore` and add the following changes:
 
-```bash
+```bash title="Update Gitignore" {4}
 ...
 
 # add this
@@ -133,7 +129,7 @@ Now that we finished setting up the actual configuration files, we need to start
 
 To do so, create a file called `contentlayer.config.ts` in the root folder of your project. Then proceed to add the following code to it:
 
-```typescript
+```ts title="Defining Content Schema" showLineNumbers
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 export const BlogPost = defineDocumentType(() => ({
@@ -182,7 +178,7 @@ Lets break down whats going on in this code snippet:
 
 1. **Import** Statements:
 
-```typescript
+```ts
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 ```
 
@@ -281,7 +277,7 @@ Now that we've covered the essentials of blog post creation and **Contentlayer**
 
 To kickstart this process, we'll begin by enhancing our home page. Navigate to the `src/app` directory and locate the `page.tsx` file, which represents our `/` route in the application. Now, simply copy and paste the following code:
 
-```typescript
+```ts title="Home Page Component" showLineNumbers
 import { allPosts } from '@contentlayer/generated';
 import PostCard from 'components/post-card';
 
@@ -315,7 +311,7 @@ Next on our agenda is the creation of the `PostCard` component, a vital element 
 
 - Copy and paste the code snippet below into your newly created `post-card.tsx` file:
 
-```typescript
+```ts title="Post Card Component" showLineNumbers
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -379,7 +375,7 @@ Now that we've fine-tuned our home page to showcase all our blog posts, it's tim
 
    - Copy and paste the provided code into your newly created `page.tsx` file:
 
-```typescript
+```ts title="Post Page Component" showLineNumbers
 import { allPosts } from '@contentlayer/generated';
 import { Metadata } from 'next';
 import Image from 'next/image';

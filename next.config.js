@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'unsplash.it'],
   },
+  experimental: {
+    mdxRs: false,
+  },
   reactStrictMode: true,
 };
 

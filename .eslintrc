@@ -23,6 +23,7 @@
     "no-plusplus": "off",
     "camelcase": "off",
     "arrow-body-style": "off",
+    "no-underscore-dangle": "off",
     "no-shadow": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",

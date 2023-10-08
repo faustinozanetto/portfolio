@@ -1,5 +1,3 @@
-import '@styles/markdown.css';
-
 import React from 'react';
 
 import { allBlogPosts } from '@contentlayer/generated';

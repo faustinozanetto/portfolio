@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'markdown.css';
 
 @layer base {
   :root {
@@ -85,17 +86,4 @@ body {
     sans-serif;
 
   @apply bg-background text-foreground;
-}
-
-@keyframes shimmer {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.skeleton * {
-  visibility: hidden;
 }

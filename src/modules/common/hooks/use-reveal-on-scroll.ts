@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 
-type UseRevealOnScrollPayload = {
-  initialShow?: boolean;
-  revealScroll: number;
-};
+const useRevealOnScroll = (initialShow = false) => {
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-const useRevealOnScroll = ({ revealScroll, initialShow = false }: UseRevealOnScrollPayload) => {
-  const [show, setShow] = useState<boolean>(initialShow);
+  const [show, setShow] = useState(initialShow);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -17,8 +14,8 @@ const useRevealOnScroll = ({ revealScroll, initialShow = false }: UseRevealOnScr
   }, []);
 
   const scrollEventListener = () => {
-    const windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    setShow(windowScroll > revealScroll);
+    setShow(window.scrollY > lastScrollY);
+    setLastScrollY(window.scrollY);
   };
 
   return { show };

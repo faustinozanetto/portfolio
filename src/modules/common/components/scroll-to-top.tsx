@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@modules/ui/components/buttons/button';
 
 const ScrollToTop: React.FC = () => {
-  const { show } = useRevealOnScroll({ revealScroll: 200 });
+  const { show } = useRevealOnScroll();
 
   const handleScrollTop = () => {
     if (typeof window === 'undefined') return;
