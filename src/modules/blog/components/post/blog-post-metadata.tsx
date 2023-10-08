@@ -1,6 +1,7 @@
 import { BlogPost } from '@contentlayer/generated';
 import React from 'react';
 import Image from 'next/image';
+import BlogPostContentBack from './blog-post-content-back';
 
 type BlogPostContentMetadataProps = {
   blogPost: BlogPost;
@@ -9,8 +10,11 @@ type BlogPostContentMetadataProps = {
 const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) => {
   const { blogPost } = props;
   return (
-    <div className="mt-6">
-      <time className="block text-sm">Published on {new Date(blogPost.publishDate).toDateString()}</time>
+    <div>
+      <div className="flex items-center justify-between mb-1">
+        <time className="block text-sm">Published on {new Date(blogPost.publishDate).toDateString()}</time>
+        <BlogPostContentBack />
+      </div>
       <h1 className="inline-block font-heading text-4xl leading-tight lg:text-5xl font-extrabold">{blogPost.title}</h1>
       {/* Author Details */}
       <div className="mt-4 flex gap-4 items-center">
