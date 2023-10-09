@@ -1,9 +1,9 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import { Button, ButtonProps } from '@modules/ui/components/buttons/button';
 import { cn } from '@modules/ui/lib/ui.lib';
 import { useTheme } from 'next-theme-kit';
-import React, { useEffect, useState } from 'react';
 
 type ThemeTogglerProps = Omit<ButtonProps, 'onClick' | 'aria-label'> & {};
 
@@ -13,15 +13,15 @@ const ThemeToggler: React.FC<ThemeTogglerProps> = (props) => {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  const handleThemeChange = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null;
+  const handleThemeChange = () => {
+    if (!isMounted) return;
+
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <Button

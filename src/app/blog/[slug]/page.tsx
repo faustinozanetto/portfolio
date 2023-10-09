@@ -3,8 +3,8 @@ import React from 'react';
 import { allBlogPosts } from '@contentlayer/generated';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import BlogPostContent from '@modules/blog/components/post/blog-post-content';
 import { siteConfig } from '@config/config';
+import BlogPostWrapper from '@modules/blog/components/post/blog-post-wrapper';
 
 type BlogPostPageProps = {
   params: {
@@ -76,5 +76,5 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
     notFound();
   }
 
-  return <BlogPostContent blogPost={blogPost} />;
+  return <BlogPostWrapper blogPost={blogPost} />;
 }

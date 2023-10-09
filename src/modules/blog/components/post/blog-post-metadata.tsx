@@ -1,15 +1,12 @@
-import { BlogPost } from '@contentlayer/generated';
 import React from 'react';
 import Image from 'next/image';
+import { useBlogPostContext } from '@modules/blog/hooks/use-blog-post-context';
 import BlogPostContentBack from './blog-post-content-back';
 import PostCardTags from '../cards/common/post-card-tags';
 
-type BlogPostContentMetadataProps = {
-  blogPost: BlogPost;
-};
+const BlogPostContentMetadata: React.FC = () => {
+  const blogPost = useBlogPostContext((s) => s.blogPost);
 
-const BlogPostContentMetadata: React.FC<BlogPostContentMetadataProps> = (props) => {
-  const { blogPost } = props;
   return (
     <div>
       <div className="flex items-center justify-between mb-1">

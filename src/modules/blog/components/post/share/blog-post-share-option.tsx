@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Button } from '@modules/ui/components/buttons/button';
 
-export type BlogPostContentShareOptionProps = {
+export type BlogPostShareOptionProps = {
   href: string;
   icon: React.ReactNode;
   label: string;
 };
 
-const BlogPostContentShareOption: React.FC<BlogPostContentShareOptionProps> = (props) => {
+const BlogPostShareOption: React.FC<BlogPostShareOptionProps> = (props) => {
   const { label, href, icon } = props;
 
   return (
@@ -20,4 +20,4 @@ const BlogPostContentShareOption: React.FC<BlogPostContentShareOptionProps> = (p
   );
 };
 
-export default BlogPostContentShareOption;
+export default BlogPostShareOption;

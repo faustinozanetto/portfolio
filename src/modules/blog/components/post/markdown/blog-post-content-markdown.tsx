@@ -7,6 +7,7 @@ import { cn } from '@modules/ui/lib/ui.lib';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import React from 'react';
 import Image from 'next/image';
+import { useBlogPostContext } from '@modules/blog/hooks/use-blog-post-context';
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -84,14 +85,10 @@ const components = {
   Image,
 };
 
-type BlogPostContentMarkdownProps = {
-  code: string;
-};
+const BlogPostContentMarkdown: React.FC = () => {
+  const blogPost = useBlogPostContext((s) => s.blogPost);
 
-const BlogPostContentMarkdown: React.FC<BlogPostContentMarkdownProps> = (props) => {
-  const { code } = props;
-
-  const MDXComponent = useMDXComponent(code);
+  const MDXComponent = useMDXComponent(blogPost.body.code);
 
   // @ts-ignore
   return <MDXComponent components={components} />;

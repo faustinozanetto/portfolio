@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import { BlogPost } from '@contentlayer/generated';
-import BlogPostContentShareOption, { type BlogPostContentShareOptionProps } from './blog-post-content-share-option';
+import { useBlogPostContext } from '@modules/blog/hooks/use-blog-post-context';
+import BlogPostShareOption, { BlogPostShareOptionProps } from './blog-post-share-option';
 
-type ShareOptionWithURLGenerator = Omit<BlogPostContentShareOptionProps, 'href'> & {
+type ShareOptionWithURLGenerator = Omit<BlogPostShareOptionProps, 'href'> & {
   generateURL: (blogPost: BlogPost) => string;
 };
 
@@ -39,12 +42,8 @@ const SHARE_OPTIONS: ShareOptionWithURLGenerator[] = [
   },
 ];
 
-type BlogPostContentShareProps = {
-  blogPost: BlogPost;
-};
-
-const BlogPostContentShare: React.FC<BlogPostContentShareProps> = (props) => {
-  const { blogPost } = props;
+const BlogPostShare: React.FC = () => {
+  const blogPost = useBlogPostContext((s) => s.blogPost);
 
   return (
     <div className="my-4">
@@ -54,7 +53,7 @@ const BlogPostContentShare: React.FC<BlogPostContentShareProps> = (props) => {
       </p>
       <div className="flex gap-4 justify-end mt-2">
         {SHARE_OPTIONS.map((option) => (
-          <BlogPostContentShareOption
+          <BlogPostShareOption
             key={option.label}
             icon={option.icon}
             label={option.label}
@@ -66,4 +65,4 @@ const BlogPostContentShare: React.FC<BlogPostContentShareProps> = (props) => {
   );
 };
 
-export default BlogPostContentShare;
+export default BlogPostShare;

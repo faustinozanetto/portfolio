@@ -30,6 +30,7 @@
     "prettier/prettier": ["error", { "semi": true }],
     "react/destructuring-assignment": "off",
     "react/prop-types": "off",
+    "react/no-array-index-key": "off",
     "react/button-has-type": "off",
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": "off",
