@@ -5,6 +5,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { siteConfig } from '@config/config';
 import BlogPostWrapper from '@modules/blog/components/post/blog-post-wrapper';
+import { getBlogPostViewsFromRedis } from '@modules/blog/actions/blog.actions';
+
+export const revalidate = 60;
 
 type BlogPostPageProps = {
   params: {
@@ -76,5 +79,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
     notFound();
   }
 
-  return <BlogPostWrapper blogPost={blogPost} />;
+  const views = await getBlogPostViewsFromRedis(blogPost.slugAsParams);
+
+  return <BlogPostWrapper blogPost={blogPost} views={views} />;
 }

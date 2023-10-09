@@ -8,13 +8,14 @@ import BlogPostProvider from './context/blog-post-provider';
 
 type BlogPostWrapperProps = {
   blogPost: BlogPostData;
+  views: number;
 };
 
 const BlogPostWrapper: React.FC<BlogPostWrapperProps> = (props) => {
-  const { blogPost } = props;
+  const { blogPost, views } = props;
 
   return (
-    <BlogPostProvider blogPost={blogPost}>
+    <BlogPostProvider blogPost={blogPost} views={views}>
       <BlogPost />
     </BlogPostProvider>
   );

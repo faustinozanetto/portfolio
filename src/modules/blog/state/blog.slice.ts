@@ -3,6 +3,7 @@ import { createStore } from 'zustand';
 
 export type BlogSliceState = {
   blogPost: BlogPost;
+  views: number;
 };
 
 export type BlogSliceActions = {
