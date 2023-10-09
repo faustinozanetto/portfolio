@@ -55,6 +55,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         {
           url: blogPost.image,
           alt: title,
+          width: 2000,
+          height: 1500,
         },
       ],
     },
@@ -66,9 +68,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         {
           url: blogPost.image,
           alt: title,
+          width: 2000,
+          height: 1500,
         },
       ],
     },
+    authors: { name: blogPost.author.name },
   };
 }
 

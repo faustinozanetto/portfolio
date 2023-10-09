@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { ComputedFields, defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
