@@ -132,7 +132,7 @@ devDependencies:
     version: 6.7.1(eslint@8.50.0)
   eslint-plugin-prettier:
     specifier: 5.0.0
-    version: 5.0.0(eslint-config-prettier@8.6.0)(eslint@8.50.0)(prettier@3.0.0)
+    version: 5.0.0(eslint-config-prettier@8.6.0)(eslint@8.50.0)(prettier@3.1.1)
   eslint-plugin-react:
     specifier: 7.32.2
     version: 7.32.2(eslint@8.50.0)
@@ -161,8 +161,8 @@ devDependencies:
     specifier: 8.4.21
     version: 8.4.21
   prettier:
-    specifier: 3.0.0
-    version: 3.0.0
+    specifier: 3.1.1
+    version: 3.1.1
   tailwindcss:
     specifier: 3.2.4
     version: 3.2.4(postcss@8.4.21)(ts-node@10.9.1)
@@ -6242,7 +6242,7 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.6.0)(eslint@8.50.0)(prettier@3.0.0):
+  /eslint-plugin-prettier@5.0.0(eslint-config-prettier@8.6.0)(eslint@8.50.0)(prettier@3.1.1):
     resolution: {integrity: sha512-AgaZCVuYDXHUGxj/ZGu1u8H8CYgDY3iG6w5kUFw4AzMVXzB7VvbKgYR4nATIN+OvUrghMbiDLeimVjVY5ilq3w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -6258,7 +6258,7 @@ packages:
     dependencies:
       eslint: 8.50.0
       eslint-config-prettier: 8.6.0(eslint@8.50.0)
-      prettier: 3.0.0
+      prettier: 3.1.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
     dev: true
@@ -9718,8 +9718,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier@3.0.0:
-    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+  /prettier@3.1.1:
+    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
