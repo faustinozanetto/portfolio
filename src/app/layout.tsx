@@ -5,6 +5,7 @@ import { siteConfig } from '@config/config';
 import Footer from '@modules/footer/components/footer';
 import Navbar from '@modules/navbar/components/navbar';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Libre_Franklin } from 'next/font/google';
 import Providers from './providers';
@@ -84,7 +85,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Providers>
           <main className="flex min-h-screen flex-col">
             <Navbar />
-            <div className="flex-1 overflow-x-hidden">{children}</div>
+            <div className="flex-1 overflow-x-hidden">
+              {children}
+              <SpeedInsights />
+            </div>
             <Footer />
           </main>
           <Analytics />
