@@ -8,6 +8,8 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
+      REDIS_REST_API_TOKEN: ${{ secrets.REDIS_REST_API_TOKEN }}
+      REDIS_REST_API_URL: ${{  secrets.REDIS_REST_API_URL }}
 
     name: Run Type Check & Linters
     runs-on: ubuntu-latest
