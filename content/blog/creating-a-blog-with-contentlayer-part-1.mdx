@@ -186,7 +186,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 2. **defineDocumentType** Function:
 
-```typescript
+```ts
 export const BlogPost = defineDocumentType(() => ({
   // ...
 }));
@@ -200,7 +200,7 @@ For more information about modeleing the `documentType` head down to the Content
 
 3. **makeSource** Function:
 
-```typescript
+```ts
 export default makeSource({
   // ...
 });
@@ -277,7 +277,7 @@ Now that we've covered the essentials of blog post creation and **Contentlayer**
 
 To kickstart this process, we'll begin by enhancing our home page. Navigate to the `src/app` directory and locate the `page.tsx` file, which represents our `/` route in the application. Now, simply copy and paste the following code:
 
-```ts title="Home Page Component" showLineNumbers
+```tsx title="Home Page Component" showLineNumbers
 import { allPosts } from '@contentlayer/generated';
 import PostCard from 'components/post-card';
 
@@ -311,7 +311,7 @@ Next on our agenda is the creation of the `PostCard` component, a vital element 
 
 - Copy and paste the code snippet below into your newly created `post-card.tsx` file:
 
-```ts title="Post Card Component" showLineNumbers
+```tsx title="Post Card Component" showLineNumbers
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -375,7 +375,7 @@ Now that we've fine-tuned our home page to showcase all our blog posts, it's tim
 
    - Copy and paste the provided code into your newly created `page.tsx` file:
 
-```ts title="Post Page Component" showLineNumbers
+```tsx title="Post Page Component" showLineNumbers
 import { allPosts } from '@contentlayer/generated';
 import { Metadata } from 'next';
 import Image from 'next/image';
