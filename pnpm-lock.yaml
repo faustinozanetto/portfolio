@@ -146,8 +146,8 @@ devDependencies:
     specifier: 10.0.0
     version: 10.0.0(eslint@8.50.0)
   eslint-plugin-tailwindcss:
-    specifier: 3.8.3
-    version: 3.8.3(tailwindcss@3.2.4)
+    specifier: 3.11.0
+    version: 3.11.0(tailwindcss@3.2.4)
   eslint-plugin-typescript-sort-keys:
     specifier: 3.0.0
     version: 3.0.0(@typescript-eslint/parser@6.7.4)(eslint@8.50.0)(typescript@5.2.2)
@@ -6312,8 +6312,8 @@ packages:
       eslint: 8.50.0
     dev: true
 
-  /eslint-plugin-tailwindcss@3.8.3(tailwindcss@3.2.4):
-    resolution: {integrity: sha512-wfzfCmc9yONNW+TqfR+QWZ+syFPQ8zMOrIGx500lS4XITEm0HJYGyKh1sC1tQ9+Wmt58bnHzW3Yc31vy5RlJww==}
+  /eslint-plugin-tailwindcss@3.11.0(tailwindcss@3.2.4):
+    resolution: {integrity: sha512-RaraOG4D6VXutKnoNvFQ4+frTWGJDKtezy1yCrGFS7Um1to/npDNdh2GL19IRoGB/eanbtwhxFXy+xyEw0grAg==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
