@@ -8,7 +8,7 @@ import HighlightedWord from '@modules/common/components/highlighted-word';
 import Section from '../../section/section';
 
 const HomeAboutMe: React.FC = () => (
-  <Section className="z-20" id="about" alternateColors>
+  <Section className="z-20" id="about">
     <div className="grid items-center gap-4 md:grid-cols-aboutMe md:gap-6">
       {/* Left */}
       <motion.div

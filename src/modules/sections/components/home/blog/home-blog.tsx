@@ -15,7 +15,7 @@ type HomeBlogProps = {
 const HomeBlog: React.FC<HomeBlogProps> = (props) => {
   const { blogPosts } = props;
   return (
-    <Section id="blog" alternateColors>
+    <Section id="blog">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, translateY: -20 }}

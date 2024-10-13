@@ -9,6 +9,7 @@ import HomeProjects from '@modules/sections/components/home/projects/home-projec
 import HomeSkills from '@modules/sections/components/home/skills/home-skills';
 import HomeAboutMe from '@modules/sections/components/home/about-me/home-aboutme';
 import ScrollToTop from '@modules/common/components/scroll-to-top';
+import HomeExperience from '@modules/sections/components/home/experience/home-experience';
 
 export default function HomePage() {
   const blogPosts = allBlogPosts.slice(0, 4);
@@ -20,6 +21,7 @@ export default function HomePage() {
     <div className="relative flex w-full flex-col items-center justify-center">
       <HomeHero />
       <HomeAboutMe />
+      <HomeExperience />
       <HomeSkills />
       <HomeProjects projects={projects} />
       <HomeEducation />

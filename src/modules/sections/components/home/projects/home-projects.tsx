@@ -15,7 +15,7 @@ type HomeProjectsProps = {
 const HomeProjects: React.FC<HomeProjectsProps> = (props) => {
   const { projects } = props;
   return (
-    <Section className="z-20" alternateColors id="projects">
+    <Section className="z-20" id="projects">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, translateY: -20 }}
