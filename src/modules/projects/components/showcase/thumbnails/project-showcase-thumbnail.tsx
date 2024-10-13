@@ -13,8 +13,8 @@ const ProjectShowcaseThumbnail: React.FC<ProjectShowcaseThumbnailProps> = (props
       src={thumbnail}
       alt="Project thumbnail"
       className="w-full rounded-lg shadow border"
-      width={600}
-      height={600}
+      width={1500}
+      height={1500}
     />
   );
 };

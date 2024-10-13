@@ -13,7 +13,7 @@ const ProjectShowcaseThumbnails: React.FC<ProjectShowcaseThumbnailsProps> = (pro
   const { thumbnails } = props;
 
   return (
-    <div className="mt-4 gap-4 md:mt-6 lg:mt-8 grid sm:grid-cols-2 justify-normal items-stretch">
+    <div className="mt-4 gap-4 md:mt-6 lg:mt-8 flex flex-col justify-normal items-stretch">
       {thumbnails.length > 0 &&
         thumbnails.map((thumbnail, index) => (
           <motion.div

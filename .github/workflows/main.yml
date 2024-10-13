@@ -8,6 +8,8 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NEXT_PUBLIC_URL: ${{ secrets.NEXT_PUBLIC_URL }}
+      REDIS_REST_API_TOKEN: ${{ secrets.REDIS_REST_API_TOKEN }}
+      REDIS_REST_API_URL: ${{  secrets.REDIS_REST_API_URL }}
 
     name: Run Type Check & Linters
     runs-on: ubuntu-latest
@@ -18,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
 
@@ -53,4 +55,4 @@ jobs:
         run: pnpm build
 
       - name: Check commits messages
-        uses: wagoid/commitlint-github-action@v5
+        uses: wagoid/commitlint-github-action@v6
